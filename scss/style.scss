@@ -1,0 +1,193 @@
+/******* Bootstrap Theming ********/
+
+$primary: #17a2b8;
+$secondary: #00394f;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+);
+
+$font-family-sans-serif: 'Nunito', sans-serif;
+
+$headings-font-family: 'Handlee', cursive;
+
+$body-color: #666666;
+
+$headings-color: $secondary;
+
+$headings-font-weight: bold;
+
+$enable-responsive-font-sizes: true;
+
+$border-radius: 5px;
+
+$btn-border-radius: 30px;
+
+@import "bootstrap/scss/bootstrap";
+
+
+/********** Custom CSS ************/
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $primary;
+}
+
+.section-title span {
+    position: relative;
+    background: #ffffff;
+    z-index: 1;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $primary;
+}
+
+[class^=flaticon-]:before,
+[class*=" flaticon-"]:before,
+[class^=flaticon-]:after,
+[class*=" flaticon-"]:after {
+    font-size: inherit;
+    margin-left: 0;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 11;
+    -webkit-animation: action 1s infinite alternate;
+    animation: action 1s infinite alternate;
+}
+
+@-webkit-keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 30px 15px;
+    color: $secondary;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: $primary;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        padding: 10px 15px;
+    }
+}
+
+.post-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    top: 50%;
+    left: 0;
+    margin-top: -20px;
+    padding: 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.post-carousel .owl-nav .owl-prev,
+.post-carousel .owl-nav .owl-next {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $secondary;
+    background: $primary;
+    border-radius: 30px;
+    font-size: 18px;
+    opacity: .1;
+    transition: .3s;
+}
+
+.post-carousel:hover .owl-nav .owl-prev,
+.post-carousel:hover .owl-nav .owl-next {
+    opacity: 1;
+}
+
+.portfolio-item .portfolio-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-btn {
+    opacity: 1;
+}
+
+.team .team-social {
+    top: 0;
+    background: rgba(23, 162, 184, .8);
+    opacity: 0;
+    z-index: 1;
+    transition: .5s;
+}
+
+.team:hover .team-social {
+    opacity: 1;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #dddddd;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: $primary;
+}
+
+.contact-form .help-block ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
