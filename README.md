@@ -72,7 +72,7 @@ I welcome contributions to Ezyshop! If you're interested in contributing, please
 
 <h2>Code Of Conduct📑</h2>
 
-This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/mdazfar2/Ezyshop/blob/main/.github/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/mdazfar2/Ezyshop/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 
 ## License 🔖
