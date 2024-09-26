@@ -1,9 +1,10 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/859c2ec7-62b9-4b58-bf96-b8838767e255" alt="ezyshop-image">
+  <img src="https://github.com/user-attachments/assets/3018ab81-b260-45ef-bca9-f7829f15f956" alt="ezyshop-image">
 </p>
-
+<!--  -->
 <div align="center">
 <p>
+
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
