@@ -85,7 +85,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
     </td>
     <td> 
       <img src="https://img.shields.io/badge/apache-license2.0-yellow.svg"/> <br> 
-AizzOps is licensed under the terms of the Apache License 2.0. check out <a href="./LICENSE">Apache 2.0</a> for details. <img width=2300/>
+Ezyshop is licensed under the terms of the Apache License 2.0. check out <a href="./LICENSE">Apache 2.0</a> for details. <img width=2300/>
     </td>
   </tr>
 </table>
