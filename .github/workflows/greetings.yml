@@ -1,0 +1,21 @@
+name: Greetings
+
+on:
+  fork:
+  push:
+    branches: [main]
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "Hello ${{ github.actor }}! \n Thanks for opening an issue in Ezyshop! 🚀 \n\n We'll get back to you as soon as possible. "
+          pr-message: "Thank you, ${{ github.actor }}, \n Thanks for opening a pull request in Ezyshop! 🎉\n\n We appreciate your contribution and will review it shortly."

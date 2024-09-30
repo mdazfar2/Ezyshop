@@ -1,0 +1,34 @@
+name: Feature Request 💡
+description: Have any new idea or new feature for HelpOps-Hub? Please suggest!
+title: '[Feat]'
+labels: [enhancement]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of any alternative solution or features you've considered.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Please add screenshots if applicable
+    validations:
+      required: false
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: 'Checklist'
+      options:
+        - label: 'I have checked the existing issues'
+          required: true
+
+        - label: 'I have read the [Contributing Guidelines](https://github.com/mdazfar2/Ezyshop/blob/main/CONTRIBUTING.md)'
+          required: true
+        - label: "I'm a GSSoC'24-Extd contributor"
+        - label: "I'm a Hacktoberfest'24 contributor"
+
+        - label: 'I am willing to work on this issue (optional)'
+          required: false
