@@ -39,16 +39,14 @@
 
         <div class="form-box login">
             <h2 class="title animation" style="--i:0; --j:21">Login</h2>
-            <form action="#">
-
+            <form id="loginForm">
                 <div class="input-box animation" style="--i:1; --j:22">
-                    <input  type="text" required>
+                    <input type="text" id="loginUsername" required>
                     <label for="">Username</label>
                     <i class='bx bxs-user'></i>
                 </div>
-
                 <div class="input-box animation" style="--i:2; --j:23">
-                    <input type="password" required>
+                    <input type="password" id="loginPassword" required>
                     <label for="">Password</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
@@ -58,7 +56,6 @@
                 </div>
             </form>
         </div>
-
         <div class="info-text login">
             <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
             <p class="animation" style="--i:1; --j:21">EzyShop makes it easy to browse, order, and receive products from your favorite stores</p>
@@ -71,35 +68,27 @@
 
 
         <div class="form-box register">
-
             <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
-
-            <form action="#">
-
+            <form id="registerForm">
                 <div class="input-box animation" style="--i:18; --j:1">
-                    <input  type="text" required>
+                    <input type="text" id="registerUsername" required>
                     <label for="">Username</label>
                     <i class='bx bxs-user'></i>
                 </div>
-
                 <div class="input-box animation" style="--i:19; --j:2">
-                    <input type="email" required>
+                    <input type="email" id="registerEmail" required>
                     <label for="">Email</label>
                     <i class='bx bxs-envelope'></i>
                 </div>
-
                 <div class="input-box animation" style="--i:20; --j:3">
-                    <input type="password" required>
+                    <input type="password" id="registerPassword" required>
                     <label for="">Password</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-
                 <button type="submit" class="btn animation" style="--i:21;--j:4">Sign Up</button>
-
                 <div class="linkTxt animation" style="--i:22; --j:5">
                     <p>Already have an account? <a href="#" class="login-link">Login</a></p>
                 </div>
-
             </form>
         </div>
 
