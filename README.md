@@ -32,7 +32,7 @@ EzyShop is a user-friendly platform that connects you to your favorite local sto
 
 ## 👩‍💻 Live demo 
 
-Fixing some issues, will share project link soon after deploy. Check back later! Thank you.:)
+Visit https://ezyshopz.vercel.app to see the live demo!
 
 ## 🚀 Features 
 - **Price Comparisons**: Find the best deals by comparing prices across multiple stores.
@@ -58,6 +58,9 @@ Fixing some issues, will share project link soon after deploy. Check back later!
   <a href="https://www.w3schools.com/css/"> <img src="https://img.icons8.com/color/70/000000/css3.png" alt="CSS" /></a>
   <a href="https://www.w3schools.com/js/"><img src="https://img.icons8.com/color/70/000000/javascript--v1.png" alt="JS" /></a>
 </p>
+
+
+
 
 <!----------------    Contributing Guidelines                ----------------------------------------------------------------------------------->
 
