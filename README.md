@@ -61,6 +61,22 @@ Visit https://ezyshopz.vercel.app to see the live demo!
 
 
 
+## Maintainers 🤝
+
+Need help while contributing? Tag any of maintainers when creating the issue. You can tag us using: `@username`
+
+<table>
+<tr>
+<td align="center" width="200"><pre><a href="https://github.com/mdazfar2"><img src="https://github.com/user-attachments/assets/76398544-1cb0-490c-b635-873ca8b1075e" width="200" alt="GitHub Profile picture of Azfar Alam" /><br><sub>Azfar Alam</sub></a><br>@mdazfar2</pre></td>
+<td align="center" width="200"><pre><a href="https://github.com/thakuratul2"><img src="https://github.com/user-attachments/assets/9bfdfdd5-6ac6-46c5-9acf-08ae60bbe020" width="200" alt="GitHub Profile picture of Atul Pratap" /><br><sub>Atul Pratap Singh</sub></a><br>@thakuratul2</pre></td>
+
+</tr>
+</table>
+
+
+---
+
+
 
 <!----------------    Contributing Guidelines                ----------------------------------------------------------------------------------->
 
