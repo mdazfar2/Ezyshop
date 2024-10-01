@@ -76,7 +76,6 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 
 ---
 
-
 <br>
 
 <div>
@@ -84,7 +83,15 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 </div>
 
 <table border="1">
-
+  <tr>
+      <td><img src="https://github.com/user-attachments/assets/82287ad0-2c5f-419f-ae49-5283fcc6fcfd" alt="Discord Logo" width="50"></td>
+      <td><a href="https://discord.gg/SEzpxqQG"> Join our Official Discord Server </a></td>
+  </tr>
+  <tr>
+      <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
+      <td><a href="https://linkedin.com/company/ezyshopz/"> Follow us on Linkedin</a></td>
+  </tr>
+</table>
 
 
 <!----------------    Contributing Guidelines                ----------------------------------------------------------------------------------->
