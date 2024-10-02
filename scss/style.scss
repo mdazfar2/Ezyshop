@@ -191,3 +191,10 @@ $btn-border-radius: 30px;
     padding: 0;
     list-style-type: none;
 }
+
+/* Add focus state styles */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #337ab7; /* High contrast color */
+  box-shadow: 0 0 10px rgba(51, 122, 183, 0.5);
+}

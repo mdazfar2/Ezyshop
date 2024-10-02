@@ -62,7 +62,6 @@
     </div>
     <!-- Navbar End -->
 
-
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
@@ -208,12 +207,13 @@
                 <h3 class="text-primary mb-4">Newsletter</h3>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                            required="required" />
-                    </div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" aria-label="Enter your name" aria-required="true" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" aria-label="Enter your email" aria-required="true" placeholder="Email">
+                      </div>
                     <div>
                         <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
                     </div>

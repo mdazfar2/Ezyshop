@@ -178,22 +178,22 @@
                     <h2 class="mb-4">Leave a comment</h2>
                     <form>
                         <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" aria-label="Enter your name" aria-required="true" placeholder="Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" aria-label="Enter your email" aria-required="true" placeholder="Email">
+                          </div>
                         <div class="form-group">
                             <label for="topic">Topic</label>
                             <input type="url" class="form-control" id="topic">
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                        </div>
+                            <label for="message">Message:</label>
+                            <textarea id="message" aria-label="Enter your message" aria-required="true" placeholder="Message"></textarea>
+                          </div>
                         <div class="form-group mb-0">
                             <input type="submit" value="Leave Comment" class="btn btn-primary px-3">
                         </div>
@@ -385,12 +385,13 @@
                 <h3 class="text-primary mb-4">Newsletter</h3>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                            required="required" />
-                    </div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" aria-label="Enter your name" aria-required="true" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" aria-label="Enter your email" aria-required="true" placeholder="Email">
+                      </div>
                     <div>
                         <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
                     </div>
