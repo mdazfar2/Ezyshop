@@ -1,63 +1,63 @@
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/3018ab81-b260-45ef-bca9-f7829f15f956" alt="ezyshop-image">
-</p>
-<!--  -->
-<div align="center">
-<p>
+# EzyShop 🛒
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/your-repo/ezyshop)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-repo/ezyshop/pulls)
+[![GitHub forks](https://img.shields.io/github/forks/your-repo/ezyshop)](https://github.com/your-repo/ezyshop/network/members)
+[![GitHub Repo stars](https://img.shields.io/github/stars/your-repo/ezyshop)](https://github.com/your-repo/ezyshop/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/your-repo/ezyshop)](https://github.com/your-repo/ezyshop/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/your-repo/ezyshop)](https://github.com/your-repo/ezyshop/commits)
+[![GitHub issues](https://img.shields.io/github/issues/your-repo/ezyshop)](https://github.com/your-repo/ezyshop/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/your-repo/ezyshop)](https://github.com/your-repo/ezyshop/pulls)
 
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
-![Visitors](https://api.visitorbadge.io/api/visitors?path=mdazfar2%2Fezyshop%20&countColor=%23263759&style=flat)
-![GitHub forks](https://img.shields.io/github/forks/mdazfar2/ezyshop)
-![GitHub Repo stars](https://img.shields.io/github/stars/mdazfar2/ezyshop)
-![GitHub contributors](https://img.shields.io/github/contributors/mdazfar2/ezyshop)
-![GitHub last commit](https://img.shields.io/github/last-commit/mdazfar2/ezyshop)
-![GitHub repo size](https://img.shields.io/github/repo-size/mdazfar2/ezyshop)
-![GitHub total lines](https://sloc.xyz/github/mdazfar2/ezyshop)
-![Github](https://img.shields.io/github/license/mdazfar2/ezyshop)
-![GitHub issues](https://img.shields.io/github/issues/mdazfar2/ezyshop)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/mdazfar2/ezyshop)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/mdazfar2/ezyshop)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/mdazfar2/ezyshop)
-</p>
-</div>
+## Welcome to EzyShop 👋
 
-<hr/>
+EzyShop is a user-friendly platform that connects you to your favorite local stores, offering a seamless shopping experience from the comfort of your home. Whether you're looking for groceries, household essentials, or organic products, EzyShop brings them all together in one app. With our easy-to-use interface, you can compare prices across multiple stores, access exclusive deals, and enjoy hassle-free deliveries right to your doorstep.
 
-<a name="Welcome to Ezyshop "></a>
+## 🚀 Features
 
-# Welcome to Ezyshop 👋
-EzyShop is a user-friendly platform that connects you to your favorite local stores, offering a seamless shopping experience from the comfort of your home. Whether you're looking for groceries, household essentials, or special organic products, EzyShop brings them all together in one app. With our easy-to-use interface, you can compare prices across multiple stores, access exclusive deals, and enjoy hassle-free deliveries right to your doorstep.
-
-## 👩‍💻 Live demo 
-
-Visit https://ezyshopz.vercel.app to see the live demo!
-
-## 🚀 Features 
 - **Price Comparisons**: Find the best deals by comparing prices across multiple stores.
 - **Digital Coupons & Cashback**: Save more with digital coupons and cashback offers.
 - **Loyalty Programs**: Earn points with every purchase and unlock special rewards.
 - **Organic & Local Products**: Support local businesses and shop for healthy, organic products.
-- **Seamless Shopping Experience**: Place orders easily and track deliveries with real-time updates.
-- **Secure Payment Options**: Choose from multiple payment methods, including credit/debit cards, UPI, and digital wallets, with secure transactions. (***Work in progress***)
+- **Seamless Shopping**: Place orders easily and track deliveries in real-time.
+- **Secure Payment Options**: Multiple payment methods, including credit/debit cards, UPI, and digital wallets (Work in progress).
 
+## 👩‍💻 Live Demo
 
-## ⚙️ How It Works 
-1. **Sign Up**: Create your EzyShop account in minutes. (***Work in progress***)
-2. **Browse Products**: Explore a wide range of products from your favorite local stores. (***Work in progress***)
+Visit the [EzyShop Live Demo](https://ezyshopz.vercel.app) to experience the platform.
+
+## ⚙️ How It Works
+
+1. **Sign Up**: Create your EzyShop account in minutes. *(Work in progress)*
+2. **Browse Products**: Explore a wide range of products from your favorite local stores. *(Work in progress)*
 3. **Compare Prices**: Use our price comparison tool to get the best deals.
-4. **Place Your Order**: Add items to your cart and complete your order with just a few clicks. (***Work in progress***)
-5. **Get Delivered**: Sit back and relax as your order is delivered straight to your door! (***Work in progress***)
+4. **Place Your Order**: Add items to your cart and complete your order with just a few clicks. *(Work in progress)*
+5. **Get Delivered**: Sit back and relax as your order is delivered straight to your door! *(Work in progress)*
 
-## Tech stack 📚
+## 🛠 Tech Stack
 
-<p>
+- **HTML**
+- **CSS**
+- **JavaScript**
 
- <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
-  <a href="https://www.w3schools.com/css/"> <img src="https://img.icons8.com/color/70/000000/css3.png" alt="CSS" /></a>
-  <a href="https://www.w3schools.com/js/"><img src="https://img.icons8.com/color/70/000000/javascript--v1.png" alt="JS" /></a>
-</p>
+## 🤝 Contributing
+
+We welcome contributions! If you'd like to help improve EzyShop, follow these steps:
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+## 📄 License
+
+EzyShop is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+Made with ❤️ by [Shubham Shukla](https://www.linkedin.com/in/shubham-shukla-62095032a/)
+
 
 
 
