@@ -4098,14 +4098,29 @@ input[type="button"].btn-block {
 .tab-content > .active {
   display: block;
 }
-
+/*
 .navbar {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  
+  
+}
+  */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; 
+  color: black;
   padding: 0.5rem 1rem;
+  z-index: 100;
 }
 
 .navbar .container,
@@ -4114,6 +4129,7 @@ input[type="button"].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .navbar-brand {
