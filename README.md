@@ -32,7 +32,7 @@ EzyShop is a user-friendly platform that connects you to your favorite local sto
 
 ## 👩‍💻 Live demo 
 
-Fixing some issues, will share project link soon after deploy. Check back later! Thank you.:)
+Visit https://ezyshopz.vercel.app to see the live demo!
 
 ## 🚀 Features 
 - **Price Comparisons**: Find the best deals by comparing prices across multiple stores.
@@ -58,6 +58,41 @@ Fixing some issues, will share project link soon after deploy. Check back later!
   <a href="https://www.w3schools.com/css/"> <img src="https://img.icons8.com/color/70/000000/css3.png" alt="CSS" /></a>
   <a href="https://www.w3schools.com/js/"><img src="https://img.icons8.com/color/70/000000/javascript--v1.png" alt="JS" /></a>
 </p>
+
+
+
+## Maintainers 🤝
+
+Need help while contributing? Tag any of maintainers when creating the issue. You can tag us using: `@username`
+
+<table>
+<tr>
+<td align="center" width="200"><pre><a href="https://github.com/mdazfar2"><img src="https://github.com/user-attachments/assets/76398544-1cb0-490c-b635-873ca8b1075e" width="200" alt="GitHub Profile picture of Azfar Alam" /><br><sub>Azfar Alam</sub></a><br>@mdazfar2</pre></td>
+<td align="center" width="200"><pre><a href="https://github.com/thakuratul2"><img src="https://github.com/user-attachments/assets/9bfdfdd5-6ac6-46c5-9acf-08ae60bbe020" width="200" alt="GitHub Profile picture of Atul Pratap" /><br><sub>Atul Pratap Singh</sub></a><br>@thakuratul2</pre></td>
+
+</tr>
+</table>
+
+
+---
+
+<br>
+
+<div>
+  <h2>🔗 Important Links</h2>
+</div>
+
+<table border="1">
+  <tr>
+      <td><img src="https://github.com/user-attachments/assets/82287ad0-2c5f-419f-ae49-5283fcc6fcfd" alt="Discord Logo" width="50"></td>
+      <td><a href="https://discord.gg/SEzpxqQG"> Join our Official Discord Server </a></td>
+  </tr>
+  <tr>
+      <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
+      <td><a href="https://linkedin.com/company/ezyshopz/"> Follow us on Linkedin</a></td>
+  </tr>
+</table>
+
 
 <!----------------    Contributing Guidelines                ----------------------------------------------------------------------------------->
 
