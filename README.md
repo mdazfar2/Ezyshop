@@ -69,10 +69,10 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 <tr>
 <td align="center" width="200"><pre><a href="https://github.com/mdazfar2"><img src="https://github.com/user-attachments/assets/76398544-1cb0-490c-b635-873ca8b1075e" width="200" alt="GitHub Profile picture of Azfar Alam" /><br><sub>Azfar Alam</sub></a><br>@mdazfar2</pre></td>
 <td align="center" width="200"><pre><a href="https://github.com/thakuratul2"><img src="https://github.com/user-attachments/assets/9bfdfdd5-6ac6-46c5-9acf-08ae60bbe020" width="200" alt="GitHub Profile picture of Atul Pratap" /><br><sub>Atul Pratap Singh</sub></a><br>@thakuratul2</pre></td>
+<td align="center" width="200"><pre><a href="https://github.com/kavita1928"><img src="https://github.com/user-attachments/assets/26f3a13e-6954-4675-b313-9ff81a16dcd6" width="200" alt="GitHub Profile picture of Kavita Yadav" /><br><sub>Kavita Yadav</sub></a><br>@kavita1928</pre></td>
 
 </tr>
 </table>
-
 
 ---
 
