@@ -5,7 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -4459,6 +4459,51 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
+}
+.facility-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+  }
+  
+  .card-content {
+    flex: 1; 
+  }
+  
+  .d-flex {
+    align-items: center; 
+}
+.class-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures each card takes up the full height */
+}
+
+.card-body {
+  flex-grow: 1; /* Allows the card body to grow and fill space */
+  display: flex;
+  flex-direction: column; /* Ensures items are stacked vertically */
+  justify-content: space-between; /* Adds space between elements */
+}
+
+.card-footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures each card takes up the full height */
+}
+
+.card-body {
+  flex-grow: 1; /* Allows the card body to grow and fill space */
+  display: flex;
+  flex-direction: column; /* Ensures items are stacked vertically */
+  justify-content: space-between; /* Adds space between elements */
+}
+
+.card-body p {
+  flex-grow: 1; /* Makes sure the paragraph grows to occupy space */
 }
 
 .card {
