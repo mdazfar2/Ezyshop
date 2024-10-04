@@ -24,7 +24,7 @@ body{
 
 .wrapper{
     position: relative;
-    margin-top: -130px;
+    margin-top: 80px;
   
     width: 750px;
     height: 480px;
@@ -352,7 +352,10 @@ form .linkTxt{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    padding: 0 1rem;
+    @media (min-width: 992px) {
+        padding: 0 3rem;
+    }
 }
 
 .navbar-brand {
@@ -389,7 +392,7 @@ form .linkTxt{
     color: #17a2b8; 
 }
 
-body {
+/* body {
     margin-top: 100px; 
-}
+} */
 

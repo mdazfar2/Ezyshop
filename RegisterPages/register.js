@@ -137,5 +137,19 @@ loginForm.addEventListener('submit', function (event) {
 });
 });
 
+// Handle Visibility Toggle
+document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
+    const passwordInput = document.getElementById("loginPassword");
+    // Toggle password visibility
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      this.classList.remove('bxs-lock-alt');  
+      this.classList.add('bxs-lock-open');  
+      passwordInput.type = "password";
+      this.classList.remove('bxs-lock-open'); 
+      this.classList.add('bxs-lock-alt');     
+    }
+  });
+  
 
 
