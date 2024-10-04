@@ -4,8 +4,7 @@
 <!--  -->
 <div align="center">
 <p>
-
-
+  
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=mdazfar2%2Fezyshop%20&countColor=%23263759&style=flat)
@@ -28,7 +27,7 @@
 <a name="Welcome to Ezyshop "></a>
 
 # Welcome to Ezyshop 👋
-EzyShop is a user-friendly platform that connects you to your favorite local stores, offering a seamless shopping experience from the comfort of your home. Whether you're looking for groceries, household essentials, or special organic products, EzyShop brings them all together in one app. With our easy-to-use interface, you can compare prices across multiple stores, access exclusive deals, and enjoy hassle-free deliveries right to your doorstep.
+EzyShop is a user-friendly platform that connects you to your favourite local stores, offering a seamless shopping experience from the comfort of your home. Whether you're looking for groceries, household essentials, or special organic products, EzyShop brings them all together in one app. With our easy-to-use interface, you can compare prices across multiple stores, access exclusive deals, and enjoy hassle-free deliveries right to your doorstep. So, go and check my project.
 
 ## 👩‍💻 Live demo 
 
@@ -94,7 +93,7 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 </table>
 
 
-<!----------------    Contributing Guidelines                ----------------------------------------------------------------------------------->
+<!----------------    Contributing Guidelines     -------------------------------------------------------------------------------------------------------------->
 
 <div align="left">
 <h2><font size="6"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" alt="Handshake" width="40" height="40" /> Want to Contribute? </font></h2>
