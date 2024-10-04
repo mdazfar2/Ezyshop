@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>EzyShop</title>
@@ -7,6 +8,7 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -33,46 +35,33 @@
 <body>
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
-
-      <nav
-        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
-      >
-        <a
-          href="index.html"
-          class="navbar-brand font-weight-bold text-secondary"
-          style="font-size: 50px"
-        >
-          <img style="width: 80px" src="/img/ezyshop.png" alt="logo" />
-          <span class="text-primary">Ezyshop</span>
-        </a>
-        <button
-          type="button"
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarCollapse"
-        >
-          <div class="navbar-nav font-weight-bold mx-auto py-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="Category.html" class="nav-item nav-link">Categories</a>
-            <a href="team.html" class="nav-item nav-link">Teams</a>
-            <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                >Pages</a
-              >
-              <div class="dropdown-menu rounded-0 m-0">
-                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                <a href="single.html" class="dropdown-item">Blog Detail</a>
-              </div>
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
+                <img style="width: 80px;" src="/img/ezyshop.png" alt="logo">
+                <span class="text-primary">Ezyshop</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav font-weight-bold mx-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active" id="secondary">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="category.html" class="nav-item nav-link">Categories</a>
+                    <a href="team.html" class="nav-item nav-link">Teams</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="primary">Pages</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                            <a href="single.html" class="dropdown-item" id="primary">Blog Detail</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary px-4">Login/SignUp</a>
+            </div>
+        </nav>
+    </div>
     <!-- Navbar End -->
 
 
@@ -252,120 +241,6 @@
                     </form>
                 </div>
             </div>
-
-          </div>
-
-          <!-- Comment Form -->
-          <div class="bg-light p-5">
-            <h2 class="mb-4">Leave a comment</h2>
-            <form id="formidd">
-              <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" class="form-control" id="name" />
-                <small id="nameError" class="text-danger d-none"
-                  >Please enter your name</small
-                >
-              </div>
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" class="form-control" id="email" />
-                <small id="emailError" class="text-danger d-none"
-                  >Invalid email address</small
-                >
-              </div>
-              <div class="form-group">
-                <label for="topic">Topic</label>
-                <input type="url" class="form-control" id="topic" />
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea
-                  id="message"
-                  cols="30"
-                  rows="5"
-                  class="form-control"
-                  maxlength="500"
-                  required
-                ></textarea>
-                <small id="messageError" class="text-danger d-none"
-                  >Please enter a message</small
-                >
-                <small id="charLimit" class="text-muted"
-                  >500 characters max</small
-                >
-              </div>
-              <div class="form-group mb-0">
-                <input
-                  type="submit"
-                  value="Leave Comment"
-                  class="btn btn-primary px-3"
-                />
-              </div>
-            </form>
-          </div>
-          <script>
-            document
-              .getElementById("formidd")
-              .addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                // Clear previous errors
-                document
-                  .querySelectorAll(".text-danger")
-                  .forEach((el) => el.classList.add("d-none"));
-                document
-                  .querySelectorAll(".form-control")
-                  .forEach((el) => el.classList.remove("border-danger"));
-
-                let hasError = false;
-
-                // Name validation
-                const name = document.getElementById("name").value.trim();
-                if (name === "") {
-                  document
-                    .getElementById("nameError")
-                    .classList.remove("d-none");
-                  document
-                    .getElementById("name")
-                    .classList.add("border-danger");
-                  hasError = true;
-                }
-
-                // Email validation
-                const email = document.getElementById("email").value.trim();
-                const emailPattern =
-                  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-                if (email === "" || !emailPattern.test(email)) {
-                  document
-                    .getElementById("emailError")
-                    .classList.remove("d-none");
-                  document
-                    .getElementById("email")
-                    .classList.add("border-danger");
-                  hasError = true;
-                }
-
-                // Message validation
-                const message = document.getElementById("message").value.trim();
-                if (message === "") {
-                  document
-                    .getElementById("messageError")
-                    .classList.remove("d-none");
-                  document
-                    .getElementById("message")
-                    .classList.add("border-danger");
-                  hasError = true;
-                }
-
-                // If no errors, submit the form
-                if (!hasError) {
-                  alert("Form submitted successfully!");
-                }
-              });
-          </script>
-        </div>
-
 
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <!-- Author Bio -->
