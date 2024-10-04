@@ -212,7 +212,7 @@
                                 <div class="col-6 py-1">$10</div>
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
+                        <a onclick="shopNow('fashion')" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-5">
@@ -240,7 +240,7 @@
                                 <div class="col-6 py-1">$25</div>
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
+                        <a onclick="shopNow('electronics')" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-5">
@@ -268,7 +268,7 @@
                                 <div class="col-6 py-1">$2</div>
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Order Now</a>
+                        <a onclick="shopNow('groceries')" class="btn btn-primary px-4 mx-auto mb-4">Order Now</a>
                     </div>
                 </div>
             </div>
@@ -586,6 +586,9 @@
     <script src="js/main.js"></script>
    
     <script>
+        function shopNow(category) {
+            window.location.href = `products.html?category=${category}`;
+        }
         document.addEventListener("DOMContentLoaded", function () {
             const authButton = document.getElementById('authButton');
             const currentUser = localStorage.getItem('currentUser');
