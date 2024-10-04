@@ -138,19 +138,16 @@ loginForm.addEventListener('submit', function (event) {
 });
 
 // Handle Visibility Toggle
-// Correct the code by accessing the first element with the class 'bx'
 document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
     const passwordInput = document.getElementById("loginPassword");
-  
     // Toggle password visibility
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
-      this.classList.remove('bxs-lock-alt');  // Change icon class to unlock
-      this.classList.add('bxs-lock-open');   // Assuming 'bxs-lock-open' is the unlock icon
-    } else {
+      this.classList.remove('bxs-lock-alt');  
+      this.classList.add('bxs-lock-open');  
       passwordInput.type = "password";
-      this.classList.remove('bxs-lock-open'); // Change back to lock
-      this.classList.add('bxs-lock-alt');     // Assuming 'bxs-lock-alt' is the lock icon
+      this.classList.remove('bxs-lock-open'); 
+      this.classList.add('bxs-lock-alt');     
     }
   });
   
