@@ -9864,3 +9864,36 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0;
   list-style-type: none;
 }
+
+/* Fixed height for cards */
+.fixed-card {
+  height: 250px; /* Set your desired height */
+  display: flex; /* Ensure flex is applied for vertical alignment */
+}
+
+/* Default card appearance with shadow */
+.card-hover-effect {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Default shadow */
+  background-color: #fff; /* Ensure the background is white */
+  flex-grow: 1; /* Allow card to grow to full height */
+  padding: 30px; /* Keep the padding consistent */
+}
+
+/* Hover effect for cards */
+.card-hover-effect:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  background-color: #f8f9fa; /* Slight background color change */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Hover effect for icons */
+.card-hover-effect:hover i {
+  transform: scale(1.2); /* Scale up the icon slightly */
+  color: #007bff; /* Optionally change the icon color */
+}
+
+/* Ensure text aligns well */
+.pl-4 {
+  padding-left: 16px; /* Keep consistent padding */
+}
