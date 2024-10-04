@@ -73,6 +73,31 @@ body {
   background-color: #fff;
 }
 
+/* ScrollBar Styles */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FA; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #418596;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5da5b8;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #27648a;
+}
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
