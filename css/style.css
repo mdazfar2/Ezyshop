@@ -9887,11 +9887,6 @@ a.text-dark:hover, a.text-dark:focus {
   transform: translateY(-5px); /* Slight lift effect */
 }
 
-/* Hover effect for icons */
-.card-hover-effect:hover i {
-  transform: scale(1.2); /* Scale up the icon slightly */
-  color: #007bff; /* Optionally change the icon color */
-}
 
 /* Ensure text aligns well */
 .pl-4 {
