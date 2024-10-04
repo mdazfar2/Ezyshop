@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <!-- Favicon -->
-    <link href="./img/ezyshop.png" rel="icon">
+    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,10 +25,10 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-   
+
     <link rel="stylesheet" href="css\footer.css">
-   
-    
+
+
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <img style="width: 80px;" src="/img/ezyshop.png" alt="logo">    
+                <img style="width: 80px;" src="/img/ezyshop.png" alt="logo">
                 <span class="text-primary">Ezyshop</span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -47,10 +47,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="category.html" class="nav-item nav-link">Categories</a>
-                    <a href="team.html" class="nav-item nav-link">Teams</a>
+                    <a href="index.html" class="nav-item nav-link active" id="home">Home</a>
+                    <a href="about.html" class="nav-item nav-link" id="about">About</a>
+                    <a href="category.html" class="nav-item nav-link" id="category">Categories</a>
+                    <a href="team.html" class="nav-item nav-link" id="team">Teams</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu rounded-0 m-0">
@@ -58,7 +58,7 @@
                             <a href="single.html" class="dropdown-item">Blog Detail</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
                 </div>
                 <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login/SignUp</a>
             </div>
@@ -68,83 +68,88 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
-        <div class="row align-items-center px-3">
-            <div class="col-lg-6 text-center text-lg-left">
+    <div class="container-fluid bg-primary px-0 px-md-5 mb-5 mt-5">
+        <div class="row align-items-center px-3 ">
+            <div class="col-lg-6 py-5 text-center text-lg-left">
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">Ezyshop</h4>
                 <h1 class="display-3 font-weight-bold text-white">Revolutionizing How You Shop</h1>
-                <p class="text-white mb-4">Bringing every store to your door, no matter where you live. EzyShop makes it easy to browse, order, and receive products from your favorite stores—from your local area to beyond—right from your live place. Enjoy seamless shopping without stepping outside.</p>
+                <p class="text-white mb-4">Bringing every store to your door, no matter where you live. EzyShop makes it
+                    easy to browse, order, and receive products from your favorite stores—from your local area to
+                    beyond—right from your live place. Enjoy seamless shopping without stepping outside.</p>
                 <a href="#" class="btn btn-secondary mt-1 py-3 px-5">Start Shopping</a>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
-                <img class="img-fluid mt-5" src="img/header.png" alt="">
+                <img class="img-fluid mt-5 mb-2" src="img/header.png" alt="">
             </div>
         </div>
     </div>
     <!-- Header End -->
 
-<!-- Facilities Start -->
-<div class="container-fluid pt-5">
-    <div class="container pb-3">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
-                    <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
-                    <div class="pl-4">
-                        <h4>Wide Product Selection</h4>
-                        <p class="m-0">Discover a variety of products from groceries to electronics, all in one app.</p>
+    <!-- Facilities Start -->
+    <div class="container-fluid pt-5">
+        <div class="container pb-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
+                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Wide Product Selection</h4>
+                            <p class="m-0">Discover a variety of products from groceries to electronics, all in one app.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
-                    <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
-                    <div class="pl-4">
-                        <h4>Local & Mall-Based Stores</h4>
-                        <p class="m-0">Easily shop from your favorite local stores and top malls, all from home.</p>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
+                        <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Local & Mall-Based Stores</h4>
+                            <p class="m-0">Easily shop from your favorite local stores and top malls, all from home.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
-                    <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>
-                    <div class="pl-4">
-                        <h4>Seamless Ordering Process</h4>
-                        <p class="m-0">Enjoy a simple and intuitive ordering system that saves you time and hassle.</p>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
+                        <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Seamless Ordering Process</h4>
+                            <p class="m-0">Enjoy a simple and intuitive ordering system that saves you time and hassle.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
-                    <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
-                    <div class="pl-4">
-                        <h4>Fast & Reliable Delivery</h4>
-                        <p class="m-0">Get your items delivered to your doorstep quickly and reliably, wherever you are.</p>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
+                        <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Fast & Reliable Delivery</h4>
+                            <p class="m-0">Get your items delivered to your doorstep quickly and reliably, wherever you
+                                are.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
-                    <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
-                    <div class="pl-4">
-                        <h4>Exclusive Discounts & Offers</h4>
-                        <p class="m-0">Unlock deals and discounts available only through EzyShop.</p>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
+                        <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Exclusive Discounts & Offers</h4>
+                            <p class="m-0">Unlock deals and discounts available only through EzyShop.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
-                    <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
-                    <div class="pl-4">
-                        <h4>Secure Payments</h4>
-                        <p class="m-0">Shop with peace of mind, thanks to our safe and secure payment gateway.</p>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px;">
+                        <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Secure Payments</h4>
+                            <p class="m-0">Shop with peace of mind, thanks to our safe and secure payment gateway.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Facilities End -->
+    <!-- Facilities End -->
 
 
 
@@ -158,16 +163,23 @@
                 <div class="col-lg-7">
                     <p class="section-title pr-5"><span class="pr-2">Learn About Us</span></p>
                     <h1 class="mb-4">Bringing Every Store to Your Door</h1>
-                    <p>EzyShop is your go-to platform for shopping locally from the comfort of your home. Whether you're looking for products from your favorite local store or the nearest mall, we make it easy to browse, order, and have it delivered to you fast. Enjoy seamless shopping with access to the stores you love, all in one place.</p>
+                    <p>EzyShop is your go-to platform for shopping locally from the comfort of your home. Whether you're
+                        looking for products from your favorite local store or the nearest mall, we make it easy to
+                        browse, order, and have it delivered to you fast. Enjoy seamless shopping with access to the
+                        stores you love, all in one place.</p>
                     <div class="row pt-2 pb-4">
                         <div class="col-6 col-md-4">
                             <img class="img-fluid rounded" src="img/about-2.png" alt="">
                         </div>
                         <div class="col-6 col-md-8">
                             <ul class="list-inline m-0">
-                                <li class="py-2 border-top border-bottom"><i class="fa fa-check text-primary mr-3"></i>Shop from local stores or malls near you</li>
-                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Quick, reliable delivery from the stores you trust</li>
-                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Exclusive offers, only available through EzyShop</li>
+                                <li class="py-2 border-top border-bottom"><i
+                                        class="fa fa-check text-primary mr-3"></i>Shop from local stores or malls near
+                                    you</li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Quick,
+                                    reliable delivery from the stores you trust</li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Exclusive
+                                    offers, only available through EzyShop</li>
                             </ul>
                         </div>
                     </div>
@@ -192,7 +204,8 @@
                         <img class="card-img-top mb-2" src="img/class-1.png" alt="">
                         <div class="card-body text-center">
                             <h4 class="card-title">Fashion & Accessories</h4>
-                            <p class="card-text">Explore the latest trends with exclusive offers on clothing, shoes and accessories.</p>
+                            <p class="card-text">Explore the latest trends with exclusive offers on clothing, shoes and
+                                accessories.</p>
                         </div>
                         <div class="card-footer bg-transparent py-4 px-5">
                             <div class="row border-bottom">
@@ -220,7 +233,8 @@
                         <img class="card-img-top mb-2" src="img/class-2.png" alt="">
                         <div class="card-body text-center">
                             <h4 class="card-title">Electronics & Gadgets</h4>
-                            <p class="card-text">Shop for the latest electronics and gadgets from top brands at the best prices.</p>
+                            <p class="card-text">Shop for the latest electronics and gadgets from top brands at the best
+                                prices.</p>
                         </div>
                         <div class="card-footer bg-transparent py-4 px-5">
                             <div class="row border-bottom">
@@ -248,7 +262,8 @@
                         <img class="card-img-top mb-2" src="img/class-3.png" alt="">
                         <div class="card-body text-center">
                             <h4 class="card-title">Groceries & Essentials</h4>
-                            <p class="card-text">Order fresh groceries and daily essentials from trusted local stores, delivered to your doorstep.</p>
+                            <p class="card-text">Order fresh groceries and daily essentials from trusted local stores,
+                                delivered to your doorstep.</p>
                         </div>
                         <div class="card-footer bg-transparent py-4 px-5">
                             <div class="row border-bottom">
@@ -284,10 +299,13 @@
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <p class="section-title pr-5"><span class="pr-2">Contact Us</span></p>
                     <h1 class="mb-4">Get in Touch with ezyshop</h1>
-                    <p>Have questions about your order, our services, or need assistance with anything? We're here to help! Reach out to us, and we'll get back to you as soon as possible.</p>
+                    <p>Have questions about your order, our services, or need assistance with anything? We're here to
+                        help! Reach out to us, and we'll get back to you as soon as possible.</p>
                     <ul class="list-inline m-0">
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Fast and Reliable Customer Support</li>
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Personalized Shopping Experience</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Fast and Reliable Customer Support
+                        </li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Personalized Shopping Experience
+                        </li>
                         <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Real-Time Order Tracking</li>
                     </ul>
                     <a href="" class="btn btn-primary mt-4 py-2 px-4">Send Message</a>
@@ -300,10 +318,12 @@
                         <div class="card-body rounded-bottom bg-primary p-5">
                             <form>
                                 <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name"
+                                        required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email"
+                                        required="required" />
                                 </div>
                                 <div class="form-group">
                                     <select class="custom-select border-0 px-4" style="height: 47px;">
@@ -316,7 +336,8 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Submit</button>
+                                    <button class="btn btn-secondary btn-block border-0 py-3"
+                                        type="submit">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -338,7 +359,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
                     <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="img/aizz pic.jpeg" alt="" >
+                        <img class="img-fluid w-100" src="img/aizz pic.jpeg" alt="">
                         <div
                             class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                             <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
@@ -352,7 +373,7 @@
                     <h4>Azfar Alam</h4>
                     <i>Founder & CEO</i>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -370,10 +391,12 @@
                 <div class="testimonial-item px-3">
                     <div class="bg-light shadow-sm rounded mb-4 p-4">
                         <h3 class="fas fa-quote-left text-primary mr-3"></h3>
-                        ezyshop makes my grocery shopping so much easier. I can compare prices from multiple stores and get my essentials delivered right to my doorstep. It’s a game-changer for busy families!
+                        ezyshop makes my grocery shopping so much easier. I can compare prices from multiple stores and
+                        get my essentials delivered right to my doorstep. It’s a game-changer for busy families!
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/testimonial-1.jpg" style="width: 70px; height: 70px;" alt="Image">
+                        <img class="rounded-circle" src="img/testimonial-1.jpg" style="width: 70px; height: 70px;"
+                            alt="Image">
                         <div class="pl-3">
                             <h5>Rajesh Sharma</h5>
                             <i>Frequent Shopper</i>
@@ -383,10 +406,12 @@
                 <div class="testimonial-item px-3">
                     <div class="bg-light shadow-sm rounded mb-4 p-4">
                         <h3 class="fas fa-quote-left text-primary mr-3"></h3>
-                        The convenience of browsing multiple stores at once is amazing. ezyshop saves me time and helps me find great deals. The user-friendly app makes everything a breeze!
+                        The convenience of browsing multiple stores at once is amazing. ezyshop saves me time and helps
+                        me find great deals. The user-friendly app makes everything a breeze!
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/testimonial-2.jpg" style="width: 70px; height: 70px;" alt="Image">
+                        <img class="rounded-circle" src="img/testimonial-2.jpg" style="width: 70px; height: 70px;"
+                            alt="Image">
                         <div class="pl-3">
                             <h5>Anita Desai</h5>
                             <i>Online Shopper</i>
@@ -396,10 +421,12 @@
                 <div class="testimonial-item px-3">
                     <div class="bg-light shadow-sm rounded mb-4 p-4">
                         <h3 class="fas fa-quote-left text-primary mr-3"></h3>
-                        I often need supplies for my store, and ezyshop helps me place bulk orders quickly. It’s reliable and efficient—exactly what I need for my business.
+                        I often need supplies for my store, and ezyshop helps me place bulk orders quickly. It’s
+                        reliable and efficient—exactly what I need for my business.
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/testimonial-3.jpg" style="width: 70px; height: 70px;" alt="Image">
+                        <img class="rounded-circle" src="img/testimonial-3.jpg" style="width: 70px; height: 70px;"
+                            alt="Image">
                         <div class="pl-3">
                             <h5>Manoj Gupta</h5>
                             <i>Local Business Owner</i>
@@ -409,10 +436,12 @@
                 <div class="testimonial-item px-3">
                     <div class="bg-light shadow-sm rounded mb-4 p-4">
                         <h3 class="fas fa-quote-left text-primary mr-3"></h3>
-                        Managing work and kids is tough, but ezyshop has been a lifesaver. I can order everything from groceries to household items without leaving home. Highly recommended!
+                        Managing work and kids is tough, but ezyshop has been a lifesaver. I can order everything from
+                        groceries to household items without leaving home. Highly recommended!
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/testimonial-4.jpg" style="width: 70px; height: 70px;" alt="Image">
+                        <img class="rounded-circle" src="img/testimonial-4.jpg" style="width: 70px; height: 70px;"
+                            alt="Image">
                         <div class="pl-3">
                             <h5>Priya Nair</h5>
                             <i>Mother of Two</i>
@@ -443,7 +472,8 @@
                                 <small class="mr-3"><i class="fa fa-folder text-primary"></i>Shopping Tips</small>
                                 <small class="mr-3"><i class="fa fa-comments text-primary"></i>15</small>
                             </div>
-                            <p>Finding the best deals on groceries has never been easier! Check out these 10 insider tips to help you cut down on your monthly food budget without sacrificing quality.</p>
+                            <p>Finding the best deals on groceries has never been easier! Check out these 10 insider
+                                tips to help you cut down on your monthly food budget without sacrificing quality.</p>
                             <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
                         </div>
                     </div>
@@ -458,7 +488,8 @@
                                 <small class="mr-3"><i class="fa fa-folder text-primary"></i> Online Shopping</small>
                                 <small class="mr-3"><i class="fa fa-comments text-primary"></i> 18</small>
                             </div>
-                            <p>Did you know ezyshop allows you to compare prices between different stores? Learn how to make the most of this feature and get the best deals on everything you need.</p>
+                            <p>Did you know ezyshop allows you to compare prices between different stores? Learn how to
+                                make the most of this feature and get the best deals on everything you need.</p>
                             <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
                         </div>
                     </div>
@@ -470,10 +501,11 @@
                             <h4 class="">Best Local Stores for Organic Products in Your Area</h4>
                             <div class="d-flex justify-content-center mb-3">
                                 <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i>  Local Shopping</small>
+                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Local Shopping</small>
                                 <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
                             </div>
-                            <p>Support local stores while staying healthy! Here’s a guide to the best places to find organic groceries near you, all accessible through ezyshop.</p>
+                            <p>Support local stores while staying healthy! Here’s a guide to the best places to find
+                                organic groceries near you, all accessible through ezyshop.</p>
                             <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
                         </div>
                     </div>
@@ -488,11 +520,14 @@
     <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px;">
+                <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
+                    style="font-size: 40px; line-height: 40px;">
                     <img style="width: 80px;" src="/img/ezyshop.png" alt="logo">
                     <span class="text-white">Ezyshop</span>
                 </a>
-                <p>EzyShop is a user-friendly platform that connects you to local stores, offering a seamless shopping experience. Compare prices, access exclusive deals, and enjoy hassle-free deliveries for groceries, essentials, and organic products—all in one app.</p>
+                <p>EzyShop is a user-friendly platform that connects you to local stores, offering a seamless shopping
+                    experience. Compare prices, access exclusive deals, and enjoy hassle-free deliveries for groceries,
+                    essentials, and organic products—all in one app.</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
                         style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
@@ -517,7 +552,7 @@
                     <h4 class="fa fa-envelope text-primary"></h4>
                     <div class="pl-3">
                         <h5 class="text-white">Email</h5>
-                        <p><a href="mailto: ezyshop@gmail.com"> ezyshop@gmail.com</a></p>
+                        <p>ezyshop@gmail.com</p>
                     </div>
                 </div>
                 <div class="d-flex">
@@ -533,7 +568,8 @@
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="/index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="/about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="/category.html"><i class="fa fa-angle-right mr-2"></i>Our Categories</a>
+                    <a class="text-white mb-2" href="/category.html"><i class="fa fa-angle-right mr-2"></i>Our
+                        Categories</a>
                     <a class="text-white mb-2" href="/team.html"><i class="fa fa-angle-right mr-2"></i>Our Teams</a>
                     <a class="text-white mb-2" href="/blog.html"><i class="fa fa-angle-right mr-2"></i>Our Blog</a>
                     <a class="text-white" href="/contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
@@ -543,7 +579,8 @@
                 <h3 class="text-primary mb-4">Newsletter</h3>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name"
+                            required="required" />
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
@@ -584,11 +621,14 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-   
+    <!-- Auth JavaScript-->
+    <script src="js/auth.js"></script>
     <script>
+        // Function to redirect to specific category page--------START
         function shopNow(category) {
             window.location.href = `products.html?category=${category}`;
         }
+        // Function to redirect to specific category page--------END
         document.addEventListener("DOMContentLoaded", function () {
             const authButton = document.getElementById('authButton');
             const currentUser = localStorage.getItem('currentUser');
