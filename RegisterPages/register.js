@@ -128,9 +128,9 @@ loginForm.addEventListener('submit', function (event) {
 
     // Check if credentials match
     if (storedUser && loginUsername === storedUser.username && loginPassword === storedUser.password) {
-        alert('Login successful! Redirecting to home page...'); // Notify user
         localStorage.setItem('currentUser', loginUsername); // Store the current user's username
-        window.location.href = "../index.html"; // Redirect to home page
+        alert('Login successful!'); // Notify user of successfull login.
+        history.back(); //  Return back to the page, from where user requested login.
     } else {
         alert('Invalid username or password.'); // Notify user of failure
     }
