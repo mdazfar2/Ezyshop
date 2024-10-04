@@ -225,7 +225,7 @@
                                 <div class="col-6 py-1">$10</div>
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
+                        <a onclick="shopNow('fashion')" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-5">
@@ -254,7 +254,7 @@
                                 <div class="col-6 py-1">$25</div>
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
+                        <a onclick="shopNow('electronics')" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-5">
@@ -283,7 +283,7 @@
                                 <div class="col-6 py-1">$2</div>
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Order Now</a>
+                        <a onclick="shopNow('groceries')" class="btn btn-primary px-4 mx-auto mb-4">Order Now</a>
                     </div>
                 </div>
             </div>
@@ -621,10 +621,45 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
     <!-- Auth JavaScript-->
     <script src="js/auth.js"></script>
-    
+    <script>
+        // Function to redirect to specific category page--------START
+        function shopNow(category) {
+            window.location.href = `products.html?category=${category}`;
+        }
+        // Function to redirect to specific category page--------END
+        document.addEventListener("DOMContentLoaded", function () {
+            const authButton = document.getElementById('authButton');
+            const currentUser = localStorage.getItem('currentUser');
+        
+            // Check if there's a logged-in user
+            if (currentUser) {
+                authButton.textContent = currentUser; // Change button text to username
+                authButton.href = "#"; // Optionally, change the link to something else or remove it
+                authButton.classList.add('btn-secondary'); // Optionally change button style
+            }
+        
+            // Add event listener for logout
+            authButton.addEventListener('click', function () {
+                if (currentUser) {
+                    // Show confirmation dialog before logging out
+                    const confirmLogout = confirm('Do you want to logout?');
+        
+                    if (confirmLogout) {
+                        // If confirmed, remove the current user from localStorage
+                        localStorage.removeItem('currentUser');
+                        // Reload the page to reset the button to "Login/SignUp"
+                        location.reload();
+                    }
+                } else {
+                    // Redirect to login page if no user is logged in
+                    window.location.href = 'RegisterPages/register.html'; // Update with your login page URL
+                }
+            });
+        });
+        </script>
+        
 </body>
 
 </html>
