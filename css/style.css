@@ -2693,6 +2693,7 @@ textarea.form-control.is-invalid {
 .btn:hover {
   color: #666666;
   text-decoration: none;
+  padding: 12px 28px;
 }
 
 .btn:focus,
@@ -2725,6 +2726,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #138496;
   border-color: #117a8b;
+  padding: 12px 28px;
 }
 
 .btn-primary:focus,
@@ -2733,6 +2735,7 @@ fieldset:disabled a.btn {
   background-color: #138496;
   border-color: #117a8b;
   box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+  padding: 12px 28px;
 }
 
 .btn-primary.disabled,
@@ -10691,7 +10694,7 @@ button.bg-dark:focus {
 }
 
 .text-white {
-  color: #fff !important;
+  color: #fff ;           
 }
 
 .text-primary {
@@ -11183,4 +11186,41 @@ a.text-dark:focus {
   .search-input-group-append .btn {
     padding: 4px 15px;
   }
+}
+
+/* -------Adding Hover Effects------- */
+.transition-facilities:hover{
+  background-image: linear-gradient(to bottom right, white,#21bed780);
+  color: #000;
+  cursor: pointer;
+}
+.card:hover{
+  background-image: linear-gradient(#17a2b899,#fff);
+  color: #000;
+}
+button:hover{
+  padding: 12px 28px;
+}
+.review:hover{
+  background-image: linear-gradient(to bottom right,white,#17a2b899);
+  color: #000;
+}
+.card-body:hover{
+  background-image: linear-gradient(#17a2b899,#fff);
+  color: #000;
+}
+.facilities:hover{
+  background-image: linear-gradient(to bottom right,white,#21bed780);
+  color: #000;
+  cursor: pointer;
+}
+.navbar a:hover{
+  border-bottom: 2px solid #17a2b899;
+}
+.links a:hover{
+  color: #17a2b8;
+}
+.contact p,.contact h4:hover{
+  cursor: pointer;
+  color: #17a2b8;
 }
