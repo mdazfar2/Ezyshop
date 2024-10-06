@@ -21,7 +21,7 @@ function createShopCard(shop) {
                 <div class="shop-card-body">
                     <h5 class="shop-card-title">${shop.name}</h5>
                     <p class="shop-card-text">${shop.description}</p>
-                    <a href="products.html?shop=${encodeURIComponent(shop.name)}&category=${shop.category}" class="btn btn-primary">Products</a>
+                    <a href="products.html?shop=${shop.name}" class="btn btn-primary">Products</a>
                 </div>
             </div>
         </div>
