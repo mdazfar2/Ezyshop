@@ -99,12 +99,26 @@
         }
     });
     
+    // Function to check if user is logged in
+    function isLoggedIn() {
+        return localStorage.getItem('currentUser') !== null;
+    }
+
+    // Function to show login alert
+    function showLoginAlert() {
+        alert("Please login first.");
+    }
+
     // Cart and Wishlist functionality
     let cart = [];
     let wishlist = [];
 
     // Function to add items to wishlist
     function addToWishlist(productName, price) {
+        if (!isLoggedIn()) {
+            showLoginAlert();
+            return;
+        }
         const existingItem = wishlist.find(item => item.name === productName);
         if (!existingItem) {
             wishlist.push({ name: productName, price: price });
@@ -117,6 +131,10 @@
 
     // Function to remove items from wishlist
     function removeFromWishlist(index) {
+        if (!isLoggedIn()) {
+            showLoginAlert();
+            return;
+        }
         wishlist.splice(index, 1);
         displayWishlist();
     }
@@ -129,6 +147,10 @@
 
     // Function to add items to cart
     function addToCart(productName, price) {
+        if (!isLoggedIn()) {
+            showLoginAlert();
+            return;
+        }
         const existingItem = cart.find(item => item.name === productName);
         if (!existingItem) {
             cart.push({ name: productName, price: price, quantity: 1 });
@@ -141,6 +163,10 @@
 
     // Function to remove items from cart
     function removeFromCart(index) {
+        if (!isLoggedIn()) {
+            showLoginAlert();
+            return;
+        }
         cart.splice(index, 1);
         updateCartDisplay();
     }
@@ -196,29 +222,47 @@
         // Track Order functionality
         $('#track-order').on('click', function(e) {
             e.preventDefault();
+            if (!isLoggedIn()) {
+                showLoginAlert();
+                return;
+            }
             alert('Tracking your order... (This is a placeholder)');
         });
 
         // Edit Order functionality
         $('#edit-order').on('click', function(e) {
             e.preventDefault();
+            if (!isLoggedIn()) {
+                showLoginAlert();
+                return;
+            }
             alert('Editing your order... (This is a placeholder)');
         });
 
         // Wishlist functionality
         $('#wishlist').on('click', function(e) {
             e.preventDefault();
+            if (!isLoggedIn()) {
+                showLoginAlert();
+                return;
+            }
             alert(`You have ${wishlist.length} item(s) in your wishlist.`);
         });
 
         // Cart functionality
         $('#cart').on('click', function(e) {
             e.preventDefault();
+            if (!isLoggedIn()) {
+                showLoginAlert();
+                return;
+            }
             updateCartDisplay();
         });
 
         // Initial cart display update
-        updateCartDisplay();
+        if (isLoggedIn()) {
+            updateCartDisplay();
+        }
     });
 
     // Expose functions to global scope
@@ -228,4 +272,3 @@
     window.removeFromCart = removeFromCart;
 
 })(jQuery);
-
