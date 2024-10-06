@@ -4990,6 +4990,14 @@ input[type="button"].btn-block {
   border-radius: 5px;
 }
 
+.card-hover {
+  transition: transform 0.2s linear;
+}
+.card-hover:hover {
+  transform: translate(0%, 0%) scale(1.03);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
 .card>hr {
   margin-right: 0;
   margin-left: 0;
