@@ -11086,10 +11086,7 @@ a.text-dark:focus {
 
 }
 
-.hov:hover{
-  .text-white{
-    font-size:1.3rem;
-  }
-  background-color:  #418395;
-  border-radius:10px;
+.icon:hover{
+  font-size:1.4rem;
+  text-decoration:underline;
 }
