@@ -569,7 +569,7 @@ mark,
 }
 
 .container-fluid {
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 
 .section-title {
@@ -581,10 +581,16 @@ mark,
     margin-bottom: 5rem;
 }
 
+#one:hover {
+    box-shadow: 0 0 10px 10px rgba(117, 214, 255, 0.7);
+}
+
 .team img {
     border-radius: 100%;
-    box-shadow: rgba(31, 123, 148, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
-    transition: transform 0.3s;
+    border-radius: 50%;
+    /* blue border */
+    /* padding: 1px; */
+    /* overflow: hidden */
 }
 
 .team img:hover {
@@ -10238,6 +10244,7 @@ a.text-dark:focus {
 .team .team-social {
     top: 0;
     background: rgba(23, 162, 184, 0.8);
+    box-shadow: 0 0 30px 6px rgba(117, 214, 255, 0.7);
     opacity: 0;
     z-index: 1;
     transition: .5s;
