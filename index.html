@@ -34,6 +34,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
 
   <body>
@@ -64,8 +65,8 @@
         >
           <div class="navbar-nav font-weight-bold mx-auto py-0">
             <a href="index.html" class="nav-item nav-link active" id="home"
-              >Home</a
-            >
+              >Home
+            </a>
             <a href="about.html" class="nav-item nav-link" id="about">About</a>
             <a href="category.html" class="nav-item nav-link" id="category"
               >Categories</a
@@ -81,6 +82,29 @@
               <div class="dropdown-menu rounded-0 m-0">
                 <a href="blog.html" class="dropdown-item">Blog Grid</a>
                 <a href="single.html" class="dropdown-item">Blog Detail</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >My Order</a
+              >
+              <div class="dropdown-menu rounded-0 m-0">
+                <a href="#" class="dropdown-item" id="track-order">Track Order</a>
+                <a href="#" class="dropdown-item" id="edit-order">Edit Order</a>
+              </div>
+            </div>
+            <a href="#" class="nav-item nav-link" id="wishlist">
+              <i class="far fa-heart"></i> Wishlist <span id="wishlist-count">0</span>
+            </a>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="cart">
+                <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
+              </a>
+              <div class="dropdown-menu rounded-0 m-0" id="cart-dropdown">
+                <!-- Cart items will be dynamically inserted here -->
               </div>
             </div>
             <a href="contact.html" class="nav-item nav-link" id="contact"
