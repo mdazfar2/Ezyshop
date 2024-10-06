@@ -466,45 +466,30 @@
                 <h1 class="text-white m-0">Fill Form</h1>
               </div>
               <div class="card-body rounded-bottom bg-primary p-5">
-                <form>
+                <form id="contactForm" onsubmit="return validateForm();">
                   <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control border-0 p-4"
-                      placeholder="Your Name"
-                      required="required"
-                    />
+                      <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" required>
+                      <small id="nameError" class="form-text text-danger"></small>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="email"
-                      class="form-control border-0 p-4"
-                      placeholder="Your Email"
-                      required="required"
-                    />
+                      <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" required>
+                      <small id="emailError" class="form-text text-danger"></small>
                   </div>
                   <div class="form-group">
-                    <select
-                      class="custom-select border-0 px-4"
-                      style="height: 47px"
-                    >
-                      <option selected>Select A Section</option>
-                      <option value="1">Order Status</option>
-                      <option value="2">Product Information</option>
-                      <option value="3">Delivery Issues</option>
-                      <option value="4">Feedback/Suggestions</option>
-                      <option value="3">Other</option>
-                    </select>
+                      <select class="custom-select border-0 px-4" id="section" required>
+                          <option selected disabled value="">Select A Section</option>
+                          <option value="1">Order Status</option>
+                          <option value="2">Product Information</option>
+                          <option value="3">Delivery Issues</option>
+                          <option value="4">Feedback/Suggestions</option>
+                          <option value="5">Other</option>
+                      </select>
+                      <small id="sectionError" class="form-text text-danger"></small>
                   </div>
                   <div>
-                    <button
-                      class="btn btn-secondary btn-block border-0 py-3"
-                      type="submit"
-                    >
-                      Submit
-                    </button>
+                      <button class="btn btn-secondary js-btn-pri btn-block border-0 py-3" type="submit">Submit</button>
                   </div>
-                </form>
+              </form>
               </div>
             </div>
           </div>
@@ -857,7 +842,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
           <h3 class="text-primary mb-4">Newsletter</h3>
-          <form action="">
+          <form action="/submit.html">
             <div class="form-group">
               <input
                 type="text"
@@ -876,7 +861,7 @@
             </div>
             <div>
               <button
-                class="btn btn-primary btn-block border-0 py-3"
+                class="btn btn-primary js-btn-pri btn-block border-0 py-3"
                 type="submit"
               >
                 Submit Now
@@ -958,6 +943,83 @@
           }
         });
       });
+// Wait until the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to validate the form
+    function validateForm() {
+        let isValid = true;
+
+        // Validate name
+        const name = document.getElementById("name");
+        if (name.value.trim() === "") {
+            name.classList.add("is-invalid");
+            document.getElementById("nameError").textContent = "Please enter your name.";
+            isValid = false;
+        } else {
+            name.classList.remove("is-invalid");
+            document.getElementById("nameError").textContent = "";
+        }
+
+        // Validate email
+        const email = document.getElementById("email");
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value.trim())) {
+            email.classList.add("is-invalid");
+            document.getElementById("emailError").textContent = "Please enter a valid email address.";
+            isValid = false;
+        } else {
+            email.classList.remove("is-invalid");
+            document.getElementById("emailError").textContent = "";
+        }
+
+        // Validate section
+        const section = document.getElementById("section");
+        if (section.value === "") {
+            section.classList.add("is-invalid");
+            document.getElementById("sectionError").textContent = "Please select a section.";
+            isValid = false;
+        } else {
+            section.classList.remove("is-invalid");
+            document.getElementById("sectionError").textContent = "";
+        }
+
+        return isValid;
+    }
+
+    // Function to handle button click
+    function handleOnclick() {
+        const btn = document.querySelector('.js-btn-pri');
+
+        // Check if button is found
+        if (!btn) {
+            console.error("Button not found!");
+            return;
+        }
+
+        // Add an event listener to the button
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log("Button clicked, running validation...");
+
+            // Call validateForm() to check if the form is valid
+            const isValid = validateForm();
+
+            // Navigate to the next page if the form is valid
+            if (isValid) {
+                console.log("Form is valid, navigating to /submit.html");
+                window.location.href = '/submit.html';
+            } else {
+                console.log("Form is invalid, staying on the page.");
+            }
+        });
+    }
+
+    // Initialize event handler
+    handleOnclick();
+});
+
+
+
     </script>
   </body>
 </html>

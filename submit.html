@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Submitted</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #00A3C7;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 16px;
+            background-color: #FFFFFF;
+            color: #333;
+            max-width: 80%;
+            width: 90%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h1 {
+            color: #00A3C7;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .container p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .container .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            color: #00A3C7;
+            background-color: #ffffff;
+            border: 2px solid #00A3C7;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .container .button:hover {
+            background-color: #00A3C7;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Your request has been successfully submitted.</p>
+        <p>We will get back to you shortly.</p>
+        <a href="/index.html" class="button">Return to Home</a>
+    </div>
+</body>
+</html>
