@@ -11117,3 +11117,20 @@ a.text-dark:focus {
   opacity: 0;
   visibility: hidden;
 }
+.facility-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f8f9fa;
+}
+
+.facility-card i {
+  transition: color 0.3s ease;
+}
+
+.facility-card:hover i {
+  color: #007bff;
+}
