@@ -22,6 +22,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Flaticon Font -->
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
@@ -47,7 +54,7 @@
           class="navbar-brand font-weight-bold text-secondary"
           style="font-size: 50px"
         >
-          <img style="width: 80px" src="/img/ezyshop.png" alt="logo" />
+          <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
           <span class="text-primary">Ezyshop</span>
         </a>
         <button
@@ -277,7 +284,7 @@
                 </ul>
               </div>
             </div>
-            <a href="shops.html" class="btn btn-primary mt-2 py-2 px-4"
+            <a onclick="exploreShops()" class="btn btn-primary mt-2 py-2 px-4"
               >Explore Stores</a
             >
           </div>
@@ -535,20 +542,21 @@
                 <a
                   class="btn btn-outline-light text-center mr-2 px-0"
                   style="width: 38px; height: 38px"
-                  href="#"
-                  ><i class="fab fa-twitter"></i
+                  href="https://github.com/mdazfar2"
+                  ><i class="fab fa-github"></i
+                ></a>
+
+                <a
+                  class="btn btn-outline-light text-center px-0"
+                  style="width: 38px; height: 38px"
+                  href="https://www.linkedin.com/in/md-azfar-alam/"
+                  ><i class="fab fa-linkedin-in"></i
                 ></a>
                 <a
                   class="btn btn-outline-light text-center mr-2 px-0"
                   style="width: 38px; height: 38px"
-                  href="#"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  class="btn btn-outline-light text-center px-0"
-                  style="width: 38px; height: 38px"
-                  href="#"
-                  ><i class="fab fa-linkedin-in"></i
+                  href="http://azfaralam.xyz/"
+                  ><i class="fa-solid fa-link"></i
                 ></a>
               </div>
             </div>
@@ -838,10 +846,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
           <h3 class="text-primary mb-4">Quick Links</h3>
-          <div
-            class="d-flex flex-column justify-content-start"
-            style="padding-top: 6rem"
-          >
+          <div class="d-flex flex-column justify-content-start">
             <a class="text-white mb-2" href="/index.html"
               ><i class="fa fa-angle-right mr-2"></i>Home</a
             >
@@ -921,21 +926,18 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <!-- Auth JavaScript-->
+    <script src="js/auth.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
-
+    
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <!-- Auth JavaScript-->
-    <script src="js/auth.js"></script>
+
     <script>
-      // Function to redirect to specific category page--------START
-      function shopNow(category) {
-        window.location.href = `products.html?category=${category}`;
-      }
-      // Function to redirect to specific category page--------END
       document.addEventListener("DOMContentLoaded", function () {
         const authButton = document.getElementById("authButton");
         const currentUser = localStorage.getItem("currentUser");
