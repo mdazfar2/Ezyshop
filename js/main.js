@@ -128,3 +128,12 @@ function shopNow(category) {
         displayAlertMessage("Please login to continue");
     }
 }
+
+function exploreShops(){
+    if(isUserLoggedIn()){
+        window.location.href = 'shops.html';
+    }
+    else{
+        displayAlertMessage("Please login to continue");
+    }
+}
