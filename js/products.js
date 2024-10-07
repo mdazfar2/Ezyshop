@@ -304,7 +304,7 @@ function displayProducts(productList) {
                                 <h3 class="product-price text-right m-0">₹${product.cost}</h3>
                             </div>
                             <div class="col-12">
-                                <button onclick="addToCart('${product.product_title}')" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                                <button onclick="addToCart('${product.product_title.replace(/'/g, "\\'")}')" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
                             </div>
                         </div>
                     </div>
