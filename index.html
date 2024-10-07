@@ -54,7 +54,7 @@
           class="navbar-brand font-weight-bold text-secondary"
           style="font-size: 50px"
         >
-          <img style="width: 80px" src="/img/ezyshop.png" alt="logo" />
+          <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
           <span class="text-primary">Ezyshop</span>
         </a>
         <button
@@ -284,7 +284,7 @@
                 </ul>
               </div>
             </div>
-            <a href="shops.html" class="btn btn-primary mt-2 py-2 px-4"
+            <a onclick="exploreShops()" class="btn btn-primary mt-2 py-2 px-4"
               >Explore Stores</a
             >
           </div>
@@ -926,21 +926,18 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <!-- Auth JavaScript-->
+    <script src="js/auth.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
-
+    
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <!-- Auth JavaScript-->
-    <script src="js/auth.js"></script>
+
     <script>
-      // Function to redirect to specific category page--------START
-      function shopNow(category) {
-        window.location.href = `products.html?category=${category}`;
-      }
-      // Function to redirect to specific category page--------END
       document.addEventListener("DOMContentLoaded", function () {
         const authButton = document.getElementById("authButton");
         const currentUser = localStorage.getItem("currentUser");
