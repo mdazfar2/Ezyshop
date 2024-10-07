@@ -47,7 +47,7 @@
           class="navbar-brand font-weight-bold text-secondary"
           style="font-size: 50px"
         >
-          <img style="width: 80px" src="/img/ezyshop.png" alt="logo" />
+          <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
           <span class="text-primary">Ezyshop</span>
         </a>
         <button
@@ -277,7 +277,7 @@
                 </ul>
               </div>
             </div>
-            <a href="shops.html" class="btn btn-primary mt-2 py-2 px-4"
+            <a onclick="exploreShops()" class="btn btn-primary mt-2 py-2 px-4"
               >Explore Stores</a
             >
           </div>
@@ -792,27 +792,34 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
           <h3 class="text-primary mb-4">Get In Touch</h3>
-          <div class="d-flex">
-            <h4 class="fa fa-map-marker-alt text-primary"></h4>
-            <div class="pl-3">
-              <h5 class="text-white">Address</h5>
-              <p>Jaipur, Rajasthan</p>
+          <div class="d-flex hov">
+            <a href="https://www.google.com/maps/place/Jaipur,+Rajasthan/@26.8851151,75.6257468,11z/data=!3m1!4b1!4m6!3m5!1s0x396c4adf4c57e281:0xce1c63a0cf22e09!8m2!3d26.9124336!4d75.7872709!16zL20vMDE2NzIy?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
+            <h4 class="fa fa-map-marker-alt text-primary icon"></h4></a>
+            <div class="pl-3 cont">
+              <a href="https://hi.wikipedia.org/wiki/%E0%A4%9C%E0%A4%AF%E0%A4%AA%E0%A5%81%E0%A4%B0"><h5 class="text-white">Address</h5>
+                <p>Jaipur, Rajasthan</p></a>
+              
             </div>
           </div>
-          <div class="d-flex">
-            <h4 class="fa fa-envelope text-primary"></h4>
-            <div class="pl-3">
+          <div class="d-flex hov">
+            <a href="mailto:ezyshop@gmail.com">
+            <h4 class="fa fa-envelope text-primary icon"></h4>
+            <div class="pl-3 cont">
               <h5 class="text-white">Email</h5>
               <p>ezyshop@gmail.com</p>
+            </a>
+              
             </div>
           </div>
-          <div class="d-flex">
-            <h4 class="fa fa-phone-alt text-primary"></h4>
-            <div class="pl-3">
+          <div class="d-flex hov">
+            <a href="tel:7739317870">
+            <h4 class="fa fa-phone-alt text-primary icon"></h4>
+            <div class="pl-3 cont">
               <h5 class="text-white">Phone</h5>
               <p>+91 7739317870</p>
+            </a>
+              </div>
             </div>
-          </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
           <h3 class="text-primary mb-4">Quick Links</h3>
@@ -899,21 +906,18 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <!-- Auth JavaScript-->
+    <script src="js/auth.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
-
+    
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <!-- Auth JavaScript-->
-    <script src="js/auth.js"></script>
+
     <script>
-      // Function to redirect to specific category page--------START
-      function shopNow(category) {
-        window.location.href = `products.html?category=${category}`;
-      }
-      // Function to redirect to specific category page--------END
       document.addEventListener("DOMContentLoaded", function () {
         const authButton = document.getElementById("authButton");
         const currentUser = localStorage.getItem("currentUser");

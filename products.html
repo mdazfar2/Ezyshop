@@ -36,6 +36,14 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="css\footer.css" />
+    <link rel="stylesheet" href="css\product.css">
+
+
+    <style>
+      body {
+        display: none; 
+      }
+    </style>
   </head>
 
   <body>
@@ -44,7 +52,7 @@
 
       <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
         <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
-          <img style="width: 80px" src="/img/ezyshop.png" alt="logo" />
+          <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
           <span class="text-primary">Ezyshop</span>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -77,13 +85,13 @@
         class="d-flex flex-column align-items-center justify-content-center"
         style="min-height: 400px"
       >
-        <h3 id="category-name-heading" class="display-3 font-weight-bold text-white">Our Categories</h3>
+        <h3 id="big-heading" class="display-3 font-weight-bold text-white">Our Categories</h3>
         <div class="d-inline-flex text-white">
           <p class="m-0"><a class="text-white" href="index.html">Home</a></p>
           <p class="m-0 px-2">/</p>
-          <p class="m-0"><a class="text-white" href="category.html">Our Categories</a></p>
+          <p id="path-general" class="m-0"><a class="text-white" href="category.html">Our Categories</a></p>
           <p class="m-0 px-2">/</p>
-          <p id="category-name" class="m-0">category-name</p>
+          <p id="path-specific" class="m-0">category-name</p>
         </div>
       </div>
     </div>
@@ -276,6 +284,9 @@
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/isotope/isotope.pkgd.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
+  
+  <!-- Auth JavaScript -->
+  <script src="js/auth.js"></script>
 
   <!-- Contact Javascript File -->
   <script src="mail/jqBootstrapValidation.min.js"></script>
@@ -284,10 +295,6 @@
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
   <script src="js/products.js"></script>
-  <script src="js/loadMore.js"></script>
-  
-  <!-- Auth JavaScript -->
-  <script src="js/auth.js"></script>
 </body>
 
 </html>
