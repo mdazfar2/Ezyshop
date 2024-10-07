@@ -7,7 +7,6 @@
     <meta content="Free HTML Templates" name="keywords" />
     <meta content="Free HTML Templates" name="description" />
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
 
@@ -31,9 +30,11 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="css\footer.css" />
+    <link rel="stylesheet" href="css\faq.css" />
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css\footer.css" />
   </head>
 
   <body>
@@ -63,14 +64,14 @@
           id="navbarCollapse"
         >
           <div class="navbar-nav font-weight-bold mx-auto py-0">
-            <a href="index.html" class="nav-item nav-link active" id="secondary"
+            <a href="index.html" class="nav-item nav-link active" id="home"
               >Home</a
             >
-            <a href="about.html" class="nav-item nav-link" id="primary"
-              >About</a
+            <a href="about.html" class="nav-item nav-link" id="about">About</a>
+            <a href="category.html" class="nav-item nav-link" id="category"
+              >Categories</a
             >
-            <a href="category.html" class="nav-item nav-link">Categories</a>
-            <a href="team.html" class="nav-item nav-link">Teams</a>
+            <a href="team.html" class="nav-item nav-link" id="team">Teams</a>
             <div class="nav-item dropdown">
               <a
                 href="#"
@@ -83,7 +84,9 @@
                 <a href="single.html" class="dropdown-item">Blog Detail</a>
               </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="contact.html" class="nav-item nav-link" id="contact"
+              >Contact</a
+            >
             <a href="faq.html" class="nav-item nav-link" id="faq">FAQ</a>
           </div>
           <a
@@ -97,229 +100,77 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary mb-5">
-      <div
-        class="d-flex flex-column align-items-center justify-content-center"
-        style="min-height: 400px"
-      >
-        <h3 class="display-3 font-weight-bold text-white">About Us</h3>
-        <div class="d-inline-flex text-white">
-          <p class="m-0"><a class="text-white" href="">Home</a></p>
-          <p class="m-0 px-2">/</p>
-          <p class="m-0">About Us</p>
+    <!--FAQ start-->
+    <div class="faq-container">
+      <h1>Frequently Asked Questions</h1>
+      <div class="faq">
+        <div class="question">
+          <h3>What payment methods do you accept?</h3>
+          <span class="faq-arrow">+</span>
         </div>
-      </div>
-    </div>
-    <!-- Header End -->
-
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-5">
-            <img
-              class="img-fluid rounded mb-5 mb-lg-0"
-              src="img/about-1.png"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-7">
-            <p class="section-title pr-5">
-              <span class="pr-2">Learn About Us</span>
-            </p>
-            <h1 class="mb-4">Bringing Every Store to Your Door</h1>
-            <p>
-              EzyShop is your go-to platform for shopping locally from the
-              comfort of your home. Whether you're looking for products from
-              your favorite local store or the nearest mall, we make it easy to
-              browse, order, and have it delivered to you fast. Enjoy seamless
-              shopping with access to the stores you love, all in one place.
-            </p>
-            <div class="row pt-2 pb-4">
-              <div class="col-6 col-md-4">
-                <img class="img-fluid rounded" src="img/about-2.png" alt="" />
-              </div>
-              <div class="col-6 col-md-8">
-                <ul class="list-inline m-0">
-                  <li class="py-2 border-top border-bottom">
-                    <i class="fa fa-check text-primary mr-3"></i>Shop from local
-                    stores or malls near you
-                  </li>
-                  <li class="py-2 border-bottom">
-                    <i class="fa fa-check text-primary mr-3"></i>Quick, reliable
-                    delivery from the stores you trust
-                  </li>
-                  <li class="py-2 border-bottom">
-                    <i class="fa fa-check text-primary mr-3"></i>Exclusive
-                    offers, only available through EzyShop
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <a href="" class="btn btn-primary mt-2 py-2 px-4">Explore Stores</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Facilities Start -->
-    <div class="container-fluid pt-5">
-      <div class="container pb-3">
-        <div class="row">
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Wide Product Selection</h4>
-                <p class="m-0">
-                  Discover a variety of products from groceries to electronics,
-                  all in one app.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Local & Mall-Based Stores</h4>
-                <p class="m-0">
-                  Easily shop from your favorite local stores and top malls, all
-                  from home.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Seamless Ordering Process</h4>
-                <p class="m-0">
-                  Enjoy a simple and intuitive ordering system that saves you
-                  time and hassle.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Fast & Reliable Delivery</h4>
-                <p class="m-0">
-                  Get your items delivered to your doorstep quickly and
-                  reliably, wherever you are.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Exclusive Discounts & Offers</h4>
-                <p class="m-0">
-                  Unlock deals and discounts available only through EzyShop.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Secure Payments</h4>
-                <p class="m-0">
-                  Shop with peace of mind, thanks to our safe and secure payment
-                  gateway.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Facilities Start -->
-
-    <!-- Team Start -->
-    <div class="container-fluid pt-5">
-      <div class="container">
-        <div class="text-center pb-2">
-          <p class="section-title px-5">
-            <span class="px-2">Ezyshop Founder</span>
+        <div class="answer">
+          <p>
+            We accept all major credit cards, debit cards, and PayPal.
+            Additionally, we offer cash on delivery in select areas.
           </p>
-          <h1 class="mb-4">Meet our Founder</h1>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-3 text-center team mb-5">
-            <div
-              class="position-relative overflow-hidden mb-4"
-              style="border-radius: 100%"
-            >
-              <img class="img-fluid w-100" src="img/aizz pic.jpeg" alt="" />
-              <div
-                class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
-              >
-                <a
-                  class="btn btn-outline-light text-center mr-2 px-0"
-                  style="width: 38px; height: 38px"
-                  href="#"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a
-                  class="btn btn-outline-light text-center mr-2 px-0"
-                  style="width: 38px; height: 38px"
-                  href="#"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  class="btn btn-outline-light text-center px-0"
-                  style="width: 38px; height: 38px"
-                  href="#"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-              </div>
-            </div>
-            <h4>Azfar Alam</h4>
-            <i>Founder & CEO</i>
-          </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>How can I track my order?</h3>
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>
+            Once your order has been shipped, you will receive a tracking number
+            via email. You can use this number to track your package on our
+            website.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>What is your return policy?</h3>
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>
+            We offer a 30-day return policy on most items. Products must be
+            returned in their original packaging. To start a return, please
+            contact our customer support.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>Do you ship internationally?</h3>
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>
+            Yes, we offer international shipping to over 100 countries. Shipping
+            costs and delivery times vary based on location.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>How do I contact customer support?</h3>
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>
+            You can reach our customer support team by clicking the "Contact Us"
+            button at the bottom of the page or emailing support@shop.com.
+          </p>
         </div>
       </div>
     </div>
-    <!-- Team End -->
+    <!--FAQ end-->
 
     <!-- Footer Start -->
     <div
@@ -394,7 +245,10 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
           <h3 class="text-primary mb-4">Quick Links</h3>
-          <div class="d-flex flex-column justify-content-start">
+          <div
+            class="d-flex flex-column justify-content-start"
+            style="padding-top: 6rem"
+          >
             <a class="text-white mb-2" href="/index.html"
               ><i class="fa fa-angle-right mr-2"></i>Home</a
             >
@@ -481,8 +335,43 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <!-- Auth JavaScript -->
+    <!-- Auth JavaScript-->
     <script src="js/auth.js"></script>
+    <script>
+      // Function to redirect to specific category page--------START
+      function shopNow(category) {
+        window.location.href = `products.html?category=${category}`;
+      }
+      // Function to redirect to specific category page--------END
+      document.addEventListener("DOMContentLoaded", function () {
+        const authButton = document.getElementById("authButton");
+        const currentUser = localStorage.getItem("currentUser");
+
+        // Check if there's a logged-in user
+        if (currentUser) {
+          authButton.textContent = currentUser; // Change button text to username
+          authButton.href = "#"; // Optionally, change the link to something else or remove it
+          authButton.classList.add("btn-secondary"); // Optionally change button style
+        }
+
+        // Add event listener for logout
+        authButton.addEventListener("click", function () {
+          if (currentUser) {
+            // Show confirmation dialog before logging out
+            const confirmLogout = confirm("Do you want to logout?");
+
+            if (confirmLogout) {
+              // If confirmed, remove the current user from localStorage
+              localStorage.removeItem("currentUser");
+              // Reload the page to reset the button to "Login/SignUp"
+              location.reload();
+            }
+          } else {
+            // Redirect to login page if no user is logged in
+            window.location.href = "RegisterPages/register.html"; // Update with your login page URL
+          }
+        });
+      });
+    </script>
   </body>
 </html>
