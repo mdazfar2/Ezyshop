@@ -11080,3 +11080,13 @@ a.text-dark:focus {
   color: #00394f;
 }
 
+/*Additional footer CSS*/
+.cont a:hover{
+  text-decoration:none;
+
+}
+
+.icon:hover{
+  font-size:1.4rem;
+  text-decoration:underline;
+}
