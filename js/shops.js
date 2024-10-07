@@ -1,3 +1,24 @@
+/** 
+ * shops.js
+ * 
+ * This script handles the functionality for the shops page of the application.
+ * It manages the display of shops on the web page and redirection to shop-specific products page.
+ *
+ * Key Features:
+ * - Display all shops on the web page.
+ * - Redirect to shop-specific products page.
+ * 
+ * Usage:
+ * - This script should be included in the shops.html file.
+ * 
+ * Dependencies:
+ * This script depends on auth.js and main.js. 
+ * Make sure to include these two files above the script tag of product.js
+ * 
+ * Author: 
+ * Date: 07 October 2024
+ */
+
 const shops = [
     { name: "Fashion Hub", category: "fashion", image: "img/shops/fashion_image1.jpg", description: "Trendy clothes for all ages" },
     { name: "Tech World", category: "electronics", image: "img/shops/tech_image1.jpg", description: "Latest gadgets and electronics" },
@@ -8,10 +29,19 @@ const shops = [
     { name: "Wellness Center", category: "health", image: "img/shops/wellness_image1.jpg", description: "Health and wellness products" },
     { name: "Book Nook", category: "books", image: "img/shops/bookstore_image1.jpg", description: "Wide range of books and media" },
     { name: "Toy Box", category: "toys", image: "img/shops/toystore_image1.jpeg", description: "Fun toys and games for all ages" },
-    { name: "Baby Bliss", category: "baby", image: "img/shops/babystore_image1.jpg", description: "Everything for babies and new mothers" },
+    { name: "Baby Bliss", category: "baby products", image: "img/shops/babystore_image1.jpg", description: "Everything for babies and new mothers" },
     { name: "Auto Zone", category: "automotive", image: "img/shops/automative_image1.jpg", description: "Automotive parts and tools" },
-    { name: "Pet Paradise", category: "pets", image: "img/shops/pet_image1.jpg", description: "Supplies and accessories for pets" }
+    { name: "Pet Paradise", category: "pet supplies", image: "img/shops/pet_image1.jpg", description: "Supplies and accessories for pets" }
 ];
+
+function exploreProducts(shopName){
+    if(isUserLoggedIn()){
+        window.location.href = `products.html?shop=${shopName}`;
+    }
+    else{
+        displayAlertMessage("Please login to continue");
+    }
+}
 
 function createShopCard(shop) {
     return `
@@ -21,7 +51,7 @@ function createShopCard(shop) {
                 <div class="shop-card-body">
                     <h5 class="shop-card-title">${shop.name}</h5>
                     <p class="shop-card-text">${shop.description}</p>
-                    <a href="products.html?shop=${shop.name}" class="btn btn-primary">Products</a>
+                    <a onclick="exploreProducts('${shop.name}')" class="btn btn-primary">Products</a>
                 </div>
             </div>
         </div>
