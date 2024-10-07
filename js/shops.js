@@ -19,6 +19,14 @@
  * Date: 07 October 2024
  */
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (!isUserLoggedIn()) {
+        window.location.href = "RegisterPages/register.html";
+    }else {
+        document.body.style.display = 'block'; 
+    }
+});
+
 const shops = [
     { name: "Fashion Hub", category: "fashion", image: "img/shops/fashion_image1.jpg", description: "Trendy clothes for all ages" },
     { name: "Tech World", category: "electronics", image: "img/shops/tech_image1.jpg", description: "Latest gadgets and electronics" },

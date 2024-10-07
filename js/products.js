@@ -22,6 +22,15 @@
  * Date: 07 October 2024
  */
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (!isUserLoggedIn()) {
+        window.location.href = "RegisterPages/register.html";
+    }else {
+        document.body.style.display = 'block'; 
+    }
+});
+
+
 const products = [
     // Fashion
     { product_title: "Men's Casual Shirt", product_category: "Fashion", product_shop: "Fashion Hub", product_img_url: "", product_id: 1, cost: 25 },
