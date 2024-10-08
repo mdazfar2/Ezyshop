@@ -100,3 +100,40 @@
     
 })(jQuery);
 
+
+//displays a custom alert message
+function displayAlertMessage(message) {
+    let alertElement = document.getElementById('custom-alert-message');
+    if (!alertElement) {
+      alertElement = document.createElement('div');
+      alertElement.id = 'custom-alert-message'; 
+      alertElement.className = 'custom-alert hidden'; 
+      document.body.appendChild(alertElement);
+    }
+    alertElement.textContent = message;
+    alertElement.classList.add('show');
+    alertElement.classList.remove('hidden');
+    setTimeout(() => {
+      alertElement.classList.remove('show');
+      alertElement.classList.add('hidden');
+    }, 2000);
+  } 
+
+//redirects to prodcuts page of a specific category
+function shopNow(category) {
+    if(isUserLoggedIn()){
+        window.location.href = `products.html?category=${category}`;
+    }
+    else{
+        displayAlertMessage("Please login to continue");
+    }
+}
+
+function exploreShops(){
+    if(isUserLoggedIn()){
+        window.location.href = 'shops.html';
+    }
+    else{
+        displayAlertMessage("Please login to continue");
+    }
+}
