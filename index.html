@@ -29,6 +29,9 @@
 
     <link rel="stylesheet" href="css\footer.css" />
 
+    <!-- chatbot css -->
+    <link rel="stylesheet" href="css/chatbot.css" />
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 </head>
@@ -568,6 +571,17 @@
     </div>
     <!-- Blog End -->
 
+    <!--chat bot start-->
+    <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
+    
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-title">Ezyshop Bot</div>
+        <div class="chatbot-chat" id="chatbot-chat"></div>
+        <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here...." />
+        <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
+      </div>
+    <!--chat bot end-->
+
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
@@ -671,6 +685,9 @@
     <!-- Auth JavaScript-->
     <script src="js/auth.js"></script>
 
+    <!-- chatbot js -->
+     <script src="js/chatbot.js"></script>
+
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
@@ -708,6 +725,12 @@
                 }
             });
         });
+
+        // toggle chatbot function
+        function toggleChatbot() {
+            const chatbotContainer = document.getElementById("chatbot-container");
+            chatbotContainer.classList.toggle("chatbot-show");
+        }
     </script>
 </body>
 
