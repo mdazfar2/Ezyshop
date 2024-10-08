@@ -1,6 +1,8 @@
 /******* Bootstrap Theming ********/
 
 
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -13950,4 +13952,9 @@ a.text-dark:focus {
 .custom-alert.hidden {
     opacity: 0;
     visibility: hidden;
+}
+*{
+  font-family: "Tinos", serif;
+  font-weight: 400;
+
 }

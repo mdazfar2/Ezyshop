@@ -1,5 +1,12 @@
 /* Product Page Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+  font-family: "Tinos", serif;
+  font-weight: 400;
+}
 .add-to-cart-btn{
+
     border-radius: 1.5rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     font-size: 1.1rem;
