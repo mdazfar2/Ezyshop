@@ -23,7 +23,7 @@ const Footer = () => {
               alt="ezyshop logo"
             />
             <Link href="/" className="ml-4 lg:ml:0 gap-x-2">
-              <p className="font-bold text-5xl text-[#17a2b8] ">Ezyshop</p>
+              <p className="font-bold text-5xl text-[#17a2b8] font-nunito">Ezyshop</p>
             </Link>
           </div>
           <div className=" text-gray-100">
@@ -42,28 +42,27 @@ const Footer = () => {
         {/* section 2 */}
         <div className="flex flex-col items-start ml-10 justify-center p-4 gap-5">
           <p
-            className="font-medium text-5xl text-[#17a2b8]"
-            style={{ fontStyle: "italic" }}
+            className="font-medium text-5xl text-[#17a2b8] font-handlee"
           >
             Get in touch
           </p>
           <div className="flex items-start flex-col gap-4 justify-center">
             <div className="flex gap-4">
-              <MapPin className="h-7 w-7" />
+              <MapPin className="h-7 w-7  text-customTeal" />
               <div className="flex flex-col">
                 <div className="text-gray-100 text-xl">Address</div>
                 <div className="text-lg text-[#17a2b8]">Jaipur, Rajisthan</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <Mail className="h-7 w-7" />
+              <Mail className="h-7 w-7 text-customTeal" />
               <div className="flex flex-col">
                 <div className="text-gray-100 text-xl">Email</div>
                 <div className="text-lg text-[#17a2b8]">ezyshop@gmail.com</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <Phone className="h-7 w-7" />
+              <Phone className="h-7 w-7  text-customTeal" />
               <div className="flex flex-col">
                 <div className="text-gray-100 text-xl">Phone</div>
                 <div className="text-lg text-[#17a2b8]">+91 7739317870</div>
@@ -82,14 +81,13 @@ const Footer = () => {
         {/* section 4 */}
         <div className="flex flex-col items-start justify-start gap-5 p-4">
           <p
-            className="font-medium text-5xl text-[#17a2b8] "
-            style={{ fontStyle: "italic" }}
+            className="font-medium text-5xl text-[#17a2b8] font-handlee"
           >
             News Letter
           </p>
           <Input placeholder="Name" className="bg-gray-100 h-10 w-10/12" />
           <Input placeholder="Email" className="bg-gray-100 h-10 w-10/12"/>
-          <Button>
+          <Button className="h-14 bg-customTeal rounded-full w-10/12">
             Subscribe
           </Button>
         </div>
