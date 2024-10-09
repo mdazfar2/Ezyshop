@@ -22,7 +22,7 @@ const Navbar = async () => {
             alt="ezyshop logo"
           />
           <Link href="/" className="ml-4 flex lg:ml:0 gap-x-2">
-            <p className="font-bold text-5xl text-[#17a2b8]">Ezyshop</p>
+            <p className="font-extrabold text-5xl text-[#17a2b8] font-nunito" >Ezyshop</p>
           </Link>
         </div>
         {/* all the navigation links */}

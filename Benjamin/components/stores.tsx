@@ -47,21 +47,21 @@ const Stores = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 py-10 h-full">
         <div className="flex items-center justify-center gap-5">
-            <div className="w-24 h-1 bg-[#17a2b8]"/>
-            <div className="text-[#17a2b8] text-5xl font-bold " style={{fontStyle:"italic"}}>
+            <div className="w-24 h-1 bg-customBlue"/>
+            <div className="text-customBlue text-5xl font-bold  font-handlee">
                 Shop for your favourite products
             </div>
-            <div className="w-24 h-1 bg-[#17a2b8]"/>
+            <div className="w-24 h-1 bg-customBlue"/>
         </div>
   <div className="h-full grid grid-cols-3 gap-20">
     {cardData.map((card) => (
      
-        <Card className="w-[350px]">
+        <Card className="w-[400px]">
           <CardHeader className="border-b">
             <div className="flex flex-col gap-2">
                 <img alt="card image"src={card.logo} />
 
-              <CardTitle className="flex items-center text-2xl text-[#17a2b8] m-2 justify-center">{card.title}</CardTitle>
+              <CardTitle className="flex items-center text-2xl pt-4 text-customBlue m-2 justify-center font-handlee">{card.title}</CardTitle>
             </div>
             <CardDescription className="text-justify text-lg">{card.description}</CardDescription>
           </CardHeader>
@@ -101,7 +101,7 @@ const Stores = () => {
             </div>
           </CardContent>
           <CardFooter className="flex justify-center">
-            <Button variant="default" className="bg-[#17a2b8]">Shop Now</Button>
+            <Button variant="default" className="bg-[#17a2b8] rounded-full">Shop Now</Button>
           </CardFooter>
         </Card>
 
