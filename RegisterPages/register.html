@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="register.css" />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="register.css" />
   </head>
 
   <body>
@@ -91,7 +90,7 @@
             <label for="">Password</label>
             <i class="bx bxs-lock-alt"></i>
           </div>
-          <button type="submit" class="btn animation" style="--i: 3; --j: 24">
+          <button type="submit" class="animation" style="--i: 3; --j: 24">
             Login
           </button>
           <div class="linkTxt animation" style="--i: 5; --j: 25">
@@ -119,13 +118,18 @@
             <i class="bx bxs-user"></i>
           </div>
           <div class="input-box animation" style="--i: 19; --j: 2">
-            <input type="email" id="registerEmail" required />
-            <label for="">Email</label>
-            <i class="bx bxs-envelope"></i>
+            <input type="password" id="registerPassword" required />
+            <label for="">Enter Password</label>
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <div class="input-box animation" style="--i: 19; --j: 2">
+            <input type="password" id="confirmPassword" required />
+            <label for="">Confirm Password</label>
+            <i class="bx bxs-lock-alt"></i>
           </div>
 
           <!-- OTP Section (initially hidden) -->
-          <div
+          <!-- <div
             class="input-box animation"
             id="otpSection"
             style="display: none; --i: 20; --j: 3"
@@ -133,10 +137,10 @@
             <input type="text" id="otpInput" />
             <label for="">OTP</label>
             <i class="bx bxs-key"></i>
-          </div>
+          </div> -->
 
           <!-- Password section (initially hidden) -->
-          <div
+          <!-- <div
             class="input-box animation"
             id="passwordSection"
             style="display: none; --i: 21; --j: 4"
@@ -144,8 +148,8 @@
             <input type="password" id="registerPassword" required />
             <label for="">Password</label>
             <i class="bx bxs-lock-alt"></i>
-          </div>
-          <div
+          </div> -->
+          <!-- <div
             class="input-box animation"
             id="confirmPasswordSection"
             style="display: none; --i: 22; --j: 5"
@@ -153,25 +157,20 @@
             <input type="password" id="confirmPassword" required />
             <label for="">Confirm Password</label>
             <i class="bx bxs-lock-alt"></i>
-          </div>
+          </div> -->
 
           <!-- Button to request OTP -->
-          <button
+          <!-- <button
             type="button"
             class="btn animation"
             id="otpBtn"
             style="--i: 23; --j: 6"
           >
             Continue
-          </button>
+          </button> -->
 
           <!-- Submit button (initially hidden) -->
-          <button
-            type="submit"
-            class="btn animation"
-            id="submitBtn"
-            style="display: none; --i: 24; --j: 7"
-          >
+          <button type="submit" class="animation" id="submitBtn" style="--i: 24; --j: 7">
             Sign Up
           </button>
 
