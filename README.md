@@ -1,3 +1,7 @@
+<a id="top"></a>
+<h1 align="center">Ezyshop</h1>
+
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/3018ab81-b260-45ef-bca9-f7829f15f956" alt="ezyshop-image">
 </p>
@@ -84,7 +88,7 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 <table border="1">
   <tr>
       <td><img src="https://github.com/user-attachments/assets/82287ad0-2c5f-419f-ae49-5283fcc6fcfd" alt="Discord Logo" width="50"></td>
-      <td><a href="https://discord.gg/SEzpxqQG"> Join our Official Discord Server </a></td>
+      <td><a href="https://discord.gg/Rg8T5gtE"> Join our Official Discord Server </a></td>
   </tr>
   <tr>
       <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
@@ -126,10 +130,30 @@ Ezyshop is licensed under the terms of the Apache License 2.0. check out <a href
 
 <a name="support"></a>
 
-## Support ⭐
+<hr>
+          
+<h2 align = "center">Our Contributors ❤️</h2>
+<div align = "center">
+ <h3>Thank you for contributing to our repository</h3>
+ <a href="https://github.com/mdazfar2/Ezyshop/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mdazfar2/Ezyshop" />
+</a>
+</div>
+
+<hr>
+
+<div>
+  <h2><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31f/512.webp" width="35" height="30"> Support </h2>
+</div>
 
 - 💰 Become [Sponsor](https://github.com/sponsors/mdazfar2)!
 - ⭐ Star our [Repo](https://github.com/mdazfar2/ezyshop)
+  
+ <br>
+
+<a href="#top" style="position: fixed; bottom: 20px; right: 20px; background-color: black ; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-family: Arial; font-size: 16px;">Go to Top</a>
+
+
 
 
 
