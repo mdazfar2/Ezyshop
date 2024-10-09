@@ -1,6 +1,11 @@
 const wrapper = document.querySelector(".wrapper");
 const registerLink = document.querySelector(".register-link");
 const loginLink = document.querySelector(".login-link");
+const forgotPasswordLink = document.querySelector('.forgot-password-link');
+const backToLoginLink = document.querySelector('.back-to-login-link');
+const loginFormBox = document.querySelector('.form-box.login');
+const forgotPasswordFormBox = document.querySelector('.form-box.forgot-password');
+const registerFormBox = document.querySelector('.form-box.register');
 
 registerLink.onclick = () => {
   wrapper.classList.add("active");
@@ -147,6 +152,47 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Invalid username or password."); // Notify user of failure
     }
   });
+});
+
+// Log when forgot password link is clicked
+forgotPasswordLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log("Forgot Password clicked");
+  loginFormBox.style.display = 'none';
+  registerFormBox.style.display = 'none';
+  forgotPasswordFormBox.style.display = 'block';
+});
+
+// Log when back to login link is clicked
+backToLoginLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log("Back to Login clicked");
+  forgotPasswordFormBox.style.display = 'none';
+  loginFormBox.style.display = 'block';
+});
+
+// Switch to the registration form
+registerLink.onclick = () => {
+  wrapper.classList.add('active');
+  loginFormBox.style.display = 'none';
+  registerFormBox.style.display = 'block';
+  forgotPasswordFormBox.style.display = 'none';
+};
+
+// Switch to the login form
+loginLink.onclick = () => {
+  wrapper.classList.remove('active');
+  loginFormBox.style.display = 'block';
+  registerFormBox.style.display = 'none';
+  forgotPasswordFormBox.style.display = 'none';
+};
+
+// Forgot Password form submission simulation
+forgotPasswordForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = document.getElementById('forgotPasswordEmail').value;
+  console.log(`Forgot Password form submitted for email: ${email}`);
+  alert(`Password reset link has been sent to ${email}`);
 });
 
 // Handle Visibility Toggle
