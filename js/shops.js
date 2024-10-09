@@ -23,7 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isUserLoggedIn()) {
         window.location.href = "RegisterPages/register.html";
     }else {
-        document.body.style.display = 'block'; 
+        document.body.classList.remove('d-none');
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    if (!isUserLoggedIn()) {
+        window.location.href = "RegisterPages/register.html"; 
+    } else {
+        document.body.classList.remove('d-none'); 
     }
 });
 
