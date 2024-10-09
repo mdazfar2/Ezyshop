@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="css\footer.css" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -58,8 +58,17 @@
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
+                   
                 </div>
                 <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login/SignUp</a>
+             <!-- Button for dark mode -->
+             <div class="ToggleMode">
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+            </div>
+        <!-- end -->
             </div>
         </nav>
     </div>
@@ -708,6 +717,27 @@
                 }
             });
         });
+    </script>
+    <!-- For Dark/Light Mode -->
+    <script>
+    let currMode = "LightMode";
+
+    let Toggle = document.querySelector(".slider")
+    Toggle.addEventListener("click",()=>{
+        if (currMode == "LightMode") {
+        document.body.style.backgroundColor = "black ";
+        document.body.style.color = "gray";
+       
+        console.log(currMode);
+     currMode = "DarkMode";
+    }else if(currMode = "DarkMode") {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+       
+        console.log(currMode);
+        currMode = "LightMode";
+    }
+})
     </script>
 </body>
 

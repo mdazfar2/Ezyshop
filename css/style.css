@@ -9,7 +9,7 @@
  */
 
 :root {
-  --blue: #007bff;
+  --blue: #72b6ff;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -45,13 +45,75 @@
 *::after {
     box-sizing: border-box;
 }
-
+*{
+  transition: all 0.2s;
+}
 html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+/* Dark mode toggler */
+/* The switch - the box around the slider */
+.ToggleMode{
+  align-self:center;
+  margin-left: 5px;
+ }
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 2.8em;
+  height: 1.4em;
+ }
+ 
+ /* Hide default HTML checkbox */
+ .switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+ }
+ 
+ /* The slider */
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background: #fff;
+  transition: .4s;
+ 
+  border: 1px solid #ccc;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+ 
+  left: 1.2px;
+  top: 2px;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px #999999;
+  transition: .4s;
+ }
+ 
+ input:checked + .slider {
+  background-color: #000;
+  border: 1px solid transparent;
+ }
+ 
+ input:checked + .slider:before {
+  transform: translateX(1.5em);
+ }
+
+/* End */
 
 article,
 aside,
@@ -1362,7 +1424,7 @@ pre code {
   .offset-sm-11 {
     margin-left: 91.66667%;
   }
-}
+
 
 @media (min-width: 768px) {
   .col-md {
@@ -6178,7 +6240,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-success.disabled,
 .btn-success:disabled {
@@ -6212,7 +6274,6 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
 
 .btn-info.disabled,
 .btn-info:disabled {
@@ -6245,7 +6306,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-warning.disabled,
 .btn-warning:disabled {
@@ -6279,7 +6340,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-danger.disabled,
 .btn-danger:disabled {
@@ -10387,7 +10448,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-    background-color: #fff !important;
+    background-color: #fff ;
 }
 
 .bg-transparent {
@@ -13950,4 +14011,7 @@ a.text-dark:focus {
 .custom-alert.hidden {
     opacity: 0;
     visibility: hidden;
+}
+.bg-light{
+  background-color: var(--blue) !important;
 }
