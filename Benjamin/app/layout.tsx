@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const font=Urbanist({subsets:['latin']})
-
+// console.log(font.className)
 export const metadata: Metadata = {
   title: "Store",
   description: "Store",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`{font.className},h-screen`}
+        className={`${font.className},h-screen`}
       >
         {/* <ModalProvider/> */}
         {/* <ToasterProvider/> */}

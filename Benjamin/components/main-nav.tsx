@@ -42,10 +42,10 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
           key={route.href}
           href={route.href}
           className={cn(
-            "transition-colors hover:text-[#17a2b8] font-bold text-xl",
+            " font-nunito hover:text-[#17a2b8] font-extrabold text-lg",
             route.active
               ? "text-[#17a2b8] "
-              : "text-muted-foreground"
+              : "text-customBlue"
           )}
         >
           {route.label}
