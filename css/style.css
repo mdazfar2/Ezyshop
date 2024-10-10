@@ -13951,3 +13951,29 @@ a.text-dark:focus {
     opacity: 0;
     visibility: hidden;
 }
+
+/* start shopping button improvement */
+.btn-shopping-start {
+  background-color: green;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-shopping-start:hover {
+  background-color: #fff;
+  color: #17a2b8;
+  transform: translateY(-2px);
+}
+
+.btn-shopping-start:active {
+  background-color: #ff4500;
+  transform: translateY(0);
+}
