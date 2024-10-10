@@ -1,5 +1,5 @@
 <a id="top"></a>
-<h1 align="center">Ezyshop</h1>
+<h1 align="center">Bringing Every Store to Your Door!</h1>
 
 
 <p align="center">

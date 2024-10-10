@@ -20,13 +20,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (!isUserLoggedIn()) {
-        window.location.href = "RegisterPages/register.html";
-    }else {
-        document.body.classList.remove('d-none');
-    }
-});
-document.addEventListener('DOMContentLoaded', () => {
+    console.log("0000");
     if (!isUserLoggedIn()) {
         window.location.href = "RegisterPages/register.html"; 
     } else {
