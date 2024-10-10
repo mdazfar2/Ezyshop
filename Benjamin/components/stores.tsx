@@ -54,7 +54,7 @@ const Stores = () => {
 
       <div className="h-full grid grid-cols-3 gap-20">
         {cardData.map((card) => (
-          <Card className="w-[400px]">
+          <Card className="w-[400px]  bg-gray-100">
             <CardHeader className="border-b">
               <div className="flex flex-col gap-2">
                 <img alt="card image" src={card.logo} />
