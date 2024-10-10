@@ -9,6 +9,8 @@ export default function Home() {
       <Hero/>
       <div className="w-full border-b border-[#00394f] my-10"/>
       <Features/>
+      <div className="w-full border-b border-[#00394f] my-10"/>
+
       <Stores/>
     </div>
   );

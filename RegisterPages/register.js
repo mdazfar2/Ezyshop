@@ -1,6 +1,11 @@
 const wrapper = document.querySelector(".wrapper");
 const registerLink = document.querySelector(".register-link");
 const loginLink = document.querySelector(".login-link");
+const forgotPasswordLink = document.querySelector('.forgot-password-link');
+const backToLoginLink = document.querySelector('.back-to-login-link');
+const loginFormBox = document.querySelector('.form-box.login');
+const forgotPasswordFormBox = document.querySelector('.form-box.forgot-password');
+const registerFormBox = document.querySelector('.form-box.register');
 
 registerLink.onclick = () => {
   wrapper.classList.add("active");
@@ -9,90 +14,6 @@ registerLink.onclick = () => {
 loginLink.onclick = () => {
   wrapper.classList.remove("active");
 };
-
-//otp
-document.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("oInlsyImVTDKcEumx"); // Initialize EmailJS
-
-  let generatedOtp; // Declare OTP variable outside for broader access
-
-  // Switch to registration form
-  document.querySelectorAll(".register-link").forEach((link) => {
-    link.addEventListener("click", function () {
-      document.querySelector(".form-box.login").style.display = "none";
-      document.querySelector(".form-box.register").style.display = "block";
-    });
-  });
-
-  // Switch to login form
-  document.querySelectorAll(".login-link").forEach((link) => {
-    link.addEventListener("click", function () {
-      document.querySelector(".form-box.register").style.display = "none";
-      document.querySelector(".form-box.login").style.display = "block";
-    });
-  });
-
-  // Handle OTP verification
-  document.getElementById("otpBtn").addEventListener("click", function () {
-    const email = document.getElementById("registerEmail").value;
-
-    if (email === "") {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    // Generate a random 4-digit OTP
-    generatedOtp = Math.floor(1000 + Math.random() * 9000);
-
-    // Send OTP email using EmailJS
-    emailjs
-      .send("service_plcacw9", "template_4mbymlc", {
-        user_email: email,
-        otp: generatedOtp,
-      })
-      .then(
-        function (response) {
-          alert("OTP has been sent to your email.");
-          document.getElementById("otpSection").style.display = "block"; // Show OTP input
-
-          // Validate the entered OTP
-          document
-            .getElementById("otpInput")
-            .addEventListener("input", function () {
-              const enteredOtp = document.getElementById("otpInput").value;
-
-              if (enteredOtp.length === 4) {
-                // Assuming a 4-digit OTP
-                if (enteredOtp == generatedOtp) {
-                  // OTP is correct, hide username, email, and OTP fields
-                  document.getElementById(
-                    "registerUsername"
-                  ).parentElement.style.display = "none"; // Hide username
-                  document.getElementById(
-                    "registerEmail"
-                  ).parentElement.style.display = "none"; // Hide email
-                  document.getElementById("otpSection").style.display = "none"; // Hide OTP input
-                  document.getElementById("otpBtn").style.display = "none";
-
-                  // Show password fields and sign-up button
-                  document.getElementById("passwordSection").style.display =
-                    "block";
-                  document.getElementById(
-                    "confirmPasswordSection"
-                  ).style.display = "block";
-                  document.getElementById("submitBtn").style.display = "block"; // Show sign-up button
-                } else {
-                  alert("Incorrect OTP. Please try again.");
-                }
-              }
-            });
-        },
-        function (error) {
-          alert("Error sending OTP. Please try again.");
-        }
-      );
-  });
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.getElementById("registerForm");
@@ -103,13 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault(); // Prevent the default form submission
 
     const username = document.getElementById("registerUsername").value;
-    const email = document.getElementById("registerEmail").value;
+    // const email = document.getElementById("registerEmail").value;
     const password = document.getElementById("registerPassword").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
     if (password === confirmPassword) {
       const userData = {
         username: username,
-        email: email,
         password: password,
       };
       localStorage.setItem("user", JSON.stringify(userData)); // Store user data
@@ -149,6 +69,47 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Log when forgot password link is clicked
+forgotPasswordLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log("Forgot Password clicked");
+  loginFormBox.style.display = 'none';
+  registerFormBox.style.display = 'none';
+  forgotPasswordFormBox.style.display = 'block';
+});
+
+// Log when back to login link is clicked
+backToLoginLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log("Back to Login clicked");
+  forgotPasswordFormBox.style.display = 'none';
+  loginFormBox.style.display = 'block';
+});
+
+// Switch to the registration form
+registerLink.onclick = () => {
+  wrapper.classList.add('active');
+  loginFormBox.style.display = 'none';
+  registerFormBox.style.display = 'block';
+  forgotPasswordFormBox.style.display = 'none';
+};
+
+// Switch to the login form
+loginLink.onclick = () => {
+  wrapper.classList.remove('active');
+  loginFormBox.style.display = 'block';
+  registerFormBox.style.display = 'none';
+  forgotPasswordFormBox.style.display = 'none';
+};
+
+// Forgot Password form submission simulation
+forgotPasswordForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = document.getElementById('forgotPasswordEmail').value;
+  console.log(`Forgot Password form submitted for email: ${email}`);
+  alert(`Password reset link has been sent to ${email}`);
+});
+
 // Handle Visibility Toggle
 document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
   const passwordInput = document.getElementById("loginPassword");
@@ -162,5 +123,3 @@ document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
     this.classList.add("bxs-lock-alt");
   }
 });
-
-// for hamburger navbar
