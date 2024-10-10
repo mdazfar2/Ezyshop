@@ -37,13 +37,18 @@ EzyShop is a user-friendly platform that connects you to your favourite local st
 
 Visit https://ezyshopz.vercel.app to see the live demo!
 
-## 🚀 Features 
-- **Price Comparisons**: Find the best deals by comparing prices across multiple stores.
-- **Digital Coupons & Cashback**: Save more with digital coupons and cashback offers.
-- **Loyalty Programs**: Earn points with every purchase and unlock special rewards.
-- **Organic & Local Products**: Support local businesses and shop for healthy, organic products.
-- **Seamless Shopping Experience**: Place orders easily and track deliveries with real-time updates.
-- **Secure Payment Options**: Choose from multiple payment methods, including credit/debit cards, UPI, and digital wallets, with secure transactions. (***Work in progress***)
+## 🚀 Features
+
+- **Login/Signup with User Roles**: Seamless authentication for two user roles – **Store Manager** 🛍️ and **Shopper** 🛒. Store Managers add their store & handle product management, while Shoppers browse and purchase items effortlessly. 
+
+- **Payment Integration with Razorpay**: Secure and smooth payments through **Razorpay**, providing multiple payment options for a hassle-free checkout experience.
+
+- **Store Manager Dashboard**: Store Managers can manage product listings, update inventory, and track orders, offering full control over their store operations.
+
+- **Shopper Experience**: Shoppers can browse a variety of products, compare prices, add items to their cart, and place orders with real-time delivery tracking.
+
+- **Responsive and Real-Time Updates**: Enjoy a fully responsive shopping experience with real-time updates, ensuring smooth browsing, shopping, and order management on any device.
+
 
 
 ## ⚙️ How It Works 
