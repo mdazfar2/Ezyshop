@@ -4,7 +4,7 @@ import SeperatorHeading from "@/components/ui/seperatorHeading";
 
 const Category = () => {
   return (
-    <div className="">
+    <>
       <div className="h-full">
         <div className="flex items-center justify-center bg-customTeal h-full mb-20 p-24">
           <div className="text-7xl font-bold font-handlee">Our Categories</div>
@@ -17,7 +17,7 @@ const Category = () => {
           Load more
         </Button>
       </div>
-    </div>
+    </>
   );
 };
 
