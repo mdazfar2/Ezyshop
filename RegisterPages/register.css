@@ -50,6 +50,7 @@ body {
 }
 
 .form-box h2 {
+  font-family: sans-serif;
   margin-bottom: 10px;
   position: relative;
   font-size: 32px;
@@ -143,7 +144,7 @@ form button {
 }
 
 form button:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.516);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.921);
 }
 
 form .linkTxt {
