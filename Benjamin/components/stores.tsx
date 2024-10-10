@@ -46,7 +46,7 @@ const Stores = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center gap-5 py-10 h-full">
+    <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full">
       <SeperatorHeading label="Trending Deals" />
       <div className="text-customBlue text-5xl font-bold  font-handlee">
         Shop for your favourite products
