@@ -11,7 +11,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
   const routes = [
     {
       href: `/`,
-      label: "Homepage",
+      label: "Home",
       active: pathname===`/`,
     },
     {
