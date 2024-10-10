@@ -361,6 +361,37 @@ form .linkTxt {
     margin-top: 100px; 
 } */
 
+/* Forgot password CSS:-  */
+#fp{
+  font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+#fp2{
+  right: 8%;
+}
+
+#forgotPasswordEmail{
+  width: 81%;
+  margin-left: 50px;
+}
+
+#emailForgotP{
+  margin-left: 55px;
+}
+
+#submitForgotP{
+  width: 52%;
+  margin-top: 16px;
+  margin-left: 98px;
+}
+
+#backForgotP{
+  margin-top: 28px;
+  margin-left: 10px;
+}
+
 @media (max-width: 768px) {
   .wrapper {
     width: 90%;

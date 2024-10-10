@@ -78,6 +78,23 @@
       <span class="rotate-bg"></span>
       <span class="rotate-bg2"></span>
 
+              
+      <div class="form-box forgot-password" style="display: none; padding-top: 60px;">
+        <h2 class="title animation" id="fp" style="--i:0; --j:21" >Forgot Password</h2>
+        <form id="forgotPasswordForm">
+            <div class="input-box animation" style="--i:1; --j:22">
+                <input type="email" id="forgotPasswordEmail" required>
+                <label id="emailForgotP" for="">Email</label>
+                <i id="fp2" class='bx bxs-envelope'></i>
+            </div>
+            <button type="submit" class="btn animation" id="submitForgotP">Send Reset Link</button>
+            <div class="linkTxt animation">
+                <p id="backForgotP"><a href="#" class="back-to-login-link" >Back to Login</a></p>
+            </div>
+        </form>
+    </div>
+    
+
       <div class="form-box login" style="padding-top: 60px">
         <h2 class="title animation" style="--i: 0; --j: 21">Login</h2>
         <form id="loginForm">
@@ -94,6 +111,12 @@
           <button type="submit" class="btn animation" style="--i: 3; --j: 24">
             Login
           </button>
+
+          <!-- Add "Forgot Password" link under Login Form -->
+          <div class="linkTxt animation" style="--i:5; --j:25">
+              <p><a href="#" class="forgot-password-link">Forgot Password?</a></p>
+          </div>
+          
           <div class="linkTxt animation" style="--i: 5; --j: 25">
             <p>
               Don't have an account?
