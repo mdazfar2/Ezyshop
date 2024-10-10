@@ -13968,7 +13968,8 @@ a.text-dark:focus {
 }
 
 .btn-shopping-start:hover {
-  background-color: #ff6347;
+  background-color: #fff;
+  color: #17a2b8;
   transform: translateY(-2px);
 }
 
