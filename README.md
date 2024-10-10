@@ -37,7 +37,12 @@ EzyShop is a user-friendly platform that connects you to your favourite local st
 
 Visit https://ezyshopz.vercel.app to see the live demo!
 
-
+## 🚀 Features
+- **Login/Signup with User Roles**: Seamless authentication for two user roles – **Store Manager** 🛍️ and **Shopper** 🛒. Store Managers add their store & handle product management, while Shoppers browse and purchase items effortlessly. 
+- **Payment Integration with Razorpay**: Secure and smooth payments through **Razorpay**, providing multiple payment options for a hassle-free checkout experience.
+- **Store Manager Dashboard**: Store Managers can manage product listings, update inventory, and track orders, offering full control over their store operations.
+- **Shopper Experience**: Shoppers can browse a variety of products, compare prices, add items to their cart, and place orders with real-time delivery tracking.
+- **Responsive and Real-Time Updates**: Enjoy a fully responsive shopping experience with real-time updates, ensuring smooth browsing, shopping, and order management on any device.
 
 ## ⚙️ How It Works 
 1. **Sign Up**: Create your EzyShop account in minutes. (***Work in progress***)
