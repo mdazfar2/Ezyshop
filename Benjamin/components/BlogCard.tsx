@@ -1,3 +1,4 @@
+"use client"
 import { Folder, MessagesSquare, User } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -46,7 +47,7 @@ const BlogCard = () => {
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full mb-10">
       <div className="h-full grid grid-cols-3 gap-10">
         {blogData.map((card) => (
-          <Card className="w-[400px] hover:scale-105 transition duration-300 bg-gray-100">
+          <Card key={card.id} className="w-[400px] hover:scale-105 transition duration-300 bg-gray-100">
             <CardHeader>
               <div className="flex flex-col gap-2">
                 <img alt="card image" src={card.url} />
@@ -55,27 +56,26 @@ const BlogCard = () => {
                   {card.title}
                 </CardTitle>
               </div>
-              <CardDescription className="text-justify text-md">
+              <CardContent className="text-justify text-md">
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="flex items-center justify-center gap-2">
                     <User className="h-4 w-4 text-customTeal" />
-                    <div className="text-sm"> {card.author}</div>
+                    <div className="text-sm text-gray-500"> {card.author}</div>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <Folder className="h-4 w-4 text-customTeal" />
-                    <div className="text-sm">{card.category}</div>
+                    <div className="text-sm text-gray-500">{card.category}</div>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <MessagesSquare className="h-4 w-4 text-customTeal" />
-                    <div className="text-sm">{card.comments}</div>
+                    <div className="text-sm text-gray-500">{card.comments}</div>
                   </div>
                 </div>
-                {card.content}
-              </CardDescription>
+                <div className="text-center text-gray-500">{card.content}</div>
+              </CardContent>
             </CardHeader>
-            <CardContent></CardContent>
             <CardFooter className="flex justify-center">
-              <Button variant="default" className="bg-[#17a2b8] rounded-full">
+              <Button variant="default" size={"lg"} className="bg-[#17a2b8] rounded-full">
                 Read more
               </Button>
             </CardFooter>
