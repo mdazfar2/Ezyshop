@@ -39,3 +39,8 @@
     height: 38px;
     margin-right: 0.5rem;
 }
+/*  review section */
+.fa-star,
+.fa-star-half-o {
+  color: #f39c12;
+}
