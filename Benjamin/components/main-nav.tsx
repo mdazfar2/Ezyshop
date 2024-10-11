@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react"; // Icons for hamburger menu
+import { Heart, Menu, ShoppingCart, X } from "lucide-react"; // Icons for hamburger menu
 import { Button } from "./ui/button";
 
 export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
@@ -19,6 +19,9 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
     { href: `/Categories`, label: "Categories", active: pathname.startsWith(`/Categories`) },
     { href: `/Teams`, label: "Teams", active: pathname.startsWith(`/Teams`) },
     { href: `/Blog`, label: "Blog", active: pathname.startsWith(`/Blog`) },
+    { href: `/MyOrders`, label: "My Orders", active: pathname.startsWith(`/MyOrders`) },
+    { href: `/WishList`, label: "Wish List", active: pathname.startsWith(`/WishList`), logo: <Heart className="h-5 w-5" /> },
+    { href: `/Cart`, label: "Cart", active: pathname.startsWith(`/Cart`), logo: <ShoppingCart className="h-5 w-5" /> },
     { href: `/Contact`, label: "Contact", active: pathname.startsWith(`/Contact`) },
   ];
 
@@ -38,10 +41,12 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
             key={route.href}
             href={route.href}
             className={cn(
-              "font-nunito hover:text-[#17a2b8] font-extrabold text-lg",
+              "font-nunito hover:text-[#17a2b8] font-extrabold text-lg flex items-center gap-1", // Added gap for space between logo and text
               route.active ? "text-[#17a2b8]" : "text-customBlue"
             )}
           >
+            {/* Conditionally render route.logo if it exists */}
+            {route.logo && <span>{route.logo}</span>}
             {route.label}
           </Link>
         ))}
@@ -72,11 +77,13 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
             key={route.href}
             href={route.href}
             className={cn(
-              "block font-nunito text-xl font-bold text-customBlue py-2",
+              "font-nunito text-xl font-bold text-customBlue py-2 flex items-center gap-1", // Added gap for space between logo and text
               route.active ? "text-[#17a2b8]" : "text-customBlue"
             )}
             onClick={toggleMenu} // Close menu on link click
           >
+            {/* Conditionally render route.logo if it exists */}
+            {route.logo && <span>{route.logo}</span>}
             {route.label}
           </Link>
         ))}
