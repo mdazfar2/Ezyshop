@@ -1,4 +1,4 @@
-import BlogCard from "@/components/BlogCard";
+import BlogCard from "@/components/Blog/BlogCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
 
 const Blogs = () => {
