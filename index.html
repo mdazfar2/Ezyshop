@@ -32,6 +32,28 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 </head>
+<style>
+    .thank-you-message {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Dim background */
+        display: none; /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .message-content {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+</style>
 
 <body>
     <!-- Navbar Start -->
@@ -634,14 +656,14 @@
                     <a class="text-white" href="/contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
+            <div class="col-lg-3 col-md-6 mb-5" id="news-form-section">
                 <h3 class="text-primary mb-4">Newsletter</h3>
-                <form action="">
+                <form id="newsForm" action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                        <input type="text" class="form-control border-0 py-4" id="newsletterName" placeholder="Your Name" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email" required="required" />
+                        <input type="email" class="form-control border-0 py-4" id="newsletterMail" placeholder="Your Email" required="required" />
                     </div>
                     <div>
                         <button class="btn btn-primary btn-block border-0 py-3" type="submit">
@@ -649,7 +671,13 @@
 				</button>
                     </div>
                 </form>
+                <div id="thankYouMessage" class="thank-you-message">
+                    <div class="message-content">
+                        <h2>Thanks for your Submission!</h2>
+                    </div>
+                </div>
             </div>
+            
         </div>
         <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2)">
             <p class="m-0 text-center text-white">
@@ -680,6 +708,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script src="js/newsLetter.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
