@@ -46,7 +46,7 @@ const Stores = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center gap-5 py-10 h-full">
+    <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full">
       <SeperatorHeading label="Trending Deals" />
       <div className="text-customBlue text-5xl font-bold  font-handlee">
         Shop for your favourite products
@@ -54,7 +54,7 @@ const Stores = () => {
 
       <div className="h-full grid grid-cols-3 gap-20">
         {cardData.map((card) => (
-          <Card className="w-[400px]">
+          <Card className="w-[400px] hover:scale-105 transition duration-300  bg-gray-100">
             <CardHeader className="border-b">
               <div className="flex flex-col gap-2">
                 <img alt="card image" src={card.logo} />

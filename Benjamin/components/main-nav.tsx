@@ -10,6 +10,11 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
 //   const params = useParams();
   const routes = [
     {
+      href: `/`,
+      label: "Home",
+      active: pathname===`/`,
+    },
+    {
       href: `/About`,
       label: "About",
       active: pathname.startsWith(`/About`),

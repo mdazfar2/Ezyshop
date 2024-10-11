@@ -29,29 +29,61 @@ $btn-border-radius: 30px;
 
 /********** Custom CSS ************/
 
+// .section-title {
+//     position: relative;
+//     // display: inline-block;
+//     text-align: center;
+//     letter-spacing: 1px;
+//     text-transform: uppercase;
+//     color: $primary;
+// }
+
+// .section-title span {
+//     position: relative;
+//     background: #ffffff;
+//     z-index: 1;
+// }
+
+// .section-title::before {
+//     position: absolute;
+//     content: "";
+//     top: 10px;
+//     left: 0;
+//     width: 100%;
+//     height: 2px;
+//     background: $primary;
+// }
+
 .section-title {
     position: relative;
-    display: inline-block;
+    text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: $primary;
+    color: $primary; /* Replace $primary with a valid color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-title span {
     position: relative;
     background: #ffffff;
     z-index: 1;
+    padding: 0 10px; /* Add padding to create space for the line */
 }
 
 .section-title::before {
     position: absolute;
     content: "";
-    top: 10px;
+    top: 50%;
     left: 0;
     width: 100%;
-    height: 2px;
-    background: $primary;
+    height: 1px;
+    background: $primary; /* Replace $primary with a valid color */
+    z-index: 0;
+    transform: translateY(-50%); /* Ensures the line is vertically centered */
 }
+
 
 [class^=flaticon-]:before,
 [class*=" flaticon-"]:before,
