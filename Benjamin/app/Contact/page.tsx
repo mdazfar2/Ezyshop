@@ -7,15 +7,16 @@ const Contact = () => {
     <div className="mb-10">
       <div className="h-full">
         <div className="flex items-center justify-center bg-customTeal h-full mb-20 p-24">
-          <div className="text-7xl font-bold font-handlee">Contact Us</div>
+          <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
+            Contact Us</div>
         </div>
       </div>
       <SeperatorHeading label="Get In Touch" />
-      <div className="flex items-center justify-center my-10 text-4xl font-bold text-customBlue font-handlee">
+      <div className="text-customBlue text-3xl px-5 text-center lg:px-0 lg:text-center mb-10 lg:text-5xl font-bold  font-handlee">
         Contact Us For Any Query
       </div>
 
-      <div className="grid grid-cols-12 gap-5 px-32">
+      <div className="flex flex-col px-10 lg:grid lg:grid-cols-12 lg:gap-5 lg:px-32">
         <div className="col-span-7"><ContactUsFrom/></div>
         <div className="col-span-5">
           <div className="text-md text-gray-500 mb-10">
