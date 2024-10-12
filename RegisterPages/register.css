@@ -93,7 +93,6 @@ i {
   padding-right: 23px;
 }
 
-
 .input-box input:focus,
 .input-box input:valid {
   border-bottom-color: var(--lightBulue);
@@ -129,6 +128,22 @@ i {
 .input-box input:valid ~ i {
   color: var(--lightBulue);
 }
+
+.input-box input:focus ~ img,
+.input-box input:valid ~ img {
+  color: var(--lightBulue);
+}
+
+.input-box img{
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  transition: 0.5s;
+}
+
 
 form button {
   width: 100%;
@@ -394,8 +409,6 @@ form .linkTxt {
   margin-left: 10px;
 }
 
-
-
 @media (max-width: 768px) {
   .wrapper {
     width: 90%;
@@ -441,7 +454,7 @@ form .linkTxt {
     right: 0;
     width: 850px;
     height: 550px;
-    background: #17a2b8;
+    background: #066979;
     transform: rotate(10deg) skewY(40deg);
     transform-origin: bottom right;
     transition: 1.5s ease;

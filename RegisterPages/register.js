@@ -54,43 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // Retrieve stored user data
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
-   // Toggle password visibility for Register Password
-document.getElementById("togglePassword").addEventListener("click", function () {
-  const passwordInput = document.getElementById("registerPassword");
-  const icon = this;
+    /*let passwordVisibility = document.getElementById("togglePassword");
+    let password = document.getElementById("registerPassword");
 
-  // Toggle the type attribute
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    icon.classList.remove("bxs-eye-off");
-    icon.classList.add("bxs-eye");
-  } else {
-    passwordInput.type = "password";
-    icon.classList.remove("bxs-eye");
-    icon.classList.add("bxs-eye-off");
-  }
-});
-
-// Toggle password visibility for Confirm Password
-document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
-  const confirmPasswordInput = document.getElementById("confirmPassword");
-  const icon = this;
-
-  // Toggle the type attribute
-  if (confirmPasswordInput.type === "password") {
-    confirmPasswordInput.type = "text";
-    icon.classList.remove("bxs-eye-off");
-    icon.classList.add("bxs-eye");
-  } else {
-    confirmPasswordInput.type = "password";
-    icon.classList.remove("bxs-eye");
-    icon.classList.add("bxs-eye-off");
-  }
-});
-
-  
+    togglePassword.onclick = function(){
+      if(password.type === "registerPassword"){
+        password.type = "text" ;
+      } else {
+        password.type = "password" ;
+      }
+      }
+    };*/
+    
     // Check if credentials match
-     if (
+    if (
       storedUser &&
       loginUsername === storedUser.username &&
       loginPassword === storedUser.password
@@ -129,6 +106,39 @@ registerLink.onclick = () => {
   forgotPasswordFormBox.style.display = 'none';
 };
 
+//Password visibility in Login page
+//togglePassword
+    let togglePassword = document.getElementById("togglePassword");
+    let password = document.getElementById("registerPassword");
+
+    togglePassword.onclick = function(){
+      if(password.type === "password"){
+        password.type = "text";
+        togglePassword.src="../img/eyeIcon/view.png";
+
+      } else {
+        password.type = "password";
+        togglePassword.src="../img/eyeIcon/hide.png";
+      }
+      }
+
+  //toggleConfirmPassword
+
+    let toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+    let confirmPassword = document.getElementById("confirmPassword");
+
+    toggleConfirmPassword.onclick = function(){
+      if(confirmPassword.type === "password"){
+        confirmPassword.type = "text";
+        toggleConfirmPassword.src="../img/eyeIcon/view.png";
+
+      } else {
+        confirmPassword.type = "password";
+        toggleConfirmPassword.src="../img/eyeIcon/hide.png";
+      }
+      }
+
+
 // Switch to the login form
 loginLink.onclick = () => {
   wrapper.classList.remove('active');
@@ -145,7 +155,23 @@ forgotPasswordForm.addEventListener('submit', (event) => {
   alert(`Password reset link has been sent to ${email}`);
 });
 
-// Handle Visibility Toggle
+
+//Password visibility in Login page
+let toggleLogPassword = document.getElementById("toggleLogPassword");
+let loginPassword = document.getElementById("loginPassword");
+
+toggleLogPassword.onclick = function(){
+  if(loginPassword.type === "password"){
+    loginPassword.type = "text";
+    toggleLogPassword.src="../img/eyeIcon/view.png";
+
+  } else {
+    loginPassword.type = "password";
+    toggleLogPassword.src="../img/eyeIcon/hide.png";
+  }
+  }
+
+/* // Handle Visibility Toggle
 document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
   const passwordInput = document.getElementById("loginPassword");
   // Toggle password visibility
@@ -157,4 +183,4 @@ document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
     this.classList.remove("bxs-lock-open");
     this.classList.add("bxs-lock-alt");
   }
-}); 
+}); */
