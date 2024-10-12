@@ -386,29 +386,32 @@
                             <h1 class="text-white m-0">Fill Form</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-primary p-5">
-                            <form>
+                            <form id="contactForm" novalidate>
                                 <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                    <input type="text" id="nameInput" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                    <input type="email" id="emailInput" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                    <div id="emailError" style="color: red; display: none;">Please enter a valid email address.</div>
                                 </div>
                                 <div class="form-group">
                                     <select class="custom-select border-0 px-4" style="height: 47px">
-										<option selected>Select A Section</option>
-										<option value="1">Order Status</option>
-										<option value="2">Product Information</option>
-										<option value="3">Delivery Issues</option>
-										<option value="4">Feedback/Suggestions</option>
-										<option value="3">Other</option>
-									</select>
+                                        <option selected>Select A Section</option>
+                                        <option value="1">Order Status</option>
+                                        <option value="2">Product Information</option>
+                                        <option value="3">Delivery Issues</option>
+                                        <option value="4">Feedback/Suggestions</option>
+                                        <option value="5">Other</option>
+                                    </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">
-										Submit
-									</button>
+                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Submit</button>
+                                </div>
+                                <div id="successMessage" style="color: green; display: none; margin-top: 10px;">
+                                    Form submitted successfully!
                                 </div>
                             </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -711,24 +714,26 @@
 
     <script src="js/newsLetter.js"></script>
 
+    <script src="js/newsLetter.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const authButton = document.getElementById("authButton");
             const currentUser = localStorage.getItem("currentUser");
-
+    
             // Check if there's a logged-in user
             if (currentUser) {
                 authButton.textContent = currentUser; // Change button text to username
                 authButton.href = "#"; // Optionally, change the link to something else or remove it
                 authButton.classList.add("btn-secondary"); // Optionally change button style
             }
-
+    
             // Add event listener for logout
             authButton.addEventListener("click", function() {
                 if (currentUser) {
                     // Show confirmation dialog before logging out
                     const confirmLogout = confirm("Do you want to logout?");
-
+    
                     if (confirmLogout) {
                         // If confirmed, remove the current user from localStorage
                         localStorage.removeItem("currentUser");
@@ -738,6 +743,37 @@
                 } else {
                     // Redirect to login page if no user is logged in
                     window.location.href = "RegisterPages/register.html"; // Update with your login page URL
+                }
+            });
+
+        });
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("contactForm");
+            const emailInput = document.getElementById("emailInput");
+            const emailError = document.getElementById("emailError");
+            const successMessage = document.getElementById("successMessage");
+
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault(); 
+                const emailValue = emailInput.value;
+
+                // Regular expression to validate email
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+                // Clear previous messages
+                emailError.style.display = 'none';
+                successMessage.style.display = 'none';
+
+                if (!emailPattern.test(emailValue)) {
+                    // if email is invalid
+                    emailError.style.display = 'block';
+                } else {
+                    // Hide error message, show success message
+                    emailError.style.display = 'none';
+                    successMessage.style.display = 'block';
                 }
             });
         });
