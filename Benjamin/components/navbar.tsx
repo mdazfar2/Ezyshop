@@ -28,18 +28,7 @@ const Navbar = async () => {
         {/* all the navigation links */}
         <MainNav />
 
-        <div className="flex items-center gap-2">
-          <Link href={"/login"}>
-            <Button size={"lg"} className="bg-[#17a2b8] rounded-xl">
-              Login
-            </Button>
-          </Link>
-          <Link href={"/signup"}>
-            <Button size={"lg"} className="bg-[#17a2b8] rounded-xl">
-              Signup
-            </Button>
-          </Link>
-        </div>
+        
       </div>
     </div>
   );
