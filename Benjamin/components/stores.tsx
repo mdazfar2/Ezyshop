@@ -48,19 +48,11 @@ const Stores = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full">
       <SeperatorHeading label="Trending Deals" />
-<<<<<<< HEAD
-      <div className="text-customBlue text-3xl p-10 text-center lg:text-start lg:p-0 lg:text-5xl font-bold  font-handlee">
-        Shop for your favourite products
-      </div>
-
-      <div className="h-full flex flex-col gap-5 lg:grid lg:grid-cols-3 lg:gap-20">
-=======
       <div className="text-customBlue text-3xl px-5 text-center lg:px-0 lg:text-start lg:text-5xl font-bold  font-handlee">
         Shop for your favourite products
       </div>
 
       <div className="h-full flex flex-col gap-10 lg:grid grid-cols-3 lg:gap-20">
->>>>>>> 8106b7e2dfd46cd312c9ef7ccef261a128a2f392
         {cardData.map((card) => (
           <Card className="w-[400px] hover:scale-105 transition duration-300  bg-gray-100">
             <CardHeader className="border-b">
