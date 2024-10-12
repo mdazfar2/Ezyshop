@@ -135,5 +135,8 @@ function exploreShops(){
     }
     else{
         displayAlertMessage("Please login to continue");
+    setTimeout(function () {
+      window.location.href = "RegisterPages/register.html";
+    }, 2000);
     }
 }
