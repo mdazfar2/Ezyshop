@@ -31,14 +31,14 @@ const categories = [
 const CategoryByKeyword = () => {
     return ( 
         <>
-         <div className="flex items-center justify-center my-10 text-4xl font-bold text-customBlue font-handlee">
+         <div className="flex items-center justify-center lg:justify-start lg:w-full px-14  lg:px-0 my-10 text-4xl font-bold text-customBlue font-handlee">
             Filter categories by keywords
           </div>
         <ComboboxDemo />
-        <div className="flex items-start justify-start mt-10 mb-5 text-4xl font-bold text-customBlue font-handlee">
+        <div className="flex items-center justify-center lg:justify-start lg:w-full px-14  lg:px-0 my-10 text-4xl font-bold text-customBlue font-handlee">
             Categories
           </div>
-        <div className="flex flex-col items-start justify-center">
+        <div className="flex px-10 lg:px-0 flex-col items-start justify-center">
         {categories.map((category)=>(
             <Link href={"#"} className=" w-full flex justify-between text-md py-3 border-b">
                 <div className="text-customTeal hover:underline">{category.label}</div>

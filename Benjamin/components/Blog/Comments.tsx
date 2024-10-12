@@ -49,19 +49,19 @@ const comments = [
 
 const BlogComments = () => {
   return (
-    <div>
-      <div className="flex items-center justify-start mt-10 text-4xl font-bold text-customBlue font-handlee">
+    <div className="px-24 lg:px-0">
+      <div className="flex items-center justify-center lg:justify-start lg:w-full px-14 text-3xl lg:px-0 my-10 lg:text-4xl font-bold text-customBlue font-handlee">
         {comments.length} Comments
       </div>
       {comments.map((comment) => (
         <CommentCard comment={comment} />
       ))}
 
-      <Input placeholder="Add a comment" className="mb-5 rounded-full"/>
+      <Input placeholder="Add a comment" className="mb-5 h-14   rounded-full"/>
       <Button
         variant="default"
         size={"sm"}
-        className="bg-[#17a2b8] text-lg rounded-full"
+        className="bg-[#161c1d] text-lg h-10 rounded-full"
       >
         Add Comment
       </Button>
