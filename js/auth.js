@@ -24,6 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function isUserLoggedIn() {
-const currentUser = localStorage.getItem('currentUser');
-return currentUser !== null;
+  const currentUser = localStorage.getItem('currentUser');
+  return currentUser !== null;
 }

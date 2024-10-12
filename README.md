@@ -1,5 +1,5 @@
 <a id="top"></a>
-<h1 align="center">Ezyshop</h1>
+<h1 align="center">Bringing Every Store to Your Door!</h1>
 
 
 <p align="center">
@@ -37,14 +37,12 @@ EzyShop is a user-friendly platform that connects you to your favourite local st
 
 Visit https://ezyshopz.vercel.app to see the live demo!
 
-## 🚀 Features 
-- **Price Comparisons**: Find the best deals by comparing prices across multiple stores.
-- **Digital Coupons & Cashback**: Save more with digital coupons and cashback offers.
-- **Loyalty Programs**: Earn points with every purchase and unlock special rewards.
-- **Organic & Local Products**: Support local businesses and shop for healthy, organic products.
-- **Seamless Shopping Experience**: Place orders easily and track deliveries with real-time updates.
-- **Secure Payment Options**: Choose from multiple payment methods, including credit/debit cards, UPI, and digital wallets, with secure transactions. (***Work in progress***)
-
+## 🚀 Features
+- **Login/Signup with User Roles**: Seamless authentication for two user roles – **Store Manager** 🛍️ and **Shopper** 🛒. Store Managers add their store & handle product management, while Shoppers browse and purchase items effortlessly. 
+- **Payment Integration with Razorpay**: Secure and smooth payments through **Razorpay**, providing multiple payment options for a hassle-free checkout experience.
+- **Store Manager Dashboard**: Store Managers can manage product listings, update inventory, and track orders, offering full control over their store operations.
+- **Shopper Experience**: Shoppers can browse a variety of products, compare prices, add items to their cart, and place orders with real-time delivery tracking.
+- **Responsive and Real-Time Updates**: Enjoy a fully responsive shopping experience with real-time updates, ensuring smooth browsing, shopping, and order management on any device.
 
 ## ⚙️ How It Works 
 1. **Sign Up**: Create your EzyShop account in minutes. (***Work in progress***)
@@ -88,7 +86,7 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 <table border="1">
   <tr>
       <td><img src="https://github.com/user-attachments/assets/82287ad0-2c5f-419f-ae49-5283fcc6fcfd" alt="Discord Logo" width="50"></td>
-      <td><a href="https://discord.gg/SEzpxqQG"> Join our Official Discord Server </a></td>
+      <td><a href="https://discord.gg/Rg8T5gtE"> Join our Official Discord Server </a></td>
   </tr>
   <tr>
       <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>

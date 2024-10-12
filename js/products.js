@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isUserLoggedIn()) {
         window.location.href = "RegisterPages/register.html";
     }else {
-        document.body.style.display = 'block'; 
+        document.body.classList.remove('d-none'); 
     }
 });
 
@@ -253,5 +253,11 @@ function loadMoreProducts() {
 }
 
 function addToCart(productName) {
-    alert(`${productName} added to cart!`);
+    const notification = document.getElementById('notification');
+    notification.innerText = `${productName} added to cart!`;
+    notification.style.display = 'block';
+
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000); // Hide after 3 seconds
 }
