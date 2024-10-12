@@ -80,12 +80,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
         <div className="flex items-center gap-2">
           <Link href={"/login"}>
             <Button size={"lg"} className="bg-[#17a2b8] rounded-xl">
-              Login
-            </Button>
-          </Link>
-          <Link href={"/signup"}>
-            <Button size={"lg"} className="bg-[#17a2b8] rounded-xl">
-              Signup
+              Login / Signup
             </Button>
           </Link>
         </div>
@@ -118,12 +113,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
         <div className="flex items-center gap-2 mt-4">
           <Link href={"/login"}>
             <Button size={"lg"} className="bg-[#17a2b8] rounded-xl">
-              Login
-            </Button>
-          </Link>
-          <Link href={"/signup"}>
-            <Button size={"lg"} className="bg-[#17a2b8] rounded-xl">
-              Signup
+              Login / Signup
             </Button>
           </Link>
         </div>
