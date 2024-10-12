@@ -8,19 +8,19 @@ import RecentPosts from "./RecentPosts";
 
 const Blog = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full mb-10 px-40">
-      <div className="h-full grid grid-cols-12 gap-10">
+    <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full mb-10 px-20 lg:px-40">
+      <div className="h-full flex items-center flex-col lg:grid lg:items-start grid-cols-12 lg:gap-10">
         {/* left half */}
-        <div className="col-span-8 flex items-start justify-center px-10 flex-col">
+        <div className="col-span-8 px-5 flex max-w-screen-sm lg:max-w-screen-xl items-center lg:items-start justify-center lg:px-10 flex-col">
           <SeperatorHeading label="blog detail page" />
           {/* blog heading */}
-          <div className="flex items-center justify-center my-10 text-4xl font-bold text-customBlue font-handlee">
+          <div className="flex items-center justify-center lg:justify-start lg:w-full px-24 text-3xl lg:px-0 my-10 lg:text-4xl font-bold text-customBlue font-handlee">
             10 Ways to Save on Groceries This Month
           </div>
 
           {/* author category and comment */}
 
-          <div className="flex items-center justify-center gap-4 mb-10">
+          <div className="flex items-center justify-start gap-4 mb-10">
             <div className="flex items-center justify-center gap-2">
               <User className="h-4 w-4 text-customTeal" />
               <div className="text-sm text-gray-500"> Shreya</div>
@@ -37,11 +37,11 @@ const Blog = () => {
 
           {/* image */}
 
-          <img src="/detailblog.png" className="rounded-lg mb-10"></img>
+          <img src="/detailblog.png" className="rounded-lg h-4/6 w-4/6 m-10 lg:m-0 lg:p-0 lg:h-full lg:w-full lg:mb-10"></img>
 
           {/* content */}
 
-          <div className="text-gray-500">
+          <div className="text-gray-500 w-4/6 lg:w-full lg:px-0 text-wrap">
             Grocery shopping can quickly add up, but with a few smart
             strategies, you can trim your monthly budget without compromising on
             quality. Start by planning your meals ahead of time and making a
@@ -49,7 +49,7 @@ const Blog = () => {
             you frequently use, and don’t forget to check for sales or discounts
             on those products. Shopping seasonal produce can also be a great way
             to get fresh, healthy foods at a lower cost.
-            <br></br>
+            <br />
             <br />
             Another great tip is to compare prices between different stores.
             Apps like ezyshop make it easy to find the best deals across local
@@ -58,15 +58,14 @@ const Blog = () => {
             Lastly, avoid shopping when hungry to prevent unnecessary splurges.
             Happy saving!
           </div>
-
-          <RelatedPosts/>
-
-          <BlogComments/>
+          <RelatedPosts />
+          <BlogComments />
         </div>
-        <div className="col-span-4">
-            <BlogAvatar/>
-            <CategoryByKeyword/>
-            <RecentPosts/>
+        {/* right */}
+        <div className="col-span-4 px-40 lg:px-0">
+          <BlogAvatar />
+          <CategoryByKeyword />
+          <RecentPosts />
         </div>
       </div>
     </div>

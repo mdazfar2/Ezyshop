@@ -141,7 +141,7 @@ const Footer = () => {
           </div>
         </div>
         {/* section 4 */}
-        <div className="flex flex-col w-full items-start py-4  lg:ml-10 lg:p-4 gap-5">
+        <div className="flex flex-col  items-start py-4  lg:ml-10 lg:p-4 gap-5">
           <p className="font-bold text-3xl text-customTeal font-handlee">
             News Letter
           </p>

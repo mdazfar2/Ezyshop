@@ -46,7 +46,7 @@ const blogData = [
 const BlogCard = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full mb-10">
-      <div className="h-full grid grid-cols-3 gap-10">
+      <div className="h-full flex items-center justify-center flex-col gap-5 lg:grid grid-cols-3 lg:gap-10">
         {blogData.map((card) => (
           <Card
             key={card.id}
