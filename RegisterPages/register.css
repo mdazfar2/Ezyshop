@@ -93,6 +93,7 @@ i {
   padding-right: 23px;
 }
 
+
 .input-box input:focus,
 .input-box input:valid {
   border-bottom-color: var(--lightBulue);
@@ -392,6 +393,8 @@ form .linkTxt {
   margin-top: 28px;
   margin-left: 10px;
 }
+
+
 
 @media (max-width: 768px) {
   .wrapper {

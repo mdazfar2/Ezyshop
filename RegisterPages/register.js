@@ -54,8 +54,47 @@ document.addEventListener("DOMContentLoaded", function () {
     // Retrieve stored user data
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
+   // Toggle password visibility for Register Password
+document.getElementById("togglePassword").addEventListener("click", function () {
+  const passwordInput = document.getElementById("registerPassword");
+  const icon = this;
+
+  // Toggle the type attribute
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    icon.classList.remove("bxs-eye-off");
+    icon.classList.add("bxs-eye");
+  } else {
+    passwordInput.type = "password";
+    icon.classList.remove("bxs-eye");
+    icon.classList.add("bxs-eye-off");
+  }
+});
+
+// Toggle password visibility for Confirm Password
+document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+  const icon = this;
+
+  // Toggle the type attribute
+  if (confirmPasswordInput.type === "password") {
+    confirmPasswordInput.type = "text";
+    icon.classList.remove("bxs-eye-off");
+    icon.classList.add("bxs-eye");
+  } else {
+    confirmPasswordInput.type = "password";
+    icon.classList.remove("bxs-eye");
+    icon.classList.add("bxs-eye-off");
+  }
+});
+
+  
+  
+  // my code stops
+  
+
     // Check if credentials match
-    if (
+     if (
       storedUser &&
       loginUsername === storedUser.username &&
       loginPassword === storedUser.password
@@ -122,4 +161,4 @@ document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
     this.classList.remove("bxs-lock-open");
     this.classList.add("bxs-lock-alt");
   }
-});
+}); 
