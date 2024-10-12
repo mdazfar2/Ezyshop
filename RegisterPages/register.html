@@ -83,6 +83,42 @@
             <label for="">Password</label>
             <i class="bx bxs-lock-alt"></i>
           </div>
+           <!-- Password strength meter (initially hidden) -->
+            <div id="password-strength-section" style="display: none; margin-top: 10px;">
+                <div class="strength-meter" style="width: 100%; max-width: 300px; height: 10px; background-color: #e0e0e0; border-radius: 5px;">
+                    <div id="strength-bar-register" style="height: 100%; width: 1%; background-color: #d73f40; border-radius: 5px; transition: width 0.5s, background-color 0.5s;"></div>
+                </div>
+                <div class="strength-label" id="strength-label-register" style="font-size: 14px; margin-top: 5px;">Weak</div>
+            </div>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+          <script>
+            let registerPassword = document.getElementById("registerPassword");
+            let strengthBarRegister = document.getElementById("strength-bar-register");
+            let strengthLabelRegister = document.getElementById("strength-label-register");
+            let passwordStrengthSection = document.getElementById("password-strength-section");
+
+            registerPassword.oninput = function () {
+                let value = registerPassword.value;
+
+                // Show the strength meter when the user starts typing
+                if (value.length > 0) {
+                    passwordStrengthSection.style.display = "block";
+                } else {
+                    passwordStrengthSection.style.display = "none";
+                }
+
+                let result = zxcvbn(value);
+                let score = result.score; // Score is between 0 and 4
+                let widths = ["1%", "25%", "50%", "75%", "100%"];
+                let colors = ["#d73f40", "#dc6551", "#f2b84f", "#bde952", "#3ba62f"];
+                let labels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
+
+                strengthBarRegister.style.width = widths[score];
+                strengthBarRegister.style.backgroundColor = colors[score];
+                strengthLabelRegister.textContent = labels[score] + " password";
+            };
+          </script>
           <button type="submit" class="animation" style="--i: 3; --j: 24">
             Login
           </button>
