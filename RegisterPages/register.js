@@ -89,10 +89,6 @@ document.getElementById("toggleConfirmPassword").addEventListener("click", funct
 });
 
   
-  
-  // my code stops
-  
-
     // Check if credentials match
      if (
       storedUser &&
