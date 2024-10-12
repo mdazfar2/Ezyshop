@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="css/newsLetter.css">
   </head>
 
-  <body class="d-none">
+  <body class="d-none" onload="">
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
 
@@ -182,7 +182,10 @@
 
 
   <!-- Footer Start -->
+  <!-- Footer Start -->
   <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div id="google_element"></div>
+
     <div class="row pt-5">
         <div class="col-lg-3 col-md-6 mb-5">
             <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px">
@@ -225,7 +228,7 @@
             </div>
             <div class="d-flex hov">
                 <a href="tel:7739317870">
-                    <h4 class="fa fa-phone-alt text-primary icon"></h4>
+                    <h4 class="fa fa-phone text-primary icon"></h4>
                     <div class="pl-3 cont">
                         <h5 class="text-white">Phone</h5>
                         <p>+91 7739317870</p>
@@ -245,26 +248,27 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5" id="news-form-section">
-          <h3 class="text-primary mb-4">Newsletter</h3>
-          <form id="newsForm" action="">
-              <div class="form-group">
-                  <input type="text" class="form-control border-0 py-4" id="newsletterName" placeholder="Your Name" required="required" />
-              </div>
-              <div class="form-group">
-                  <input type="email" class="form-control border-0 py-4" id="newsletterMail" placeholder="Your Email" required="required" />
-              </div>
-              <div>
-                  <button class="btn btn-primary btn-block border-0 py-3" type="submit">
-    Submit Now
-  </button>
-              </div>
-          </form>
-          <div id="thankYouMessage" class="thank-you-message">
-              <div class="message-content">
-                  <h2>Thanks for your Submission!</h2>
-              </div>
-          </div>
-      </div>
+            <h3 class="text-primary mb-4">Newsletter</h3>
+            <form id="newsForm" action="">
+                <div class="form-group">
+                    <input type="text" class="form-control border-0 py-4" id="newsletterName" placeholder="Your Name" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control border-0 py-4" id="newsletterMail" placeholder="Your Email" required="required" />
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">
+      Submit Now
+    </button>
+                </div>
+            </form>
+            <div id="thankYouMessage" class="thank-you-message">
+                <div class="message-content">
+                    <h2>Thanks for your Submission!</h2>
+                </div>
+            </div>
+        </div>
+        
     </div>
     <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2)">
         <p class="m-0 text-center text-white">
@@ -277,7 +281,6 @@
 
 <!-- Back to Top -->
 <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-<div id="notification" class="notification"></div>
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -286,6 +289,9 @@
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/isotope/isotope.pkgd.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<!--Google translate-->
+<script src = "js/google_translate.js"></script>
 
 <!-- Auth JavaScript-->
 <script src="js/auth.js"></script>
@@ -296,7 +302,6 @@
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
-<script src="js/products.js"></script>
 
 <script src="js/newsLetter.js"></script>
 
