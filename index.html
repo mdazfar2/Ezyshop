@@ -81,6 +81,18 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
                 </div>
+                <div class="container mt-4">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" id="searchInput" class="form-control" placeholder="Search..." aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" id="searchButton">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login/SignUp</a>
             </div>
         </nav>
@@ -106,8 +118,26 @@
         </div>
     </div>
     <!-- Header End -->
+    <div id="searchResults" style="display: none;">
+        <h3>Search Results:</h3>
+        <div id="resultsContainer"></div>
+    </div>
+    <div id="notificationIcon" class="notification-icon" onclick="toggleNotifications()">
+        🛎️ <span id="notificationCount">0</span>
+    </div>
+
+    <div id="notificationSection" class="notification-section" style="display: none;">
+        <h2>Notifications</h2>
+        <div id="notificationsContainer"></div>
+    </div>
+
+    <div id="notification" class="notification" style="display: none;">
+        You are currently offline. Some features may not be available.
+    </div>
+    
 
     <!-- Facilities Start -->
+    <div id="content">
     <div class="container-fluid pt-5">
         <div class="container pb-3">
             <p class="section-title px-5">
@@ -183,9 +213,11 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Facilities End -->
 
     <!-- About Start -->
+    <div id="content">
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -230,9 +262,11 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- About End -->
 
     <!-- Class Start -->
+    <div id="content">
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -359,9 +393,11 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Class End -->
 
     <!-- Registration Start -->
+    <div id="content">
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -421,9 +457,11 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Registration End -->
 
     <!-- Team Start -->
+    <div id="content">
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -449,9 +487,11 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Team End -->
 
     <!-- Testimonial Start -->
+    <div id="content">
     <div class="container-fluid py-5">
         <div class="container p-0">
             <div class="text-center pb-2">
@@ -516,9 +556,11 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Testimonial End -->
 
     <!-- Blog Start -->
+    <div id="content">
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -597,9 +639,11 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Blog End -->
 
     <!-- Footer Start -->
+    <div id="content">
     <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
@@ -692,6 +736,7 @@
             </p>
         </div>
     </div>
+    </div>
     <!-- Footer End -->
 
     <!-- Back to Top -->
@@ -747,6 +792,96 @@
                 }
             });
         });
+    
+        document.getElementById("searchButton").addEventListener("click", function() {
+    performSearch();
+});
+
+function performSearch() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const elements = document.querySelectorAll("#content h1, #content h2, #content h3, #content h4, #content h5, #content p"); // Search only within #content div
+
+    const resultsContainer = document.getElementById("resultsContainer");
+    resultsContainer.innerHTML = ""; // Clear previous results
+
+    let hasResults = false; // To check if we have any results
+    elements.forEach(element => {
+        if (element.textContent.toLowerCase().includes(searchInput)) {
+            resultsContainer.innerHTML += `<div>${element.outerHTML}</div>`; // Add matching content to results
+            hasResults = true; // If it matches, mark that we have results
+        }
+    });
+
+    // Show or hide the results container
+    if (hasResults) {
+        document.getElementById("searchResults").style.display = "block"; // Show results
+        
+        // Scroll to the top of the page or the search results container
+        resultsContainer.scrollIntoView({
+            behavior: "smooth",  // Smooth scroll effect
+            block: "start"  // Align the results container to the top
+        });
+    } else {
+        document.getElementById("searchResults").style.display = "none"; // Hide if no results found
+        alert("No results found");
+    }
+}
+// script.js
+
+const notifications = []; // Array to store notifications
+
+function updateOnlineStatus() {
+    const notification = document.getElementById("notification");
+    
+    if (!navigator.onLine) {
+        // User is offline
+        notification.style.display = "block";
+        notification.style.opacity = "1";
+    } else {
+        // User is online
+        notification.style.opacity = "0";
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 500); // Delay to allow fade out
+    }
+}
+
+// Function to toggle the notification section visibility
+function toggleNotifications() {
+    const notificationSection = document.getElementById("notificationSection");
+    notificationSection.style.display = notificationSection.style.display === "none" ? "block" : "none";
+}
+
+// Function to add a new notification
+function addNotification(message) {
+    notifications.push(message); // Add message to the notifications array
+    updateNotificationDisplay(); // Update the notification display
+}
+
+// Function to update the notification display
+function updateNotificationDisplay() {
+    const notificationsContainer = document.getElementById("notificationsContainer");
+    const notificationCount = document.getElementById("notificationCount");
+    notificationsContainer.innerHTML = ""; // Clear previous notifications
+
+    notifications.forEach((notification, index) => {
+        notificationsContainer.innerHTML += `<div>${index + 1}. ${notification}</div>`;
+    });
+
+    notificationCount.textContent = notifications.length; // Update notification count
+}
+
+// Initial check
+updateOnlineStatus();
+
+// Add event listeners for online/offline events
+window.addEventListener("online", () => {
+    updateOnlineStatus();
+    addNotification("You are now online."); // Add notification when online
+});
+window.addEventListener("offline", updateOnlineStatus);
+
+
     </script>
 </body>
 

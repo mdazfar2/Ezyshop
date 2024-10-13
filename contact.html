@@ -57,6 +57,18 @@
                             <a href="single.html" class="dropdown-item">Blog Detail</a>
                         </div>
                     </div>
+                    <div class="container mt-4">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Search..." aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" id="searchButton">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="contact.html" class="nav-item nav-link" id="primary">Contact Us</a>
                 </div>
                 <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login / Sign Up</a>
@@ -78,9 +90,14 @@
     </div>
 </div>
     <!-- Header End -->
+    <div id="searchResults" style="display: none;">
+        <h3>Search Results:</h3>
+        <div id="resultsContainer"></div>
+    </div>
 
 
     <!-- Contact Start -->
+    <div id="content">
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -161,10 +178,13 @@
             </div>
         </div>
     </div>
+    </div>
+
     <!-- Contact End -->
 
 
     <!-- Footer Start -->
+    <div id="content">
     <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
@@ -256,6 +276,7 @@
             </p>
         </div>
     </div>
+    </div>
     <!-- Footer End -->
 
     <!-- Back to Top -->
@@ -311,6 +332,39 @@
                 }
             });
         });
+        document.getElementById("searchButton").addEventListener("click", function() {
+    performSearch();
+});
+
+function performSearch() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const elements = document.querySelectorAll("#content h1, #content h2, #content h3, #content h4, #content h5, #content p"); // Search only within #content div
+
+    const resultsContainer = document.getElementById("resultsContainer");
+    resultsContainer.innerHTML = ""; // Clear previous results
+
+    let hasResults = false; // To check if we have any results
+    elements.forEach(element => {
+        if (element.textContent.toLowerCase().includes(searchInput)) {
+            resultsContainer.innerHTML += `<div>${element.outerHTML}</div>`; // Add matching content to results
+            hasResults = true; // If it matches, mark that we have results
+        }
+    });
+
+    // Show or hide the results container
+    if (hasResults) {
+        document.getElementById("searchResults").style.display = "block"; // Show results
+        
+        // Scroll to the top of the page or the search results container
+        resultsContainer.scrollIntoView({
+            behavior: "smooth",  // Smooth scroll effect
+            block: "start"  // Align the results container to the top
+        });
+    } else {
+        document.getElementById("searchResults").style.display = "none"; // Hide if no results found
+        alert("No results found");
+    }
+}
     </script>
 </body>
 

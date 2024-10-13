@@ -13948,3 +13948,66 @@ a.text-dark:focus {
     opacity: 0;
     visibility: hidden;
 }
+.search-container {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#searchResults {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.notification-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #17a2b8;
+  border-radius: 50%;
+  padding: 5px; /* Reduced padding */
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 18px; /* Reduced font size */
+  width: 40px; /* Set a specific width */
+  height: 35px; /* Set a specific height */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.notification-section {
+  position: fixed;
+  top: 50px;
+  right: 9px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 9px;
+  width: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.notification {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color:#17a2b8 ;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
