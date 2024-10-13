@@ -1362,7 +1362,7 @@ pre code {
   .offset-sm-11 {
     margin-left: 91.66667%;
   }
-}
+/* } */
 
 @media (min-width: 768px) {
   .col-md {
@@ -6175,7 +6175,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+/* } */
 
 .btn-success.disabled,
 .btn-success:disabled {
@@ -6209,7 +6209,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+/* } */
 
 .btn-info.disabled,
 .btn-info:disabled {
@@ -6242,7 +6242,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+/* } */
 
 .btn-warning.disabled,
 .btn-warning:disabled {
@@ -6276,7 +6276,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+/* } */
 
 .btn-danger.disabled,
 .btn-danger:disabled {
@@ -8335,7 +8335,7 @@ fieldset:disabled a.btn {
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 5px;
-    height: 100%;
+    height: 50em;
 }
 
 .card-hover {
