@@ -20,7 +20,7 @@ interface shopCardProps {
 
 const ShopCard: React.FC<shopCardProps> = ({ shop }) => {
   return (
-    <Card className="w-[400px] border-black hover:scale-105 transition duration-300  border">
+    <Card className="w-[400px] border-DarkGray bg-gray-700 hover:scale-105 transition duration-300  border">
       <CardHeader className="mb-5 p-0">
         <div className="flex flex-col gap-2">
           <img
@@ -29,11 +29,11 @@ const ShopCard: React.FC<shopCardProps> = ({ shop }) => {
             src={shop.image}
           />
 
-          <CardTitle className="flex items-center text-2xl pt-4 text-customBlue m-2 justify-center font-handlee">
+          <CardTitle className="flex items-center text-2xl pt-4 text-Green m-2 justify-center font-handlee">
             {shop.name}
           </CardTitle>
         </div>
-        <CardDescription className="text-center text-lg">
+        <CardDescription className="text-center text-gray-200 text-lg">
           {shop.description}
         </CardDescription>
       </CardHeader>
@@ -43,7 +43,7 @@ const ShopCard: React.FC<shopCardProps> = ({ shop }) => {
           <Button
             variant="default"
             size={"lg"}
-            className="bg-[#17a2b8] rounded-full"
+            className="bg-Green rounded-full"
           >
             Products
           </Button>
