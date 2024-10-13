@@ -9,7 +9,7 @@ const LearnAboutUs = () => {
         <div className=" col-span-12 lg:col-span-5 py-5 lg:mr-10 flex justify-center">
           <Image
             alt="aboutusImage"
-            src={"/aboutus1.png"}
+            src={"/about-us-1.png"}
             width={500}
             height={500}
             className="rounded-lg w-full max-w-[full]"
@@ -28,7 +28,7 @@ const LearnAboutUs = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-5">
             <Image
-              src={"/aboutus2.png"}
+              src={"/about-us-2.png"}
               alt="aboutusImage"
               width={350}
               height={350}

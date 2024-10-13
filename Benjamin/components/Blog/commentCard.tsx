@@ -18,13 +18,13 @@ const CommentCard = ({
         <AvatarImage src={comment.image} />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
-      <div className="flex items-start justify-center flex-col">
+      <div className="flex items-start justify-center flex-col gap-2 lg:gap-0">
         <div className="flex items-center justify-center gap-2">
           <div className="font-nunito text-lg text-customBlue font-bold">{comment.name}</div>
           <div className="h-1 w-1 bg-customTeal rounded-full"/>
           <div className="font-handlee text-customBlue text-sm">{comment.date}</div>
         </div>
-        <div className="mb-2">
+        <div className="mb-2 text-wrap pr-10 lg:p-0">
             {comment.text}
         </div>
         <Button
