@@ -14,6 +14,7 @@ body {
 /* * {
   outline: 1px solid red;
 } */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

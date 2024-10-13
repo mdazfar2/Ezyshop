@@ -52,6 +52,10 @@ const config: Config = {
         },
 		customBlue: "#00394f",  // Dark Blue-Green
         customTeal: "#17a2b8",  // Light Blue
+        Yellow:"#FFC107",
+        Green:"#4CAF50",
+        Gray: "#F5F5F5",
+        DarkGray: "#212121"
       },
       borderRadius: {
         lg: "var(--radius)",
