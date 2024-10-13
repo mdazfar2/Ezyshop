@@ -80,10 +80,12 @@ const Footer = () => {
             groceries, essentials, and organic products—all in one app.
           </div>
           <div className="flex gap-2">
-            <InstagramLogoIcon className="h-10 w-10 text-[#17a2b8]" />
-            <TwitterLogoIcon className="h-10 w-10 text-[#17a2b8]" />
-            <LinkedInLogoIcon className="h-10 w-10 text-[#17a2b8]" />
-            <Facebook className="h-10 w-10 text-[#17a2b8]" />
+                <div className="d-flex justify-content-start mt-4">
+                    <a className="inline-block border border-[#17a2b8] text-[#17a2b8] text-sm w-[38px] bg-transparent hover:bg-[#17a2b8] hover:text-white rounded-full text-center mr-2 p-2" href="https://github.com/mdazfar2/Ezyshop"><i className="fab fa-github"></i></a>
+                    <a className="inline-block border border-[#17a2b8] text-[#17a2b8] text-sm w-[38px] bg-transparent hover:bg-[#17a2b8] hover:text-white rounded-full text-center mr-2 p-2" href="https://discord.gg/Rg8T5gtE"><i className="fa-brands fa-discord"></i></a>
+                    <a className="inline-block border border-[#17a2b8] text-[#17a2b8] text-sm w-[38px] bg-transparent hover:bg-[#17a2b8] hover:text-white rounded-full text-center mr-2 p-2" href="https://www.linkedin.com/company/ezyshopz/"><i className="fab fa-linkedin-in"></i></a>
+                    <a className="inline-block border border-[#17a2b8] text-[#17a2b8] text-sm w-[38px] bg-transparent hover:bg-[#17a2b8] hover:text-white rounded-full text-center mr-2 p-2" href="#"><i className="fab fa-instagram"></i></a>
+                </div>
           </div>
         </div>
         {/* section 2 */}
@@ -103,7 +105,7 @@ const Footer = () => {
               <Mail className="h-7 w-7 text-customTeal" />
               <div className="flex flex-col">
                 <div className="text-gray-100 text-xl">Email</div>
-                <div className="text-lg text-[#17a2b8]">ezyshop@gmail.com</div>
+                <div className="text-lg text-[#17a2b8]">ezyshopz@gmail.com</div>
               </div>
             </div>
             <div className="flex gap-4">
@@ -120,7 +122,7 @@ const Footer = () => {
           <p className="font-bold text-3xl text-customTeal font-handlee">
             Quick Links
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="text-white flex flex-col gap-2">
             {Links.map((link) => (
               <Link
                 href={link.href}
@@ -163,12 +165,25 @@ const Footer = () => {
           onMouseLeave={()=>{
             setId(0)
           }}
-          className={id===7?"underline text-customBlue" : "text-customTeal"}
+          className="text-customTeal hover:text-[#127c8c] hover:underline pl-1"
         >
           Ezyshop
         </Link>
         </div>
-        . All Rights Reserved. Designed by Azfar Alam
+        . All Rights Reserved. Designed by  
+        
+        <Link
+          href={"https://www.azfaralam.xyz/"}
+          onMouseOver={() => {
+            setId(7);
+          }}
+          onMouseLeave={()=>{
+            setId(0)
+          }}
+          className="text-customTeal hover:text-[#127c8c] hover:underline pl-1 "
+        >
+           Azfar Alam
+        </Link>
       </div>
     </div>
   );
