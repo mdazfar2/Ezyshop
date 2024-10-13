@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { Folder, MessagesSquare, User } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -8,7 +8,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "../ui/card";
+import Link from "next/link";
 
 const blogData = [
   {
@@ -45,9 +46,12 @@ const blogData = [
 const BlogCard = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full mb-10">
-      <div className="h-full grid grid-cols-3 gap-10">
+      <div className="h-full flex items-center justify-center flex-col gap-5 lg:grid grid-cols-3 lg:gap-10">
         {blogData.map((card) => (
-          <Card key={card.id} className="w-[400px] hover:scale-105 transition duration-300 bg-gray-100">
+          <Card
+            key={card.id}
+            className="w-[400px] hover:scale-105 transition duration-300 bg-gray-100"
+          >
             <CardHeader>
               <div className="flex flex-col gap-2">
                 <img alt="card image" src={card.url} />
@@ -75,9 +79,15 @@ const BlogCard = () => {
               </CardContent>
             </CardHeader>
             <CardFooter className="flex justify-center">
-              <Button variant="default" size={"lg"} className="bg-[#17a2b8] rounded-full">
-                Read more
-              </Button>
+              <Link href={`/Blog/${card.id}`}>
+                <Button
+                  variant="default"
+                  size={"lg"}
+                  className="bg-[#17a2b8] rounded-full"
+                >
+                  Read more
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}

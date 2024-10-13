@@ -57,9 +57,9 @@ const Footer = () => {
 
   return (
     <div className="flex items-center flex-col p-5 bg-[#00394f]">
-      <div className="border-b grid grid-cols-4 py-2 gap-4">
+      <div className="border-b flex items-start justify-start flex-col lg:grid lg:grid-cols-4 py-2 gap-4">
         {/* section1 */}
-        <div className="flex gap-4 items-start justify-between px-4 pb-4 flex-col">
+        <div className="flex gap-4 items-start justify-between lg:px-4 pb-4 flex-col">
           <div className="flex justify-center items-center">
             <Image
               src={"/ezyshop.png"}
@@ -87,8 +87,8 @@ const Footer = () => {
           </div>
         </div>
         {/* section 2 */}
-        <div className="flex flex-col items-start ml-10 p-4 gap-5">
-          <p className="font-medium text-5xl text-[#17a2b8] font-handlee">
+        <div className="flex flex-col w-full items-start py-4  lg:ml-10 lg:p-4 gap-5">
+          <p className="font-bold text-3xl text-customTeal font-handlee">
             Get in touch
           </p>
           <div className="flex items-start flex-col gap-4 justify-center">
@@ -116,8 +116,8 @@ const Footer = () => {
           </div>
         </div>
         {/* section 3 */}
-        <div className="flex flex-col items-start ml-10  p-4 gap-5">
-          <p className="font-medium text-5xl text-[#17a2b8] font-handlee">
+        <div className="flex flex-col w-full items-start py-4  lg:ml-10 lg:p-4 gap-5">
+          <p className="font-bold text-3xl text-customTeal font-handlee">
             Quick Links
           </p>
           <div className="flex flex-col gap-2">
@@ -141,18 +141,19 @@ const Footer = () => {
           </div>
         </div>
         {/* section 4 */}
-        <div className="flex flex-col items-start justify-start gap-5 p-4">
-          <p className="font-medium text-5xl text-[#17a2b8] font-handlee">
+        <div className="flex flex-col w-full lg:w-10/12 items-start py-4  lg:ml-10 lg:p-4 gap-5">
+          <p className="font-bold text-3xl text-customTeal font-handlee">
             News Letter
           </p>
           <Input placeholder="Name" className="bg-gray-100 h-10 w-10/12" />
           <Input placeholder="Email" className="bg-gray-100 h-10 w-10/12" />
-          <Button className="h-14 bg-customTeal rounded-full w-10/12">
+          <Button className="lg:h-14 bg-customTeal rounded-full w-10/12">
             Subscribe
           </Button>
         </div>
       </div>
-      <div className="flex pt-5 items-center text-gray-100 justify-center">
+      <div className="flex flex-col lg:flex-row pt-5 items-center text-gray-100 justify-center">
+        <div className="flex items-center justify-center">
         <Copyright className="h-4 w-4 mr-2"></Copyright>
         <Link
           href={"/"}
@@ -166,6 +167,7 @@ const Footer = () => {
         >
           Ezyshop
         </Link>
+        </div>
         . All Rights Reserved. Designed by Azfar Alam
       </div>
     </div>

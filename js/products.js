@@ -271,7 +271,18 @@ function loadMoreProducts() {
 }
 
 function addToCart(productName) {
+    // Alert the user
     alert(`${productName} added to cart!`);
+
+    // Show notification in the HTML element
+    const notification = document.getElementById('notification');
+    notification.innerText = `${productName} added to cart!`;
+    notification.style.display = 'block';
+
+    // Hide notification after 3 seconds
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000);
 }
 
 function saveForLater(productTitle) {
@@ -279,3 +290,4 @@ function saveForLater(productTitle) {
     console.log(`${productTitle} saved for later!`);
     // Implement your saving logic here (e.g., localStorage or sending to backend).
 }
+

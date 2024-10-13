@@ -41,14 +41,14 @@ const Features = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center py-10 h-full">
-      <div className="h-full grid grid-cols-3 gap-20">
+    <div className="flex items-center  justify-center py-10 h-full">
+      <div className="h-full flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-20">
         {cardData.map((card) => (
-          <Card className="w-[350px] h-[200px]">
+          <Card className="w-[350px] bg-gray-100 h-[200px]">
             <CardHeader>
                 <div className="flex gap-2 items-center justify-center">
                     {card.logo}
-              <CardTitle className="text-3xl ml-4 font-bold font-handlee text-customBlue" >{card.title}</CardTitle>
+              <CardTitle className="text-2xl ml-4 font-bold font-handlee text-customBlue" >{card.title}</CardTitle>
 
                 </div>
               <CardDescription className="text-xl">{card.decription}</CardDescription>
