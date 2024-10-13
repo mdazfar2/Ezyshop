@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-interface orderItemProps {
+export interface orderItemProps {
   item: {
     name: string;
     variant: String;
