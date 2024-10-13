@@ -111,15 +111,20 @@ forgotPasswordForm.addEventListener('submit', (event) => {
 });
 
 // Handle Visibility Toggle
-document.querySelector(".bxs-lock-alt").addEventListener("click", function () {
-  const passwordInput = document.getElementById("loginPassword");
-  // Toggle password visibility
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    this.classList.remove("bxs-lock-alt");
-    this.classList.add("bxs-lock-open");
-    passwordInput.type = "password";
-    this.classList.remove("bxs-lock-open");
-    this.classList.add("bxs-lock-alt");
-  }
+const lockIcons = document.querySelectorAll(".bxs-lock-alt");
+
+lockIcons.forEach((icon) => {
+    icon.addEventListener("click", function () {
+        const passwordInput = this.closest('.input-box').querySelector('input[type="password"], input[type="text"]');
+        // Toggle password visibility
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            this.classList.remove('bxs-lock-alt');  
+            this.classList.add('bxs-lock-open');  
+        } else {
+            passwordInput.type = "password";
+            this.classList.remove('bxs-lock-open'); 
+            this.classList.add('bxs-lock-alt');     
+        }
+    });
 });

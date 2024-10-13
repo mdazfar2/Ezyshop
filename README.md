@@ -2,8 +2,9 @@
 <h1 align="center">Bringing Every Store to Your Door!</h1>
 
 
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3018ab81-b260-45ef-bca9-f7829f15f956" alt="ezyshop-image">
+  <img src="https://github.com/user-attachments/assets/db7eeca8-4e79-4aa3-9228-d6fad437c398" alt="ezyshop-image">
 </p>
 <!--  -->
 <div align="center">

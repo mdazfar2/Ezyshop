@@ -271,7 +271,17 @@ function loadMoreProducts() {
 }
 
 function addToCart(productName) {
+    // Show an alert (optional)
     alert(`${productName} added to cart!`);
+
+    // Show a notification
+    const notification = document.getElementById('notification');
+    notification.innerText = `${productName} added to cart!`;
+    notification.style.display = 'block';
+
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000); // Hide after 3 seconds
 }
 
 function saveForLater(productTitle) {

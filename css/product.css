@@ -25,7 +25,6 @@
   transform: scale(1.01);
 }
 
-
 .product-content {
   display: flex;
   flex-direction: column; /* Change to column for vertical stacking */
@@ -78,9 +77,6 @@
   background-size: cover;
 }
 
-.col-8 {
-  gap: 0px;
-}
 .save-for-later-icon {
   transition: all 0.1s ease-in; /* Smooth transition for hover effects */
   display: inline-flex; /* Keeps icon and button aligned */
@@ -88,7 +84,6 @@
 }
 
 .save-for-later-icon:hover {
-  /* Adding a subtle effect without changing layout */
   transform: scale(1.1); /* Slightly enlarges the icon */
   color: #117b8bd4; /* Change color on hover */
 }
@@ -101,79 +96,95 @@
   width: auto; /* Adjust width for better look */
   display: inline-flex; /* Keeps button and icon aligned */
   align-items: center; /* Centers the button text vertically */
-  position: relative; /* Maintain positioning */
 }
 
-
-
-  @media (max-width:576px){
-    .product-title{
-      font-size: 1.1rem;
-    }
-    .product-category{
-      font-size: 0.9rem;
-    }
-    .product-price{
-      font-size: 1.2rem;
-    }
+/* Responsive styles */
+@media (max-width:576px) {
+  .product-title {
+    font-size: 1.1rem;
   }
-  
-  /* Product page Search bar styles */
+  .product-category {
+    font-size: 0.9rem;
+  }
+  .product-price {
+    font-size: 1.2rem;
+  }
+}
+
+/* Product page Search bar styles */
+.search-input-group {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-form-control {
+  border-radius: 30px 0 0 30px;
+  border: 2px solid #17a2b8;
+  padding: 22px 24px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-form-control:focus {
+  outline: none;
+  box-shadow: 0 0 5px #17a2b850;
+  border-color: #17a2b8;
+}
+
+.search-input-group-append .btn {
+  border-radius: 0 30px 30px 0;
+  background-color: #17a2b8;
+  border: 2px solid #17a2b8;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+}
+
+.search-input-group-append .btn:hover {
+  background-color: #117a8b;
+  border-color: #117a8b;
+}
+
+.search-input-group-append .btn i {
+  font-size: 14px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
   .search-input-group {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: row;
+    max-width: 100%;
   }
   .search-form-control {
-    border-radius: 30px 0 0 30px;
-    border: 2px solid #17a2b8;
-    padding: 22px 24px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  .search-form-control:focus {
-    outline: none;
-    box-shadow: 0 0 5px #17a2b850;
-    border-color: #17a2b8;
+    font-size: 14px;
   }
   .search-input-group-append .btn {
-    border-radius: 0 30px 30px 0;
-    background-color: #17a2b8;
-    border: 2px solid #17a2b8;
-    padding: 10px 25px;
-    transition: all 0.3s ease;
-  }
-  .search-input-group-append .btn:hover {
-    background-color: #117a8b;
-    border-color: #117a8b;
+    padding: 10px;
   }
   .search-input-group-append .btn i {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-form-control {
+    padding: 8px 15px;
     font-size: 14px;
-    color: #fff;
   }
-  
-  @media (max-width: 768px) {
-    .search-input-group {
-      max-width: 100%;
-    }
-    .search-form-control {
-      font-size: 14px;
-    }
-    .search-input-group-append .btn {
-      padding: 10px;
-    }
-    .search-input-group-append .btn i {
-      font-size: 16px;
-    }
+  .search-input-group-append .btn {
+    padding: 4px 15px;
   }
-  
-  @media (max-width: 576px) {
-    .search-form-control {
-      padding: 8px 15px;
-      font-size: 14px;
-    }
-    .search-input-group-append .btn {
-      padding: 4px 15px;
-    }
-  }
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #138496;
+  color: white;
+  padding: 15px 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  display: none;
+}

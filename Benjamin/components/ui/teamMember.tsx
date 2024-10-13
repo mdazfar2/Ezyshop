@@ -7,15 +7,15 @@ const TeamMember = () => {
     <div className="flex justify-center">
       <div className="text-center team mb-5 w-full md:w-1/2 lg:w-1/6">
         <div
-          className="relative overflow-hidden mb-4"
-          style={{ borderRadius: "100%" }}
+          className="relative flex items-center justify-center w-full mb-4"
         >
           <img
-            className="img-fluid w-full"
+
+            className="img-fluid rounded-full w-2/3 lg:w-full"
             src="/Founder.jpeg"
             alt="Azfar Alam"
           />
-          <div className="flex items-center bg-customTeal justify-center w-full h-full absolute inset-0 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity gap-2 duration-300">
+          <div className="flex items-center rounded-full w-2/3 lg:w-full bg-customTeal justify-center  h-full absolute  bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity gap-2 duration-300">
             <a
               className="btn btn-outline-light text-center mr-2"
               style={{ width: "38px", height: "38px" }}
