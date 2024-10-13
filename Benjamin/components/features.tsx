@@ -1,5 +1,6 @@
 import { Car, CreditCard, Drum, SendToBack, ShoppingCart, Store, TicketPercent } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import SeperatorHeading from "./ui/seperatorHeading";
 
 const Features = () => {
   const cardData = [
@@ -40,24 +41,29 @@ const Features = () => {
     },
   ];
 
-  return (
-    <div className="flex items-center  justify-center py-10 h-full">
-      <div className="h-full flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-20">
-        {cardData.map((card) => (
-          <Card className="w-[350px] bg-gray-100 h-[200px]">
-            <CardHeader>
-                <div className="flex gap-2 items-center justify-center">
-                    {card.logo}
-              <CardTitle className="text-2xl ml-4 font-bold font-handlee text-customBlue" >{card.title}</CardTitle>
+//  
+return (
+  <div className="pt-10">    
+    <SeperatorHeading label="Our Facilities" />
+  <div className="flex items-center  justify-center py-10 px-4 h-full">
+    
+    <div className="h-full flex flex-col gap-4 md:grid md:grid-cols-2 lg:gap-10 lg:grid-cols-3 lg:gap-20">
+      {cardData.map((card) => (
+        <Card className="min-w-[250px] max-w-[350px]  bg-gray-100 ">
+          <CardHeader>
+              <div className="flex gap-2 items-center justify-center">
+                  {card.logo}
+            <CardTitle className="text-xl md:text-2xl ml-4 font-bold font-handlee text-customBlue" >{card.title}</CardTitle>
 
-                </div>
-              <CardDescription className="text-xl">{card.decription}</CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
-      </div>
+              </div>
+            <CardDescription className="text-xl">{card.decription}</CardDescription>
+          </CardHeader>
+        </Card>
+      ))}
     </div>
-  );
+  </div>
+  </div>
+);
 };
 
 export default Features;

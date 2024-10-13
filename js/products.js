@@ -121,6 +121,72 @@ const products = [
     { product_title: "Dog Food (10kg)", product_category: "Pet Supplies", product_shop: "Pet Paradise", product_img_url: "",hover_img_url:"",  product_id: 72, cost: 1299 },
     { product_title: "Cat Litter", product_category: "Pet Supplies", product_shop: "Pet Paradise", product_img_url: "",hover_img_url:"",  product_id: 73, cost: 1199 },
     { product_title: "Dog Leash", product_category: "Pet Supplies", product_shop: "Pet Paradise", product_img_url: "",hover_img_url:"",  product_id: 74, cost: 699 },
+
+    { product_title: "Organic Apples", product_category: "Groceries", product_shop: "Fresh Mart", product_img_url: "", product_id: 19, cost: 52 },
+    { product_title: "Whole Grain Bread", product_category: "Groceries", product_shop: "Green Grocer", product_img_url: "", product_id: 20, cost: 38 },
+    { product_title: "Fresh Milk (1L)", product_category: "Groceries", product_shop: "Fresh Mart", product_img_url: "", product_id: 21, cost: 52 },
+    { product_title: "Eggs (dozen)", product_category: "Groceries", product_shop: "Green Grocer", product_img_url: "", product_id: 22, cost: 82 },
+    { product_title: "Chicken Breast (1kg)", product_category: "Groceries", product_shop: "Fresh Mart", product_img_url: "", product_id: 23, cost: 192 },
+    { product_title: "Fresh Spinach", product_category: "Groceries", product_shop: "Green Grocer", product_img_url: "", product_id: 24, cost: 52 },
+    { product_title: "Rice (5kg)", product_category: "Groceries", product_shop: "Fresh Mart", product_img_url: "", product_id: 25, cost: 92 },
+    { product_title: "Pasta (500g)", product_category: "Groceries", product_shop: "Green Grocer", product_img_url: "", product_id: 26, cost: 42 },
+    { product_title: "Tomato Sauce", product_category: "Groceries", product_shop: "Fresh Mart", product_img_url: "", product_id: 27, cost: 82 },
+    { product_title: "Soy Sauce", product_category: "Groceries", product_shop: "Green Grocer", product_img_url: "", product_id: 29, cost: 82 },
+    
+    // Beauty
+    { product_title: "Moisturizer", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 36, cost: 25 },
+    { product_title: "Lipstick", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 37, cost: 15 },
+    { product_title: "Facial Cleanser", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 38, cost: 20 },
+    { product_title: "Eye Shadow Palette", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 39, cost: 30 },
+    { product_title: "Nail Polish", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 40, cost: 10 },
+    { product_title: "Sunscreen", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 41, cost: 18 },
+    { product_title: "Perfume", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 42, cost: 60 },
+    { product_title: "Hair Dryer", product_category: "Beauty", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 43, cost: 50 },
+    
+    // Sports
+    { product_title: "Running Shoes", product_category: "Sports", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 44, cost: 70 },
+    { product_title: "Yoga Mat", product_category: "Sports", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 45, cost: 25 },
+    { product_title: "Dumbbells Set", product_category: "Sports", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 46, cost: 50 },
+    { product_title: "Tennis Racket", product_category: "Sports", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 47, cost: 80 },
+    { product_title: "Soccer Ball", product_category: "Sports", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 48, cost: 30 },
+    { product_title: "Swimming Goggles", product_category: "Sports", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 49, cost: 15 },
+    { product_title: "Baseball Glove", product_category: "Sports", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 50, cost: 35 },
+    
+    // Health
+    { product_title: "Multivitamins", product_category: "Health", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 51, cost: 20 },
+    { product_title: "Protein Powder", product_category: "Health", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 52, cost: 40 },
+    { product_title: "Blood Pressure Monitor", product_category: "Health", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 53, cost: 60 },
+    { product_title: "Fitness Tracker", product_category: "Health", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 54, cost: 70 },
+    { product_title: "Yoga Block", product_category: "Health", product_shop: "Wellness Center", product_img_url: "",hover_img_url:"",  product_id: 55, cost: 15 },
+    
+    // Books
+    { product_title: "The Great Gatsby", product_category: "Books", product_shop: "Book Nook", product_img_url: "",hover_img_url:"",  product_id: 56, cost: 10 },
+    { product_title: "1984", product_category: "Books", product_shop: "RBook Nook", product_img_url: "",hover_img_url:"",  product_id: 57, cost: 12 },
+    { product_title: "To Kill a Mockingbird", product_category: "Books", product_shop: "Book Nook", product_img_url: "",hover_img_url:"",  product_id: 58, cost: 15 },
+    { product_title: "Pride and Prejudice", product_category: "Books", product_shop: "Book Nook", product_img_url: "",hover_img_url:"",  product_id: 59, cost: 10 },
+    { product_title: "Moby Dick", product_category: "Books", product_shop: "Book Nook", product_img_url: "",hover_img_url:"",  product_id: 60, cost: 18 },
+    
+    // Toys
+    { product_title: "Building Blocks", product_category: "Toys", product_shop: "Toy Box", product_img_url: "",hover_img_url:"",  product_id: 63, cost: 30 },
+    { product_title: "Puzzle Game", product_category: "Toys", product_shop: "Toy Box", product_img_url: "",hover_img_url:"",  product_id: 64, cost: 25 },
+    { product_title: "Action Figure", product_category: "Toys", product_shop: "Toy Box", product_img_url: "",hover_img_url:"",  product_id: 65, cost: 20 },
+    { product_title: "Doll Set", product_category: "Toys", product_shop: "Toy Box", product_img_url: "",hover_img_url:"",  product_id: 66, cost: 35 },
+    { product_title: "Remote Control Car", product_category: "Toys", product_shop: "Toy Box", product_img_url: "",hover_img_url:"",  product_id: 67, cost: 45 },
+    
+    // Baby Products
+    { product_title: "Diapers (Pack of 30)", product_category: "Baby Products", product_shop: "Baby Bliss", product_img_url: "",hover_img_url:"",  product_id: 68, cost: 25 },
+    { product_title: "Baby Wipes", product_category: "Baby Products", product_shop: "Baby Bliss", product_img_url: "",hover_img_url:"",  product_id: 69, cost: 10 },
+    { product_title: "Baby Monitor", product_category: "Baby Products", product_shop: "Baby Bliss", product_img_url: "",hover_img_url:"",  product_id: 70, cost: 70 },
+    { product_title: "Baby Stroller", product_category: "Baby Products", product_shop: "Baby Bliss", product_img_url: "",hover_img_url:"",  product_id: 71, cost: 120 },
+    
+    // Automotive
+    { product_title: "Car Wax", product_category: "Automotive", product_shop: "Auto Zone", product_img_url: "",hover_img_url:"",  product_id: 75, cost: 15 },
+    { product_title: "Tire Inflator", product_category: "Automotive", product_shop: "Auto Zone", product_img_url: "",hover_img_url:"",  product_id: 80, cost: 30 },
+    
+    // Pet Supplies
+    { product_title: "Dog Food (10kg)", product_category: "Pet Supplies", product_shop: "Pet Paradise", product_img_url: "",hover_img_url:"",  product_id: 81, cost: 45 },
+    { product_title: "Cat Litter", product_category: "Pet Supplies", product_shop: "Pet Paradise", product_img_url: "",hover_img_url:"",  product_id: 82, cost: 20 },
+    { product_title: "Dog Leash", product_category: "Pet Supplies", product_shop: "Pet Paradise", product_img_url: "",hover_img_url:"",  product_id: 83, cost: 15 },
 ];
 
 
@@ -200,18 +266,18 @@ function displayProducts(productList) {
         let img_url = `img/updatedProducts/${product.product_id}.webp`;
         let hover_img_url = `img/hoverProducts/${product.product_id}.webp`; // Image for hover
 
-        // If the product category is not in ['Groceries', 'Electronics', 'Fashion'], use a default image
+        // If the product category is not in the specified categories, use a default image
         if (product.product_category !== 'Groceries' && 
             product.product_category !== 'Electronics' && 
             product.product_category !== 'Fashion' && 
-            product.product_category !== 'Beauty'
-            && product.product_category !== 'Sports'
-            && product.product_category !== 'Health'
-            && product.product_category !== 'Books'
-            && product.product_category !== 'Toys'
-            && product.product_category !== 'Baby Products'
-            && product.product_category !== 'Automotive'
-            & product.product_category !== 'Pet Supplies') {
+            product.product_category !== 'Beauty' &&
+            product.product_category !== 'Sports' &&
+            product.product_category !== 'Health' &&
+            product.product_category !== 'Books' &&
+            product.product_category !== 'Toys' &&
+            product.product_category !== 'Baby Products' &&
+            product.product_category !== 'Automotive' &&
+            product.product_category !== 'Pet Supplies') {
             img_url = "img/products/product-image-not-available.png";
             hover_img_url = "img/products/product-image-not-available.png"; // Use the same default for hover
         }
@@ -251,6 +317,7 @@ function displayProducts(productList) {
 
 
 
+
 function filterProducts() {
     const query = document.getElementById('search-input').value.toLowerCase();
     const container = document.getElementById('product-container');
@@ -277,19 +344,19 @@ function loadMoreProducts() {
     currentPage++;
     loadProducts();
 }
-
 function addToCart(productName) {
-    // Show an alert (optional)
+    // Show an alert to the user
     alert(`${productName} added to cart!`);
 
-    // Show a notification
+    // Show notification in the HTML element
     const notification = document.getElementById('notification');
     notification.innerText = `${productName} added to cart!`;
     notification.style.display = 'block';
 
+    // Hide notification after 3 seconds
     setTimeout(() => {
         notification.style.display = 'none';
-    }, 3000); // Hide after 3 seconds
+    }, 3000);
 }
 
 function saveForLater(productTitle) {
@@ -297,4 +364,3 @@ function saveForLater(productTitle) {
     console.log(`${productTitle} saved for later!`);
     // Implement your saving logic here (e.g., localStorage or sending to backend).
 }
-
