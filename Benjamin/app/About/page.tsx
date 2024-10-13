@@ -6,8 +6,8 @@ const About = () => {
   return (
     <>
       <div className="h-full">
-        <div className="flex items-center justify-center bg-customTeal h-full mb-20 p-24">
-          <div className="text-4xl md:text-7xl font-bold font-handlee">About us</div>
+        <div className="text-white flex items-center justify-center bg-customTeal h-full mb-20 p-24">
+          <div className=" text-4xl md:text-7xl font-bold font-handlee">About us</div>
         </div>
       </div>
       <SeperatorHeading label="Learn About us"/>

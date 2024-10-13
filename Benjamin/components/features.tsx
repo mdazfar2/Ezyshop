@@ -1,5 +1,6 @@
 import { Car, CreditCard, Drum, SendToBack, ShoppingCart, Store, TicketPercent } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import SeperatorHeading from "./ui/seperatorHeading";
 
 const Features = () => {
   const cardData = [
@@ -42,7 +43,10 @@ const Features = () => {
 
 //  
 return (
+  <div className="pt-10">    
+    <SeperatorHeading label="Our Facilities" />
   <div className="flex items-center  justify-center py-10 px-4 h-full">
+    
     <div className="h-full flex flex-col gap-4 md:grid md:grid-cols-2 lg:gap-10 lg:grid-cols-3 lg:gap-20">
       {cardData.map((card) => (
         <Card className="min-w-[250px] max-w-[350px]  bg-gray-100 ">
@@ -57,6 +61,7 @@ return (
         </Card>
       ))}
     </div>
+  </div>
   </div>
 );
 };
