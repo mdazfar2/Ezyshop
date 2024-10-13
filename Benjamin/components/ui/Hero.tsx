@@ -3,7 +3,7 @@ import { Button } from "./button";
 
 const Hero = () => {
     return ( 
-    <div className="flex flex-col lg:flex-row items-center justify-around lg:p-5 text-gray-100 bg-[#17a2b8] h-full">
+    <div className="flex flex-col lg:flex-row items-center justify-around lg:p-5 text-gray-100 bg-[#17a2b8] h-full mb-20">
         <div className="flex flex-col items-center lg:items-start justify-center gap-10 p-4 lg:p-0 lg:w-2/4">
             <div className="text-5xl pt-5 lg:pt-0 lg:text-8xl text-center lg:text-start font-extrabold font-handlee">
             Revolutionizing How You Shop
