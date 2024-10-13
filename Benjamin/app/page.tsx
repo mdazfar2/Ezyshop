@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="h-full">
+    <div className="h-full bg-DarkGray">
       <Hero/>
       <Features/>
-      <div className="w-full border-b border-[#00394f] my-10"/>
+      <div className="w-full border-b border-Green my-10"/>
 
       <Stores/>
     </div>

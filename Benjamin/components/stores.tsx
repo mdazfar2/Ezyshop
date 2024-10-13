@@ -48,43 +48,43 @@ const Stores = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full">
       <SeperatorHeading label="Trending Deals" />
-      <div className="text-customBlue text-3xl px-5 text-center lg:px-0 lg:text-start lg:text-5xl font-bold  font-handlee">
+      <div className="text-Green text-3xl px-5 text-center lg:px-0 lg:text-start lg:text-5xl font-bold  font-handlee">
         Shop for your favourite products
       </div>
 
       <div className="h-full flex flex-col gap-10 lg:grid grid-cols-3 lg:gap-20">
         {cardData.map((card) => (
-          <Card className="w-[400px] hover:scale-105 transition duration-300  bg-gray-100">
-            <CardHeader className="border-b">
+          <Card className="w-[400px] hover:scale-105 border border-DarkGray transition duration-300  bg-gray-700">
+            <CardHeader className="border-b border-DarkGray">
               <div className="flex flex-col gap-2">
                 <img alt="card image" src={card.logo} />
 
-                <CardTitle className="flex items-center text-2xl pt-4 text-customBlue m-2 justify-center font-handlee">
+                <CardTitle className="flex items-center text-2xl pt-4 text-Yellow m-2 justify-center font-handlee">
                   {card.title}
                 </CardTitle>
               </div>
-              <CardDescription className="text-justify text-lg">
+              <CardDescription className="text-justify text-gray-200 text-lg">
                 {card.description}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center justify-center">
-                <div className="border-r">
-                  <div className="border-b p-2">Category</div>
-                  <div className="border-b p-2">Offers Available</div>
-                  <div className="border-b p-2">Delivery Time</div>
-                  <div className="border-b p-2">Starting from</div>
+              <div className="flex text-gray-200 items-center justify-center">
+                <div className="border-r border-DarkGray">
+                  <div className="border-b border-DarkGray p-2">Category</div>
+                  <div className="border-b border-DarkGray p-2">Offers Available</div>
+                  <div className="border-b border-DarkGray p-2">Delivery Time</div>
+                  <div className="border-b border-DarkGray p-2">Starting from</div>
                 </div>
                 <div>
-                  <div className="border-b p-2">{card.category}</div>
-                  <div className="border-b p-2">{card.Offers}</div>
-                  <div className="border-b p-2">{card.deliveryTime}</div>
-                  <div className="border-b p-2">{card.StartingFrom}</div>
+                  <div className="border-b border-DarkGray p-2">{card.category}</div>
+                  <div className="border-b border-DarkGray p-2">{card.Offers}</div>
+                  <div className="border-b border-DarkGray p-2">{card.deliveryTime}</div>
+                  <div className="border-b border-DarkGray p-2">{card.StartingFrom}</div>
                 </div>
               </div>
             </CardContent>
             <CardFooter className="flex justify-center">
-              <Button variant="default" className="bg-[#17a2b8] rounded-full">
+              <Button variant="default" className="bg-Green text-gray-200 rounded-full">
                 Shop Now
               </Button>
             </CardFooter>

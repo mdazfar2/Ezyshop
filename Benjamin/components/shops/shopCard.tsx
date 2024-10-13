@@ -20,7 +20,7 @@ interface shopCardProps {
 
 const ShopCard: React.FC<shopCardProps> = ({ shop }) => {
   return (
-    <Card className="w-[400px]  hover:scale-105 transition duration-300  border">
+    <Card className="w-[400px] border-black hover:scale-105 transition duration-300  border">
       <CardHeader className="mb-5 p-0">
         <div className="flex flex-col gap-2">
           <img
