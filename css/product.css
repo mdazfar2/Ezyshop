@@ -15,21 +15,21 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 5px; /* Optional: adds rounded corners */
   transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* Smooth transitions */
 }
 
 /* Hover effect */
 .product-card:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.134);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.134); /* Default shadow */
   transform: scale(1.01);
 }
 
 .product-content {
   display: flex;
   flex-direction: column; /* Vertical stacking */
-  align-items: center;
-  height: auto;
+  align-items: center; /* Center the content */
+  height: auto; /* Set the height you want */
   padding: 2px;
 }
 
@@ -57,7 +57,7 @@
 .product-price {
   font-family: Nunito, sans-serif;
   font-size: 1.5rem;
-  margin: 1rem 0;
+  margin: 1rem 0; /* Add margin for spacing */
 }
 
 .center {
@@ -77,34 +77,30 @@
   background-size: cover;
 }
 
-.col-8 {
-  gap: 0px;
-}
-
 /* Save for later button and icon */
 .save-for-later-icon {
-  transition: all 0.1s ease-in;
-  display: inline-flex;
-  align-items: center;
+  transition: all 0.1s ease-in; /* Smooth transition for hover effects */
+  display: inline-flex; /* Keeps icon and button aligned */
+  align-items: center; /* Centers the icon vertically */
 }
 
 .save-for-later-icon:hover {
-  transform: scale(1.1);
-  color: #117b8bd4;
+  transform: scale(1.1); /* Slightly enlarges the icon */
+  color: #117b8bd4; /* Change color on hover */
 }
 
 .save-for-later-btn {
   margin-left: 0.2rem;
   border-radius: 1.6rem;
   font-size: 1.5rem;
-  padding: 0.1rem 0.7rem;
-  display: inline-flex;
-  align-items: center;
-  position: relative;
+  padding: 0.1rem 0.7rem; /* Adjust padding for the button */
+  width: auto; /* Adjust width for better look */
+  display: inline-flex; /* Keeps button and icon aligned */
+  align-items: center; /* Centers the button text vertically */
 }
 
-/* Media queries for responsiveness */
-@media (max-width:576px){
+/* Responsive styles */
+@media (max-width:576px) {
   .product-title {
     font-size: 1.1rem;
   }
