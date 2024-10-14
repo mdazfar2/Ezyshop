@@ -1,5 +1,6 @@
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Link } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const TeamMember = () => {
@@ -9,8 +10,9 @@ const TeamMember = () => {
         <div
           className="relative flex items-center justify-center w-full mb-4"
         >
-          <img
-
+          <Image
+            width={1000}
+            height={1000}
             className="img-fluid rounded-full w-2/3 lg:w-full"
             src="/Founder.jpeg"
             alt="Azfar Alam"

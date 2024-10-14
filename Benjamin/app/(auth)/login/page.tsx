@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock, Mail, User } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 
 const Login = () => {
@@ -57,7 +56,7 @@ const Login = () => {
                 Forgot Password?
               </div>
               <div className="flex items-center justify-center gap-2">
-                Don't have an account?
+                Don&apos;t have an account?
                 <div
                   className="text-Green cursor-pointer"
                   onClick={() => setSwitchCss(!switchCss)}

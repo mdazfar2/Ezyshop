@@ -20,9 +20,9 @@ const Contact = () => {
         <div className="col-span-7"><ContactUsFrom/></div>
         <div className="col-span-5">
           <div className="text-md text-gray-200 mb-10">
-            Have a question or need assistance? We're here to help! Reach out to
+            Have a question or need assistance? We&apos;re here to help! Reach out to
             us for any inquiries regarding your orders, deliveries, or shopping
-            experience with EzyShop. We're happy to assist you with all your
+            experience with EzyShop. We&apos;re happy to assist you with all your
             needs.
           </div>
           <div className="flex items-start flex-col gap-4 justify-center">

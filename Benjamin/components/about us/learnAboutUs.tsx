@@ -21,7 +21,7 @@ const LearnAboutUs = () => {
           </div>
           <div className="text-gray-200 text-md md:text-xl">
             EzyShop is your go-to platform for shopping locally from the comfort
-            of your home. Whether you're looking for products from your favorite
+            of your home. Whether you&apos;re looking for products from your favorite
             local store or the nearest mall, we make it easy to browse, order,
             and have it delivered to you fast. Enjoy seamless shopping with
             access to the stores you love, all in one place.

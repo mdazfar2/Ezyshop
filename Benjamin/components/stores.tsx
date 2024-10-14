@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "./ui/button";
 import {
   Card,
@@ -54,10 +55,10 @@ const Stores = () => {
 
       <div className="h-full flex flex-col gap-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-20">
         {cardData.map((card) => (
-          <Card className="sm:w-[400px] md:hover:scale-105 border border-DarkGray transition duration-300  bg-gray-700">
+          <Card  key={card.title} className="sm:w-[400px] md:hover:scale-105 border border-DarkGray transition duration-300  bg-gray-700">
             <CardHeader className="border-b border-DarkGray">
               <div className="flex flex-col gap-2">
-                <img alt="card image" src={card.logo} />
+                <Image width={1000} height={1000} alt="card image" src={card.logo} />
 
                 <CardTitle className="flex items-center text-2xl pt-4 text-Yellow m-2 justify-center font-handlee">
                   {card.title}

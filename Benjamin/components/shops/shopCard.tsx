@@ -2,12 +2,12 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import Image from "next/image";
 
 interface shopCardProps {
   shop: {
@@ -23,7 +23,9 @@ const ShopCard: React.FC<shopCardProps> = ({ shop }) => {
     <Card className="w-[400px] border-DarkGray bg-gray-700 hover:scale-105 transition duration-300  border">
       <CardHeader className="mb-5 p-0">
         <div className="flex flex-col gap-2">
-          <img
+          <Image
+            height={1000}
+            width={1000}
             alt="card image"
             className="rounded-t-lg max-h-52"
             src={shop.image}

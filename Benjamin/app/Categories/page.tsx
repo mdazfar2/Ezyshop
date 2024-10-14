@@ -1,6 +1,5 @@
 import Stores from "@/components/stores";
 import { Button } from "@/components/ui/button";
-import SeperatorHeading from "@/components/ui/seperatorHeading";
 
 const Category = () => {
   return (

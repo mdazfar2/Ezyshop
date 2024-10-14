@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
 import { Card, CardHeader, CardContent } from "./ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Quote, TextQuote } from "lucide-react";
+import { Quote } from "lucide-react";
+import Image from "next/image";
 
 const reviews = [
   {
@@ -54,7 +52,9 @@ const ReviewsCarousel = () => {
               <div className="w-full p-4">
                 <Card className="bg-gray-700 border border-DarkGray lg:p-6 rounded-lg shadow-lg h-full">
                   <CardHeader className="flex flex-col items-center justify-center mb-4">
-                    <img
+                    <Image
+                      width={1000}
+                      height={1000}
                       src={review.image}
                       alt={review.name}
                       className="w-20 h-20 rounded-full object-cover mb-2"
