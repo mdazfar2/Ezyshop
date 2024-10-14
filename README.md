@@ -1,6 +1,6 @@
 <a id="top"></a>
 <h1 align="center">Bringing Every Store to Your Door!</h1>
-'km
+'k
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/db7eeca8-4e79-4aa3-9228-d6fad437c398" alt="ezyshop-image">
