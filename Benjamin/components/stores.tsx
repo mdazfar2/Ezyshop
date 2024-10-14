@@ -75,9 +75,7 @@ const Stores = () => {
                   {card.title}
                 </CardTitle>
               </div>
-              <CardDescription className="text-justify text-gray-200 text-lg">
-                {card.description}
-              </CardDescription>
+           
             </CardHeader>
             <CardContent>
               <div className="flex text-gray-200 items-center justify-center font-nunito">
