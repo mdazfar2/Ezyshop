@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Ezyshop</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&amp;family=Nunito&amp;display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\footer.css">
+    <link rel="stylesheet" href="css\product.css">
+
+    <link rel="stylesheet" href="css/newsLetter.css">
+  </head>
+
+  <body class="">
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-light position-relative shadow">
+
+      <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+        <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
+          <img style="width: 80px" src="./img/ezyshop.png" alt="logo">
+          <span class="text-primary">Ezyshop</span>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">     
+          <div class="navbar-nav font-weight-bold mx-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="Category.html" class="nav-item nav-link">Categories</a>
+            <a href="team.html" class="nav-item nav-link">Teams</a>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Pages</a>
+              <div class="dropdown-menu rounded-0 m-0">
+                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                <a href="single.html" class="dropdown-item">Blog Detail</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+          <a id="authButton" href="#" class="btn btn-primary px-4 btn-secondary">mansi</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary mb-5">
+      <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+        <h3 id="big-heading" class="display-3 font-weight-bold text-white">Fashion</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0"><a class="text-white" href="index.html">Home</a></p>
+          <p class="m-0 px-2">/</p>
+          <p id="path-general" class="m-0"><a class="text-white" href="category.html">Our Categories</a></p>
+          <p class="m-0 px-2">/</p>
+          <p id="path-specific" class="m-0">Fashion</p>
+          <a href="productdetail.html">show more</a>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Search Bar Start -->
+    <div class="container-fluid ">
+      <div class="row px-2">
+        <div class="col-12">
+          <div class="input-group search-input-group mb-3">
+            <input type="text" class="form-control search-form-control" id="search-input" placeholder="Search products...">
+            <div class="input-group-append search-input-group-append">
+              <button id="search-button" class="btn btn-primary" onclick="filterProducts()">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Search Bar End -->
+    <!-- Class Start -->     
+    <div class="container-fluid pt-5">
+      <div class="container">
+        <div id="product-container" class="row">
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product1" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/1.webp" alt="Man's Casual Shirt"  onmouseover="this.src='img/hoverProducts/1.webp'" onmouseout="this.src='img/updatedProducts/1.webp'"   onclick="redirectToProduct()" >
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                          <h4 class="product-title mb-2">Men's Casual Shirt</h4>
+                            <p class="product-shop">Fashion Hub</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹1,999</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Men\'s Casual Shirt')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <a href="productdetail.html" >show more</a>
+                           
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Men\'s Casual Shirt')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product2" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/2.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/2.webp'" onmouseout="this.src='img/updatedProducts/2.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Women's Scarf</h4>
+                            <p class="product-shop">Style Studio</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹299</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Women\'s Scarf')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Women\'s Scarf')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product3" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/3.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/3.webp'" onmouseout="this.src='img/updatedProducts/3.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Kid's T-Shirt</h4>
+                            <p class="product-shop">Fashion Hub</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹699</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Kid\'s T-Shirt')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Kid\'s T-Shirt')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product4" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/4.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/4.webp'" onmouseout="this.src='img/updatedProducts/4.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Men's Leather Jacket</h4>
+                            <p class="product-shop">Style Studio</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹1,299</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Men\'s Leather Jacket')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Men\'s Leather Jacket')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product5" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/5.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/5.webp'" onmouseout="this.src='img/updatedProducts/5.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Sports Shoes</h4>
+                            <p class="product-shop">Fashion Hub</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹1,999</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Sports Shoes')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Sports Shoes')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product6" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/6.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/6.webp'" onmouseout="this.src='img/updatedProducts/6.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Cozy Winter Coat</h4>
+                            <p class="product-shop">Style Studio</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹1,500</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Cozy Winter Coat')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Cozy Winter Coat')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product7" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/7.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/7.webp'" onmouseout="this.src='img/updatedProducts/7.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Women's Jeans</h4>
+                            <p class="product-shop">Fashion Hub</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹999</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Women\'s Jeans')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Women\'s Jeans')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product8" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/8.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/8.webp'" onmouseout="this.src='img/updatedProducts/8.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Seamless Sunglasses</h4>
+                            <p class="product-shop">Style Studio</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹799</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Seamless Sunglasses')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Seamless Sunglasses')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 col-lg-4 p-2">
+                <div id="product9" class="card border-0 bg-light shadow-sm product-card">
+                    <img class="card-img-top mb-3" src="img/updatedProducts/9.webp" alt="undefined image" onmouseover="this.src='img/hoverProducts/9.webp'" onmouseout="this.src='img/updatedProducts/9.webp'">
+                    <div class="card-body text-center p-1">
+                        <div class="product-content">
+                            <h4 class="product-title mb-2">Stylish Handbags</h4>
+                            <p class="product-shop">Fashion Hub</p>
+                            <p class="product-category">Fashion</p>
+                        </div>
+                        <div class="product-price text-center m-1">₹999</div>
+                        <div class="d-flex justify-content-between align-items-center"> 
+                            <button onclick="addToCart('Stylish Handbags')" class="btn btn-primary add-to-cart-btn mt-2">Add to Cart</button>
+                            <span class="save-for-later-icon save-for-later-btn" onclick="saveForLater('Stylish Handbags')" style="cursor: pointer;">
+                                <i class="fa-regular fa-bookmark mt-2" title="Save for Later" style="font-size: 1.2rem; color: #117a8b;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center" style="margin-top: 2rem;">
+          <button id="load-more-products" class="btn btn-primary px-4 py-2 " onclick="loadMoreProducts()" style="display: block;">Load More</button>
+        </div>
+
+        <div id="end-message" style="display: none; margin-top: 2rem;"><p class="text-center">You have reached the end of the products!</p></div>
+
+      </div>
+    </div>
+    <!-- Class End -->
+
+    <!-- Registration Start -->
+    <div class="container-fluid py-5">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-7 mb-5 mb-lg-0">
+                  <p class="section-title pr-5"><span class="pr-2">Contact Us</span></p>
+                  <h1 class="mb-4">Get in Touch with ezyshop</h1>
+                  <p>Have questions about your order, our services, or need assistance with anything? We're here to
+                      help! Reach out to us, and we'll get back to you as soon as possible.</p>
+                  <ul class="list-inline m-0">
+                      <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Fast and Reliable Customer Support
+                      </li>
+                      <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Personalized Shopping Experience
+                      </li>
+                      <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Real-Time Order Tracking</li>
+                  </ul>
+                  <a href="" class="btn btn-primary mt-4 py-2 px-4">Send Message</a>
+              </div>
+              <div class="col-lg-5">
+                  <div class="card border-0">
+                      <div class="card-header bg-secondary text-center p-4">
+                          <h1 class="text-white m-0">Fill Form</h1>
+                      </div>
+                      <div class="card-body rounded-bottom bg-primary p-5">
+                          <form>
+                              <div class="form-group">
+                                  <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required">
+                              </div>
+                              <div class="form-group">
+                                  <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required">
+                              </div>
+                              <div class="form-group">
+                                  <select class="custom-select border-0 px-4" style="height: 47px;">
+                                      <option selected="">Select A Section</option>
+                                      <option value="1">Order Status</option>
+                                      <option value="2">Product Information</option>
+                                      <option value="3">Delivery Issues</option>
+                                      <option value="4">Feedback/Suggestions</option>
+                                      <option value="3">Other</option>
+                                  </select>
+                              </div>
+                              <div>
+                                  <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Submit</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Registration End -->
+
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px">
+                <img style="width: 80px" src="./img/ezyshop.png" alt="logo">
+                <span class="text-white">Ezyshop</span>
+            </a>
+            <p>
+                EzyShop is a user-friendly platform that connects you to local stores, offering a seamless shopping experience. Compare prices, access exclusive deals, and enjoy hassle-free deliveries for groceries, essentials, and organic products—all in one app.
+            </p>
+            <div class="d-flex justify-content-start mt-4">
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://github.com/mdazfar2/Ezyshop"><i class="fab fa-github"></i></a>
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://discord.com/invite/SEzpxqQG"><i class="fa-brands fa-discord"></i></a>
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://www.linkedin.com/company/ezyshopz/"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h3 class="text-primary mb-4">Get In Touch</h3>
+            <div class="d-flex hov">
+                <a href="https://www.google.com/maps/place/Jaipur,+Rajasthan/@26.8851151,75.6257468,11z/data=!3m1!4b1!4m6!3m5!1s0x396c4adf4c57e281:0xce1c63a0cf22e09!8m2!3d26.9124336!4d75.7872709!16zL20vMDE2NzIy?entry=ttu&amp;g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
+                    <h4 class="fa fa-map-marker-alt text-primary icon"></h4>
+                </a>
+                <div class="pl-3 cont">
+                    <a href="https://hi.wikipedia.org/wiki/%E0%A4%9C%E0%A4%AF%E0%A4%AA%E0%A5%81%E0%A4%B0">
+                        <h5 class="text-white">Address</h5>
+                        <p>Jaipur, Rajasthan</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="d-flex hov">
+                <a href="mailto:ezyshop@gmail.com">
+                    <h4 class="fa fa-envelope text-primary icon"></h4>
+                    </a><div class="pl-3 cont"><a href="mailto:ezyshop@gmail.com">
+                        <h5 class="text-white">Email</h5>
+                        <p>ezyshop@gmail.com</p>
+                </a>
+
+                </div>
+            </div>
+            <div class="d-flex hov">
+                <a href="tel:7739317870">
+                    <h4 class="fa fa-phone-alt text-primary icon"></h4>
+                    </a><div class="pl-3 cont"><a href="tel:7739317870">
+                        <h5 class="text-white">Phone</h5>
+                        <p>+91 7739317870</p>
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h3 class="text-primary mb-4">Quick Links</h3>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white mb-2" href="/index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class="text-white mb-2" href="/about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                <a class="text-white mb-2" href="/category.html"><i class="fa fa-angle-right mr-2"></i>Our Categories</a>
+                <a class="text-white mb-2" href="/team.html"><i class="fa fa-angle-right mr-2"></i>Our Teams</a>
+                <a class="text-white mb-2" href="/blog.html"><i class="fa fa-angle-right mr-2"></i>Our Blog</a>
+                <a class="text-white" href="/contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5" id="news-form-section">
+          <h3 class="text-primary mb-4">Newsletter</h3>
+          <form id="newsForm" action="">
+              <div class="form-group">
+                  <input type="text" class="form-control border-0 py-4" id="newsletterName" placeholder="Your Name" required="required">
+              </div>
+              <div class="form-group">
+                  <input type="email" class="form-control border-0 py-4" id="newsletterMail" placeholder="Your Email" required="required">
+              </div>
+              <div>
+                  <button class="btn btn-primary btn-block border-0 py-3" type="submit">
+    Submit Now
+  </button>
+              </div>
+          </form>
+          <div id="thankYouMessage" class="thank-you-message">
+              <div class="message-content">
+                  <h2>Thanks for your Submission!</h2>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2)">
+        <p class="m-0 text-center text-white">
+            © <a class="text-primary font-weight-bold" href="#">Ezyshop</a>. All Rights Reserved. Designed by
+            <a class="text-primary font-weight-bold" href="https://www.azfaralam.xyz/">Azfar Alam</a>
+        </p>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary p-3 back-to-top" style="display: none;"><i class="fa fa-angle-double-up"></i></a>
+<div id="notification" class="notification"></div>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Auth JavaScript-->
+<script src="js/auth.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script src="js/products.js"></script>
+
+<script src="js/newsLetter.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const authButton = document.getElementById("authButton");
+        const currentUser = localStorage.getItem("currentUser");
+
+        // Check if there's a logged-in user
+        if (currentUser) {
+            authButton.textContent = currentUser; // Change button text to username
+            authButton.href = "#"; // Optionally, change the link to something else or remove it
+            authButton.classList.add("btn-secondary"); // Optionally change button style
+        }
+
+        // Add event listener for logout
+        authButton.addEventListener("click", function() {
+            if (currentUser) {
+                // Show confirmation dialog before logging out
+                const confirmLogout = confirm("Do you want to logout?");
+
+                if (confirmLogout) {
+                    // If confirmed, remove the current user from localStorage
+                    localStorage.removeItem("currentUser");
+                    // Reload the page to reset the button to "Login/SignUp"
+                    location.reload();
+                }
+            } else {
+                // Redirect to login page if no user is logged in
+                window.location.href = "RegisterPages/register.html"; // Update with your login page URL
+            }
+        });
+    });
+</script>
+<script>
+    function redirectToProduct() {
+        window.location.href = 'productdetail.html';
+    }
+</script>
+
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>

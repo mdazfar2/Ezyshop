@@ -4,7 +4,7 @@ import SeperatorHeading from "@/components/ui/seperatorHeading";
 const shops = [
   {
     name: "Fashion Hub",
-    category: "fashion",
+    category: "",
     image: "/shops/fashion_image1.jpg",
     description: "Trendy clothes for all ages",
   },
