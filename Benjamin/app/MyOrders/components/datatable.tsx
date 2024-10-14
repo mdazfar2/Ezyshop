@@ -44,7 +44,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="w-3/4">
+    <div className="w-3/4 text-gray-200">
       <div className="rounded-md  border">
         <Table>
           <TableHeader>
@@ -101,6 +101,7 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
+          className="text-gray-500 font-bold"
         >
           Previous
         </Button>
@@ -109,6 +110,7 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
+          className="text-gray-500 font-bold"
         >
           Next
         </Button>
