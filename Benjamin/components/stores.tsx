@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "./ui/button";
 import {
   Card,
@@ -51,64 +52,57 @@ const Stores = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full">
       <SeperatorHeading label="Trending Deals" />
-      <div className="text-customBlue text-3xl px-5 text-center lg:px-0 lg:text-start lg:text-5xl font-bold  font-handlee">
+      <div className="text-Green text-3xl px-5 text-center lg:px-0 lg:text-start lg:text-5xl font-bold  font-handlee">
         Shop for your favourite products
       </div>
-      <div className="h-full flex flex-col gap-10 lg:grid grid-cols-3 lg:gap-20">
-  {cardData.map((card) => (
-    <Card
-      className="relative w-[400px] hover:scale-105 transition duration-300 bg-gray-100 overflow-hidden"
-      key={card.id}
-    >
-      <CardHeader className="border-b relative">
-        <div className="relative">
-          {/* Image */}
-          <img
-            alt="card image"
-            src={card.logo}
-            className="w-full object-cover h-64"
-          />
+     
 
-        
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 hover:opacity-100 transition-opacity duration-300">
+
+      <div className="h-full flex flex-col gap-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-20">
+        {cardData.map((card) => (
+          <Card  key={card.title} className="sm:w-[400px] md:hover:scale-105 border border-DarkGray transition duration-300  bg-gray-700">
+            <CardHeader className="border-b border-DarkGray">
+              <div className="flex flex-col gap-2">
+               <div className="relative">
+               <Image width={1000} height={1000} alt="card image" src={card.logo} />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 hover:opacity-100 transition-opacity duration-300">
             <CardDescription className="text-white text-md text-center font-nunito p-4 ">
               {card.description}
             </CardDescription>
           </div>
-        </div>
-
-        
-        <CardTitle className="flex items-center text-2xl pt-4 text-customBlue m-2 justify-center font-handlee">
-          {card.title}
-        </CardTitle>
-      </CardHeader>
-
-      <CardContent>
-        <div className="flex items-center justify-center font-nunito">
-          <div className="border-r font-semibold">
-            <div className="border-b p-2">Category</div>
-            <div className="border-b p-2">Offers Available</div>
-            <div className="border-b p-2">Delivery Time</div>
-            <div className="border-b p-2">Starting from</div>
-          </div>
-          <div>
-            <div className="border-b p-2">{card.category}</div>
-            <div className="border-b p-2">{card.Offers}</div>
-            <div className="border-b p-2">{card.deliveryTime}</div>
-            <div className="border-b p-2">{card.StartingFrom}</div>
-          </div>
-        </div>
-      </CardContent>
-
-      <CardFooter className="flex justify-center">
-        <Button variant="default" className="bg-[#17a2b8] rounded-full">
-          Shop Now
-        </Button>
-      </CardFooter>
-    </Card>
-  ))}
-</div>
-
+               </div>
+                <CardTitle className="flex items-center text-2xl pt-4 text-Yellow m-2 justify-center font-handlee">
+                  {card.title}
+                </CardTitle>
+              </div>
+              <CardDescription className="text-justify text-gray-200 text-lg">
+                {card.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex text-gray-200 items-center justify-center font-nunito">
+                <div className="border-r border-DarkGray font-semibold">
+                  <div className="border-b border-DarkGray p-2">Category</div>
+                  <div className="border-b border-DarkGray p-2">Offers Available</div>
+                  <div className="border-b border-DarkGray p-2">Delivery Time</div>
+                  <div className="border-b border-DarkGray p-2">Starting from</div>
+                </div>
+                <div>
+                  <div className="border-b border-DarkGray p-2">{card.category}</div>
+                  <div className="border-b border-DarkGray p-2">{card.Offers}</div>
+                  <div className="border-b border-DarkGray p-2">{card.deliveryTime}</div>
+                  <div className="border-b border-DarkGray p-2">{card.StartingFrom}</div>
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter className="flex justify-center">
+              <Button variant="default" className="bg-Green text-gray-200 rounded-full">
+                Shop Now
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import BlogComments from "./Comments";
 import BlogAvatar from "./blogAvatar";
 import CategoryByKeyword from "./CategoryByKeyword";
 import RecentPosts from "./RecentPosts";
+import Image from "next/image";
 
 const Blog = () => {
   return (
@@ -37,7 +38,7 @@ const Blog = () => {
 
           {/* image */}
 
-          <img src="/detailblog.png" className="rounded-lg h-4/6 w-4/6 m-10 lg:m-0 lg:p-0 lg:h-full lg:w-full lg:mb-10"></img>
+          <Image alt="blogImage" width={1000} height={1000} src="/detailblog.png" className="rounded-lg h-4/6 w-4/6 m-10 lg:m-0 lg:p-0 lg:h-full lg:w-full lg:mb-10"></Image>
 
           {/* content */}
 
