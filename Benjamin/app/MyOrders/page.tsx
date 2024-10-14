@@ -184,7 +184,7 @@ const Orders = () => {
           Your Orders
         </div>
       </div>
-      <div className="w-full flex items-center justify-center">
+      {/* <div className="w-full flex items-center justify-center">
         <div className="w-3/4  flex gap-5 items-center justify-center flex-col">
           <OrderCard />
           <OrderCard />
@@ -192,10 +192,10 @@ const Orders = () => {
           <OrderCard />
           <OrderCard />
         </div>
-      </div>
+      </div> */}
 
 
-    <div className="container w-screen flex items-center justify-center mx-auto py-10">
+    <div className="container w-screen flex items-center justify-center py-10">
       <DataTable columns={columns} data={orders} />
     </div>
  
