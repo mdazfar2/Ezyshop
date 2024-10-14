@@ -5,6 +5,67 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ /* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(254, 250, 250); /* Page background color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Logo styles (pulsing background effect, no border) */
+.preloader-icon {
+  width: 400px; /* Set the size you want */
+  border-radius: 50%; /* Keep circular shape */
+  animation: pulseBackground 2s infinite ease-in-out; /* Pulsing effect */
+  /*background-color: rgb(255, 56, 56);  Initial color */
+}
+
+/* Loading text with pulse animation */
+.loading-text {
+  margin-top: 30px;
+  font-size: 30px;
+  color: #3e91df; /* Text color for visibility */
+  font-family: 'Amatic SC', sans-serif;
+  animation: pulse 2.5s linear infinite;
+}
+
+/* Pulse animation for loading text */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Pulse animation for logo's background 
+@keyframes pulseBackground {
+  0% {
+      box-shadow: 0 0 10px rgba(255, 56, 56, 0.8);
+  }
+  50% {
+      box-shadow: 0 0 20px rgba(255, 56, 56, 0.5);
+  }
+  100% {
+      box-shadow: 0 0 10px rgba(255, 56, 56, 0.8);
+  }
+}*/
+
+/* Hide the preloader once the page is loaded */
+body.loaded #preloader {
+  display: none;
+}
+
+body.loaded #main-content {
+  display: block;
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
