@@ -2,7 +2,6 @@
 <h1 align="center">Bringing Every Store to Your Door!</h1>
 
 
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/db7eeca8-4e79-4aa3-9228-d6fad437c398" alt="ezyshop-image">
 </p>
@@ -54,11 +53,23 @@ Visit https://ezyshopz.vercel.app to see the live demo!
 
 ## Tech stack 📚
 
-<p>
 
- <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
-  <a href="https://www.w3schools.com/css/"> <img src="https://img.icons8.com/color/70/000000/css3.png" alt="CSS" /></a>
-  <a href="https://www.w3schools.com/js/"><img src="https://img.icons8.com/color/70/000000/javascript--v1.png" alt="JS" /></a>
+<p>
+  <a href="https://nextjs.org/">
+    <img src="https://img.shields.io/badge/Next.js-7c3aed?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js Official Website"/>
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://img.shields.io/badge/tailwind_css-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="TailWind CSS Official Website" />
+  </a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Official Website" />
+  </a>
+  <a href="https://www.mongodb.com/">
+    <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Official Website" />
+  </a>
+  <a href="https://razorpay.com/">
+    <img src="https://img.shields.io/badge/razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=white" alt="Razorpay Official Website" />
+  </a>
 </p>
 
 
