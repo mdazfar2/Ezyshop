@@ -10,9 +10,9 @@ const CartItem:React.FC<orderItemProps> = ({
 
     // const cart=useCart();
 
-    const onRemove=()=>{
-        // cart.removeItem(data.id);
-    }
+    // const onRemove=()=>{
+    //     // cart.removeItem(data.id);
+    // }
 
     return ( 
         <li className="flex py-6 border-b">

@@ -4,12 +4,12 @@ import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 const blogData = [
   {
@@ -54,7 +54,7 @@ const BlogCard = () => {
           >
             <CardHeader>
               <div className="flex flex-col gap-2">
-                <img alt="card image" src={card.url} />
+                <Image alt="card image" width={1000} height={1000} src={card.url} />
 
                 <CardTitle className="flex text-center items-center text-2xl pt-4 text-Green mt-2 justify-center font-handlee">
                   {card.title}

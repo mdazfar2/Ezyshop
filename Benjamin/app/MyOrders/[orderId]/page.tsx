@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowBigLeft, ArrowLeft, Download } from "lucide-react";
-import OrderCard from "../components/orderCard";
+import { ArrowLeft, Download } from "lucide-react";
 import OrderItem from "../components/orderItem";
 import Link from "next/link";
 
@@ -67,7 +66,7 @@ const Order = () => {
 
         <div className="w-full flex gap-5 flex-col items-center justify-center">
           {orderItems.map((item) => (
-            <OrderItem item={item} />
+            <OrderItem key={item.name} item={item} />
           ))}
         </div>
       </div>

@@ -92,7 +92,7 @@ const Shop = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-10 px-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
             {shops.map((shop)=>(
-                <ShopCard shop={shop}/>
+                <ShopCard key={shop.name} shop={shop}/>
             ))}
         </div>
       </div>

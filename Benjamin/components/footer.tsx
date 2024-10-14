@@ -1,17 +1,11 @@
 "use client";
-import {
-  InstagramLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
+
 import {
   ChevronRight,
   Copyright,
-  Facebook,
   Mail,
   MapPin,
   Phone,
-  X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -125,6 +119,7 @@ const Footer = () => {
           <div className="text-gray-200 flex flex-col gap-2">
             {Links.map((link) => (
               <Link
+                key={link.id}
                 href={link.href}
                 onMouseOver={() => {
                   setId(link.id);

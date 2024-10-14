@@ -17,7 +17,7 @@ const OrderCard = () => {
             <div>₹327</div>
           </div>
           <div className="text-sm text-gray-500">
-            Placed on tue, 9 jan'24, 10:16 am
+            Placed on tue, 9 jan&apos;24, 10:16 am
           </div>
         </div>
         <div className="rounded-full text-gray-200 bg-Green text-sm p-1">
