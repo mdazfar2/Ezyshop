@@ -22,7 +22,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Card className="w-[400px]  hover:scale-105 transition duration-300  border">
+    <Card className="w-[400px] bg-gray-700 hover:scale-105 transition duration-300  border">
       <CardHeader className=" p-0">
         <div className="flex flex-col gap-2">
           <img
@@ -31,9 +31,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             src={`/products/${product.product_id}.jpeg`}
           />
 
-          <CardTitle className="flex items-center justify-between text-2xl pt-4 text-customBlue m-2 px-5 font-handlee">
+          <CardTitle className="flex items-center justify-between text-2xl pt-4 text-Green m-2 px-5 font-handlee">
             <div>{product.product_title}</div>
-            <div>₹<span className="text-3xl">{product.cost}</span></div>
+            <div className="text-gray-200">₹<span className="text-3xl">{product.cost}</span></div>
 
           </CardTitle>
         </div>
@@ -49,7 +49,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <Button
             variant="default"
             size={"lg"}
-            className="bg-[#17a2b8] rounded-full w-full"
+            className="bg-Green rounded-full w-full"
           >
             Add to cart
           </Button>
