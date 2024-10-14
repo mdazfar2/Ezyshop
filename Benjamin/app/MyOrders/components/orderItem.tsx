@@ -12,7 +12,7 @@ export interface orderItemProps {
 
 const OrderItem: React.FC<orderItemProps> = ({ item }) => {
   return (
-    <div className="flex bg-gray-700 p-5 rounded-lg shadow-2xl w-full items-center justify-between">
+    <div className="flex bg-gray-700 p-5 hover:scale-100 my-2 rounded-lg shadow-2xl w-full items-center justify-between">
       <div className="flex items-center text-gray-200 justify-center gap-5">
         <Image
           src={item.image}
