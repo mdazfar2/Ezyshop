@@ -53,6 +53,57 @@
         text-align: center;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
+    <style>
+        .goog-te-combo {
+            width: 100%;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .goog-te-gadget {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 12px;
+            color: gray;
+        }
+        .goog-te-gadget > div {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        .goog-te-gadget > span {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .goog-te-gadget .goog-logo-link {
+            display: flex;
+            align-items: center;
+        }
+        .goog-te-gadget .goog-logo-link img {
+            margin-left: 4px;
+        }
+        .goog-te-gadget > span > a:last-child {
+            margin-top: -2px;
+        }
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+        .goog-te-menu-frame {
+            max-height: 24rem;
+            overflow-y: auto;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 4px;
+        }
+        .skiptranslate > iframe {
+            height: 0;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
 </style>
 
 <body>
@@ -80,6 +131,7 @@
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
+                    
                 </div>
                 <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login/SignUp</a>
             </div>
@@ -595,6 +647,8 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div id="google_element"></div>
+
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px">
@@ -698,6 +752,9 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <!--Google translate-->
+    <script src = "js/google_translate.js"></script>
 
     <!-- Auth JavaScript-->
     <script src="js/auth.js"></script>
