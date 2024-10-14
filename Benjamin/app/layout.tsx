@@ -30,7 +30,7 @@ export default function RootLayout({
 
       </head>
       <body
-        className={`${font.className},h-screen`}
+        className={`${font.className},h-screen bg-DarkGray`}
       >
         {/* <ModalProvider/> */}
         {/* <ToasterProvider/> */}

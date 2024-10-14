@@ -56,26 +56,26 @@ const BlogCard = () => {
               <div className="flex flex-col gap-2">
                 <img alt="card image" src={card.url} />
 
-                <CardTitle className="flex text-center items-center text-2xl pt-4 text-customBlue mt-2 justify-center font-handlee">
+                <CardTitle className="flex text-center items-center text-2xl pt-4 text-Green mt-2 justify-center font-handlee">
                   {card.title}
                 </CardTitle>
               </div>
               <CardContent className="text-justify text-md">
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="flex items-center justify-center gap-2">
-                    <User className="h-4 w-4 text-customTeal" />
+                    <User className="h-4 w-4 text-Yellow" />
                     <div className="text-sm text-gray-500"> {card.author}</div>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <Folder className="h-4 w-4 text-customTeal" />
+                    <Folder className="h-4 w-4 text-Yellow" />
                     <div className="text-sm text-gray-500">{card.category}</div>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <MessagesSquare className="h-4 w-4 text-customTeal" />
+                    <MessagesSquare className="h-4 w-4 text-Yellow" />
                     <div className="text-sm text-gray-500">{card.comments}</div>
                   </div>
                 </div>
-                <div className="text-center text-gray-500">{card.content}</div>
+                <div className="text-center text-gray-200">{card.content}</div>
               </CardContent>
             </CardHeader>
             <CardFooter className="flex justify-center">
@@ -83,7 +83,7 @@ const BlogCard = () => {
                 <Button
                   variant="default"
                   size={"lg"}
-                  className="bg-[#17a2b8] rounded-full"
+                  className="bg-Green rounded-full"
                 >
                   Read more
                 </Button>

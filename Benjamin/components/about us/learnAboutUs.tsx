@@ -16,10 +16,10 @@ const LearnAboutUs = () => {
           />
         </div>
         <div className="col-span-12 lg:col-span-7 flex gap-10  flex-col justify-start">
-          <div className="font-handlee text-2xl text-customBlue font-bold md:text-5xl">
+          <div className="font-handlee text-2xl text-Green font-bold md:text-5xl">
             Bringing Every Store to Your Door
           </div>
-          <div className="text-gray-500 text-md md:text-xl">
+          <div className="text-gray-200 text-md md:text-xl">
             EzyShop is your go-to platform for shopping locally from the comfort
             of your home. Whether you're looking for products from your favorite
             local store or the nearest mall, we make it easy to browse, order,
@@ -35,28 +35,28 @@ const LearnAboutUs = () => {
               className="rounded-lg"
             />
             <div className="flex flex-col gap-2">
-              <div className="border-b border-customTeal" />
+              <div className="border-b-2 border-Green" />
               <div className="flex gap-2">
-                <Check className="h-7 w-7 font-bold text-customTeal " />
+                <Check className="h-7 w-7 font-bold text-Yellow " />
                 <div className="text-gray-500 text-xl">Shop from local stores or malls near you</div>
               </div>
-              <div className="border-b-2 border-customTeal" />
+              <div className="border-b-2 border-Green" />
               <div className="flex gap-2">
-                <Check className="h-7 w-7 font-bold text-customTeal " />
+                <Check className="h-7 w-7 font-bold text-Yellow " />
                 <div className="text-gray-500 text-xl">Quick, reliable delivery from the stores you trust</div>
               </div>
-              <div className="border-b-2 border-customTeal" />
+              <div className="border-b-2 border-Green" />
               <div className="flex gap-2">
-                <Check className="h-7 w-7 font-bold text-customTeal " />
+                <Check className="h-7 w-7 font-bold text-Yellow " />
                 <div className="text-gray-500 text-xl">Exclusive offers, only available through EzyShop</div>
               </div>
-              <div className="border-b border-customTeal" />
+              <div className="border-b-2 border-Green" />
 
             </div>
           </div>
         </div>
       </div>
-      <Button className="rounded-full bg-customTeal h-10 w-40 text-lg m-10">
+      <Button className="rounded-full bg-Green h-10 w-40 text-lg m-10">
         Explore Stores
       </Button>
     </div>

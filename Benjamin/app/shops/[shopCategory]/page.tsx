@@ -586,7 +586,7 @@ const CategoryProducts = () => {
   return (
     <>
       <div className="h-full  mb-10">
-        <div className="flex items-center justify-center bg-customTeal h-full mb-20 p-24">
+        <div className="flex items-center justify-center bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
           <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
             {shopCategory}
           </div>
@@ -594,12 +594,12 @@ const CategoryProducts = () => {
 
         {/* <SeperatorHeading label="Our shops" /> */}
         <div className="w-full flex justify-center px-5 lg:px-0 mb-10">
-          <div className="bg-customTeal p-1  flex items-center justify-center rounded-full w-full lg:w-2/6">
+          <div className="bg-Green p-1  flex items-center justify-center rounded-full w-full lg:w-2/6">
             <Input
               placeholder="Search Products..."
               className="rounded-full bg-white"
             />
-            <Button className="bg-customTeal hover:shadow-slate-500 rounded-full">
+            <Button className="bg-Green hover:shadow-slate-500 rounded-full">
               <Search className="h-7 w-7" />
             </Button>
           </div>
