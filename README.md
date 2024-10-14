@@ -1,5 +1,9 @@
+<a id="top"></a>
+<h1 align="center">Bringing Every Store to Your Door!</h1>
+
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3018ab81-b260-45ef-bca9-f7829f15f956" alt="ezyshop-image">
+  <img src="https://github.com/user-attachments/assets/db7eeca8-4e79-4aa3-9228-d6fad437c398" alt="ezyshop-image">
 </p>
 <!--  -->
 <div align="center">
@@ -33,14 +37,12 @@ EzyShop is a user-friendly platform that connects you to your favourite local st
 
 Visit https://ezyshopz.vercel.app to see the live demo!
 
-## 🚀 Features 
-- **Price Comparisons**: Find the best deals by comparing prices across multiple stores.
-- **Digital Coupons & Cashback**: Save more with digital coupons and cashback offers.
-- **Loyalty Programs**: Earn points with every purchase and unlock special rewards.
-- **Organic & Local Products**: Support local businesses and shop for healthy, organic products.
-- **Seamless Shopping Experience**: Place orders easily and track deliveries with real-time updates.
-- **Secure Payment Options**: Choose from multiple payment methods, including credit/debit cards, UPI, and digital wallets, with secure transactions. (***Work in progress***)
-
+## 🚀 Features
+- **Login/Signup with User Roles**: Seamless authentication for two user roles – **Store Manager** 🛍️ and **Shopper** 🛒. Store Managers add their store & handle product management, while Shoppers browse and purchase items effortlessly. 
+- **Payment Integration with Razorpay**: Secure and smooth payments through **Razorpay**, providing multiple payment options for a hassle-free checkout experience.
+- **Store Manager Dashboard**: Store Managers can manage product listings, update inventory, and track orders, offering full control over their store operations.
+- **Shopper Experience**: Shoppers can browse a variety of products, compare prices, add items to their cart, and place orders with real-time delivery tracking.
+- **Responsive and Real-Time Updates**: Enjoy a fully responsive shopping experience with real-time updates, ensuring smooth browsing, shopping, and order management on any device.
 
 ## ⚙️ How It Works 
 1. **Sign Up**: Create your EzyShop account in minutes. (***Work in progress***)
@@ -51,11 +53,23 @@ Visit https://ezyshopz.vercel.app to see the live demo!
 
 ## Tech stack 📚
 
-<p>
 
- <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
-  <a href="https://www.w3schools.com/css/"> <img src="https://img.icons8.com/color/70/000000/css3.png" alt="CSS" /></a>
-  <a href="https://www.w3schools.com/js/"><img src="https://img.icons8.com/color/70/000000/javascript--v1.png" alt="JS" /></a>
+<p>
+  <a href="https://nextjs.org/">
+    <img src="https://img.shields.io/badge/Next.js-7c3aed?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js Official Website"/>
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://img.shields.io/badge/tailwind_css-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="TailWind CSS Official Website" />
+  </a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Official Website" />
+  </a>
+  <a href="https://www.mongodb.com/">
+    <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Official Website" />
+  </a>
+  <a href="https://razorpay.com/">
+    <img src="https://img.shields.io/badge/razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=white" alt="Razorpay Official Website" />
+  </a>
 </p>
 
 
@@ -84,7 +98,7 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 <table border="1">
   <tr>
       <td><img src="https://github.com/user-attachments/assets/82287ad0-2c5f-419f-ae49-5283fcc6fcfd" alt="Discord Logo" width="50"></td>
-      <td><a href="https://discord.gg/SEzpxqQG"> Join our Official Discord Server </a></td>
+      <td><a href="https://discord.gg/Rg8T5gtE"> Join our Official Discord Server </a></td>
   </tr>
   <tr>
       <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
@@ -126,10 +140,30 @@ Ezyshop is licensed under the terms of the Apache License 2.0. check out <a href
 
 <a name="support"></a>
 
-## Support ⭐
+<hr>
+          
+<h2 align = "center">Our Contributors ❤️</h2>
+<div align = "center">
+ <h3>Thank you for contributing to our repository</h3>
+ <a href="https://github.com/mdazfar2/Ezyshop/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mdazfar2/Ezyshop" />
+</a>
+</div>
+
+<hr>
+
+<div>
+  <h2><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31f/512.webp" width="35" height="30"> Support </h2>
+</div>
 
 - 💰 Become [Sponsor](https://github.com/sponsors/mdazfar2)!
 - ⭐ Star our [Repo](https://github.com/mdazfar2/ezyshop)
+  
+ <br>
+
+<a href="#top" style="position: fixed; bottom: 20px; right: 20px; background-color: black ; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-family: Arial; font-size: 16px;">Go to Top</a>
+
+
 
 
 

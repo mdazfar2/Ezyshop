@@ -3,26 +3,23 @@
     "development"
   ],
   "hints": {
-    "axe/forms": [
-      "default",
-      {
-        "select-name": "off"
-      }
-    ],
     "axe/name-role-value": [
       "default",
       {
         "button-name": "off"
       }
     ],
-    "compat-api/css": [
+    "no-inline-styles": "off",
+    "axe/forms": [
       "default",
       {
-        "ignore": [
-          "-webkit-text-size-adjust",
-          "user-select",
-          "text-align: -webkit-match-parent"
-        ]
+        "select-name": "off"
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
       }
     ]
   }
