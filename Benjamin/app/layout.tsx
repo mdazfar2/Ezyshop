@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 const font=Urbanist({subsets:['latin']})
 // console.log(font.className)
 export const metadata: Metadata = {
-  title: "Ezyshopz",
+  title: "Ezyshop",
   description: "Store",
 };
 
