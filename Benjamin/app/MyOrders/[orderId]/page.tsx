@@ -50,21 +50,23 @@ const orderItems = [
 
 const Order = () => {
   return (
-    <div className="flex items-center my-10 w-full justify-center">
-      <div className="w-3/4">
+    <div className="flex items-start my-10 w-full justify-center min-h-screen">
+      <div className="w-3/4 flex flex-col gap-2">
         <Link href={"/MyOrders"}>
-          <Button className="h-12 mb-10 hover:shadow-lg w-12 p-0">
+          <Button className="h-12 mb-2 hover:shadow-lg w-12 p-0">
             <ArrowLeft className="h-10 w-10" />
           </Button>
         </Link>
+
         <div className="text-gray-200 font-bold text-2xl">Order Summary</div>
         <div className="text-gray-500 text-sm">Arrived at 9:59 pm</div>
-        <div className="flex mb-10 hover:cursor-pointer hover:underline items-center text-Green justify-start">
+        <div className="flex mb-5 hover:cursor-pointer hover:underline items-center text-green-500 justify-start">
           <div>Download Invoice</div>
-          <Download className="h-4 w-4" />
+          <Download className="h-4 w-4 ml-1" />
         </div>
 
-        <div className="w-full flex gap-5 flex-col items-center justify-center">
+        {/* Scrollable Content Section */}
+        <div className="flex-1 shadow-2xl overflow-y-auto max-h-[400px] w-full border border-gray-700 rounded-lg p-3">
           {orderItems.map((item) => (
             <OrderItem key={item.name} item={item} />
           ))}

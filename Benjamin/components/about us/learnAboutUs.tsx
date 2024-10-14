@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const LearnAboutUs = () => {
   return (
@@ -20,11 +21,15 @@ const LearnAboutUs = () => {
             Bringing Every Store to Your Door
           </div>
           <div>
-           <p  className="text-gray-200 text-md md:text-base font-nunito"> EzyShop is your go-to platform for shopping locally from the comfort
-            of your home. Whether you&apos;re looking for products from your favorite
-            local store or the nearest mall, we make it easy to browse, order,
-            and have it delivered to you fast. Enjoy seamless shopping with
-            access to the stores you love, all in one place.</p>
+            <p className="text-gray-200 text-md md:text-base font-nunito">
+              {" "}
+              EzyShop is your go-to platform for shopping locally from the
+              comfort of your home. Whether you&apos;re looking for products
+              from your favorite local store or the nearest mall, we make it
+              easy to browse, order, and have it delivered to you fast. Enjoy
+              seamless shopping with access to the stores you love, all in one
+              place.
+            </p>
           </div>
           <div className="flex flex-col md:flex-row gap-5">
             <Image
@@ -38,27 +43,34 @@ const LearnAboutUs = () => {
               <div className="border-b-2 border-gray-500" />
               <div className="flex gap-2">
                 <Check className="h-7 w-7 font-bold text-Yellow " />
-                <div className="text-[#7aba7c] text-base">Shop from local stores or malls near you</div>
+                <div className="text-[#7aba7c] text-base">
+                  Shop from local stores or malls near you
+                </div>
               </div>
               <div className="border-b-2 border-gray-500 " />
               <div className="flex gap-2">
                 <Check className="h-7 w-7 font-bold text-Yellow " />
-                <div className="text-[#7aba7c] text-base">Quick, reliable delivery from the stores you trust</div>
+                <div className="text-[#7aba7c] text-base">
+                  Quick, reliable delivery from the stores you trust
+                </div>
               </div>
               <div className="border-b-2 border-gray-500" />
               <div className="flex gap-2">
                 <Check className="h-7 w-7 font-bold text-Yellow " />
-                <div className="text-[#7aba7c] text-base">Exclusive offers, only available through EzyShop</div>
+                <div className="text-[#7aba7c] text-base">
+                  Exclusive offers, only available through EzyShop
+                </div>
               </div>
               <div className="border-b-2 border-gray-500" />
-
             </div>
           </div>
         </div>
       </div>
-      <Button className="rounded-full bg-Green h-10 w-40 text-md m-10 font-nunito ">
-        Explore Stores
-      </Button>
+      <Link href={"/shops"}>
+        <Button className="rounded-full bg-Green h-10 w-40 text-md m-10 font-nunito ">
+          Explore Stores
+        </Button>
+      </Link>
     </div>
   );
 };
