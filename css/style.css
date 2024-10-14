@@ -27,7 +27,7 @@
 .preloader-icon {
   width: 400px; /* Set the size you want */
   border-radius: 50%; /* Keep circular shape */
-  animation: pulseBackground 2s infinite ease-in-out; /* Pulsing effect */
+  animation: pulse 2s infinite ease-in-out; /* Pulsing effect */
   /*background-color: rgb(255, 56, 56);  Initial color */
 }
 
@@ -37,7 +37,7 @@
   font-size: 30px;
   color: #3e91df; /* Text color for visibility */
   font-family: 'Amatic SC', sans-serif;
-  animation: pulse 2.5s linear infinite;
+  
 }
 
 /* Pulse animation for loading text */
