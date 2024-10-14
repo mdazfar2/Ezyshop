@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
+    <link href="css/popup.css" rel="stylesheet" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -31,6 +32,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <!-- aos js stylesheet cdn  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <style>
     .thank-you-message {
@@ -107,6 +111,29 @@
     </div>
     <!-- Header End -->
 
+     <!-- Pop up HTML Starts Here -->
+     <!-- Pop-up for email registration -->
+     <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-left">
+                <img src="img/popup.png" alt="Shopping Image">
+            </div>
+            <a href="#" class="no-thanks"><img class="popuplogo" style="width: 50px" src="./img/ezyshop.png" alt="logo"></a>
+
+            <div class="popup-right">
+                <h1>Join EzyShop!</h1>
+                <p class="h2">Exclusive Deals, Local Stores</p>
+                <p>Sign up to get <strong>10% off</strong> your first local order and stay updated on the best offers around you.</p>
+                <form id="emailForm">
+                    <input type="email" id="popup-email" placeholder="Enter your email" required>
+                    <button type="submit" class="signup-btn">Sign Up Now</button>
+                </form>
+                <a href="#" class="no-thanks close-btn">No thanks, I’ll browse with Fullprice</a>
+                <p class="terms">By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Facilities Start -->
     <div class="container-fluid pt-5">
         <div class="container pb-3">
@@ -114,7 +141,7 @@
                 <span class="px-2" style="text-align: center;">Our Facilities</span>
             </p>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
                         <i class="flaticon-050-fence h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
@@ -125,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
                         <i class="flaticon-022-drum h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
@@ -136,7 +163,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
                         <i class="flaticon-030-crayons h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
@@ -147,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
                         <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
@@ -158,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
                         <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
@@ -169,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
                         <i class="flaticon-047-backpack h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
@@ -189,20 +216,20 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5">
+                <div class="col-lg-5" data-aos="zoom-in">
                     <img class="img-fluid rounded mb-5 mb-lg-0" src="img/about-1.png" alt="" />
                 </div>
                 <div class="col-lg-7">
                     <p class="section-title px-5">
                         <span class="px-2">Learn About Us</span>
                     </p>
-                    <h1 class="mb-4">Bringing Every Store to Your Door</h1>
+                    <h1 class="mb-4" data-aos="fade-in">Bringing Every Store to Your Door</h1>
                     <p>
                         EzyShop is your go-to platform for shopping locally from the comfort of your home. Whether you're looking for products from your favorite local store or the nearest mall, we make it easy to browse, order, and have it delivered to you fast. Enjoy seamless
                         shopping with access to the stores you love, all in one place.
                     </p>
                     <div class="row pt-2 pb-4">
-                        <div class="col-6 col-md-4">
+                        <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="200">
                             <img class="img-fluid rounded" src="img/about-2.png" alt="" />
                         </div>
                         <div class="col-6 col-md-8">
@@ -219,7 +246,7 @@
                             </ul>
                         </div>
                     </div>
-                    <a onclick="exploreShops()" class="btn btn-primary mt-2 py-2 px-4">Explore Stores</a>
+                    <a onclick="exploreShops()" class="btn btn-primary mt-2 py-2 px-4" data-aos="fade-up">Explore Stores</a>
                 </div>
             </div>
         </div>
@@ -233,11 +260,11 @@
                 <p class="section-title px-5">
                     <span class="px-2">Trending Deals</span>
                 </p>
-                <h1 class="mb-4">Shop for Your Favorite Products</h1>
+                <h1 class="mb-4" data-aos="zoom-in">Shop for Your Favorite Products</h1>
             </div>
             <div class="row">
                 <div class="col-lg-4 mb-5">
-                    <div class="card card-hover border-0 bg-light shadow-sm pb-2">
+                    <div class="card card-hover border-0 bg-light shadow-sm pb-2" data-aos="fade-up" data-aos-delay="100">
                         <img class="card-img-top mb-2" src="img/class-1.png" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title">Fashion & Accessories</h4>
@@ -275,7 +302,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mb-5">
-                    <div class="card card-hover border-0 bg-light shadow-sm pb-2">
+                    <div class="card card-hover border-0 bg-light shadow-sm pb-2" data-aos="fade-up" data-aos-delay="150">
                         <img class="card-img-top mb-2" src="img/class-2.png" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title">Electronics & Gadgets</h4>
@@ -313,7 +340,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mb-5">
-                    <div class="card card-hover border-0 bg-light shadow-sm pb-2">
+                    <div class="card card-hover border-0 bg-light shadow-sm pb-2" data-aos="fade-up" data-aos-delay="200">
                         <img class="card-img-top mb-2" src="img/class-3.png" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title">Groceries & Essentials</h4>
@@ -347,7 +374,7 @@
                                 <div class="col-6 py-1">$2</div>
                             </div>
                         </div>
-                        <a onclick="shopNow('groceries')" class="btn btn-primary px-4 mx-auto mb-4">Order Now</a>
+                        <a onclick="shopNow('groceries')" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -364,26 +391,26 @@
                         <span class="px-2">Contact Us</span>
                     </p>
                     <h1 class="mb-4">Get in Touch with ezyshop</h1>
-                    <p>
+                    <p data-aos="fade-right">
                         Have questions about your order, our services, or need assistance with anything? We're here to help! Reach out to us, and we'll get back to you as soon as possible.
                     </p>
                     <ul class="list-inline m-0">
-                        <li class="py-2">
+                        <li class="py-2" data-aos="fade-right">
                             <i class="fa fa-check text-success mr-3"></i>Fast and Reliable Customer Support
                         </li>
-                        <li class="py-2">
+                        <li class="py-2" data-aos="fade-right">
                             <i class="fa fa-check text-success mr-3"></i>Personalized Shopping Experience
                         </li>
-                        <li class="py-2">
+                        <li class="py-2" data-aos="fade-right">
                             <i class="fa fa-check text-success mr-3"></i>Real-Time Order Tracking
                         </li>
                     </ul>
-                    <a href="" class="btn btn-primary mt-4 py-2 px-4">Send Message</a>
+                    <a href="" class="btn btn-primary mt-4 py-2 px-4" data-aos="fade-right">Send Message</a>
                 </div>
                 <div class="col-lg-5">
-                    <div class="card border-0">
+                    <div class="card border-0" data-aos="zoom-in">
                         <div class="card-header bg-secondary text-center p-4">
-                            <h1 class="text-white m-0">Fill Form</h1>
+                            <h1 class="text-white m-0">Contact Us</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-primary p-5">
                             <form id="contactForm" novalidate>
@@ -425,11 +452,11 @@
         <div class="container">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
-                    <span class="px-2">Ezyshop Founder</span>
+                    <span class="px-2" data-aos="fade-up">Ezyshop Founder</span>
                 </p>
-                <h1 class="mb-4">Meet our Founder</h1>
+                <h1 class="mb-4" data-aos="fade-up">Meet our Founder</h1>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" data-aos="fade-up">
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
                     <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
                         <img class="img-fluid w-100" src="img/aizz pic.jpeg" alt="" />
@@ -449,7 +476,7 @@
     <!-- Team End -->
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" data-aos="fade-up">
         <div class="container p-0">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
@@ -516,7 +543,7 @@
     <!-- Testimonial End -->
 
     <!-- Blog Start -->
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-5" data-aos="fade-up">
         <div class="container">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
@@ -714,8 +741,18 @@
 
     <script src="js/newsLetter.js"></script>
 
-    <script src="js/newsLetter.js"></script>
+<script src="js/newsLetter.js"></script>
+<!-- Aos js javascript -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+<!-- for aos js config -->
+<script>
+    AOS.init({
+        duration: 1000,
+        easing: "ease",
+    });
+</script>
+  
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const authButton = document.getElementById("authButton");
@@ -778,6 +815,7 @@
             });
         });
     </script>
+    <script src="./js/popup.js"></script>
 </body>
 
 </html>

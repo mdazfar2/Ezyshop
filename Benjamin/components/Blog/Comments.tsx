@@ -54,7 +54,7 @@ const BlogComments = () => {
         {comments.length} Comments
       </div>
       {comments.map((comment) => (
-        <CommentCard comment={comment} />
+        <CommentCard key={comment.date} comment={comment} />
       ))}
 
       <Input placeholder="Add a comment" className="mb-5 h-14   rounded-full"/>

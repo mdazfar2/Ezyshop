@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const authButton = document.getElementById('authButton');
   const currentUser = localStorage.getItem('currentUser');
 
-  // Check if there's a logged-in user
+// Check if there's a logged-in user
   if (currentUser) {
       authButton.textContent = currentUser; // Change button text to username
       authButton.href = "#"; // Optionally, change the link to something else or remove it

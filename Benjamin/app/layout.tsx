@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 const font=Urbanist({subsets:['latin']})
 // console.log(font.className)
 export const metadata: Metadata = {
-  title: "Store",
+  title: "Ezyshop",
   description: "Store",
 };
 
@@ -18,8 +18,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* font awesome CDN */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-<your-integrity-hash>"
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+
+      </head>
       <body
-        className={`${font.className},h-screen`}
+        className={`${font.className},h-screen bg-DarkGray`}
       >
         {/* <ModalProvider/> */}
         {/* <ToasterProvider/> */}
