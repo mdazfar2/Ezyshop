@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="css/newsLetter.css">
     <link rel="stylesheet" href="css/cart.css">
 </head>
-
 <body>
 <!-- Navbar Start -->
 <div class="container-fluid bg-light position-relative shadow">
@@ -113,103 +112,87 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-        <h3 class="display-3 font-weight-bold text-white">Contact Us</h3>
-        <div class="d-inline-flex text-white pb-3">
-            <p class="m-0"><a class="text-white" href="">Home</a></p>
-            <p class="m-0 px-2">/</p>
-            <p class="m-0"><a class="text-white" href="">Contact Us</a></p>
-        </div>
-    </div>
-</div>
+    
     <!-- Header End -->
 
 
-    <!-- Contact Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5 mb-4"><span class="px-2">Get In Touch</span></p>
-                <h1 class="mb-4">Contact Us For Any Query</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 mb-5">
-                    <div class="contact-form">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="control-group">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                    required="required" data-validation-required-message="Please enter your name" />
-                                <p class="help-block text-danger"></p>
+    <!-- Header Start -->
+
+    <!-- Header End -->
+
+<!-- Cart Start -->
+<div class="container-fluid pt-5 mt-5">
+    <h1 class="p-3" style="text-align: center; color: #117b8bd4;">Cart Items</h1>
+    <div class="row px-xl-5 py-5">
+        <!-- Cart Items Section -->
+        <div class="col-lg-8 table-responsive">
+            <table class="table table-bordered text-center mb-0">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th>Products</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody
+                    <!-- Example cart item row -->
+                    <tr>
+                        <td class="align-middle d-flex justify-content-around align-items-center"><img src="img/about-1.png" alt="" style="width: 50px;"> Product Name</td>
+                        <td class="align-middle">Rs.150</td>
+                        <td class="align-middle">
+                            <div class="input-group quantity mx-auto" style="width: 100px;">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-sm btn-primary btn-minus" style="border: none; border-radius: 0;">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control form-control-sm text-center" value="1">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-sm btn-primary btn-plus" style="border: none; border-radius: 0;">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                    required="required" data-validation-required-message="Please enter your email" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject"
-                                    minlength="5" maxlength="50" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control" rows="6" id="message" placeholder="Message"
-                                    required="required"
-                                    data-validation-required-message="Please enter your message"
-                                    minlength="10"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
-                                    Message</button>
-                            </div>
-                        </form>
+                        </td>
+                        <td class="align-middle">Rs.150</td>
+                        <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
+                    </tr>
+                    <!-- Repeat similar rows for other products -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cart Summary Section -->
+        <div class="col-lg-4 d-flex justify-content-center">
+            <div class="bg-light p-3 mt-md-5 mt-sm-5" style="border: 1px solid #117b8bd4; border-radius: 10px; width: 80%;">
+                <h5 class="section-title position-relative text-uppercase">
+                    <span>Cart Summary</span>
+                </h5>
+                <div class="border-bottom py-lg-1">
+                    <div class="d-flex justify-content-between">
+                        <h6>Subtotal</h6>
+                        <h6 class="subtotal">Rs.150</h6>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="font-weight-medium">Shipping</h6>
+                        <h6 class="font-weight-medium">Rs.10</h6>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <p style="margin-bottom: 0;">Have a question or need assistance? We're here to help! Reach out to us for any inquiries
-                        regarding your orders, deliveries, or shopping experience with EzyShop. We're happy to assist
-                        you with all your needs.</p>
-                    <div class="d-flex align-items-center" style="gap: 1rem;">
-                        <i class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                            style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5 class="mt-lg-0">Address</h5>
-                            <p style="margin-top: -3px; margin-bottom: 0;">Jaipur, Rajasthan</p>
-                        </div>
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <h5>Total</h5>
+                        <h5 class="total">Rs.160</h5>
                     </div>
-                    <div class="d-flex align-items-center" style="gap: 1rem;">
-                        <i class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                            style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Email</h5>
-                            <p style="margin-top: -3px; margin-bottom: 0;">ezyshop@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center" style="gap: 1rem;">
-                        <i class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                            style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Phone</h5>
-                            <p style="margin-top: -3px; margin-bottom: 0;">+91 7739317870</p>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center" style="gap: 1rem;">
-                        <i class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                            style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Opening Hours</h5>
-                            <strong>Our platform is available 24/7. For customer support</strong>
-
-                        </div>
-                    </div>
+                    <button class="btn btn-block btn-primary font-weight-bold my-4 py-2">Proceed To Checkout</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+</div>
+<!-- Cart End -->
+
 
 
     <!-- Footer Start -->
@@ -233,7 +216,7 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h3 class="text-primary mb-4">Get In Touch</h3>
                 <div class="d-flex hov">
-                    <a href="https://www.google.com/maps/place/Jaipur,+Rajasthan/@26.8851151,75.6257468,11z/data=!3m1!4b1!4m6!3m5!1s0x396c4adf4c57e281:0xce1c63a0cf22e09!8m2!3d26.9124336!4d75.7872709!16zL20vMDE2NzIyMjI?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
+                    <a href="https://www.google.com/maps/place/Jaipur,+Rajasthan/@26.8851151,75.6257468,11z/data=!3m1!4b1!4m6!3m5!1s0x396c4adf4c57e281:0xce1c63a0cf22e09!8m2!3d26.9124336!4d75.7872709!16zL20vMDE2NzIy?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
                         <h4 class="fa fa-map-marker-alt text-primary icon"></h4>
                     </a>
                     <div class="pl-3 cont">
@@ -359,55 +342,6 @@
                 }
             });
         });
-    </script>
-
-    <!-- Add this new script tag -->
-    <script>
-    $(document).ready(function() {
-        $('#contactForm').jqBootstrapValidation({
-            preventSubmit: true,
-            submitError: function($form, event, errors) {
-                // Additional error messages or events
-            },
-            submitSuccess: function($form, event) {
-                event.preventDefault();
-                
-                // Validate subject length
-                var subject = $("input#subject").val();
-                if(subject.length < 5 || subject.length > 50) {
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry, the subject must be between 5 and 50 characters long."));
-                    $('#success > .alert-danger').append('</div>');
-                    return;
-                }
-                
-                // Validate message length
-                var message = $("textarea#message").val();
-                if(message.length < 10) {
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry, your message must be at least 10 characters long."));
-                    $('#success > .alert-danger').append('</div>');
-                    return;
-                }
-                
-                // If both validations pass, you can submit the form or perform further actions
-                // For now, we'll just show a success message
-                $('#success').html("<div class='alert alert-success'>");
-                $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                    .append("</button>");
-                $('#success > .alert-success').append("<strong>Your message has been sent. </strong>");
-                $('#success > .alert-success').append('</div>');
-                $('#contactForm').trigger("reset");
-            },
-            filter: function() {
-                return $(this).is(":visible");
-            },
-        });
-    });
     </script>
 </body>
 

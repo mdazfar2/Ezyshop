@@ -19,6 +19,8 @@
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
     <!-- Flaticon Font -->
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
@@ -32,53 +34,94 @@
     <link rel="stylesheet" href="css\footer.css">
 
     <link rel="stylesheet" href="css/newsLetter.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
-
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <img style="width: 80px;" src="./img/ezyshop.png" alt="logo">
-                <span class="text-primary">Ezyshop</span>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active" id="secondary">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="category.html" class="nav-item nav-link" id="primary">Categories</a>
-                    <a href="team.html" class="nav-item nav-link">Teams</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                        </div>
+<!-- Navbar Start -->
+<div class="container-fluid bg-light position-relative shadow">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+        <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
+            <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
+            <span class="text-primary">Ezyshop</span>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav font-weight-bold mx-auto py-0">
+                <a href="index.html" class="nav-item nav-link active" id="home">Home</a>
+                <a href="about.html" class="nav-item nav-link" id="about">About</a>
+                <a href="category.html" class="nav-item nav-link" id="category">Categories</a>
+                <a href="team.html" class="nav-item nav-link" id="team">Teams</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                        <a href="single.html" class="dropdown-item">Blog Detail</a>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login/SignUp</a>
+                <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
             </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+
+<!-- Search Bar -->
+<div class="search-container mx-3">
+    <form class="form-inline position-relative">
+        <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search" style="padding-right: 50px; border: 1px solid #ced4da; border-radius: 8px;">
+        <button class="btn btn-outline-secondary position-absolute" type="submit" style="top: 50%; right: 10px; transform: translateY(-50%); border: none; background: none; cursor: pointer; z-index: 10;">
+            <i class="fa-solid fa-search"></i>
+        </button>
+    </form>
+</div>
+
+
+            <div class="nav-icons d-flex justify-content-center align-items-center" style="gap: 1rem; font-size: 20px;">
+                <div class="profile d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="profileButton" href="RegisterPages/register.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Login/SignUp
+                    </a>
+                </div>
+                <div class="cart-container d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="cartButton" href="cart.html" style="position: relative;">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cartCount" class="badge" style="position: absolute; top: -10px; right: -10px; font-size: 12px; background-color: red; color: white; border-radius: 50%; padding: 2px 5px; display: block;">0</span>
+                    </a>
+                    <a id="cartPop" href="cart.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Cart
+                    </a>
+                </div>
+                <div class="wishlist-container d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="savedButton" href="wishlist.html">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                    <a id="wishlistPop" href="wishlist.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Wishlist
+                    </a>
+                </div>
+            </div> 
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
 
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 font-weight-bold text-white">Our Categories</h3>
-            <div class="d-inline-flex text-white">
-                <p class="m-0"><a class="text-white" href="">Home</a></p>
-                <p class="m-0 px-2">/</p>
-                <p class="m-0"><a class="text-white" href="">Our Categories</a></p>
-            </div>
+        <h3 class="display-3 font-weight-bold text-white">Our Categories</h3> <!-- Added ID here -->
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Home</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0"><a class="text-white" href="">Our Categories</a></p>
         </div>
     </div>
-    <!-- Header End -->
+</div>
+<!-- Header End -->
 
 
     <!-- Class Start -->
@@ -729,6 +772,29 @@
                 }
             });
         });
+
+// function shopNow(category) {
+//     // Get the element where the category title is displayed
+//     const categoryTitleElement = document.getElementById('category-title');
+
+//     // Change the title based on the clicked category
+//     switch (category) {
+//         case 'fashion':
+//             categoryTitleElement.textContent = "Fashion & Accessories";
+//             break;
+//         case 'electronics':
+//             categoryTitleElement.textContent = "Electronics & Gadgets";
+//             break;
+//         case 'groceries':
+//             categoryTitleElement.textContent = "Groceries & Essentials";
+//             break;
+//         default:
+//             categoryTitleElement.textContent = "Our Categories"; // Default title
+//     }
+
+//     // Optionally, you can scroll to the header or perform other actions
+//     // window.scrollTo(0, 0); // Scroll to the top
+// }
     </script>
 </body>
 
