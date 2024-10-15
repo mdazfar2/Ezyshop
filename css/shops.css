@@ -5,6 +5,7 @@
     transition: transform 0.3s;
 }
 
+
 .shop-card:hover {
     transform: translateY(-5px);
 }

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const shops = [
-    { name: "Fashion Hub", category: "fashion", image: "img/shops/fashion_image1.jpg", description: "Trendy clothes for all ages" },
+    { name: "Fashion Hub", category: "fashion", image: "img/shops/fashion_image1.jpg", description: "Trendy clothes for all ages"},
     { name: "Tech World", category: "electronics", image: "img/shops/tech_image1.jpg", description: "Latest gadgets and electronics" },
     { name: "Fresh Mart", category: "groceries", image: "img/shops/grocery_image1.jpg", description: "Fresh produce and groceries" },
     { name: "Style Studio", category: "fashion", image: "img/shops/fashion_image2.jpg", description: "Designer clothes and accessories" },
@@ -77,6 +77,8 @@ function displayShops(category) {
         shopContainer.innerHTML += createShopCard(shop);
     });
 }
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
