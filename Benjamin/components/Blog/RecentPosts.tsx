@@ -1,11 +1,8 @@
 "use client";
 import { Folder, MessagesSquare, User } from "lucide-react";
-import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
@@ -14,10 +11,9 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 const blogData = [
   {
@@ -72,17 +68,19 @@ const RecentPosts = () => {
         >
           <CarouselContent className="">
             {blogData.map((card) => (
-              <CarouselItem className="basis-1/2 p-4">
+              <CarouselItem key={card.id} className="basis-1/2 p-4">
                 <Link href={`/Blog/${card.id}`}>
                   <Card
                     key={card.id}
-                    className="w-[320px] h-[140px]  flex items-center justify-center hover:scale-105 transition duration-800 bg-gray-100"
+                    className="w-[400px] lg:w-[320px] h-[140px]  flex items-center justify-center hover:scale-105 transition duration-800 bg-gray-100"
                   >
                     <CardHeader className="p-1 w-full ">
                       <div className="flex items-center justify-center p-0">
-                        <img
+                        <Image
+                          width={1000}
+                          height={1000}
                           alt="card image"
-                          className="h-24 w-24 rounded-lg"
+                          className="h-28 w-28 lg:h-24 lg:w-24 rounded-lg"
                           src={card.url}
                         />
                       </div>

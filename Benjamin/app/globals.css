@@ -11,6 +11,9 @@
 body {
   font-family: sans-serif,'Handlee','Nutino';
 }
+/* * {
+  outline: 1px solid red;
+} */
 
 @layer utilities {
   .text-balance {

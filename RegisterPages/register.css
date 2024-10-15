@@ -319,8 +319,11 @@ form .linkTxt {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  @media (min-width: 992px) {
-    padding: 0 3rem;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+      padding: 0 3rem;
   }
 }
 

@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
 import { Card, CardHeader, CardContent } from "./ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Quote, TextQuote } from "lucide-react";
+import { Quote } from "lucide-react";
+import Image from "next/image";
 
 const reviews = [
   {
@@ -52,21 +50,23 @@ const ReviewsCarousel = () => {
           {reviews.map((review, index) => (
             <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
               <div className="w-full p-4">
-                <Card className="bg-gray-100 lg:p-6 rounded-lg shadow-lg h-full">
+                <Card className="bg-gray-700 border border-DarkGray lg:p-6 rounded-lg shadow-lg h-full">
                   <CardHeader className="flex flex-col items-center justify-center mb-4">
-                    <img
+                    <Image
+                      width={1000}
+                      height={1000}
                       src={review.image}
                       alt={review.name}
                       className="w-20 h-20 rounded-full object-cover mb-2"
                     />
-                    <h4 className="font-bold text-lg sm:text-xl lg:text-2xl text-customBlue font-handlee text-center">
+                    <h4 className="font-extrabold text-lg sm:text-xl lg:text-2xl text-Green font-handlee text-center">
                       {review.name}
                     </h4>
                     <p className="text-sm text-gray-500 text-center">{review.role}</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4 text-sm sm:text-md">
-                      <Quote className="h-10 w-10 text-customTeal inline-block mr-2" />
+                    <p className="mb-4 text-gray-200 text-sm sm:text-md">
+                      <Quote className="h-10 w-10 text-Yellow inline-block mr-2" />
                       “{review.text}”
                     </p>
                   </CardContent>
