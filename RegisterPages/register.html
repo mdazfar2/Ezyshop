@@ -1,154 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Register</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+		<!-- Favicon -->
+		<link
+			rel="shortcut icon"
+			href="../img/favicon.png"
+			type="image/x-icon"
+		/>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
 
-    <!-- Bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+		<!-- Bootstrap -->
+		<link
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" ></script>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+		></script>
 
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
-    <!-- CSS -->
-     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="register.css" />
-  </head>
+		<!-- CSS -->
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="register.css" />
+		<style>
+			/* Notification */
+			.notification {
+				position: fixed;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: #138496;
+				color: white;
+				padding: 15px 50px;
+				border-radius: 50px;
+				font-size: 16px;
+				display: none;
+			}
+		</style>
+	</head>
 
-  <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-light position-relative shadow">
-      <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-          <a href="../index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
-              <img style="width: 80px" src="../img/ezyshop.png" alt="logo" />
-              <span class="text-primary">Ezyshop</span>
-          </a>
-          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-              <div class="navbar-nav font-weight-bold ml-auto py-0 px-2">
-                  <a href="../index.html" class="nav-item nav-link" id="home">Home</a>
-                  <a href="../contact.html" class="nav-item nav-link" id="contact">Contact</a>
-              </div>
-          </div>
-      </nav>
-  </div>
-  <!-- Navbar End -->
+	<body>
+		<!-- Navbar Start -->
+		<div class="container-fluid bg-light position-relative shadow">
+			<nav
+				class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
+			>
+				<a
+					href="../index.html"
+					class="navbar-brand font-weight-bold text-secondary"
+					style="font-size: 50px"
+				>
+					<img
+						style="width: 80px"
+						src="../img/ezyshop.png"
+						alt="logo"
+					/>
+					<span class="text-primary">Ezyshop</span>
+				</a>
+				<button
+					type="button"
+					class="navbar-toggler"
+					data-toggle="collapse"
+					data-target="#navbarCollapse"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="collapse navbar-collapse justify-content-between"
+					id="navbarCollapse"
+				>
+					<div class="navbar-nav font-weight-bold ml-auto py-0 px-2">
+						<a
+							href="../index.html"
+							class="nav-item nav-link"
+							id="home"
+							>Home</a
+						>
+						<a
+							href="../contact.html"
+							class="nav-item nav-link"
+							id="contact"
+							>Contact</a
+						>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- Navbar End -->
 
-    <div class="wrapper">
-      <span class="rotate-bg"></span>
-      <span class="rotate-bg2"></span>
+		<div class="wrapper">
+			<span class="rotate-bg"></span>
+			<span class="rotate-bg2"></span>
 
-              
-      <div class="form-box forgot-password" style="display: none; padding-top: 60px;">
-        <h2 class="title animation" id="fp" style="--i:0; --j:21" >Forgot Password</h2>
-        <form id="forgotPasswordForm">
-            <div class="input-box animation" style="--i:1; --j:22">
-                <input type="email" id="forgotPasswordEmail" required>
-                <label id="emailForgotP" for="">Email</label>
-                <i id="fp2" class='bx bxs-envelope'></i>
-            </div>
-            <button type="submit" class="btn animation" id="submitForgotP">Send Reset Link</button>
-            <div class="linkTxt animation">
-                <p id="backForgotP"><a href="#" class="back-to-login-link" >Back to Login</a></p>
-            </div>
-        </form>
-    </div>
-    
+			<div
+				class="form-box forgot-password"
+				style="display: none; padding-top: 60px"
+			>
+				<h2 class="title animation" id="fp" style="--i: 0; --j: 21">
+					Forgot Password
+				</h2>
+				<form id="forgotPasswordForm">
+					<div class="input-box animation" style="--i: 1; --j: 22">
+						<input type="email" id="forgotPasswordEmail" required />
+						<label id="emailForgotP" for="">Email</label>
+						<i id="fp2" class="bx bxs-envelope"></i>
+					</div>
+					<button
+						type="submit"
+						class="btn animation"
+						id="submitForgotP"
+					>
+						Send Reset Link
+					</button>
+					<div class="linkTxt animation">
+						<p id="backForgotP">
+							<a href="#" class="back-to-login-link"
+								>Back to Login</a
+							>
+						</p>
+					</div>
+				</form>
+			</div>
 
-      <div class="form-box login" style="padding-top: 60px">
-        <h2 class="title animation" style="--i: 0; --j: 21">Login</h2>
-        <form id="loginForm">
-          <div class="input-box animation" style="--i: 1; --j: 22">
-            <input type="text" id="loginUsername" required />
-            <label for="">Username</label>
-            <i class="bx bxs-user"></i>
-          </div>
-          <div class="input-box animation" style="--i: 2; --j: 23">
-            <input type="password" id="loginPassword" required />
-            <label for="">Password</label>
-            <i class="bx bxs-lock-alt"></i>
-          </div>
-          <button type="submit" class="animation" style="--i: 3; --j: 24">
-            Login
-          </button>
+			<div class="form-box login" style="padding-top: 60px">
+				<h2 class="title animation" style="--i: 0; --j: 21">Login</h2>
+				<form id="loginForm">
+					<div class="input-box animation" style="--i: 1; --j: 22">
+						<input type="text" id="loginUsername" required />
+						<label for="">Username</label>
+						<i class="bx bxs-user"></i>
+					</div>
+					<div class="input-box animation" style="--i: 2; --j: 23">
+						<input type="password" id="loginPassword" required />
+						<label for="">Password</label>
+						<i class="bx bxs-lock-alt"></i>
+					</div>
+					<button
+						type="submit"
+						class="animation"
+						style="--i: 3; --j: 24"
+					>
+						Login
+					</button>
 
-          <!-- Add "Forgot Password" link under Login Form -->
-          <div class="linkTxt animation" style="--i:5; --j:25">
-              <p><a href="#" class="forgot-password-link">Forgot Password?</a></p>
-          </div>
-          
-          <div class="linkTxt animation" style="--i: 5; --j: 25">
-            <p>
-              Don't have an account?
-              <a href="#" class="register-link">Sign Up</a>
-            </p>
-          </div>
-        </form>
-      </div>
-      <div class="info-text login">
-        <h2 class="animation" style="--i: 0; --j: 20">Welcome Back!</h2>
-        <p class="animation" style="--i: 1; --j: 21">
-          EzyShop makes it easy to browse, order, and receive products from your
-          favorite stores.
-        </p>
-      </div>
+					<!-- Add "Forgot Password" link under Login Form -->
+					<div class="linkTxt animation" style="--i: 5; --j: 25">
+						<p>
+							<a href="#" class="forgot-password-link"
+								>Forgot Password?</a
+							>
+						</p>
+					</div>
 
-      <div class="form-box register" style="padding-top: 70px">
-        <h2 class="title animation" style="--i: 17; --j: 0">Sign Up</h2>
-        <form id="registerForm">
-          <div class="input-box animation" style="--i: 18; --j: 1">
-            <input type="text" id="registerUsername" required />
-            <label for="">Username</label>
-            <i class="bx bxs-user"></i>
-          </div>
-          <div class="input-box animation" style="--i: 19; --j: 2">
-            <input type="password" id="registerPassword" required />
-            <label for="">Enter Password</label>
-            <i class="bx bxs-lock-alt"></i>
-          </div>
-          <div class="input-box animation" style="--i: 19; --j: 2">
-            <input type="password" id="confirmPassword" required />
-            <label for="">Confirm Password</label>
-            <i class="bx bxs-lock-alt"></i>
-          </div>
+					<div class="linkTxt animation" style="--i: 5; --j: 25">
+						<p>
+							Don't have an account?
+							<a href="#" class="register-link">Sign Up</a>
+						</p>
+					</div>
+				</form>
+			</div>
+			<div class="info-text login">
+				<h2 class="animation" style="--i: 0; --j: 20">Welcome Back!</h2>
+				<p class="animation" style="--i: 1; --j: 21">
+					EzyShop makes it easy to browse, order, and receive products
+					from your favorite stores.
+				</p>
+			</div>
 
-          <!-- Submit button (initially hidden) -->
-          <button type="submit" class="animation" id="submitBtn" style="--i: 24; --j: 7">
-            Sign Up
-          </button>
+			<div class="form-box register" style="padding-top: 70px">
+				<h2 class="title animation" style="--i: 17; --j: 0">Sign Up</h2>
+				<form id="registerForm">
+					<div class="input-box animation" style="--i: 18; --j: 1">
+						<input type="text" id="registerUsername" required />
+						<label for="">Username</label>
+						<i class="bx bxs-user"></i>
+					</div>
+					<div class="input-box animation" style="--i: 19; --j: 2">
+						<input type="password" id="registerPassword" required />
+						<label for="">Enter Password</label>
+						<i class="bx bxs-lock-alt"></i>
+					</div>
+					<div class="input-box animation" style="--i: 19; --j: 2">
+						<input type="password" id="confirmPassword" required />
+						<label for="">Confirm Password</label>
+						<i class="bx bxs-lock-alt"></i>
+					</div>
 
-          <div class="linkTxt animation" style="--i: 25; --j: 8">
-            <p>
-              Already have an account? <a href="#" class="login-link">Login</a>
-            </p>
-          </div>
-        </form>
-      </div>
+					<!-- Submit button (initially hidden) -->
+					<button
+						type="submit"
+						class="animation"
+						id="submitBtn"
+						style="--i: 24; --j: 7"
+					>
+						Sign Up
+					</button>
 
-      <div class="info-text register">
-        <h2 class="animation" style="--i: 17; --j: 0">Welcome!</h2>
-        <p class="animation" style="--i: 18; --j: 1">
-          EzyShop makes it easy to browse, order, and receive products from your
-          favorite stores.
-        </p>
-      </div>
-    </div>
+					<div class="linkTxt animation" style="--i: 25; --j: 8">
+						<p>
+							Already have an account?
+							<a href="#" class="login-link">Login</a>
+						</p>
+					</div>
+				</form>
+			</div>
 
-    <script src="register.js"></script>
-  </body>
+			<div class="info-text register">
+				<h2 class="animation" style="--i: 17; --j: 0">Welcome!</h2>
+				<p class="animation" style="--i: 18; --j: 1">
+					EzyShop makes it easy to browse, order, and receive products
+					from your favorite stores.
+				</p>
+			</div>
+		</div>
+    <div id="notification" class="notification"></div>
+		<script src="register.js"></script>
+	</body>
 </html>
