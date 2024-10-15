@@ -111,9 +111,9 @@
       <div class="row px-2">
         <div class="col-12">
           <div class="input-group search-input-group mb-3">
-            <input type="text" class="form-control search-form-control" id="search-input" placeholder="Search products...">
+            <input type="text" class="form-control search-form-control" id="search-input" placeholder="Search products..." onkeyup="debouncedFilterProducts()">
             <div class="input-group-append search-input-group-append">
-              <button id="search-button" class="btn btn-primary" onclick="filterProducts()">
+              <button id="search-button" class="btn btn-primary">
                 <i class="fas fa-search"></i>
               </button>
             </div>

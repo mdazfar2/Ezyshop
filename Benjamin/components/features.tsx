@@ -1,4 +1,4 @@
-import { Car, CreditCard, Drum, SendToBack, ShoppingCart, Store, TicketPercent } from "lucide-react";
+import { Car, CreditCard, SendToBack, ShoppingCart, Store, TicketPercent } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import SeperatorHeading from "./ui/seperatorHeading";
 
@@ -49,7 +49,7 @@ return (
     
     <div className="h-full flex flex-col gap-4 md:grid md:grid-cols-2 lg:gap-10 lg:grid-cols-3 ">
       {cardData.map((card) => (
-        <Card className="min-w-[250px] max-w-[350px] border border-black bg-gray-700 ">
+        <Card key={card.title} className="min-w-[250px] max-w-[350px] border border-black bg-gray-700 ">
           <CardHeader>
               <div className="flex gap-2 items-center justify-center">
                   {card.logo}

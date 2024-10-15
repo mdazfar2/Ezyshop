@@ -8,32 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedButton = document.getElementById('savedButton');
   const currentUser = localStorage.getItem('currentUser');
 
-  // Simulate the cart count (replace with your actual logic to get cart count)
-  let itemCount = 0; // Example count, replace this with actual count from your cart
-  const initialCartCount = 0; // Replace this with your actual logic to get the initial count
-
-  // Function to update the cart count display
-  function updateCartCount(count) {
-      itemCount = count; // Update the item count
-      cartCount.textContent = itemCount; // Update the badge text
-      cartCount.style.display = itemCount >= 0 ? 'block' : 'none'; // Show/hide badge based on count
-  }
-
-  // Update the cart count initially
-  updateCartCount(initialCartCount); // Set initial count
-
-  // Check if there's a logged-in user
-  function updateAuthButton() {
-      if (currentUser) {
-          authButton.textContent = currentUser;
-          authButton.href = "#"; 
-          authButton.classList.add('btn-secondary'); 
-      } else {
-          authButton.textContent = "Login/Signup"; // Set default text
-          authButton.href = "RegisterPages/register.html"; // Redirect to login/signup page
-      }
-  }
-
   updateAuthButton(); // Update the authButton initially
 
   // Handle click on the profile button
