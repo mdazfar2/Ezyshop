@@ -647,6 +647,12 @@ pre code {
     margin-left: auto;
 }
 
+.effect:hover{
+  box-shadow: 1px 1px 8px #2d5587f7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @media (min-width: 576px) {
   .container,
   .container-sm {
@@ -1362,7 +1368,7 @@ pre code {
   .offset-sm-11 {
     margin-left: 91.66667%;
   }
-}
+
 
 @media (min-width: 768px) {
   .col-md {
@@ -6175,7 +6181,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-success.disabled,
 .btn-success:disabled {
@@ -6209,7 +6215,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-info.disabled,
 .btn-info:disabled {
@@ -6242,7 +6248,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-warning.disabled,
 .btn-warning:disabled {
@@ -6276,7 +6282,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-danger.disabled,
 .btn-danger:disabled {
