@@ -1,6 +1,5 @@
 import { columns, order } from "./components/columns";
 import { DataTable } from "./components/datatable";
-import OrderCard from "./components/orderCard";
 
 const options: Intl.DateTimeFormatOptions = {
   weekday: 'short', // 'Tue'
@@ -184,16 +183,6 @@ const Orders = () => {
           Your Orders
         </div>
       </div>
-      {/* <div className="w-full flex items-center justify-center">
-        <div className="w-3/4  flex gap-5 items-center justify-center flex-col">
-          <OrderCard />
-          <OrderCard />
-          <OrderCard />
-          <OrderCard />
-          <OrderCard />
-        </div>
-      </div> */}
-
 
     <div className="container w-screen flex items-center justify-center py-10">
       <DataTable columns={columns} data={orders} />

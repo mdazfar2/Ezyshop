@@ -7,11 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "prisma db seed"
+    "seed": "ts-node prisma/seed.ts"
   },
-
   "type": "module",
- 
   "prisma": {
     "seed": "node --loader ts-node/esm prisma/seed.ts"
   },
@@ -32,6 +30,7 @@
     "embla-carousel-react": "^8.3.0",
     "lucide-react": "^0.451.0",
     "next": "14.2.14",
+    "next-auth": "^4.24.8",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.3",
