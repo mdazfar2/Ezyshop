@@ -59,7 +59,27 @@
     }
 </style>
 
+
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <img src="img/ezyshop.png" alt="Preloader" class="preloader-icon">
+      <p class="loading-text">Loading...</p>
+  </div>
+
+  <!-- Main content -->
+  <div id="main-content" style="display:none;">
+      <!-- Your existing content goes here -->
+  </div>
+  <script>
+      window.addEventListener('load', function() {
+          setTimeout(function() {
+              document.body.classList.add('loaded');
+          }, 3000); // 3 seconds delay
+      });
+  </script>
+
+
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
@@ -817,5 +837,4 @@
     </script>
     <script src="./js/popup.js"></script>
 </body>
-
 </html>
