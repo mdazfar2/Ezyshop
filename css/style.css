@@ -284,7 +284,8 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    -webkit-appearance: button;
+  -webkit-appearance: button;
+  appearance: button; 
 }
 
 button:not(:disabled),
@@ -349,7 +350,8 @@ progress {
 
 [type="search"] {
     outline-offset: -2px;
-    -webkit-appearance: none;
+    -webkit-appearance: button;
+    appearance: button; 
 }
 
 [type="search"]::-webkit-search-decoration {
@@ -1362,7 +1364,7 @@ pre code {
   .offset-sm-11 {
     margin-left: 91.66667%;
   }
-}
+
 
 @media (min-width: 768px) {
   .col-md {
@@ -4189,7 +4191,8 @@ input[type="button"].btn-block {
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
-  color-adjust: exact;
+  print-color-adjust: exact;
+
 }
 
 .custom-control-inline {
@@ -6175,7 +6178,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-success.disabled,
 .btn-success:disabled {
@@ -6209,7 +6212,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-info.disabled,
 .btn-info:disabled {
@@ -6242,7 +6245,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-warning.disabled,
 .btn-warning:disabled {
@@ -6276,7 +6279,7 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
+
 
 .btn-danger.disabled,
 .btn-danger:disabled {
@@ -7365,7 +7368,8 @@ fieldset:disabled a.btn {
     display: block;
     min-height: 1.5rem;
     padding-left: 1.5rem;
-    color-adjust: exact;
+    print-color-adjust: exact;
+
 }
 
 .custom-control-inline {

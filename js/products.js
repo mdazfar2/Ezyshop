@@ -364,3 +364,9 @@ function saveForLater(productTitle) {
     console.log(`${productTitle} saved for later!`);
     // Implement your saving logic here (e.g., localStorage or sending to backend).
 }
+
+
+
+
+
+
