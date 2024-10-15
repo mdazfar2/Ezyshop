@@ -1,18 +1,28 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Lock, Mail, User } from "lucide-react";
-import { signIn } from "next-auth/react";
+import { Spinner } from "@/components/ui/spinner";
+import { Loader2, Lock, Mail, User } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   // BE logic and states
+  const session= useSession();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setloading] =useState(false);
+
+  if (error != "") {
+    toast.error(error);
+    setError("");
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
+    setloading(true)
     e.preventDefault();
 
     const result = await signIn("credentials", {
@@ -20,9 +30,13 @@ const Login = () => {
       password,
       redirect: false,
     });
-
-    if (result?.error) alert("Invalid email or password");
-    else window.location.href = "/"; // Redirect on success
+    console.log(result)
+    if (result?.error) setError("Invalid email or password");
+    else {
+      toast.success(`Welcome ${session.data?.user?.name}`)
+      window.location.href = "/"; // Redirect on success
+    }
+    setloading(false)
   };
 
   // FE logic and states
@@ -77,8 +91,12 @@ const Login = () => {
                   />
                   <Lock className="h-7 w-7 text-Yellow" />
                 </div>
-                <Button type="submit" className="rounded-full bg-Green font-bold h-10 w-4/5 ">
-                  Login
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="rounded-full bg-Green font-bold h-10 w-4/5 disabled"
+                >
+                  {loading?<Spinner/>:"Login"}
                 </Button>
               </form>
               <div
@@ -185,6 +203,7 @@ const Login = () => {
           )}
         </div>
       </div>
+      <Toaster />
     </>
   );
 };
