@@ -40,7 +40,7 @@ const CategoryByKeyword = () => {
           </div>
         <div className="flex px-10 lg:px-0 flex-col items-start justify-center">
         {categories.map((category)=>(
-            <Link href={"#"} className=" w-full flex justify-between text-md py-3 border-b">
+            <Link key={category.label} href={"#"} className=" w-full flex justify-between text-md py-3 border-b">
                 <div className="text-customTeal hover:underline">{category.label}</div>
                 <div className="bg-customTeal rounded-full px-2 ">{category.count}</div>
             </Link>
