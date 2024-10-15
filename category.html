@@ -19,6 +19,8 @@
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
     <!-- Flaticon Font -->
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
@@ -30,53 +32,96 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css\footer.css">
-</head>
 
+    <link rel="stylesheet" href="css/newsLetter.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <img style="width: 80px;" src="./img/ezyshop.png" alt="logo">
-                <span class="text-primary">Ezyshop</span>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active" id="secondary">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="category.html" class="nav-item nav-link" id="primary">Categories</a>
-                    <a href="team.html" class="nav-item nav-link">Teams</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                        </div>
+<!-- Navbar Start -->
+<div class="container-fluid bg-light position-relative shadow">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+        <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
+            <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
+            <span class="text-primary">Ezyshop</span>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav font-weight-bold mx-auto py-0">
+                <a href="index.html" class="nav-item nav-link active" id="home">Home</a>
+                <a href="about.html" class="nav-item nav-link" id="about">About</a>
+                <a href="category.html" class="nav-item nav-link" id="category">Categories</a>
+                <a href="team.html" class="nav-item nav-link" id="team">Teams</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                        <a href="single.html" class="dropdown-item">Blog Detail</a>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login/SignUp</a>
+                <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
             </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+
+<!-- Search Bar -->
+<div class="search-container mx-3">
+    <form class="form-inline position-relative">
+        <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search" style="padding-right: 50px; border: 1px solid #ced4da; border-radius: 8px;">
+        <button class="btn btn-outline-secondary position-absolute" type="submit" style="top: 50%; right: 10px; transform: translateY(-50%); border: none; background: none; cursor: pointer; z-index: 10;">
+            <i class="fa-solid fa-search"></i>
+        </button>
+    </form>
+</div>
+
+
+            <div class="nav-icons d-flex justify-content-center align-items-center" style="gap: 1rem; font-size: 20px;">
+                <div class="profile d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="profileButton" href="RegisterPages/register.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Login/SignUp
+                    </a>
+                </div>
+                <div class="cart-container d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="cartButton" href="cart.html" style="position: relative;">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cartCount" class="badge" style="position: absolute; top: -10px; right: -10px; font-size: 12px; background-color: red; color: white; border-radius: 50%; padding: 2px 5px; display: block;">0</span>
+                    </a>
+                    <a id="cartPop" href="cart.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Cart
+                    </a>
+                </div>
+                <div class="wishlist-container d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="savedButton" href="wishlist.html">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                    <a id="wishlistPop" href="wishlist.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Wishlist
+                    </a>
+                </div>
+            </div> 
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
 
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 font-weight-bold text-white">Our Categories</h3>
-            <div class="d-inline-flex text-white">
-                <p class="m-0"><a class="text-white" href="">Home</a></p>
-                <p class="m-0 px-2">/</p>
-                <p class="m-0"><a class="text-white" href="">Our Categories</a></p>
-            </div>
+        <h3 class="display-3 font-weight-bold text-white">Our Categories</h3> <!-- Added ID here -->
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Home</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0"><a class="text-white" href="">Our Categories</a></p>
         </div>
     </div>
-    <!-- Header End -->
+</div>
+<!-- Header End -->
 
 
     <!-- Class Start -->
@@ -203,13 +248,9 @@
                                 <div class="col-6 py-1">$2</div>
                             </div>
                         </div>
-                        <a onclick="shopNow('groceries')" class="btn btn-primary px-4 mx-auto mb-4">Order Now</a>
+                        <a onclick="shopNow('groceries')" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
                     </div>
                 </div>
-
-
-
-
 
                 <div class="row row-section" style="display: none;">
 
@@ -514,26 +555,22 @@
 
             </div>
         </div>
+        </div>
         <!-- Class End -->
 
 
         <!-- Registration Start -->
-        <div class="container-fluid py-5">
+        <div class="container-fluid py-5" id="form-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7 mb-5 mb-lg-0">
                         <p class="section-title pr-5"><span class="pr-2">Contact Us</span></p>
                         <h1 class="mb-4">Get in Touch with ezyshop</h1>
-                        <p>Have questions about your order, our services, or need assistance with anything? We're here
-                            to
-                            help! Reach out to us, and we'll get back to you as soon as possible.</p>
+                        <p>Have questions about your order, our services, or need assistance with anything? We're here to help!
+                            Reach out to us, and we'll get back to you as soon as possible.</p>
                         <ul class="list-inline m-0">
-                            <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Fast and Reliable Customer
-                                Support
-                            </li>
-                            <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Personalized Shopping
-                                Experience
-                            </li>
+                            <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Fast and Reliable Customer Support</li>
+                            <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Personalized Shopping Experience</li>
                             <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Real-Time Order Tracking</li>
                         </ul>
                         <a href="" class="btn btn-primary mt-4 py-2 px-4">Send Message</a>
@@ -544,14 +581,12 @@
                                 <h1 class="text-white m-0">Fill Form</h1>
                             </div>
                             <div class="card-body rounded-bottom bg-primary p-5">
-                                <form>
+                                <form id="contactForm">
                                     <div class="form-group">
-                                        <input type="text" class="form-control border-0 p-4" placeholder="Your Name"
-                                            required="required" />
+                                        <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control border-0 p-4" placeholder="Your Email"
-                                            required="required" />
+                                        <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
                                     </div>
                                     <div class="form-group">
                                         <select class="custom-select border-0 px-4" style="height: 47px;">
@@ -560,12 +595,11 @@
                                             <option value="2">Product Information</option>
                                             <option value="3">Delivery Issues</option>
                                             <option value="4">Feedback/Suggestions</option>
-                                            <option value="3">Other</option>
+                                            <option value="5">Other</option>
                                         </select>
                                     </div>
                                     <div>
-                                        <button class="btn btn-secondary btn-block border-0 py-3"
-                                            type="submit">Submit</button>
+                                        <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Submit</button>
                                     </div>
                                 </form>
                             </div>
@@ -574,97 +608,115 @@
                 </div>
             </div>
         </div>
+
         <!-- Registration End -->
 
 
-        <!-- Footer Start -->
-    <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
-        <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px">
-                    <img style="width: 80px" src="/img/ezyshop.png" alt="logo" />
-                    <span class="text-white">Ezyshop</span>
-                </a>
-                <p>
-                    EzyShop is a user-friendly platform that connects you to local stores, offering a seamless shopping experience. Compare prices, access exclusive deals, and enjoy hassle-free deliveries for groceries, essentials, and organic products—all in one app.
-                </p>
-                <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://github.com/mdazfar2/Ezyshop"><i class="fab fa-github"></i></a>
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://discord.com/invite/SEzpxqQG"><i class="fa-brands fa-discord"></i></a>
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://www.linkedin.com/company/ezyshopz/"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Get In Touch</h3>
-                <div class="d-flex hov">
-                    <a href="https://www.google.com/maps/place/Jaipur,+Rajasthan/@26.8851151,75.6257468,11z/data=!3m1!4b1!4m6!3m5!1s0x396c4adf4c57e281:0xce1c63a0cf22e09!8m2!3d26.9124336!4d75.7872709!16zL20vMDE2NzIy?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
-                        <h4 class="fa fa-map-marker-alt text-primary icon"></h4>
-                    </a>
-                    <div class="pl-3 cont">
-                        <a href="https://hi.wikipedia.org/wiki/%E0%A4%9C%E0%A4%AF%E0%A4%AA%E0%A5%81%E0%A4%B0">
-                            <h5 class="text-white">Address</h5>
-                            <p>Jaipur, Rajasthan</p>
-                        </a>
-
-                    </div>
-                </div>
-                <div class="d-flex hov">
-                    <a href="mailto:ezyshop@gmail.com">
-                        <h4 class="fa fa-envelope text-primary icon"></h4>
-                        <div class="pl-3 cont">
-                            <h5 class="text-white">Email</h5>
-                            <p>ezyshop@gmail.com</p>
-                    </a>
-
-                    </div>
-                </div>
-                <div class="d-flex hov">
-                    <a href="tel:7739317870">
-                        <h4 class="fa fa-phone-alt text-primary icon"></h4>
-                        <div class="pl-3 cont">
-                            <h5 class="text-white">Phone</h5>
-                            <p>+91 7739317870</p>
-                    </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Quick Links</h3>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="/index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="/about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="/category.html"><i class="fa fa-angle-right mr-2"></i>Our Categories</a>
-                    <a class="text-white mb-2" href="/team.html"><i class="fa fa-angle-right mr-2"></i>Our Teams</a>
-                    <a class="text-white mb-2" href="/blog.html"><i class="fa fa-angle-right mr-2"></i>Our Blog</a>
-                    <a class="text-white" href="/contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Newsletter</h3>
-                <form action="">
-                    <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email" required="required" />
-                    </div>
-                    <div>
-                        <button class="btn btn-primary btn-block border-0 py-3" type="submit">
-					Submit Now
-				</button>
-                    </div>
-                </form>
+<!-- Footer Start -->
+<div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="row pt-5">
+        <!-- Column 1: Logo and About Info -->
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px">
+                <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
+                <span class="text-white">Ezyshop</span>
+            </a>
+            <p>
+                EzyShop is a user-friendly platform that connects you to local stores, offering a seamless shopping experience.
+                Compare prices, access exclusive deals, and enjoy hassle-free deliveries for groceries, essentials, and organic
+                products—all in one app.
+            </p>
+            <div class="d-flex justify-content-start mt-4">
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://github.com/mdazfar2/Ezyshop">
+                    <i class="fab fa-github"></i></a>
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://discord.com/invite/SEzpxqQG">
+                    <i class="fa-brands fa-discord"></i></a>
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="https://www.linkedin.com/company/ezyshopz/">
+                    <i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px" href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2)">
-            <p class="m-0 text-center text-white">
-                &copy; <a class="text-primary font-weight-bold" href="#">Ezyshop</a>. All Rights Reserved. Designed by
-                <a class="text-primary font-weight-bold" href="https://www.azfaralam.xyz/">Azfar Alam</a>
-            </p>
+
+        <!-- Column 2: Contact Info -->
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h3 class="text-primary mb-4">Get In Touch</h3>
+            <div class="d-flex hov">
+                <a href="https://www.google.com/maps/place/Jaipur,+Rajasthan/@26.8851151,75.6257468,11z/data=!3m1!4b1!4m6!3m5!1s0x396c4adf4c57e281:0xce1c63a0cf22e09!8m2!3d26.9124336!4d75.7872709!16zL20vMDE2NzIy?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
+                    <h4 class="fa fa-map-marker-alt text-primary icon"></h4>
+                </a>
+                <div class="pl-3 cont">
+                    <a href="https://hi.wikipedia.org/wiki/%E0%A4%9C%E0%A4%AF%E0%A4%AA%E0%A5%81%E0%A4%B0">
+                        <h5 class="text-white">Address</h5>
+                        <p>Jaipur, Rajasthan</p>
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex hov">
+                <a href="mailto:ezyshop@gmail.com">
+                    <h4 class="fa fa-envelope text-primary icon"></h4>
+                    <div class="pl-3 cont">
+                        <h5 class="text-white">Email</h5>
+                        <p>ezyshop@gmail.com</p>
+                </a>
+                </div>
+            </div>
+            <div class="d-flex hov">
+                <a href="tel:7739317870">
+                    <h4 class="fa fa-phone-alt text-primary icon"></h4>
+                    <div class="pl-3 cont">
+                        <h5 class="text-white">Phone</h5>
+                        <p>+91 7739317870</p>
+                </a>
+                </div>
+            </div>
+        </div>
+<!-- Footer End -->
+
+        <!-- Column 3: Quick Links -->
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h3 class="text-primary mb-4">Quick Links</h3>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white mb-2" href="/index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class="text-white mb-2" href="/about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                <a class="text-white mb-2" href="/category.html"><i class="fa fa-angle-right mr-2"></i>Our Categories</a>
+                <a class="text-white mb-2" href="/team.html"><i class="fa fa-angle-right mr-2"></i>Our Teams</a>
+                <a class="text-white mb-2" href="/blog.html"><i class="fa fa-angle-right mr-2"></i>Our Blog</a>
+                <a class="text-white" href="/contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="col-lg-3 col-md-6 mb-5" id="news-form-section">
+            <h3 class="text-primary mb-4">Newsletter</h3>
+            <form id="newsForm" action="">
+                <div class="form-group">
+                    <input type="text" class="form-control border-0 py-4" id="newsletterName" placeholder="Your Name" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control border-0 py-4" id="newsletterMail" placeholder="Your Email" required="required" />
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                </div>
+            </form>
+            <div id="thankYouMessage" class="thank-you-message">
+                <div class="message-content">
+                    <h2>Thanks for your Submission!</h2>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Footer End -->
+    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2)">
+        <p class="m-0 text-center text-white">
+            &copy; <a class="text-primary font-weight-bold" href="#">Ezyshop</a>. All Rights Reserved. Designed by
+            <a class="text-primary font-weight-bold" href="https://www.azfaralam.xyz/">Azfar Alam</a>
+        </p>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
@@ -679,6 +731,7 @@
 
     <!-- Auth JavaScript-->
     <script src="js/auth.js"></script>
+    <script src="js/loadMore.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
@@ -686,6 +739,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script src="js/newsLetter.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -717,6 +772,29 @@
                 }
             });
         });
+
+// function shopNow(category) {
+//     // Get the element where the category title is displayed
+//     const categoryTitleElement = document.getElementById('category-title');
+
+//     // Change the title based on the clicked category
+//     switch (category) {
+//         case 'fashion':
+//             categoryTitleElement.textContent = "Fashion & Accessories";
+//             break;
+//         case 'electronics':
+//             categoryTitleElement.textContent = "Electronics & Gadgets";
+//             break;
+//         case 'groceries':
+//             categoryTitleElement.textContent = "Groceries & Essentials";
+//             break;
+//         default:
+//             categoryTitleElement.textContent = "Our Categories"; // Default title
+//     }
+
+//     // Optionally, you can scroll to the header or perform other actions
+//     // window.scrollTo(0, 0); // Scroll to the top
+// }
     </script>
 </body>
 

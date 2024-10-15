@@ -14,11 +14,13 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
     <!-- Flaticon Font -->
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
@@ -30,40 +32,83 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css\footer.css">
+    <link rel="stylesheet" href="css/newsLetter.css">
+
+    <link rel="stylesheet" href="css/cart.css">
 
 </head>
-
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <img style="width: 80px;" src="./img/ezyshop.png" alt="logo">
-                <span class="text-primary">Ezyshop</span>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active" id="secondary">Home</a>
-                    <a href="about.html" class="nav-item nav-link" id="primary">About</a>
-                    <a href="category.html" class="nav-item nav-link">Categories</a>
-                    <a href="team.html" class="nav-item nav-link">Teams</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                        </div>
+<!-- Navbar Start -->
+<div class="container-fluid bg-light position-relative shadow">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+        <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
+            <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
+            <span class="text-primary">Ezyshop</span>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav font-weight-bold mx-auto py-0">
+                <a href="index.html" class="nav-item nav-link active" id="home">Home</a>
+                <a href="about.html" class="nav-item nav-link" id="about">About</a>
+                <a href="category.html" class="nav-item nav-link" id="category">Categories</a>
+                <a href="team.html" class="nav-item nav-link" id="team">Teams</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                        <a href="single.html" class="dropdown-item">Blog Detail</a>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-4">Login/SignUp</a>
+                <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
             </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+
+<!-- Search Bar -->
+<div class="search-container mx-3">
+    <form class="form-inline position-relative">
+        <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search" style="padding-right: 50px; border: 1px solid #ced4da; border-radius: 8px;">
+        <button class="btn btn-outline-secondary position-absolute" type="submit" style="top: 50%; right: 10px; transform: translateY(-50%); border: none; background: none; cursor: pointer; z-index: 10;">
+            <i class="fa-solid fa-search"></i>
+        </button>
+    </form>
+</div>
+
+
+            <div class="nav-icons d-flex justify-content-center align-items-center" style="gap: 1rem; font-size: 20px;">
+                <div class="profile d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="profileButton" href="RegisterPages/register.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <a id="authButton" href="RegisterPages/register.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Login/SignUp
+                    </a>
+                </div>
+                <div class="cart-container d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="cartButton" href="cart.html" style="position: relative;">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cartCount" class="badge" style="position: absolute; top: -10px; right: -10px; font-size: 12px; background-color: red; color: white; border-radius: 50%; padding: 2px 5px; display: block;">0</span>
+                    </a>
+                    <a id="cartPop" href="cart.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Cart
+                    </a>
+                </div>
+                <div class="wishlist-container d-flex flex-column align-items-center justify-content-center" style="position: relative;">
+                    <a id="savedButton" href="wishlist.html">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                    <a id="wishlistPop" href="wishlist.html" class="btn btn-primary px-2 py-0"
+                        style="font-size: 12px; display: none; position: absolute; top: 32px;">
+                        Wishlist
+                    </a>
+                </div>
+            </div> 
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
 
 
     <!-- Header Start -->
@@ -73,10 +118,11 @@
             <div class="d-inline-flex text-white">
                 <p class="m-0"><a class="text-white" href="">Home</a></p>
                 <p class="m-0 px-2">/</p>
-                <p class="m-0">About Us</p>
+                <p class="m-0"><a class="text-white" href="">About Us</a></p>
             </div>
         </div>
     </div>
+
     <!-- Header End -->
 
 
@@ -88,6 +134,7 @@
                     <img class="img-fluid rounded mb-5 mb-lg-0" src="img/about-1.png" alt="">
                 </div>
                 <div class="col-lg-7">
+                    <p class="section-title pr-5"></p>
                     <p class="section-title pr-5"><span class="pr-2">Learn About Us</span></p>
                     <h1 class="mb-4">Bringing Every Store to Your Door</h1>
                     <p>EzyShop is your go-to platform for shopping locally from the comfort of your home. Whether you're
@@ -121,68 +168,80 @@
     <!-- Facilities Start -->
     <div class="container-fluid pt-5">
         <div class="container pb-3">
+            <p class="section-title px-5">
+                <span class="px-2" style="text-align: center;">Our Facilities</span>
+            </p>
             <div class="row">
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
+                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
                             <h4>Wide Product Selection</h4>
-                            <p class="m-0">Discover a variety of products from groceries to electronics, all in one app.
+                            <p class="m-0">
+                                Discover a variety of products from groceries to electronics, all in one app.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
+                        <i class="flaticon-022-drum h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
                             <h4>Local & Mall-Based Stores</h4>
-                            <p class="m-0">Easily shop from your favorite local stores and top malls, all from home.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>
-                        <div class="pl-4">
-                            <h4>Seamless Ordering Process</h4>
-                            <p class="m-0">Enjoy a simple and intuitive ordering system that saves you time and hassle.
+                            <p class="m-0">
+                                Easily shop from your favorite local stores and top malls, all from home.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
+                        <i class="flaticon-030-crayons h1 font-weight-normal text-primary mt-4"></i>
+                        <div class="pl-4">
+                            <h4>Seamless Ordering Process</h4>
+                            <p class="m-0">
+                                Enjoy a simple and intuitive ordering system that saves you time and hassle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
+                        <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
                             <h4>Fast & Reliable Delivery</h4>
-                            <p class="m-0">Get your items delivered to your doorstep quickly and reliably, wherever you
-                                are.</p>
+                            <p class="m-0">
+                                Get your items delivered to your doorstep quickly and reliably, wherever you are.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
+                        <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
                             <h4>Exclusive Discounts & Offers</h4>
-                            <p class="m-0">Unlock deals and discounts available only through EzyShop.</p>
+                            <p class="m-0">
+                                Unlock deals and discounts available only through EzyShop.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="d-flex bg-light shadow-sm border-top rounded flex-fill" style="padding: 30px">
+                        <i class="flaticon-047-backpack h1 font-weight-normal text-primary mt-4"></i>
                         <div class="pl-4">
                             <h4>Secure Payments</h4>
-                            <p class="m-0">Shop with peace of mind, thanks to our safe and secure payment gateway.</p>
+                            <p class="m-0">
+                                Shop with peace of mind, thanks to our safe and secure payment gateway.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Facilities Start -->
+    <!-- Facilities End -->
 
 
 
@@ -222,7 +281,7 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px">
-                    <img style="width: 80px" src="/img/ezyshop.png" alt="logo" />
+                    <img style="width: 80px" src="./img/ezyshop.png" alt="logo" />
                     <span class="text-white">Ezyshop</span>
                 </a>
                 <p>
@@ -280,14 +339,14 @@
                     <a class="text-white" href="/contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
+            <div class="col-lg-3 col-md-6 mb-5" id="news-form-section">
                 <h3 class="text-primary mb-4">Newsletter</h3>
-                <form action="">
+                <form id="newsForm" action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                        <input type="text" class="form-control border-0 py-4" id="newsletterName" placeholder="Your Name" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email" required="required" />
+                        <input type="email" class="form-control border-0 py-4" id="newsletterMail" placeholder="Your Email" required="required" />
                     </div>
                     <div>
                         <button class="btn btn-primary btn-block border-0 py-3" type="submit">
@@ -295,6 +354,11 @@
 				</button>
                     </div>
                 </form>
+                <div id="thankYouMessage" class="thank-you-message">
+                    <div class="message-content">
+                        <h2>Thanks for your Submission!</h2>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2)">
@@ -327,7 +391,10 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
+    <script src="js/newsLetter.js"></script>
+
     <script>
+
         document.addEventListener("DOMContentLoaded", function() {
             const authButton = document.getElementById("authButton");
             const currentUser = localStorage.getItem("currentUser");
