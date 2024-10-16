@@ -11,7 +11,7 @@ const Navbar = () => {
   const { theme} = useTheme() || {theme:"light"} // Get the current theme and toggle function
   
   return (
-    <div className={`border-b dark:border-Green w-full border-gray-900 ${theme === 'dark' ? 'bg-DarkGray' : 'bg-white'}`}>
+    <div className={`border-b  dark:border-Green w-full border-gray-900 ${theme === 'dark' ? 'bg-DarkGray' : 'bg-white'}`}>
       <div className={`relative px-4 sm:px-6 lg:px-8 flex h-25 justify-between items-center ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
         <div className="flex items-center">
           <Image

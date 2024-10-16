@@ -50,12 +50,12 @@ const blogData = [
 const RelatedPosts = () => {
   return (
     <>
-      <div className="flex items-center justify-center mt-10 text-4xl font-bold text-customBlue font-handlee">
+      <div className="flex items-center justify-center mt-10 text-4xl font-bold text-customBlue dark:text-Green font-handlee">
         Related Posts
       </div>
 
       {/* Ensure no overflow with max-width and padding adjustments */}
-      <div className="w-full max-w-screen-xl mx-auto px-4 mt-10 text-white overflow-hidden mb-10">
+      <div className="w-full max-w-screen-xl mx-auto  mt-10 text-white overflow-hidden mb-10">
         <Carousel
           opts={{
             align: "start",
@@ -75,42 +75,42 @@ const RelatedPosts = () => {
                   className="flex items-center justify-center lg:block"
                 >
                   <Card
-                    className="w-[400px] sm:w-[320px] h-[160px] flex items-center justify-center hover:scale-105 transition duration-800 bg-gray-100"
+                    className="w-[400px] sm:w-[320px] h-[160px] flex lg:p-2 items-center justify-center hover:scale-105 transition duration-800 bg-gray-200 dark:bg-gray-700"
                   >
-                    <CardHeader className="p-1 w-full">
+                    <CardHeader className="h-full flex flex-col items-center justify-center lg:p-0 w-full">
                       <div className="flex items-center justify-center p-0">
                         <Image
-                          width={1000}
-                          height={1000}
+                          width={350}
+                          height={350}
                           alt="card image"
-                          className="h-24 w-24 rounded-lg"
+                          className="w-20 h-20 rounded-full"
                           src={card.url}
                         />
                       </div>
                     </CardHeader>
 
-                    <CardContent className="text-justify p-2 flex flex-col items-center justify-center text-md">
-                      <CardTitle className="flex text-center items-center text-xl pt-4 text-customBlue mt-2 justify-center font-handlee">
+                    <CardContent className="text-justify  lg:p-0 flex flex-col items-center justify-center text-md">
+                      <CardTitle className="flex p-0 text-center items-center text-xl pt-4 text-customBlue dark:text-Green mt-2 justify-center font-handlee">
                         {card.title}
-                      </CardTitle>
+                      </CardTitle >
 
                       <div className="flex items-center justify-center gap-2 mb-4">
                         <div className="flex items-center justify-center gap-2">
-                          <User className="h-4 w-4 text-customTeal" />
+                          <User className="h-4 w-4 text-customTeal dark:text-Yellow" />
                           <div className="text-sm text-gray-500">
                             {card.author}
                           </div>
                         </div>
 
                         <div className="flex items-center justify-center gap-2">
-                          <Folder className="h-4 w-4 text-customTeal" />
+                          <Folder className="h-4 w-4 text-customTeal dark:text-Yellow" />
                           <div className="text-sm text-gray-500">
                             {card.category}
                           </div>
                         </div>
 
                         <div className="flex items-center justify-center gap-2">
-                          <MessagesSquare className="h-4 w-4 text-customTeal" />
+                          <MessagesSquare className="h-4 w-4 text-customTeal dark:text-Yellow" />
                           <div className="text-sm text-gray-500">
                             {card.comments}
                           </div>
