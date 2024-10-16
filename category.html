@@ -59,6 +59,22 @@
                         <a href="blog.html" class="dropdown-item">Blog Grid</a>
                         <a href="single.html" class="dropdown-item">Blog Detail</a>
                     </div>
+                    <div class="container mt-4">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Search..." aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" id="searchButton">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+
                 </div>
                 <a href="contact.html" class="nav-item nav-link" id="contact">Contact</a>
             </div>
@@ -120,11 +136,29 @@
             <p class="m-0"><a class="text-white" href="">Our Categories</a></p>
         </div>
     </div>
-</div>
-<!-- Header End -->
+    <!-- Header End -->
+    <div id="searchResults" style="display: none;">
+        <h3>Search Results:</h3>
+        <div id="resultsContainer"></div>
+    </div>
+    
+    <div id="notificationIcon" class="notification-icon" onclick="toggleNotifications()">
+        🛎️ <span id="notificationCount">0</span>
+    </div>
 
+    <div id="notificationSection" class="notification-section" style="display: none;">
+        <h2>Notifications</h2>
+        <div id="notificationsContainer"></div>
+    </div>
+</div>
+<!-- Header End -
+
+    <div id="notification" class="notification" style="display: none;">
+        You are currently offline. Some features may not be available.
+    </div>
 
     <!-- Class Start -->
+    <div id="content">
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -481,6 +515,7 @@
                             <a onclick="shopNow('baby products')" class="btn btn-primary px-4 mx-auto mb-4">Shop Now</a>
                         </div>
                     </div>
+                    <div id="content">
 
                     <div class="col-lg-4 mb-5">
                         <div class="card card-hover border-0 bg-light shadow-sm pb-2">
@@ -544,6 +579,7 @@
                     </div>
 
                 </div>
+                </div>
 
 
                 <!-- Load More Button -->
@@ -558,6 +594,9 @@
         </div>
         <!-- Class End -->
 
+
+    
+    </div>
 
         <!-- Registration Start -->
         <div class="container-fluid py-5" id="form-section">
@@ -773,6 +812,89 @@
             });
         });
 
+        document.getElementById("searchButton").addEventListener("click", function() {
+        performSearch();
+    });
+
+    function performSearch() {
+        const searchInput = document.getElementById("searchInput").value.toLowerCase();
+        const elements = document.querySelectorAll("#content h1, #content h2, #content h3, #content h4, #content h5, #content p"); // Search only within #content div
+
+        const resultsContainer = document.getElementById("resultsContainer");
+        resultsContainer.innerHTML = ""; // Clear previous results
+
+        let hasResults = false; // To check if we have any results
+        elements.forEach(element => {
+            if (element.textContent.toLowerCase().includes(searchInput)) {
+                resultsContainer.innerHTML += `<div>${element.outerHTML}</div>`; // Add matching content to results
+                hasResults = true; // If it matches, mark that we have results
+            }
+        });
+
+        // Show or hide the results container
+        if (hasResults) {
+            document.getElementById("searchResults").style.display = "block"; // Show results
+        } else {
+            document.getElementById("searchResults").style.display = "none"; // Hide if no results found
+            alert("No results found");
+        }
+    }
+    // script.js
+
+const notifications = []; // Array to store notifications
+
+function updateOnlineStatus() {
+    const notification = document.getElementById("notification");
+    
+    if (!navigator.onLine) {
+        // User is offline
+        notification.style.display = "block";
+        notification.style.opacity = "1";
+    } else {
+        // User is online
+        notification.style.opacity = "0";
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 500); // Delay to allow fade out
+    }
+}
+
+// Function to toggle the notification section visibility
+function toggleNotifications() {
+    const notificationSection = document.getElementById("notificationSection");
+    notificationSection.style.display = notificationSection.style.display === "none" ? "block" : "none";
+}
+
+// Function to add a new notification
+function addNotification(message) {
+    notifications.push(message); // Add message to the notifications array
+    updateNotificationDisplay(); // Update the notification display
+}
+
+// Function to update the notification display
+function updateNotificationDisplay() {
+    const notificationsContainer = document.getElementById("notificationsContainer");
+    const notificationCount = document.getElementById("notificationCount");
+    notificationsContainer.innerHTML = ""; // Clear previous notifications
+
+    notifications.forEach((notification, index) => {
+        notificationsContainer.innerHTML += `<div>${index + 1}. ${notification}</div>`;
+    });
+
+    notificationCount.textContent = notifications.length; // Update notification count
+}
+
+// Initial check
+updateOnlineStatus();
+
+// Add event listeners for online/offline events
+window.addEventListener("online", () => {
+    updateOnlineStatus();
+    addNotification("You are now online."); // Add notification when online
+});
+window.addEventListener("offline", updateOnlineStatus);
+
+
 // function shopNow(category) {
 //     // Get the element where the category title is displayed
 //     const categoryTitleElement = document.getElementById('category-title');
@@ -795,6 +917,7 @@
 //     // Optionally, you can scroll to the header or perform other actions
 //     // window.scrollTo(0, 0); // Scroll to the top
 // }
+
     </script>
 </body>
 
