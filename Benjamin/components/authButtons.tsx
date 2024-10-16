@@ -9,10 +9,10 @@ const AuthButtons = () => {
     <div className="flex items-center justify-center gap-2">
       {session.status == "unauthenticated" && (
         <Link href={"/login"}>
-          <Button size={"lg"} className="bg-Green hover:border rounded-xl">
-            Login / Signup
-          </Button>
-        </Link>
+        <Button size={"lg"} className={`bg-customTeal dark:bg-Green  hover:border rounded-xl`}>
+          Login / Signup
+        </Button>
+      </Link>
       )}
       {session.status == "authenticated" && (
         <>
