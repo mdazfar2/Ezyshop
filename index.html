@@ -59,12 +59,22 @@
         text-align: center;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
-
-
-
+    .accordion .card {
+        transition: box-shadow 0.3s ease; 
+    }
+    .accordion .card-header {
+        cursor: pointer;
+    }
+    .accordion .collapse {
+        transition: max-height 0.5s ease; 
+        overflow: hidden; 
+        max-height: 0; 
+    }
+    .accordion .collapse.show {
+        max-height: 1000px; 
+    }
 
 </style>
-
 <body>
 <!-- Navbar Start -->
 <div class="container-fluid bg-light position-relative shadow">
@@ -649,6 +659,98 @@
     </div>
     <!-- Blog End -->
 
+    <!-- FAQ Start -->
+<div class="container my-5">
+    <h2 class="text-primary text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is Ezyshop?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    EzyShop is a user-friendly platform that connects you to local stores, offering a seamless shopping experience for groceries and essentials.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How can I contact customer support?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                <div class="card-body">
+                    You can contact customer support by emailing us at ezyshop@gmail.com or calling +91 7739317870.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What payment methods are accepted?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                <div class="card-body">
+                    We accept various payment methods, including credit/debit cards, net banking, and digital wallets.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Do I need to create an account to shop?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Yes, creating an account allows you to save your preferences, track your orders, and enjoy a personalized shopping experience.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        How can I track my order?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                <div class="card-body">
+                    You can track your order status through the 'My Orders' section in your account or via the tracking link sent to your email.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSix">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Can I cancel my order?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Yes, you can cancel your order within 30 minutes of placing it. After that, you will need to contact customer support for assistance.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQ End -->
+
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
@@ -841,6 +943,35 @@
             });
         });
     </script>
+ <script>
+    document.querySelectorAll('.accordion button').forEach(button => {
+        button.addEventListener('click', () => {
+            const collapseElement = document.querySelector(button.getAttribute('data-target'));
+            const isCollapsed = collapseElement.classList.contains('show');
+
+            
+            collapseElement.classList.toggle('show', !isCollapsed);
+            collapseElement.style.maxHeight = isCollapsed ? '0' : collapseElement.scrollHeight + "px"; // Collapse or expand
+
+            
+            document.querySelectorAll('.accordion .collapse').forEach(collapse => {
+                if (collapse !== collapseElement) {
+                    collapse.classList.remove('show');
+                    collapse.style.maxHeight = '0'; 
+                }
+            });
+        });
+    });
+
+
+    document.querySelectorAll('.accordion .collapse').forEach(collapse => {
+        collapse.addEventListener('transitionend', () => {
+            if (!collapse.classList.contains('show')) {
+                collapse.style.maxHeight = 'none'; 
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
