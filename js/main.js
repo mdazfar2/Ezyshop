@@ -50,6 +50,7 @@
     // Post carousel
     $(".post-carousel").owlCarousel({
         autoplay: true,
+        autoplayTimeout: 11500, 
         smartSpeed: 1500,
         dots: false,
         loop: true,
@@ -79,24 +80,26 @@
     $(".testimonial-carousel").owlCarousel({
         center: true,
         autoplay: true,
+        autoplayTimeout: 11500, 
         smartSpeed: 2000,
         dots: true,
         loop: true,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             },
-            992:{
-                items:3
+            992: {
+                items: 3
             }
         }
     });
+    
     
 })(jQuery);
 
