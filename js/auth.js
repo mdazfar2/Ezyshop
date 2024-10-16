@@ -8,6 +8,56 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedButton = document.getElementById('savedButton');
   const currentUser = localStorage.getItem('currentUser');
 
+  updateAuthButton(); // Update the authButton initially
+
+  // Handle click on the profile button
+  profileButton.addEventListener('mouseenter', function () {
+    authButton.style.display = 'block'; // Show authButton when hovering over profileButton
+});
+
+// Add mouseleave event for profileButton
+profileButton.addEventListener('mouseleave', function () {
+    if (!authButton.matches(':hover')) {
+        authButton.style.display = 'none'; // Hide if not hovering over authButton
+    }
+});
+
+// Add mouseenter event for authButton
+authButton.addEventListener('mouseenter', function () {
+    authButton.style.display = 'block'; // Keep authButton visible while hovering
+});
+
+// Add mouseleave event for authButton
+authButton.addEventListener('mouseleave', function () {
+    authButton.style.display = 'none'; // Hide when not hovering over authButton
+});
+
+  // Handle logout
+  authButton.addEventListener('click', function (event) {
+      if (currentUser) { // Only prompt for logout if user is logged in
+          event.preventDefault(); 
+          const confirmLogout = confirm('Do you want to logout?');
+          if (confirmLogout) {
+              localStorage.removeItem('currentUser');
+              updateAuthButton(); // Update authButton after logout
+              location.href = "index.html";
+          }
+      }else{
+        event.preventDefault(); 
+          const confirmLogin = confirm('Do you want to login/signup?');
+          if (confirmLogin) {
+            localStorage.removeItem('login.signup');
+            updateAuthButton(); // Update authButton after logout
+            location.href = "register.html";
+        }
+      }
+  });
+
+  // Cart and wishlist hover functionality
+  setupHover(cartButton, cartPop);
+  setupHover(savedButton, wishlistPop);
+});
+
   // Simulate the cart count (replace with your actual logic to get cart count)
   let itemCount = 0; // Example count, replace this with actual count from your cart
   const initialCartCount = 0; // Replace this with your actual logic to get the initial count
@@ -101,6 +151,7 @@ authButton.addEventListener('mouseleave', function () {
   setupHover(cartButton, cartPop);
   setupHover(savedButton, wishlistPop);
 });
+
 
 // Function to set up hover effects
 function setupHover(button, pop) {
