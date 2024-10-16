@@ -12,8 +12,8 @@ export interface orderItemProps {
 
 const OrderItem: React.FC<orderItemProps> = ({ item }) => {
   return (
-    <div className="flex bg-gray-700 p-5 hover:scale-100 my-2 rounded-lg shadow-2xl w-full items-center justify-between">
-      <div className="flex items-center text-gray-200 justify-center gap-5">
+    <div className="flex bg-gray-200  dark:bg-gray-700 p-5 hover:scale-100 my-2 rounded-lg shadow-lg w-full items-center justify-between">
+      <div className="flex items-center dark:text-gray-200 justify-center gap-5">
         <Image
           src={item.image}
           className="rounded-lg"
@@ -21,7 +21,7 @@ const OrderItem: React.FC<orderItemProps> = ({ item }) => {
           height={"100"}
           alt="orderImage"
         />
-        <div className="flex text-gray-200 flex-col items-start justify-center">
+        <div className="flex dark:text-gray-200 flex-col items-start justify-center">
           <div className="flex gap-2 font-bold items-center justify-center">
             <div>{item.name}</div>
           </div>
@@ -30,7 +30,7 @@ const OrderItem: React.FC<orderItemProps> = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className="text-gray-200">₹{item.price}</div>
+      <div className="dark:text-gray-200">₹{item.price}</div>
       
     </div>
   );

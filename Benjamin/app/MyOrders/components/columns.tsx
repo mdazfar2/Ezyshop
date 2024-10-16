@@ -138,7 +138,7 @@ export const columns: ColumnDef<order>[] = [
       const orderId = row.getValue("orderId");
       return (
         <Link href={`MyOrders/${orderId}`}>
-          <Button className="border text-sm font-bold text-Green hover:bg-Green hover:text-gray-200 hover:border hover:border-DarkGray">
+          <Button className="border text-sm font-bold bg-customTeal hover:bg-customTeal dark:bg-Green dark:hover:bg-Green hover:opacity-80 text-gray-200 hover:border hover:border-DarkGray">
             view details
           </Button>
         </Link>

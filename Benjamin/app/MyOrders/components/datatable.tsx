@@ -44,15 +44,15 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="w-3/4 text-gray-200">
-      <div className="rounded-md  border">
+    <div className="w-3/4   text-black dark:text-gray-200">
+      <div className="rounded-md dark:dark:border-gray-200  border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow  key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="bg-DarkGray" key={header.id}>
+                    <TableHead className= "bg-customTeal text-gray-200 dark:bg-Green dark:text-Yellow font-bold dark:border-gray-200 dark:border-b" key={header.id}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -65,12 +65,13 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          <TableBody className="dark:border-gray-200 dark:border-y">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  className="dark:border-gray-200 dark:border-y"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
@@ -101,7 +102,7 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="text-gray-500 font-bold"
+          className="bg-customTeal text-gray-200 dark:text-gray-200 dark:bg-Green hover:opacity-80 font-bold"
         >
           Previous
         </Button>
@@ -110,7 +111,7 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="text-gray-500 font-bold"
+          className="bg-customTeal text-gray-200 dark:text-gray-200 dark:bg-Green hover:opacity-80 font-bold"
         >
           Next
         </Button>

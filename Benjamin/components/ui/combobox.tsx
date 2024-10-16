@@ -60,7 +60,7 @@ export function ComboboxDemo() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between"
+          className="w-full dark:text-gray-200 justify-between"
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
