@@ -2,15 +2,22 @@ import { PrismaClient } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
+import {  User as NextAuthUser } from "next-auth";
+
+interface JWTToken {
+  uid?: string;
+  user?: NextAuthUser;
+}
+
 export const NEXT_AUTH_CONFIG = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "email", type: "text", placeholder: "" },
+        email: { label: "email", type: "text", placeholder: "" },
         password: { label: "password", type: "password", placeholder: "" },
       },
-      async authorize(credentials: any) {
+      async authorize(credentials:Record<"email" | "password", string> | undefined) {
 
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Invalid credentials");
@@ -48,15 +55,18 @@ export const NEXT_AUTH_CONFIG = {
   ],
       secret: process.env.NEXTAUTH_SECRET,
       callbacks: {
-          jwt: async ({ user, token }: any) => {
+          jwt: async ({ user, token }: { user?: NextAuthUser; token: JWTToken }) => {
           if (user) {
               token.uid = user.id;
           }
           return token;
           },
-        session: ({ session, token, user }: any) => {
+        session: ({ session, token }: {
+          session: { user?: NextAuthUser };
+          token: JWTToken;
+        }) => {
             if (session.user) {
-                session.user.id = token.uid
+                session.user.id = token.uid ||""
             }
             return session
         }

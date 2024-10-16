@@ -2,42 +2,41 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { Loader2, Lock, Mail, User } from "lucide-react";
-import { signIn, useSession } from "next-auth/react";
+import { Lock, Mail, User } from "lucide-react";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   // BE logic and states
-  const session= useSession();
+  // const session= useSession();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setloading] =useState(false);
+  const [loading] =useState(false);
 
   if (error != "") {
     toast.error(error);
     setError("");
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    setloading(true)
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   setloading(true)
+  //   e.preventDefault();
 
-    const result = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });
-    console.log(result)
-    if (result?.error) setError("Invalid email or password");
-    else {
-      toast.success(`Welcome ${session.data?.user?.name}`)
-      window.location.href = "/"; // Redirect on success
-    }
-    setloading(false)
-  };
+  //   const result = await signIn("credentials", {
+  //     email,
+  //     password,
+  //     redirect: false,
+  //   });
+  //   console.log(result)
+  //   if (result?.error) setError("Invalid email or password");
+  //   else {
+  //     toast.success(`Welcome ${session.data?.user?.name}`)
+  //     window.location.href = "/"; // Redirect on success
+  //   }
+  //   setloading(false)
+  // };
 
   // FE logic and states
   const [switchCss, setSwitchCss] = useState(true);

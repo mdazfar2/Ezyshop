@@ -9,13 +9,13 @@ import Image from "next/image";
 
 const Blog = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full mb-10 px-20 lg:px-40">
+    <div className="flex flex-col items-center justify-center gap-5  h-full pb-20 px-20 lg:px-40">
       <div className="h-full flex items-center flex-col lg:grid lg:items-start grid-cols-12 lg:gap-10">
         {/* left half */}
         <div className="col-span-8 px-5 flex max-w-screen-sm lg:max-w-screen-xl items-center lg:items-start justify-center lg:px-10 flex-col">
           <SeperatorHeading label="blog detail page" />
           {/* blog heading */}
-          <div className="flex items-center justify-center lg:justify-start lg:w-full px-24 text-3xl lg:px-0 my-10 lg:text-4xl font-bold text-customBlue font-handlee">
+          <div className="flex items-center justify-center lg:justify-start lg:w-full px-24 text-3xl lg:px-0 my-10 lg:text-4xl font-bold text-customBlue dark:text-Green font-handlee">
             10 Ways to Save on Groceries This Month
           </div>
 
@@ -23,15 +23,15 @@ const Blog = () => {
 
           <div className="flex items-center justify-start gap-4 mb-10">
             <div className="flex items-center justify-center gap-2">
-              <User className="h-4 w-4 text-customTeal" />
+              <User className="h-4 w-4 text-customTeal dark:text-Yellow" />
               <div className="text-sm text-gray-500"> Shreya</div>
             </div>
             <div className="flex items-center justify-center gap-2">
-              <Folder className="h-4 w-4 text-customTeal" />
+              <Folder className="h-4 w-4 text-customTeal dark:text-Yellow" />
               <div className="text-sm text-gray-500">Shopping Tips</div>
             </div>
             <div className="flex items-center justify-center gap-2">
-              <MessagesSquare className="h-4 w-4 text-customTeal" />
+              <MessagesSquare className="h-4 w-4 text-customTeal dark:text-Yellow" />
               <div className="text-sm text-gray-500">23</div>
             </div>
           </div>
@@ -62,7 +62,7 @@ const Blog = () => {
           <RelatedPosts />
           <BlogComments />
         </div>
-        {/* right */}
+        {/* right half*/}
         <div className="col-span-4 px-40 lg:px-0">
           <BlogAvatar />
           <CategoryByKeyword />
