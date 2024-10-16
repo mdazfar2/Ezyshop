@@ -29,7 +29,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`${font.className},h-screen bg-DarkGray`}>
+      <body className={`${font.className},h-screen `}>
         {/* <ModalProvider/> */}
         {/* <ToasterProvider/> */}
         <Providers>
