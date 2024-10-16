@@ -8,8 +8,14 @@ import { usePathname } from "next/navigation";
 import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
 import { Button } from "./ui/button";
+import { ModeToggle } from "./ui/themeButton";
 
-export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
+interface MainNavProps{
+  className?:React.HTMLAttributes<HTMLElement>
+  theme:string
+}
+
+export function MainNav({ className,theme }:MainNavProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu visibility
 
@@ -34,13 +40,13 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
       href: `/WishList`,
       label: "Wish List",
       active: pathname.startsWith(`/WishList`),
-      logo: <Heart className="h-5 w-5 text-Green" />,
+      logo: <Heart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
     },
     {
       href: `/Cart`,
       label: "Cart",
       active: pathname.startsWith(`/Cart`),
-      logo: <ShoppingCart className="h-5 w-5 text-Green" />,
+      logo: <ShoppingCart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
     },
     {
       href: `/Contact`,
@@ -52,7 +58,8 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
     <nav className={cn("flex items-center justify-between", className)}>
       {/* Hamburger icon for mobile */}
-      <div className="lg:hidden">
+      <div className="lg:hidden flex items-center justify-center gap-2">
+        <ModeToggle/>
         <button
           onClick={toggleMenu}
           className="text-White focus:outline-none"
@@ -68,18 +75,21 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
             key={route.href}
             href={route.href}
             className={cn(
-              "font-nunito flex items-center gap-2 justify-center hover:text-gray-500 font-extrabold text-lg",
-              route.active ?"text-gray-500" :"text-white"
+              "font-nunito flex items-center gap-2 justify-center font-extrabold text-lg",
+              route.active ?`${theme==='dark'?'text-gray-200':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
+              theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
             )}
           >
             {route.logo && <span>{route.logo}</span>}
             {route.label}
           </Link>
         ))}
+        
+        <ModeToggle/>
 
         <div className="flex items-center gap-2">
           <Link href={"/login"}>
-            <Button size={"lg"} className="bg-Green hover:border rounded-xl">
+            <Button size={"lg"} className={`${theme==="dark"?`bg-Green`:`bg-customTeal`} hover:border rounded-xl`}>
               Login / Signup
             </Button>
           </Link>
@@ -89,7 +99,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
       {/* Mobile menu with slow opening animation */}
       <div
         className={cn(
-          "lg:hidden absolute top-16 left-0 w-full bg-DarkGray shadow-lg flex flex-col items-center justify-center space-y-2 py-4 px-6 transition-all duration-500 ease-in-out", // Add transition for smooth animation
+          "lg:hidden absolute top-16 left-0 w-full bg-white dark:bg-DarkGray shadow-lg flex flex-col items-center justify-center space-y-2 py-4 px-6 transition-all duration-500 ease-in-out", // Add transition for smooth animation
           isOpen
             ? "max-h-screen opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"
@@ -100,8 +110,9 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
             key={route.href}
             href={route.href}
             className={cn(
-              "font-nunito flex items-center gap-2 justify-center text-xl font-bold   py-2",
-              route.active ? "text-white" : "text-gray-500"
+              "font-nunito flex items-center gap-2 justify-center font-extrabold text-lg",
+              route.active ?`${theme==='dark'?'text-gray-200':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
+              theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
             )}
             onClick={toggleMenu} // Close menu on link click
           >
@@ -112,7 +123,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
 
         <div className="flex items-center gap-2 mt-4">
           <Link href={"/login"}>
-            <Button size={"lg"} className="bg-Green hover:border rounded-xl">
+            <Button size={"lg"} className={`${theme==="dark"?`bg-Green`:`bg-customTeal`} hover:border rounded-xl`}>
               Login / Signup
             </Button>
           </Link>

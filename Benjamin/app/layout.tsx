@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import {Urbanist} from 'next/font/google'
+import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { ThemeProvider } from "@/context/themeProvider";
 
-const font=Urbanist({subsets:['latin']})
+const font = Urbanist({ subsets: ["latin"] });
 // console.log(font.className)
 export const metadata: Metadata = {
   title: "Ezyshop",
@@ -27,16 +28,13 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-
       </head>
-      <body
-        className={`${font.className},h-screen bg-DarkGray`}
-      >
-        {/* <ModalProvider/> */}
-        {/* <ToasterProvider/> */}
-        <Navbar/>
-        {children}
-        <Footer/>
+      <body className={`${font.className},h-screen `}>
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

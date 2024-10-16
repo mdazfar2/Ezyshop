@@ -50,8 +50,8 @@ const Footer = () => {
   const [id, setId] = useState(0);
 
   return (
-    <div className="flex items-center flex-col p-5 bg-DarkGray">
-      <div className="border-y border-Green flex items-start justify-start flex-col lg:grid lg:grid-cols-4 py-2 gap-4">
+    <div className="flex items-center flex-col p-5 bg-customBlue dark:bg-DarkGray">
+      <div className="border-y border-customTeal dark:border-Green flex items-start justify-start flex-col lg:grid lg:grid-cols-4 py-2 gap-4">
         {/* section1 */}
         <div className="flex gap-4 items-start justify-between lg:px-4 pb-4 flex-col">
           <div className="flex justify-center items-center">
@@ -62,7 +62,7 @@ const Footer = () => {
               alt="ezyshop logo"
             />
             <Link href="/" className="ml-4 lg:ml:0 gap-x-2">
-              <p className="font-bold text-5xl text-Green font-nunito">
+              <p className="font-bold text-5xl text-gray-200 dark:text-Green font-nunito">
                 Ezyshop
               </p>
             </Link>
@@ -75,45 +75,45 @@ const Footer = () => {
           </div>
           <div className="flex gap-2">
                 <div className="d-flex justify-content-start mt-4">
-                    <a className="inline-block border border-Green text-Yellow text-sm w-[38px] bg-transparent hover:bg-Yellow hover:text-white rounded-full text-center mr-2 p-2" href="https://github.com/mdazfar2/Ezyshop"><i className="fab fa-github"></i></a>
-                    <a className="inline-block border border-Green text-Yellow text-sm w-[38px] bg-transparent hover:bg-Yellow hover:text-white rounded-full text-center mr-2 p-2" href="https://discord.gg/Rg8T5gtE"><i className="fa-brands fa-discord"></i></a>
-                    <a className="inline-block border border-Green text-Yellow text-sm w-[38px] bg-transparent hover:bg-Yellow hover:text-white rounded-full text-center mr-2 p-2" href="https://www.linkedin.com/company/ezyshopz/"><i className="fab fa-linkedin-in"></i></a>
-                    <a className="inline-block border border-Green text-Yellow text-sm w-[38px] bg-transparent hover:bg-Yellow hover:text-white rounded-full text-center mr-2 p-2" href="#"><i className="fab fa-instagram"></i></a>
+                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="https://github.com/mdazfar2/Ezyshop"><i className="fab fa-github"></i></a>
+                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="https://discord.gg/Rg8T5gtE"><i className="fa-brands fa-discord"></i></a>
+                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="https://www.linkedin.com/company/ezyshopz/"><i className="fab fa-linkedin-in"></i></a>
+                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="#"><i className="fab fa-instagram"></i></a>
                 </div>
           </div>
         </div>
         {/* section 2 */}
         <div className="flex flex-col w-full items-start py-4  lg:ml-10 lg:p-4 gap-5">
-          <p className="font-bold text-3xl text-Green font-handlee">
+          <p className="font-bold text-3xl text-customTeal dark:text-Green font-handlee">
             Get in touch
           </p>
           <div className="flex items-start flex-col gap-4 justify-center">
             <div className="flex gap-4">
-              <MapPin className="h-7 w-7  text-Yellow" />
+              <MapPin className="h-7 w-7  text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Address</div>
-                <div className="text-lg text-Green">Jaipur, Rajisthan</div>
+                <div className="text-lg text-customTeal dark:text-Green">Jaipur, Rajisthan</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <Mail className="h-7 w-7 text-Yellow" />
+              <Mail className="h-7 w-7 text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Email</div>
-                <div className="text-lg text-Green">ezyshopz@gmail.com</div>
+                <div className="text-lg text-customTeal dark:text-Green">ezyshopz@gmail.com</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <Phone className="h-7 w-7  text-Yellow" />
+              <Phone className="h-7 w-7  text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Phone</div>
-                <div className="text-lg text-Green">+91 7739317870</div>
+                <div className="text-lg text-customTeal dark:text-Green">+91 7739317870</div>
               </div>
             </div>
           </div>
         </div>
         {/* section 3 */}
         <div className="flex flex-col w-full items-start py-4  lg:ml-10 lg:p-4 gap-5">
-          <p className="font-bold text-3xl text-Green font-handlee">
+          <p className="font-bold text-3xl text-customTeal dark:text-Green font-handlee">
             Quick Links
           </p>
           <div className="text-gray-200 flex flex-col gap-2">
@@ -139,12 +139,12 @@ const Footer = () => {
         </div>
         {/* section 4 */}
         <div className="flex flex-col w-full lg:w-10/12 items-start py-4  lg:ml-10 lg:p-4 gap-5">
-          <p className="font-bold text-3xl text-Green font-handlee">
+          <p className="font-bold text-3xl text-customTeal dark:text-Green font-handlee">
             News Letter
           </p>
           <Input placeholder="Name" className="bg-DarkGray text-gray-200 h-10 w-10/12" />
           <Input placeholder="Email" className="bg-DarkGray text-gray-200 h-10 w-10/12" />
-          <Button className="lg:h-14 bg-Green rounded-full w-10/12">
+          <Button className="lg:h-14 bg-customTeal dark:bg-Green rounded-full w-10/12">
             Subscribe
           </Button>
         </div>
@@ -160,7 +160,7 @@ const Footer = () => {
           onMouseLeave={()=>{
             setId(0)
           }}
-          className="text-Green hover:text-gray-200 hover:underline pl-1"
+          className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1"
         >
           Ezyshop
         </Link>
@@ -175,7 +175,7 @@ const Footer = () => {
           onMouseLeave={()=>{
             setId(0)
           }}
-          className="text-Green hover:text-gray-200 hover:underline pl-1 "
+          className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1 "
         >
            Azfar Alam
         </Link>
