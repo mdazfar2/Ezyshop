@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
 import { Button } from "./ui/button";
+import AuthButtons from "./authButtons";
 
 export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
@@ -53,23 +54,20 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
     <nav className={cn("flex items-center justify-between", className)}>
       {/* Hamburger icon for mobile */}
       <div className="lg:hidden">
-        <button
-          onClick={toggleMenu}
-          className="text-White focus:outline-none"
-        >
+        <button onClick={toggleMenu} className="text-White focus:outline-none">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Navigation links (shown on larger screens, hidden on mobile) */}
-      <div className={cn("hidden lg:flex items-center space-x-4 lg:space-x-6")}>
+      <div className={cn("hidden lg:flex items-center justify-centerx space-x-4 lg:space-x-6")}>
         {routes.map((route) => (
           <Link
             key={route.href}
             href={route.href}
             className={cn(
               "font-nunito flex items-center gap-2 justify-center hover:text-gray-500 font-extrabold text-lg",
-              route.active ?"text-gray-500" :"text-white"
+              route.active ? "text-gray-500" : "text-white"
             )}
           >
             {route.logo && <span>{route.logo}</span>}
@@ -77,13 +75,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
           </Link>
         ))}
 
-        <div className="flex items-center gap-2">
-          <Link href={"/login"}>
-            <Button size={"lg"} className="bg-Green hover:border rounded-xl">
-              Login / Signup
-            </Button>
-          </Link>
-        </div>
+        <AuthButtons />
       </div>
 
       {/* Mobile menu with slow opening animation */}
@@ -110,13 +102,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
           </Link>
         ))}
 
-        <div className="flex items-center gap-2 mt-4">
-          <Link href={"/login"}>
-            <Button size={"lg"} className="bg-Green hover:border rounded-xl">
-              Login / Signup
-            </Button>
-          </Link>
-        </div>
+        <AuthButtons />
       </div>
     </nav>
   );
