@@ -1362,7 +1362,6 @@ pre code {
   .offset-sm-11 {
     margin-left: 91.66667%;
   }
-}
 
 @media (min-width: 768px) {
   .col-md {
@@ -6175,8 +6174,6 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
-
 .btn-success.disabled,
 .btn-success:disabled {
     color: #fff;
@@ -6209,8 +6206,6 @@ fieldset:disabled a.btn {
     border-left-width: 1px;
   }
 
-}
-
 .btn-info.disabled,
 .btn-info:disabled {
     color: #fff;
@@ -6241,8 +6236,6 @@ fieldset:disabled a.btn {
     margin-left: -1px;
     border-left-width: 1px;
   }
-
-}
 
 .btn-warning.disabled,
 .btn-warning:disabled {
@@ -6275,9 +6268,6 @@ fieldset:disabled a.btn {
     margin-left: -1px;
     border-left-width: 1px;
   }
-
-}
-
 .btn-danger.disabled,
 .btn-danger:disabled {
     color: #fff;
@@ -11682,11 +11672,6 @@ button.bg-dark:focus {
     padding-top: 0 !important;
 }
 
-.pr-0,
-.px-0 {
-    padding-right: 0 !important;
-}
-
 .pb-0,
 .py-0 {
     padding-bottom: 0 !important;
@@ -13424,6 +13409,12 @@ button.bg-dark:focus {
     .text-lg-center {
         text-align: center !important;
     }
+}
+
+@media (max-width: 365px){
+  .navbar-toggler{
+    margin-left: 1em;
+  }
 }
 
 @media (min-width: 1200px) {
