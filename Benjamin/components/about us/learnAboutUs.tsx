@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const LearnAboutUs = () => {
   return (
-    <div className="flex items-center justify-center flex-col px-20 md:px-20 ">
+    <div className="flex items-center dark:text-gray-200 justify-center flex-col px-20 md:px-20 ">
       <div className="grid grid-cols-12  lg:w-10/12 ">
         <div className=" col-span-12 lg:col-span-5 py-5 lg:mr-10 flex justify-center">
           <Image
@@ -17,11 +17,11 @@ const LearnAboutUs = () => {
           />
         </div>
         <div className="col-span-12 lg:col-span-7 flex gap-8  flex-col justify-start">
-          <div className="font-handlee text-2xl text-Green font-bold md:text-4xl">
+          <div className="font-handlee text-2xl text-customBlue dark:text-Green font-bold md:text-4xl">
             Bringing Every Store to Your Door
           </div>
           <div>
-            <p className="text-gray-200 text-md md:text-base font-nunito">
+            <p className=" text-md md:text-base font-nunito">
               {" "}
               EzyShop is your go-to platform for shopping locally from the
               comfort of your home. Whether you&apos;re looking for products
@@ -42,22 +42,22 @@ const LearnAboutUs = () => {
             <div className="flex flex-col gap-2 font-nunito ">
               <div className="border-b-2 border-gray-500" />
               <div className="flex gap-2">
-                <Check className="h-7 w-7 font-bold text-Yellow " />
-                <div className="text-[#7aba7c] text-base">
+                <Check className="h-7 w-7 font-bold text-customTeal dark:text-Yellow " />
+                <div className="text-base">
                   Shop from local stores or malls near you
                 </div>
               </div>
               <div className="border-b-2 border-gray-500 " />
               <div className="flex gap-2">
-                <Check className="h-7 w-7 font-bold text-Yellow " />
-                <div className="text-[#7aba7c] text-base">
+                <Check className="h-7 w-7 font-bold text-customTeal dark:text-Yellow " />
+                <div className="text-base">
                   Quick, reliable delivery from the stores you trust
                 </div>
               </div>
               <div className="border-b-2 border-gray-500" />
               <div className="flex gap-2">
-                <Check className="h-7 w-7 font-bold text-Yellow " />
-                <div className="text-[#7aba7c] text-base">
+                <Check className="h-7 w-7 font-bold text-customTeal dark:text-Yellow " />
+                <div className="text-base">
                   Exclusive offers, only available through EzyShop
                 </div>
               </div>
@@ -67,7 +67,7 @@ const LearnAboutUs = () => {
         </div>
       </div>
       <Link href={"/shops"}>
-        <Button className="rounded-full bg-Green h-10 w-40 text-md m-10 font-nunito ">
+        <Button className="rounded-full bg-customTeal dark:bg-Green h-10 w-40 text-md m-10 font-nunito ">
           Explore Stores
         </Button>
       </Link>
