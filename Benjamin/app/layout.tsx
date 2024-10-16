@@ -3,7 +3,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { ThemeProvider } from "@/context/themeProvider";
+import { Providers } from "@/providers/sessionProvider";
 
 const font = Urbanist({ subsets: ["latin"] });
 // console.log(font.className)
@@ -29,12 +29,14 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`${font.className},h-screen `}>
-        <ThemeProvider>
+      <body className={`${font.className},h-screen bg-DarkGray`}>
+        {/* <ModalProvider/> */}
+        {/* <ToasterProvider/> */}
+        <Providers>
           <Navbar />
           {children}
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

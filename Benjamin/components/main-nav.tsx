@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 
 import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
-import { Button } from "./ui/button";
 import { ModeToggle } from "./ui/themeButton";
+import AuthButtons from "./authButtons";
 
 interface MainNavProps{
   className?:React.HTMLAttributes<HTMLElement>
@@ -69,7 +69,7 @@ export function MainNav({ className,theme }:MainNavProps) {
       </div>
 
       {/* Navigation links (shown on larger screens, hidden on mobile) */}
-      <div className={cn("hidden lg:flex items-center space-x-4 lg:space-x-6")}>
+      <div className={cn("hidden lg:flex items-center justify-centerx space-x-4 lg:space-x-6")}>
         {routes.map((route) => (
           <Link
             key={route.href}
@@ -87,13 +87,7 @@ export function MainNav({ className,theme }:MainNavProps) {
         
         <ModeToggle/>
 
-        <div className="flex items-center gap-2">
-          <Link href={"/login"}>
-            <Button size={"lg"} className={`${theme==="dark"?`bg-Green`:`bg-customTeal`} hover:border rounded-xl`}>
-              Login / Signup
-            </Button>
-          </Link>
-        </div>
+        <AuthButtons />
       </div>
 
       {/* Mobile menu with slow opening animation */}
@@ -121,13 +115,7 @@ export function MainNav({ className,theme }:MainNavProps) {
           </Link>
         ))}
 
-        <div className="flex items-center gap-2 mt-4">
-          <Link href={"/login"}>
-            <Button size={"lg"} className={`${theme==="dark"?`bg-Green`:`bg-customTeal`} hover:border rounded-xl`}>
-              Login / Signup
-            </Button>
-          </Link>
-        </div>
+        <AuthButtons />
       </div>
     </nav>
   );

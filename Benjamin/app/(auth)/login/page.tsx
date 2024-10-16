@@ -2,9 +2,30 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock, Mail, User } from "lucide-react";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 
 const Login = () => {
+  // BE logic and states
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    if (result?.error) alert("Invalid email or password");
+    else window.location.href = "/"; // Redirect on success
+  };
+
+  // FE logic and states
   const [switchCss, setSwitchCss] = useState(true);
   const [isResetOpen, setIsResetOpen] = useState(false);
 
@@ -29,26 +50,38 @@ const Login = () => {
 
           {switchCss && !isResetOpen && (
             <div className="flex flex-col z-10 items-center justify-start pt-24  pr-14 gap-4 w-2/4">
-              <div className="font-nunito text-4xl text-Green font-extrabold">Login</div>
-              <div className="flex items-center w-4/5 justify-center">
-                <Input
-                  className="rounded-full"
-                  type="text"
-                  placeholder="Username"
-                />
-                <User className="h-7 w-7 text-Yellow" />
-              </div>
-              <div className="flex items-center w-4/5 justify-center">
-                <Input
-                  className="rounded-full"
-                  type="password"
-                  placeholder="Password"
-                />
-                <Lock className="h-7 w-7 text-Yellow" />
-              </div>
-              <Button className="rounded-full bg-Green font-bold h-10 w-4/5 ">
+              <div className="font-nunito text-4xl text-Green font-extrabold">
                 Login
-              </Button>
+              </div>
+              <form
+                // closed login button
+                // onSubmit={handleSubmit}
+                className="w-full flex flex-col items-center gap-4"
+              >
+                <div className="flex items-center w-4/5 justify-center">
+                  <Input
+                    className="rounded-full"
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <User className="h-7 w-7 text-Yellow" />
+                </div>
+                <div className="flex items-center w-4/5 justify-center">
+                  <Input
+                    className="rounded-full"
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <Lock className="h-7 w-7 text-Yellow" />
+                </div>
+                <Button type="submit" className="rounded-full bg-Green font-bold h-10 w-4/5 ">
+                  Login
+                </Button>
+              </form>
               <div
                 className="text-Green cursor-pointer"
                 onClick={() => setIsResetOpen(!isResetOpen)}
@@ -90,7 +123,6 @@ const Login = () => {
               >
                 Back to Login
               </div>
-              
             </div>
           )}
 
@@ -110,7 +142,9 @@ const Login = () => {
 
           {!switchCss && (
             <div className="flex flex-col z-10 items-center justify-start pt-24  pl-14 gap-4 w-2/4">
-              <div className="font-nunito text-4xl text-Green font-extrabold">Sign Up</div>
+              <div className="font-nunito text-4xl text-Green font-extrabold">
+                Sign Up
+              </div>
               <div className="flex items-center w-4/5 justify-center">
                 <Input
                   className="rounded-full"
