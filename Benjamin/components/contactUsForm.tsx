@@ -9,7 +9,7 @@ const ContactUsFrom = () => {
             <Input placeholder="Your Email"/>
             <Input placeholder="Your Subject"/>
             <Textarea rows={5} placeholder="Message"/>
-            <Button variant="default" size={"lg"}  className="bg-Green mb-10 lg:mb-0 text-xl rounded-full">
+            <Button variant="default" size={"lg"}  className="bg-customTeal dark:bg-Green mb-10 lg:mb-0 text-xl rounded-full">
                 Send Message
               </Button>
         </div>

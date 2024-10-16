@@ -31,11 +31,12 @@ const Summary = () => {
             lg:col-span-5
             lg:mt-0
             lg:p-8
+            dark:bg-gray-700
             "
     >
-      <div>
-        <h2 className="text-lg font-bold text-Green pb-2">Order Summary</h2>
-        <h3 className="text-m font-medium text-gray-900 py-4 border-t">Your Details</h3>
+      <div >
+        <h2 className="text-lg font-bold dark:bg-gray-700 text-customTeal dark:text-Green pb-2">Order Summary</h2>
+        <h3 className="text-m font-medium  py-4 border-t">Your Details</h3>
         {/* Each Inputbox component handles its respective field */}
         <div className="lg:grid gap-2 grid-cols-2">
           <Input
@@ -68,7 +69,7 @@ const Summary = () => {
            ₹{566}
         </div>
       </div>
-      <Button className="w-full bg-Green mt-6">
+      <Button className="w-full bg-customTeal dark:bg-Green mt-6">
         Checkout
       </Button>
     </div>

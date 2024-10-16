@@ -19,8 +19,8 @@ const wishlistItems = [
 
 const Wishlist = () => {
   return (
-    <div className="h-full mb-10">
-      <div className="text-white flex items-center justify-center bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
+    <div className="h-full dark:bg-DarkGray pb-10">
+      <div className="text-white flex items-center justify-center bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
         <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center text-gray-200 lg:text-start font-extrabold font-handlee">
           Wish List
         </div>
@@ -35,7 +35,7 @@ const Wishlist = () => {
         ) : (
           <div className="text-center text-gray-500">
             <p>Your wishlist is empty!</p>
-            <Button className="mt-4">Continue Shopping</Button>
+            <Button className=" bg-Green mt-4">Continue Shopping</Button>
           </div>
         )}
       </div>
