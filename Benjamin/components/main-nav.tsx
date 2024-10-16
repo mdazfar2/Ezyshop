@@ -76,7 +76,7 @@ export function MainNav({ className,theme }:MainNavProps) {
             href={route.href}
             className={cn(
               "font-nunito flex items-center gap-2 justify-center font-extrabold text-lg",
-              route.active ?`${theme==='dark'?'text-gray-200':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
+              route.active ?`${theme==='dark'?'text-gray-500':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
               theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
             )}
           >

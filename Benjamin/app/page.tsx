@@ -1,16 +1,16 @@
-"use client"
+
 import Features from "@/components/features";
 import Stores from "@/components/stores";
 import Hero from "@/components/ui/Hero";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
 import LearnAboutUs from "@/components/about us/learnAboutUs";
-import { useTheme } from "@/context/themeProvider";
+// import { useTheme } from "@/context/themeProvider";
 
 export default function Home() {
-  const { theme} = useTheme() || {theme:"light"} // Get the current theme and toggle function
+  // const { theme} = useTheme() || {theme:"light"} // Get the current theme and toggle function
 
   return (
-    <div className={`h-full ${theme === 'dark' ? 'bg-DarkGray' : 'bg-white'}`}>
+    <div className={`h-full dark:bg-DarkGray`}>
       <Hero />
       <SeperatorHeading label="Learn About us" />
 
