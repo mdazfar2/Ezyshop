@@ -1,6 +1,8 @@
-import { columns, order } from "./components/columns";
-import { DataTable } from "./components/datatable";
+"use client";
+import { order } from "./components/columns";
 import OrderCard from "./components/orderCard";
+import { useState, useRef, useEffect } from "react";
+
 
 const options: Intl.DateTimeFormatOptions = {
   weekday: 'short', // 'Tue'
@@ -175,32 +177,83 @@ const orders:order[]  = [
   },
 ];
 
-
 const Orders = () => {
+
+  const ordersContainerRef = useRef<HTMLDivElement>(null);
+
+  const itemsPerPage = 7;
+  const [currentPage, setCurrentPage] = useState(1); 
+  const [isFirstRender, setIsFirstRender] = useState(true);
+
+  const sortedOrders = orders.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
+  const totalPages = Math.ceil(sortedOrders.length / itemsPerPage);
+  const currentOrders = sortedOrders.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const scrollToContainer = () => {
+    ordersContainerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage((prev) => (currentPage > 1)? prev - 1 : prev);
+    // scrollToContainer();
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => (currentPage < totalPages)? prev + 1 : prev);
+    // scrollToContainer();
+  }; 
+  useEffect(() => {
+    if (!isFirstRender) {
+      ordersContainerRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      setIsFirstRender(false);
+    }
+  }, [currentPage]);
+
   return (
     <div className="h-full mb-10">
-      <div className="text-white flex items-center justify-center bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
+      <div className="text-white flex items-center justify-center bg-gradient-to-r from-Green to-Yellow h-full  p-24">
         <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center text-gray-200 lg:text-start font-extrabold font-handlee">
           Your Orders
         </div>
       </div>
-      {/* <div className="w-full flex items-center justify-center">
-        <div className="w-3/4  flex gap-5 items-center justify-center flex-col">
-          <OrderCard />
-          <OrderCard />
-          <OrderCard />
-          <OrderCard />
-          <OrderCard />
+      <div  ref={ordersContainerRef} className="w-full pt-10 md:pt-20 flex items-center justify-center">
+        <div className="w-[94%] md:w-3/4 flex gap-2 md:gap-5 items-center justify-center flex-col">
+          {currentOrders.map((order) => (
+            <OrderCard key={order.id} orderItem={order} />
+          ))}
+
+          <div className="flex items-center justify-center space-x-2 py-4">
+            <button
+              onClick={() => {
+                handlePreviousPage();
+              }}
+              disabled={currentPage === 1}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg"
+            >
+              Previous
+            </button>
+            <span className="text-white">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              onClick={() => {
+                handleNextPage();
+              }}
+              disabled={currentPage === totalPages}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg"
+            >
+              Next
+            </button>
+          </div>
         </div>
-      </div> */}
-
-
-    <div className="container w-screen flex items-center justify-center py-10">
-      <DataTable columns={columns} data={orders} />
-    </div>
- 
-
-
+      </div>
     </div>
   );
 };
