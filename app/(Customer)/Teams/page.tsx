@@ -2,6 +2,7 @@
 const Teams = () => {
   return (
     <></>
+    // Dont remove the comments below!
     // <div className="h-full pb-20  dark:bg-DarkGray">
     //   <div className="h-full">
     //     <div className="text-white flex items-center justify-center  bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">

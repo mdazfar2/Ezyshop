@@ -4,23 +4,20 @@ import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
-import { ModeToggle } from "./ui/themeButton";
 import AuthButtons from "./authButtons";
-import { useConstruction } from "@/context/modalContext";
+import { ModeToggle } from "../ui/themeButton";
 
-interface MainNavProps{
+interface SellerMainNavProps{
   className?:React.HTMLAttributes<HTMLElement>
   theme:string
 }
 
 
-export function MainNav({ className,theme }:MainNavProps) {
+export function SellerMainNav({ className,theme }:SellerMainNavProps) {
 
   const [loading,setLoading]=useState(true);
-  const {openDialog}=useConstruction();
+//   const {openDialog}=useConstruction();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu visibility
 
@@ -34,41 +31,41 @@ export function MainNav({ className,theme }:MainNavProps) {
 
   const routes = [
     { href: `/`, label: "Home", active: pathname === `/` },
-    { href: `/About`, label: "About", active: pathname.startsWith(`/About`) },
-    {
-      href: `/Categories`,
-      label: "Categories",
-      active: pathname.startsWith(`/Categories`),
-    },
-    { href: `#`, label: "Teams", active: pathname.startsWith(`/Teams`),
-      onClick: (e: React.MouseEvent) => {
-        e.preventDefault();
-        openDialog(); 
-      },
-     },
-    { href: `/Blog`, label: "Blog", active: pathname.startsWith(`/Blog`) },
-    {
-      href: `/MyOrders`,
-      label: "My Orders",
-      active: pathname.startsWith(`/MyOrders`),
-    },
-    {
-      href: `/WishList`,
-      label: "Wish List",
-      active: pathname.startsWith(`/WishList`),
-      logo: <Heart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
-    },
-    {
-      href: `/Cart`,
-      label: "Cart",
-      active: pathname.startsWith(`/Cart`),
-      logo: <ShoppingCart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
-    },
-    {
-      href: `/Contact`,
-      label: "Contact",
-      active: pathname.startsWith(`/Contact`),
-    },
+    // { href: `/About`, label: "About", active: pathname.startsWith(`/About`) },
+    // {
+    //   href: `/Categories`,
+    //   label: "Categories",
+    //   active: pathname.startsWith(`/Categories`),
+    // },
+    // { href: `#`, label: "Teams", active: pathname.startsWith(`/Teams`),
+    //   onClick: (e: React.MouseEvent) => {
+    //     e.preventDefault();
+    //     openDialog(); 
+    //   },
+    //  },
+    // { href: `/Blog`, label: "Blog", active: pathname.startsWith(`/Blog`) },
+    // {
+    //   href: `/MyOrders`,
+    //   label: "My Orders",
+    //   active: pathname.startsWith(`/MyOrders`),
+    // },
+    // {
+    //   href: `/WishList`,
+    //   label: "Wish List",
+    //   active: pathname.startsWith(`/WishList`),
+    //   logo: <Heart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
+    // },
+    // {
+    //   href: `/Cart`,
+    //   label: "Cart",
+    //   active: pathname.startsWith(`/Cart`),
+    //   logo: <ShoppingCart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
+    // },
+    // {
+    //   href: `/Contact`,
+    //   label: "Contact",
+    //   active: pathname.startsWith(`/Contact`),
+    // },
   ];
 
   return (
@@ -95,9 +92,9 @@ export function MainNav({ className,theme }:MainNavProps) {
               route.active ?`${theme==='dark'?'text-gray-500':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
               theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
             )}
-            onClick={route.onClick}
+            // onClick={route.onClick}
           >
-            {route.logo && <span>{route.logo}</span>}
+            {/* {route.logo && <span>{route.logo}</span>} */}
             {route.label}
           </Link>
         ))}
@@ -125,12 +122,12 @@ export function MainNav({ className,theme }:MainNavProps) {
               route.active ?`${theme==='dark'?'text-gray-200':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
               theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
             )}
-            onClick={(e) => {
-              toggleMenu(); // Close menu on link click
-              if (route.onClick) route.onClick(e); // Call route's onClick if it exists
-            }}// Close menu on link click
+            // onClick={(e) => {
+            //   toggleMenu(); // Close menu on link click
+            // //   if (route.onClick) route.onClick(e); // Call route's onClick if it exists
+            // }}// Close menu on link click
           >
-            {route.logo && <span>{route.logo}</span>}
+            {/* {route.logo && <span>{route.logo}</span>} */}
             {route.label}
           </Link>
         ))}
