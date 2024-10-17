@@ -1,76 +1,60 @@
 import { PrismaClient } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
+import { NextAuthOptions } from "next-auth";
 
-import {  DefaultUser, Session } from "next-auth";
-import { JWT } from "next-auth/jwt";
+const prisma = new PrismaClient();
 
-
-export const NEXT_AUTH_CONFIG = {
+export const NEXT_AUTH_CONFIG: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "email", type: "text", placeholder: "" },
-        password: { label: "password", type: "password", placeholder: "" },
+        email: { label: "Email", type: "text" },
+        password: { label: "Password", type: "password" },
       },
-      async authorize(credentials:Record<"email" | "password", string> | undefined) {
-
+      async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Invalid credentials");
         }
 
-        const prisma = new PrismaClient();
-        // console.log(credentials);
-        const user = await prisma.user.findUnique({
-          where: {
-            email: credentials.email,
-          },
-        });
-        if (!user || !user.passwordHash) {
-          // return NextResponse.json({msg:"invalid email, not found in DB"},{status:403})
-          console.log("invalid email, not found in DB");
-          return null; // Return null for invalid login
-        }
-        const isVerified = await bcrypt.compare(
-          credentials.password,
-          user.passwordHash
-        );
+        const user = await prisma.user.findUnique({ where: { email: credentials.email } });
+        const seller = await prisma.seller.findUnique({ where: { email: credentials.email } });
 
-        if (!isVerified) {
-          console.log("Invalid password");
-          return null; // Return null if password doesn't match
+        const account = user || seller;
+        if (!account || !account.passwordHash) {
+          return null;
         }
-        return { 
-          id: user.id,   // Ensure id is included
-        name: user.name,
-        email: user.email,
+
+        const isVerified = await bcrypt.compare(credentials.password, account.passwordHash);
+        if (!isVerified) {
+          return null;
+        }
+
+        return {
+          id: account.id,
+          name: account.name,
+          email: account.email,
+          role: user ? "user" : "seller",
         };
       },
     }),
   ],
-      secret: process.env.NEXTAUTH_SECRET,
-      callbacks: {
-          jwt: async ({ user, token }:{user:DefaultUser,token:JWT}) => {
-          if (user) {
-              token.uid = user.id;
-          }
-          return token;
-          },
-        session: ({ session, token }:{session:Session,token:JWT}) => {
-            // if (session.user) {
-             
-            //     session.user.id = token.uid
-            // }
-            if (session.user) {
-             
-              return { ...session,
-                user: { ...session.user,
-                  id: token.uid,
-                }
-            }
-          }
-            return session
-        }
-      },
+  secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    jwt: async ({ token, user }) => {
+      if (user) {
+        token.uid = user.id;
+        token.role = user.role; // Store role in JWT token
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      if (session.user) {
+        session.user.id = token.uid;
+        session.user.role = token.role; // Pass role to session
+      }
+      return session;
+    },
+  },
 };
