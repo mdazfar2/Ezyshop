@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MainNav } from "./main-nav";
 import { useTheme } from "@/context/themeProvider";
+import UnderConstructionAlert from "./ui/underConstruction";
 // import { useTheme } from "@/context/ThemeContext"; // Import your theme context
 
 const Navbar = () => {
@@ -31,7 +32,7 @@ const Navbar = () => {
         {/* all the navigation links */}
         <MainNav theme={theme}/>
 
-       
+       <UnderConstructionAlert theme={theme}/>
       </div>
     </div>
   );
