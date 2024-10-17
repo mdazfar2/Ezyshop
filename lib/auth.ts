@@ -2,12 +2,9 @@ import { PrismaClient } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
-import {  User as NextAuthUser } from "next-auth";
+import {  DefaultUser, Session } from "next-auth";
+import { JWT } from "next-auth/jwt";
 
-interface JWTToken {
-  uid?: string;
-  user?: NextAuthUser;
-}
 
 export const NEXT_AUTH_CONFIG = {
   providers: [
@@ -44,30 +41,35 @@ export const NEXT_AUTH_CONFIG = {
           console.log("Invalid password");
           return null; // Return null if password doesn't match
         }
-        return {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          phone: user.mobileNumber,
+        return { 
+          id: user.id,   // Ensure id is included
+        name: user.name,
+        email: user.email,
         };
       },
     }),
   ],
       secret: process.env.NEXTAUTH_SECRET,
       callbacks: {
-          jwt: async ({ user, token }: { user?: NextAuthUser; token: JWTToken }) => {
+          jwt: async ({ user, token }:{user:DefaultUser,token:JWT}) => {
           if (user) {
               token.uid = user.id;
           }
           return token;
           },
-        session: ({ session, token }: {
-          session: { user?: NextAuthUser };
-          token: JWTToken;
-        }) => {
+        session: ({ session, token }:{session:Session,token:JWT}) => {
+            // if (session.user) {
+             
+            //     session.user.id = token.uid
+            // }
             if (session.user) {
-                session.user.id = token.uid ||""
+             
+              return { ...session,
+                user: { ...session.user,
+                  id: token.uid,
+                }
             }
+          }
             return session
         }
       },

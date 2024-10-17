@@ -1,10 +1,11 @@
-import { signOut } from "next-auth/react";
-import { useSession } from "next-auth/react";
+
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { signOut, useSession } from "next-auth/react";
 
 const AuthButtons = () => {
-  const session = useSession();
+
+  const session=useSession()
   return (
     <div className="flex items-center justify-center gap-2">
       {session.status == "unauthenticated" && (
