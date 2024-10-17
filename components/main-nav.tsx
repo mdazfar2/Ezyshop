@@ -14,7 +14,7 @@ interface MainNavProps{
   className?:React.HTMLAttributes<HTMLElement>
   theme:string
 }
-
+ 
 export function MainNav({ className,theme }:MainNavProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu visibility
@@ -40,13 +40,13 @@ export function MainNav({ className,theme }:MainNavProps) {
       href: `/WishList`,
       label: "Wish List",
       active: pathname.startsWith(`/WishList`),
-      logo: <Heart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
+      logo: <Heart className={`icon h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
     },
     {
       href: `/Cart`,
       label: "Cart",
       active: pathname.startsWith(`/Cart`),
-      logo: <ShoppingCart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
+      logo: <ShoppingCart className={`icon h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
     },
     {
       href: `/Contact`,
@@ -55,6 +55,8 @@ export function MainNav({ className,theme }:MainNavProps) {
     },
   ];
 
+
+
   return (
     <nav className={cn("flex items-center justify-between", className)}>
       {/* Hamburger icon for mobile */}
@@ -62,33 +64,39 @@ export function MainNav({ className,theme }:MainNavProps) {
         <ModeToggle/>
         <button
           onClick={toggleMenu}
-          className="text-White focus:outline-none"
+          className="text-white  focus:outline-none"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Navigation links (shown on larger screens, hidden on mobile) */}
-      <div className={cn("hidden lg:flex items-center justify-centerx space-x-4 lg:space-x-6")}>
+      <div className={cn("nav-item hidden lg:flex items-center justify-centerx space-x-4 lg:space-x-6")}>
         {routes.map((route) => (
           <Link
             key={route.href}
             href={route.href}
             className={cn(
               "font-nunito flex items-center gap-2 justify-center font-extrabold text-lg",
-              route.active ?`${theme==='dark'?'text-gray-500':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
-              theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
+              route.active ? `${theme === 'dark' ? 'text-gray-500' : 'text-customTeal'}` : `${theme === 'dark' ? 'text-gray-200' : 'text-customBlue'}`,
+              theme === 'dark' ? 'hover:text-gray-500' : 'hover:text-customTeal'
             )}
           >
             {route.logo && <span>{route.logo}</span>}
             {route.label}
           </Link>
-        ))}
-        
-        <ModeToggle/>
+  
 
-        <AuthButtons />
-      </div>
+        ))}
+       
+        <ModeToggle/>
+        </div>
+         <span className="ml-5">
+         <AuthButtons/>
+         </span>
+        
+
+       
 
       {/* Mobile menu with slow opening animation */}
       <div
