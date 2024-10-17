@@ -242,7 +242,7 @@ const Orders = () => {
     } else {
       setIsFirstRender(false);
     }
-  }, [currentPage]);
+  }, [isFirstRender,currentPage]);
 
   return (
     <div className="h-full mb-10  dark:bg-DarkGray">
