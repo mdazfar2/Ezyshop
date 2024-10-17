@@ -1,5 +1,4 @@
 import Stores from "@/components/stores";
-import { Button } from "@/components/ui/button";
 
 const Category = () => {
   return (
@@ -11,11 +10,7 @@ const Category = () => {
       </div>
       {/* <SeperatorHeading label="Trending Deals"/> */}
       <Stores />
-      <div className="flex items-center justify-center flex-col px-20">
-        <Button className="rounded-full bg-customTeal dark:bg-Green h-10 w-40 flex items-center justify-center text-lg m-10">
-          Load more
-        </Button>
-      </div>
+      
     </div>
   );
 };

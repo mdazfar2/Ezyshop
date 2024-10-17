@@ -1,19 +1,39 @@
+"use client";
 import { Construction } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useConstruction } from "@/context/modalContext";
 
-const UnderConstruction = () => {
+const UnderConstructionAlert = ({theme}:{theme:string}) => {
+  const { isOpen, closeDialog } = useConstruction();
+
   return (
-    <div className="h-screen dark:bg-DarkGray flex items-center justify-center w-full">
-      <div className="flex bg-customBlue dark:shadow-Green shadow-black shadow-2xl mx-10 lg:mx-60 rounded-lg gap-10 p-10  dark:bg-Yellow items-center justify-center">
-        <Construction className="h-40 w-40 lg:h-20 lg:w-20 text-customTeal  dark:text-Green" />
-        <div className="flex flex-col items-start font-handlee font-extrabold text-gray-200 dark:text-black text-2xl">
-          <div>
-            This page is under development. We apologise for the inconvinience{" "}
-          </div>
-          <div>Please check back soon.</div>
-        </div>
-      </div>
-    </div>
+    <>
+      {/* <a
+        href="#"
+        className="text-customBlue dark:text-Green underline cursor-pointer"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default link behavior
+          openDialog(); // Open the dialog globally
+        }}
+      >
+        This page is under construction
+      </a> */}
+
+      <Dialog open={isOpen} onOpenChange={closeDialog}>
+        <DialogContent className="flex items-center justify-center p-6">
+          <DialogHeader className="text-center">
+            <Construction className={`h-16 w-16 ${theme==='light'? 'text-customTeal':'text-Green'} mx-auto`} />
+            <DialogTitle className="text-xl font-bold mt-4 dark:text-black">
+              This page is under development
+            </DialogTitle>
+            <p className="text-gray-600 dark:text-black mt-2">
+              We apologize for the inconvenience. Please check back soon.
+            </p>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
-export default UnderConstruction;
+export default UnderConstructionAlert;

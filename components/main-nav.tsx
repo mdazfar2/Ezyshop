@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,15 +9,26 @@ import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
 import { ModeToggle } from "./ui/themeButton";
 import AuthButtons from "./authButtons";
+import { useConstruction } from "@/context/modalContext";
 
 interface MainNavProps{
   className?:React.HTMLAttributes<HTMLElement>
   theme:string
 }
 
+
 export function MainNav({ className,theme }:MainNavProps) {
+
+  const [loading,setLoading]=useState(true);
+  const {openDialog}=useConstruction();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu visibility
+
+  useEffect(()=>{
+    setLoading(false);
+  },[])
+
+  if(loading) return null;
 
   const toggleMenu = () => setIsOpen(!isOpen); // Toggle function for menu
 
@@ -29,7 +40,12 @@ export function MainNav({ className,theme }:MainNavProps) {
       label: "Categories",
       active: pathname.startsWith(`/Categories`),
     },
-    { href: `/Teams`, label: "Teams", active: pathname.startsWith(`/Teams`) },
+    { href: `#`, label: "Teams", active: pathname.startsWith(`/Teams`),
+      onClick: (e: React.MouseEvent) => {
+        e.preventDefault();
+        openDialog(); 
+      },
+     },
     { href: `/Blog`, label: "Blog", active: pathname.startsWith(`/Blog`) },
     {
       href: `/MyOrders`,
@@ -79,6 +95,7 @@ export function MainNav({ className,theme }:MainNavProps) {
               route.active ?`${theme==='dark'?'text-gray-500':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
               theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
             )}
+            onClick={route.onClick}
           >
             {route.logo && <span>{route.logo}</span>}
             {route.label}
@@ -108,7 +125,10 @@ export function MainNav({ className,theme }:MainNavProps) {
               route.active ?`${theme==='dark'?'text-gray-200':'text-customTeal'}`:`${theme==='dark'?'text-gray-200':'text-customBlue'}`,
               theme=='dark'? `${'hover:text-gray-500'}`:`${'hover:text-customTeal'}`
             )}
-            onClick={toggleMenu} // Close menu on link click
+            onClick={(e) => {
+              toggleMenu(); // Close menu on link click
+              if (route.onClick) route.onClick(e); // Call route's onClick if it exists
+            }}// Close menu on link click
           >
             {route.logo && <span>{route.logo}</span>}
             {route.label}
