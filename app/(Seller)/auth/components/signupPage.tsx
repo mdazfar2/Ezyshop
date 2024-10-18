@@ -154,7 +154,7 @@ const SignupPage: React.FC<SignupPageProps> =({ switchCss, setSwitchCss,setError
             <Button
               className="rounded-full h-10 w-4/5 font-bold bg-customTeal dark:bg-Green"
               type="submit"
-              // disabled
+              disabled
             >
               {loading ? <Spinner /> : "Sign Up"}
             </Button>

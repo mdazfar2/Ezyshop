@@ -45,7 +45,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
     if (result?.error) setError("Invalid email or password");
     else {
       toast.success(`Welcome ${session.data?.user?.name}`);
-      window.location.href = "/"; // Redirect on success
+      window.location.href = "/dashboard"; // Redirect on success
     }
     setloading(false);
   };
@@ -93,8 +93,8 @@ const LoginPage: React.FC<LoginPageProps> = ({
             </div>
             <Button
               type="submit"
-                disabled
-              // disabled={loading}
+                // disabled
+              disabled={loading}
               className="rounded-full bg-customTeal dark:bg-Green font-bold h-10 w-4/5 disabled"
             >
               {loading ? <Spinner /> : "Login"}
