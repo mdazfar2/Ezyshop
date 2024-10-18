@@ -30,7 +30,7 @@ const CommentCard = ({
         <Button
         variant="secondary"
         size={"sm"}
-        className="text-lg rounded-lg"
+        className="dark:bg-gray-700 hover:opacity-80 hover:shadow-md text-lg rounded-lg"
       >
         Reply
       </Button>

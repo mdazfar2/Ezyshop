@@ -166,7 +166,7 @@ const Stores = () => {
         {initialStores.map((card) => (
           <Card
             key={card.title}
-            className="sm:w-[400px] md:hover:scale-105 border border-DarkGray transition duration-300 bg-gray-200 dark:bg-gray-700"
+            className="sm:w-[400px] my-5 md:hover:scale-105  transition duration-300 bg-gray-200 dark:bg-gray-700"
           >
             <CardHeader className="border-b border-gray-400 dark:border-DarkGray">
               <div className="flex flex-col gap-2">
@@ -178,7 +178,7 @@ const Stores = () => {
                     alt="card image"
                     src={card.logo}
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center text-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                     <CardDescription className="text-white text-md text-center font-nunito p-4 ">
                       {card.description}
                     </CardDescription>
@@ -224,7 +224,7 @@ const Stores = () => {
             <CardFooter className="flex justify-center">
               <Button
                 variant="default"
-                className="bg-customTeal dark:bg-Green text-gray-200 rounded-full"
+                className="bg-customTeal dark:bg-Green text-gray-200 rounded-full dark:text-gray-100 dark:hover:opacity-80"
               >
                 Shop Now
               </Button>
@@ -238,7 +238,7 @@ const Stores = () => {
           {remainingStores.map((card) => (
             <Card
               key={card.title}
-              className="sm:w-[400px] md:hover:scale-105 border border-DarkGray transition duration-300 bg-gray-200 dark:bg-gray-700"
+              className="sm:w-[400px] md:hover:scale-105 transition duration-300 bg-gray-200 dark:bg-gray-700 "
             >
               <CardHeader className="border-b border-gray-400 dark:border-DarkGray">
                 <div className="flex flex-col gap-2">
@@ -250,7 +250,7 @@ const Stores = () => {
                       alt="card image"
                       src={card.logo}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center text-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <CardDescription className="text-white text-md text-center font-nunito p-4 ">
                         {card.description}
                       </CardDescription>
@@ -296,7 +296,7 @@ const Stores = () => {
               <CardFooter className="flex justify-center">
                 <Button
                   variant="default"
-                  className="bg-customTeal dark:bg-Green text-gray-200 rounded-full"
+                  className="bg-customTeal dark:bg-Green text-gray-200 dark:text-gray-100 rounded-full  dark:hover:opacity-80"
                 >
                   Shop Now
                 </Button>
@@ -309,7 +309,7 @@ const Stores = () => {
     
         <Button
           onClick={() => setShowMore(!showMore)}
-          className="mt-6 px-4 py-2 bg-customTeal dark:bg-Green dark:text-gray-200 rounded-full hover:opacity-90"
+          className="mt-6 px-4 py-2 bg-customTeal rounded-full dark:bg-Green dark:text-gray-100 dark:hover:opacity-80"
         >
             {showMore?"Show Less":"Show More"}
         </Button>

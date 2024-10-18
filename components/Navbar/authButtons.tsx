@@ -15,7 +15,7 @@ const AuthButtons = () => {
     <div className="flex items-center justify-center gap-2">
       {session.status == "unauthenticated" && (
         // <Link href={"/login"}>
-        <Button size={"lg"} className={`bg-customTeal dark:bg-Green  hover:border rounded-xl`}
+        <Button size={"lg"} className={`bg-customTeal dark:bg-Green dark:text-[#fff] dark:hover:opacity-80  rounded-xl`}
         onClick={() => setOpen(true)}
         >
           Login / Signup

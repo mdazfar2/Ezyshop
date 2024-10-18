@@ -152,9 +152,9 @@ const Footer = () => {
           <p className="font-bold text-3xl text-customTeal dark:text-Green font-handlee">
             News Letter
           </p>
-          <Input placeholder="Name" className="bg-DarkGray text-gray-200 h-10 w-10/12" />
-          <Input placeholder="Email" className="bg-DarkGray text-gray-200 h-10 w-10/12" />
-          <Button className="lg:h-14 bg-customTeal dark:bg-Green rounded-full w-10/12">
+          <Input placeholder="Name" className="bg-[#f9f9f9] dark:bg-gray-700 text-gray-200 h-10 w-10/12" />
+          <Input placeholder="Email" className="bg-[#f9f9f9] dark:bg-gray-700 text-gray-200 h-10 w-10/12" />
+          <Button className="lg:h-14 bg-customTeal dark:bg-Green dark:text-gray-100 dark:hover:opacity-80 rounded-full w-10/12">
             Subscribe
           </Button>
         </div>

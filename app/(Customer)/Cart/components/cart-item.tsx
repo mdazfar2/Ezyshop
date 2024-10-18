@@ -38,12 +38,12 @@ const CartItem:React.FC<orderItemProps> = ({
                             {item.name}
                         </p>
                     </div>
-                    <div className="mt-1 flex text-sm">
+                    <div className="mt-1 flex sm:justify-end text-sm">
                         <p className="text-gray-500 dark:text-gray-200">
                             {/* haha */}
                             {item.variant}
                         </p>
-                        <p className="text-gray-500 ml-4 border-l border-gray-200 pl-4">
+                        <p className="text-gray-500 ml-4 sm:mr-4 border-l border-gray-200 pl-4">
                             {/* nunu */}
                             {item.count}
                         </p>
