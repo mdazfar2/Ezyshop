@@ -25,3 +25,15 @@ model User {
   // orders        Order[]
   // wishlist      Product[]
 }
+model Seller {
+  id            String   @id @default(uuid()) @map("_id")
+  mobileNumber  String   @unique
+  name          String?
+  email         String?  @unique
+  passwordHash  String?
+  // addresses     Address[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  // orders        Order[]
+  // wishlist      Product[]
+}

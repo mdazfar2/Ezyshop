@@ -67,6 +67,9 @@ const config: Config = {
 		nunito: ['Nunito', 'sans-serif'],
       },
     },
+    letterSpacing: {
+      widest: '1.25em',
+    }
   },
   plugins: [require("tailwindcss-animate")],
 };
