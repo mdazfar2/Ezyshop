@@ -1,26 +1,25 @@
 
 import { signOut, useSession } from "next-auth/react";
-import { useState } from "react";
 import { Button } from "../ui/button";
-import { AuthModal } from "../modals/authModal";
+import Link from "next/link";
 
 const AuthButtons = () => {
 
   
-  const [open, setOpen] = useState(false);
-  const [loading] = useState(false);
+  // const [open, setOpen] = useState(false);
+  // const [loading] = useState(false);
 
   const session=useSession()
   return (
     <div className="flex items-center justify-center gap-2">
       {session.status == "unauthenticated" && (
-        // <Link href={"/login"}>
+        <Link href={"/auth/role"}>
         <Button size={"lg"} className={`bg-customTeal dark:bg-Green  hover:border rounded-xl`}
-        onClick={() => setOpen(true)}
+        // onClick={() => setOpen(true)}
         >
           Login / Signup
         </Button>
-      // </Link>
+      </Link>
       )}
       {session.status == "authenticated" && (
         <>
@@ -28,11 +27,11 @@ const AuthButtons = () => {
           <Button className="rounded-full" variant={"outline"} onClick={() => signOut()}>Log out</Button>
         </>
       )}
-      <AuthModal
+      {/* <AuthModal
           isOpen={open}
           onClose={() => setOpen(false)}
           loading={loading}
-        />
+        /> */}
     </div>
   );
 };
