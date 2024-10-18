@@ -44,6 +44,16 @@ const Links = [
     id: 6,
     href: "/Contact",
   },
+  {
+    name: "Terms and Conditions",
+    id: 7,
+    href: "/Terms",
+  },
+  {
+    name: "Privacy and Policy",
+    id: 8,
+    href: "/Policy",
+  },
 ];
 
 const Footer = () => {
