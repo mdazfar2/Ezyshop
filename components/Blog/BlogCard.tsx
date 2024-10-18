@@ -83,7 +83,7 @@ const BlogCard = () => {
                 <Button
                   variant="default"
                   size={"lg"}
-                  className="bg-customTeal dark:bg-Green rounded-full"
+                  className="bg-customTeal dark:bg-Green dark:text-gray-100 dark:hover:opacity-80 rounded-full"
                 >
                   Read more
                 </Button>
