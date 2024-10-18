@@ -16,7 +16,7 @@ async function main() {
       mobileNumber: "1234567899",
       name: "John Doe",
       email: "john@examplle.com",
-      passwordHash: hashedPassword1,
+      // passwordHash: hashedPassword1,
     },
   });
 
@@ -25,7 +25,7 @@ async function main() {
       mobileNumber: "0987654322",
       name: "Jane Smith",
       email: "jane@examplee.com",
-      passwordHash: hashedPassword2,
+      // passwordHash: hashedPassword2,
     },
   });
 
