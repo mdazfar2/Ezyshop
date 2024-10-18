@@ -1,6 +1,6 @@
 "use client"
 
-import { orderItemProps } from "@/app/MyOrders/components/orderItem";
+import { orderItemProps } from "@/app/(Customer)/MyOrders/components/orderItem";
 import Image from "next/image";
 
 

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { Providers } from "@/providers/sessionProvider";
 
 const font = Urbanist({ subsets: ["latin"] });
@@ -30,12 +28,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`${font.className},h-screen `}>
-        {/* <ModalProvider/> */}
-        {/* <ToasterProvider/> */}
         <Providers>
-          <Navbar />
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>
