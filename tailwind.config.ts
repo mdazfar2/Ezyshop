@@ -50,12 +50,12 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-		customBlue: "#00394f",  // Dark Blue-Green
-        customTeal: "#17a2b8",  // Light Blue
-        Yellow:"#FFC107",
-        Green:"#4CAF50",
+        customBlue: "#00394f", // Dark Blue-Green
+        customTeal: "#17a2b8", // Light Blue
+        Yellow: "#FFC107",
+        Green: "#4CAF50",
         Gray: "#F5F5F5",
-        DarkGray: "#212121"
+        DarkGray: "#212121",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -64,12 +64,21 @@ const config: Config = {
       },
       fontFamily: {
         handlee: ["Handlee", "cursive"],
-		nunito: ['Nunito', 'sans-serif'],
+        nunito: ["Nunito", "sans-serif"],
+      },
+      keyframes: {
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
+        },
+      },
+      animation: {
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
       },
     },
     letterSpacing: {
-      widest: '1.25em',
-    }
+      widest: "1.25em",
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };

@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
+import sendEmail from "@/lib/sendEmail"; // Ensure this points to your sendEmail function
 
 const prisma = new PrismaClient();
 
@@ -11,31 +11,53 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" },
+        otp: { label: "OTP", type: "text" },
+        role: { label: "Role", type: "text" },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
+        if (!credentials?.email || !credentials?.otp || !credentials?.role) {
           throw new Error("Invalid credentials");
         }
 
-        const user = await prisma.user.findUnique({ where: { email: credentials.email } });
-        const seller = await prisma.seller.findUnique({ where: { email: credentials.email } });
+        let account;
+        if (credentials.role === "user") {
+          account = await prisma.user.findUnique({
+            where: { email: credentials.email },
+          });
+        } else {
+          account = await prisma.seller.findUnique({
+            where: { email: credentials.email },
+          });
+        }
 
-        const account = user || seller;
-        if (!account || !account.passwordHash) {
+        if (!account) {
           return null;
         }
 
-        const isVerified = await bcrypt.compare(credentials.password, account.passwordHash);
-        if (!isVerified) {
+        // Verify OTP
+        if (credentials.otp !== account.otp) {
+          // Assuming 'otp' field exists in your User/Seller model
           return null;
+        }
+
+        // Clear OTP after successful login
+        if (credentials.role === "user") {
+          await prisma.user.update({
+            where: { email: credentials.email },
+            data: { otp: null }, // Reset OTP or delete it after use
+          });
+        } else {
+          await prisma.seller.update({
+            where: { email: credentials.email },
+            data: { otp: null }, // Reset OTP or delete it after use
+          });
         }
 
         return {
           id: account.id,
           name: account.name,
           email: account.email,
-          role: user ? "user" : "seller",
+          role: account.role == "user" ? "user" : "seller",
         };
       },
     }),
@@ -58,3 +80,34 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
     },
   },
 };
+
+// Function to generate and send OTP
+export const generateAndSendOTP = async (email: string, role: string) => {
+  const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Generate 6-digit OTP
+
+  // Store OTP in the user or seller record
+  if (role === "user") {
+    await prisma.user.update({
+      where: { email },
+      data: { otp }, // Ensure 'otp' field exists in your User model
+    });
+  }
+  if (role === "seller") {
+    await prisma.user.update({
+      where: { email },
+      data: { otp }, // Ensure 'otp' field exists in your User model
+    });
+  }
+
+  // Send OTP via email
+  await sendEmail({
+    to: email,
+    subject: "Your OTP Code",
+    text: `Your OTP code is ${otp}`,
+    html: `<strong>Your OTP code is ${otp}</strong>`,
+  });
+
+  return otp;
+};
+
+// Call generateAndSendOTP(email) before redirecting to the login page to send OTP to the user
