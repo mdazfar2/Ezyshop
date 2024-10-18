@@ -49,6 +49,11 @@ const Links = [
     id: 7,
     href: "/Terms",
   },
+  {
+    name: "Privacy and Policy",
+    id: 8,
+    href: "/Policy",
+  },
 ];
 
 const Footer = () => {
