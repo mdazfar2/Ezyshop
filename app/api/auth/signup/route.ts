@@ -34,5 +34,5 @@ export async function POST(request: Request) {
 
 
 
-  return NextResponse.json({ message: 'aCCOUNT CREATED, VERIFY EMAIL VIA OTP',user });
+  return NextResponse.json({ message: 'ACCOUNT CREATED, VERIFY EMAIL VIA OTP',user });
 }
