@@ -45,7 +45,7 @@ const ShopCard: React.FC<shopCardProps> = ({ shop }) => {
           <Button
             variant="default"
             size={"lg"}
-            className="bg-customTeal dark:bg-Green dark:hover:opacity-80 rounded-full"
+            className="bg-customTeal dark:bg-Green dark:hover:opacity-80 dark:text-gray-100 rounded-full"
           >
             Products
           </Button>

@@ -79,7 +79,7 @@ const shops = [
 const Shop = () => {
   return (
     <>
-      <div className="h-full dark:bg-DarkGray mb-10">
+      <div className="h-full dark:bg-DarkGray pb-10">
         <div className="text-white flex items-center justify-center bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
           <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
             Our Shops
