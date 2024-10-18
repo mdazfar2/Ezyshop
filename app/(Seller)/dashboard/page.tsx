@@ -1,7 +1,7 @@
 "use client"
 import { useSession } from "next-auth/react";
 
-const dashboard = () => {
+const Dashboard = () => {
 
     const session= useSession();
 
@@ -13,4 +13,4 @@ const dashboard = () => {
      );
 }
  
-export default dashboard;
+export default Dashboard;
