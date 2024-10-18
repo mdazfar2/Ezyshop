@@ -33,9 +33,9 @@ const Wishlist = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center text-gray-500">
+          <div className="text-center text-gray-700 dark:text-gray-500">
             <p>Your wishlist is empty!</p>
-            <Button className=" bg-Green mt-4">Continue Shopping</Button>
+            <Button className="bg-customTeal dark:text-gray-100 dark:hover:opacity-80 dark:bg-Green mt-4">Continue Shopping</Button>
           </div>
         )}
       </div>

@@ -49,7 +49,7 @@ return (
     
     <div className="h-full flex flex-col gap-4 md:grid md:grid-cols-2 lg:gap-10 lg:grid-cols-3 ">
       {cardData.map((card) => (
-        <Card key={card.title} className="min-w-[250px] max-w-[350px] border border-black bg-gray-200 dark:bg-gray-700 ">
+        <Card key={card.title} className="min-w-[250px] max-w-[350px] shadow-md bg-gray-200 dark:bg-gray-700 ">
           <CardHeader>
               <div className="flex gap-2 items-center text-customTeal dark:text-Green justify-center">
                   {card.logo}

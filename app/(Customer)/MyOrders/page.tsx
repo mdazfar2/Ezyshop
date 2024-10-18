@@ -14,19 +14,6 @@ const options: Intl.DateTimeFormatOptions = {
   hour12: true, // 12-hour format
 };
 
-// import { columns, order } from "./components/columns";
-// import { DataTable } from "./components/datatable";
-
-// const options: Intl.DateTimeFormatOptions = {
-//   weekday: "short", // 'Tue'
-//   year: "numeric", // '2024'
-//   month: "short", // 'Oct'
-//   day: "2-digit", // '01'
-//   hour: "2-digit", // '10'
-//   minute: "2-digit", // '30'
-//   hour12: true, // 12-hour format
-// };
-
 const orders: order[] = [
   {
     id: "1",
@@ -190,25 +177,6 @@ const orders: order[] = [
   },
 ];
 
-// const Orders = () => {
-//   return (
-//     <div className="h-full pb-10 dark:bg-DarkGray">
-//       <div className="text-white flex items-center justify-center bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
-//         <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center text-gray-200 lg:text-start font-extrabold font-handlee">
-//           Your Orders
-//         </div>
-//       </div>
-
-//       <div className="container flex items-center justify-center py-10">
-//         <DataTable columns={columns} data={orders} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Orders;
-
-
 const Orders = () => {
 
   const ordersContainerRef = useRef<HTMLDivElement>(null);
@@ -245,7 +213,7 @@ const Orders = () => {
   }, [isFirstRender,currentPage]);
 
   return (
-    <div className="h-full mb-10  dark:bg-DarkGray">
+    <div className="h-full pb-10  dark:bg-DarkGray">
       <div className="text-white flex items-center justify-center bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
         <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center text-gray-200 lg:text-start font-extrabold font-handlee">
           Your Orders

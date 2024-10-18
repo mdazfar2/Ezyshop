@@ -67,7 +67,7 @@ const LearnAboutUs = () => {
         </div>
       </div>
       <Link href={"/shops"}>
-        <Button className="rounded-full bg-customTeal dark:bg-Green h-10 w-40 text-md m-10 font-nunito ">
+        <Button className="rounded-full bg-customTeal dark:bg-Green dark:text-white dark:hover:opacity-80 h-10 w-40 text-md m-10 font-nunito ">
           Explore Stores
         </Button>
       </Link>

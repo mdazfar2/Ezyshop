@@ -27,8 +27,8 @@ const Contact = () => {
           </div>
           <div className="flex items-start flex-col gap-4 justify-center">
             <div className="flex gap-7 items-center justify-center">
-              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-Yellow flex items-center justify-center">
-                <MapPin className="h-5 w-5  dark:text-Green" />
+              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow flex items-center justify-center">
+                <MapPin className="h-5 w-5  dark:text-gray-100" />
               </div>
               <div className="flex flex-col gap-2">
                 <div className="text-customTeal dark:text-Green text-xl font-handlee font-bold ">Address</div>
@@ -36,8 +36,8 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-7 items-center justify-center">
-              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-Yellow flex items-center justify-center">
-                <Mail className="h-5 w-5   dark:text-Green" />
+              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow flex items-center justify-center">
+                <Mail className="h-5 w-5   dark:text-gray-100" />
               </div>
               <div className="flex flex-col gap-2">
                 <div className=" text-customTeal dark:text-Green text-xl font-handlee font-bold ">Email</div>
@@ -45,8 +45,8 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-7 items-center justify-center">
-              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-Yellow flex items-center justify-center">
-                <Phone className="h-5 w-5   dark:text-Green" />
+              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow flex items-center justify-center">
+                <Phone className="h-5 w-5   dark:text-gray-100" />
               </div>
               <div className="flex flex-col gap-2">
                 <div className=" text-customTeal dark:text-Green text-xl font-handlee font-bold ">Phone</div>
@@ -54,8 +54,8 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-7 items-center justify-center">
-              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-Yellow flex items-center justify-center">
-                <Clock className="h-5 w-5 dark:text-Green" />
+              <div className="rounded-full h-10 w-10 bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow flex items-center justify-center">
+                <Clock className="h-5 w-5 dark:text-gray-100" />
               </div>
               <div className="flex flex-col gap-2">
                 <div className="text-customTeal dark:text-Green text-xl font-handlee font-bold ">Opening Hours</div>

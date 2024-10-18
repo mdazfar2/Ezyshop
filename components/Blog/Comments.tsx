@@ -61,7 +61,7 @@ const BlogComments = () => {
       <Button
         variant="default"
         size={"sm"}
-        className="bg-customBlue dark:bg-Green text-lg h-10 rounded-full"
+        className="bg-customBlue dark:bg-Green dark:text-gray-100 dark:hover:opacity-80 text-md md:text-lg h-10 rounded-full"
       >
         Add Comment
       </Button>

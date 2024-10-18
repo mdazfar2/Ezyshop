@@ -72,7 +72,7 @@ const RecentPosts = () => {
                 <Link href={`/Blog/${card.id}`}>
                   <Card
                     key={card.id}
-                    className="w-[400px] lg:w-[320px] h-[140px] lg:p-2 flex items-center justify-center hover:scale-105 transition duration-800 bg-gray-200 dark:bg-gray-700"
+                    className="w-[400px] lg:w-[320px] h-[140px] lg:p-2 bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:scale-105 transition duration-800 "
                   >
                     <CardHeader className="p-1 lg:p-0  lg:mx-0 w-1/4 lg:w-full ">
                       <div className="flex items-center justify-center p-0">
