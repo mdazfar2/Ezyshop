@@ -6,7 +6,6 @@ import UnderConstructionAlert from "../modals/underConstruction";
 import { SellerMainNav } from "./seller-main-nav";
 
 const SellerNavbar = () => {
-  
   const { theme } = useTheme() || { theme: "light" }; // Get the current theme and toggle function
 
   return (
@@ -30,17 +29,20 @@ const SellerNavbar = () => {
             />
           </Link>
           <Link href="/" className="ml-4 flex lg:ml:0 gap-x-2">
-            <p className="font-extrabold text-5xl font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text">
-              Ezyshop
-            </p>
+            <div className="flex flex-col items-start">
+              <p className="font-extrabold text-5xl font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text">
+                Ezyshop
+              </p>
+              <p className="font-extrabold text-xl tracking-widest font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text">
+                seller
+              </p>
+            </div>
           </Link>
         </div>
         {/* all the navigation links */}
-        <SellerMainNav theme={theme}/>
-        
+        <SellerMainNav theme={theme} />
 
         <UnderConstructionAlert theme={theme} />
-        
       </div>
     </div>
   );

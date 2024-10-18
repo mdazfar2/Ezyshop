@@ -44,7 +44,7 @@ const SignupPage: React.FC<SignupPageProps> =({ switchCss, setSwitchCss,setError
     }
 
 
-    const result = await axios.post('/api/auth/signup',{
+    const result = await axios.post('/api/auth/signup/seller',{
         email,
         password,
         name:fullname,
@@ -55,7 +55,7 @@ const SignupPage: React.FC<SignupPageProps> =({ switchCss, setSwitchCss,setError
     else {
       toast.success(`Successful, you can login now.`)
     //   ${session.data?.user?.name}
-      window.location.href = "/login"; // Redirect on success
+      window.location.href = "/auth/seller"; // Redirect on success
     }
     
     // Reset form fields after submission

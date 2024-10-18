@@ -54,7 +54,7 @@ const Login = () => {
             } z-10 h-full`}
           >
             <div className="text-5xl font-handlee font-bold ">
-              {switchCss ? "Welcome Back!" : "Welcome!"}
+              {switchCss ? "Welcome Back Seller!" : "Welcome Seller!"}
             </div>
             <div className="mt-5 text-lg w-52">
               EzyShop makes it easy to browse, order, and receive products from
