@@ -93,7 +93,7 @@ export const generateAndSendOTP = async (email: string, role: string) => {
     });
   }
   if (role === "seller") {
-    await prisma.user.update({
+    await prisma.seller.update({
       where: { email },
       data: { otp }, // Ensure 'otp' field exists in your User model
     });
