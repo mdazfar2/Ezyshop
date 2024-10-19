@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { BillboardColumn } from "./columns";
 import { Button } from "@/components/ui/button";
-import { Copy, MoreHorizontal, Trash } from "lucide-react";
+import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
 import { AlertModal } from "@/components/modals/alert-modal";
@@ -72,6 +72,14 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
           <DropdownMenuItem onClick={() => onCopy(data.id)}>
             <Copy className="h-4 w-4 mr-2" />
             Copy Id
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() =>
+              router.push(`/${params.storeId}/billboards/${data.id}`)
+            }
+          >
+            <Edit className="h-4 w-4 mr-2" />
+            Update
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setOpen(true)}>
             <Trash className="h-4 w-4 mr-2" />
