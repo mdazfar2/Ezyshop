@@ -33,7 +33,7 @@ const Login = () => {
           ></div>
           {/* Second background div */}
           <div
-            className={`w-full h-full absolute right-60 bottom-[9.5rem] -rotate-45 transition-opacity duration-1000 ease-in-out bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow ${
+            className={`w-full h-full absolute right-80 bottom-[9.5rem] -rotate-45 transition-opacity duration-1000 ease-in-out bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow ${
               !switchCss ? "opacity-100" : "opacity-0"
             }`}
           ></div>

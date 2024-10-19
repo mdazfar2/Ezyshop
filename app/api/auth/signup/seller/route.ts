@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+import { generateAndSendOTP } from '@/lib/auth';
 // import bcrypt from 'bcrypt'; 
 
 const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
-  const { email} = await request.json();
+  const { name,storeMobile,email,storeAddress,storeUPI,storeName} = await request.json();
   // storeMobile,name 
   // Check if the user already exists
-  const existingUser = await prisma.user.findUnique({
+  const existingUser = await prisma.seller.findUnique({
     where: { email },
   });
 
@@ -18,15 +19,14 @@ export async function POST(request: Request) {
 
   
   // Create the user
-  // const user = await prisma.seller.create({
-  //   data: {
-  //     email,
-  //     storeMobile,
-  //     name
-  //   },
-  // });
+  const seller = await prisma.seller.create({
+    data: {
+      name,storeMobile,email,storeAddress,storeUPI,storeName
+    },
+  });
+
+  generateAndSendOTP(email,"seller");
 
 
-
-  return NextResponse.json({ message: 'Signup successful!' });
+  return NextResponse.json({ message: 'STORE CREATED, VERIFY EMAIL VIA OTP',seller });
 }
