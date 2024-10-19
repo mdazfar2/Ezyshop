@@ -8,6 +8,7 @@ const Dashboard = () => {
     return ( 
         <>
         {session.data?.user.role}
+        <br></br>
         {session.data?.user.name}
         </>
      );
