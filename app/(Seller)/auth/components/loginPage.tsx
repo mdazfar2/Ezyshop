@@ -1,10 +1,10 @@
+"use client"
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { User } from "lucide-react";
-import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { signIn, useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-
 import { z } from "zod";
 import {
   InputOTP,
@@ -25,6 +25,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+// import { redirect } from "next/dist/server/api-utils";
 
 interface LoginPageProps {
   switchCss: boolean;
@@ -49,6 +50,15 @@ const LoginPage: React.FC<LoginPageProps> = ({
   setloading,
   setError,
 }) => {
+
+  const session=useSession();
+  console.log(session)
+
+  useEffect(()=>{
+    if(session.status==="authenticated" && session.data?.user?.id){
+      window.location.href =`/${session.data.user.id}/dashboard`;
+    }
+  },[session.status,session.data?.user.id])
   const [otpOpen, setOtpOpen] = useState(false);
 
   const [email, setEmail] = useState("");
@@ -67,7 +77,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
     const result = await signIn("credentials", {
       email,
       otp: data.pin,
-      role: "user",
+      role: "seller",
       redirect: false,
     });
     console.log(result);
@@ -75,9 +85,9 @@ const LoginPage: React.FC<LoginPageProps> = ({
       setError("Invalid email or otp");
     } else {
       toast.success(`Welcome Seller!`);
-      setTimeout(() => {
-        window.location.href = "/dashboard"; // Redirect on success
-      }, 2000);
+      // setTimeout(() => {
+      //   window.location.href = `/${session.data?.user.id}/dashboard`; // Redirect on success
+      // }, 2000);
     }
     setloading(false);
   }

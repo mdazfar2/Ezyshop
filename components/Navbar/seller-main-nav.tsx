@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
 import AuthButtons from "./authButtons";
 import { ModeToggle } from "../ui/themeButton";
+import { useSession } from "next-auth/react";
 
 interface SellerMainNavProps{
   className?:React.HTMLAttributes<HTMLElement>
@@ -15,6 +16,8 @@ interface SellerMainNavProps{
 
 
 export function SellerMainNav({ className,theme }:SellerMainNavProps) {
+
+  const session = useSession()
 
   const [loading,setLoading]=useState(true);
 //   const {openDialog}=useConstruction();
@@ -30,8 +33,8 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
   const toggleMenu = () => setIsOpen(!isOpen); // Toggle function for menu
 
   const routes = [
-    { href: `/`, label: "Home", active: pathname === `/` },
-    // { href: `/About`, label: "About", active: pathname.startsWith(`/About`) },
+    { href: `/${session.data?.user.id}/dashboard`, label: "Home", active: pathname === `/${session.data?.user.id}/dashboard` },
+    // { href: `/${session.data?.user.id}/billboards`, label: "Billboards", active: pathname.startsWith(`/${session.data?.user.id}/billboards`) },
     // {
     //   href: `/Categories`,
     //   label: "Categories",

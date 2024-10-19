@@ -7,12 +7,13 @@ export default function SellerLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     // <body>
     <>
       <SellerNavbar />
-      {children}
+      <div className="h-screen w-full dark:bg-DarkGray">{children}</div>
       {/* <Footer /> */}
-      </>
+    </>
     // {/* </body> */}
   );
 }
