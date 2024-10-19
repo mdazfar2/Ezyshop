@@ -13,147 +13,147 @@ import {
 import SeperatorHeading from "./ui/seperatorHeading";
 import { useState } from "react";
 
-const cardData = [
+const categories = [
   {
     id: 1,
-    title: "Fashion Hub",
-    logo: "/shops/fashion_image1.jpg",
-    description: "Explore trendy clothes for all ages.",
+    title: "Fashion & Accessories",
+    logo: "/categories/class-1.png",
+    description: "Explore the latest trends in fashion with exclusive offers on clothing, shoes, and accessories.",
     category: "Fashion",
-    Offers: "30+ Brands",
-    deliveryTime: "1-2 day delivery",
-    StartingFrom: "$15",
-    ButtonLink: "/fashion-hub",
+    Offers: "50+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$10",
+    buttonLink: "/fashion",
   },
   {
     id: 2,
-    title: "Tech World",
-    logo: "/shops/tech_image1.jpg",
-    description: "Find the latest gadgets and electronics.",
+    title: "Electronics & Gadgets",
+    logo: "/categories/class-2.png",
+    description: "Shop for the latest electronics and gadgets from top brands at the best prices.",
     category: "Electronics",
-    Offers: "40+ Brands",
-    deliveryTime: "Same-day delivery",
-    StartingFrom: "$100",
-    ButtonLink: "/tech-world",
+    Offers: "20+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$25",
+    buttonLink: "/electronics",
   },
   {
     id: 3,
-    title: "Fresh Mart",
-    logo: "/shops/grocery_image1.jpg",
-    description: "Fresh produce and groceries at your doorstep.",
-    category: "Groceries",
-    Offers: "20+ Stores",
-    deliveryTime: "30 min delivery",
-    StartingFrom: "$10",
-    ButtonLink: "/fresh-mart",
+    title: "Groceries & Essentials",
+    logo: "/categories/class-3.png",
+    description: "Order fresh groceries and daily essentials from trusted local stores, delivered to your doorstep.",
+    category: "Grocery",
+    Offers: "30+ Stores",
+    deliveryTime: "30 Minute Delivery",
+    startingFrom: "$2",
+    buttonLink: "/groceries",
   },
   {
     id: 4,
-    title: "Style Studio",
-    logo: "/shops/fashion_image2.jpg",
-    description: "Discover designer clothes and accessories.",
-    category: "Fashion",
-    Offers: "50+ Brands",
-    deliveryTime: "2-3 day delivery",
-    StartingFrom: "$50",
-    ButtonLink: "/style-studio",
+    title: "Home & Furniture",
+    logo: "/categories/Home&Living.webp",
+    description: "Transform your space with stylish furniture and home decor.",
+    category: "Home",
+    Offers: "60+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$20",
+    buttonLink: "/home",
   },
   {
     id: 5,
-    title: "Gadget Zone",
-    logo: "/shops/tech_image2.jpg",
-    description: "Shop for cutting-edge technology products.",
-    category: "Electronics",
+    title: "Beauty & Personal Care",
+    logo: "/categories/Beauty&PersonalCare.webp",
+    description: "Explore beauty products and personal care essentials for your daily routine.",
+    category: "Beauty",
     Offers: "30+ Brands",
-    deliveryTime: "Next-day delivery",
-    StartingFrom: "$150",
-    ButtonLink: "/gadget-zone",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$10",
+    buttonLink: "/beauty",
   },
   {
     id: 6,
-    title: "Green Grocer",
-    logo: "/shops/grocery_image2.jpg",
-    description: "Organic and locally sourced produce.",
-    category: "Groceries",
-    Offers: "10+ Organic Stores",
-    deliveryTime: "45 min delivery",
-    StartingFrom: "$12",
-    ButtonLink: "/green-grocer",
+    title: "Sports & Fitness",
+    logo: "/categories/Sports&Fitness.webp",
+    description: "Get premium sports equipment and fitness accessories for all activities. Stay active with fitness goals and top-rated gear.",
+    category: "Sports",
+    Offers: "40+ Stores",
+    deliveryTime: "30 Minute Delivery",
+    startingFrom: "$20",
+    buttonLink: "/sports",
   },
   {
     id: 7,
-    title: "Wellness Center",
-    logo: "/shops/wellness_image1.jpg",
-    description: "Health and wellness products for your well-being.",
+    title: "Health & Wellness",
+    logo: "/categories/Health&Wellness.webp",
+    description: "Shop medicines, vitamins, supplements, and fitness gear for a healthy lifestyle.",
     category: "Health",
-    Offers: "30+ Brands",
-    deliveryTime: "2 day delivery",
-    StartingFrom: "$20",
-    ButtonLink: "/wellness-center",
+    Offers: "100+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$1",
+    buttonLink: "/health",
   },
   {
     id: 8,
-    title: "Book Nook",
-    logo: "/shops/bookstore_image1.jpg",
-    description: "Browse a wide range of books and media.",
+    title: "Books & Media",
+    logo: "/categories/Books&Media.webp",
+    description: "Enjoy a wide selection of books, movies and music gadgets for entertainment.",
     category: "Books",
-    Offers: "50+ Publishers",
-    deliveryTime: "2-3 day delivery",
-    StartingFrom: "$5",
-    ButtonLink: "/book-nook",
+    Offers: "60+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$5",
+    buttonLink: "/books",
   },
   {
     id: 9,
-    title: "Toy Box",
-    logo: "/shops/toystore_image1.jpeg",
-    description: "Fun toys and games for all ages.",
+    title: "Toys & Games",
+    logo: "/categories/Toyes2.png",
+    description: "Discover fun and educational toys and games for kids of all ages.",
     category: "Toys",
-    Offers: "20+ Brands",
-    deliveryTime: "1-2 day delivery",
-    StartingFrom: "$10",
-    ButtonLink: "/toy-box",
+    Offers: "24+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$5",
+    buttonLink: "/toys",
   },
   {
     id: 10,
-    title: "Baby Bliss",
-    logo: "/shops/babystore_image1.jpg",
-    description: "Everything for babies and new mothers.",
+    title: "Baby Products & Maternity",
+    logo: "/categories/BabyProducts&Maternity.webp",
+    description: "Find baby clothing, toys, and maternity products for new and expecting parents.",
     category: "Baby Products",
-    Offers: "15+ Stores",
-    deliveryTime: "1 day delivery",
-    StartingFrom: "$8",
-    ButtonLink: "/baby-bliss",
+    Offers: "60+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$5",
+    buttonLink: "/baby-products",
   },
   {
     id: 11,
-    title: "Auto Zone",
-    logo: "/shops/automative_image1.jpg",
-    description: "Automotive parts and tools for your vehicle.",
+    title: "Automotive & Tools",
+    logo: "/categories/Automotive&Tools.webp",
+    description: "Shop car accessories, tools, and maintenance essentials for your vehicle.",
     category: "Automotive",
-    Offers: "10+ Brands",
-    deliveryTime: "3-4 day delivery",
-    StartingFrom: "$50",
-    ButtonLink: "/auto-zone",
+    Offers: "55+ Brands",
+    deliveryTime: "Same Day Delivery",
+    startingFrom: "$10",
+    buttonLink: "/automotive",
   },
   {
     id: 12,
-    title: "Pet Paradise",
-    logo: "/shops/pet_image1.jpg",
-    description: "Supplies and accessories for your pets.",
+    title: "Pet Supplies & Accessories",
+    logo: "/categories/PetSupplies.webp",
+    description: "Keep your furry friends happy and healthy with top-quality products like food and toys to grooming essentials.",
     category: "Pet Supplies",
-    Offers: "20+ Brands",
-    deliveryTime: "1-2 day delivery",
-    StartingFrom: "$5",
-    ButtonLink: "/pet-paradise",
+    Offers: "40+ Stores",
+    deliveryTime: "30 Minute Delivery",
+    startingFrom: "$20",
+    buttonLink: "/pet-supplies",
   },
 ];
 
-const Stores = () => {
+const Categories = ({ showLoadMore = true }) => {
   const [showMore, setShowMore] = useState(false);
 
   // Slice stores: Display only 3 in the first row initially
-  const initialStores = cardData.slice(0, 3);
-  const remainingStores = cardData.slice(3);
+  const initialStores = categories.slice(0, 3);
+  const remainingStores = categories.slice(3);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full">
@@ -216,7 +216,7 @@ const Stores = () => {
                     {card.deliveryTime}
                   </div>
                   <div className="border-b border-gray-400 dark:border-DarkGray p-2">
-                    {card.StartingFrom}
+                    {card.startingFrom}
                   </div>
                 </div>
               </div>
@@ -233,7 +233,7 @@ const Stores = () => {
         ))}
       </div>
 
-      {showMore && (
+      {showLoadMore && showMore && (
         <div className="h-full flex flex-col gap-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-20">
           {remainingStores.map((card) => (
             <Card
@@ -288,7 +288,7 @@ const Stores = () => {
                       {card.deliveryTime}
                     </div>
                     <div className="border-b border-gray-400 dark:border-DarkGray p-2">
-                      {card.StartingFrom}
+                      {card.startingFrom}
                     </div>
                   </div>
                 </div>
@@ -306,16 +306,19 @@ const Stores = () => {
         </div>
       )}
 
-    
+      { showLoadMore && 
         <Button
           onClick={() => setShowMore(!showMore)}
           className="mt-6 px-4 py-2 bg-customTeal rounded-full dark:bg-Green dark:text-gray-100 dark:hover:opacity-80"
         >
             {showMore?"Show Less":"Show More"}
         </Button>
+      }
+
+    
  
     </div>
   );
 };
 
-export default Stores;
+export default Categories;

@@ -1,6 +1,6 @@
 
 import Features from "@/components/features";
-import Stores from "@/components/stores";
+import Categories from "@/components/categories";
 import Hero from "@/components/ui/Hero";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
 import LearnAboutUs from "@/components/about us/learnAboutUs";
@@ -20,7 +20,7 @@ export default function Home() {
       <Features />
       <div className="w-full border-b border-customBlue dark:border-Green my-10" />
 
-      <Stores />
+      <Categories showLoadMore = {false}/>
     </div>
   );
 }
