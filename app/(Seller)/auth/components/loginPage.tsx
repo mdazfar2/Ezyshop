@@ -1,10 +1,30 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { Eye, EyeOff, Mail, User } from "lucide-react";
-import { signIn, useSession } from "next-auth/react";
+import { User } from "lucide-react";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
+
+import { z } from "zod";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
 interface LoginPageProps {
   switchCss: boolean;
@@ -16,43 +36,81 @@ interface LoginPageProps {
   setloading: (value: boolean) => void;
 }
 
+const FormSchema = z.object({
+  pin: z.string().min(6, {
+    message: "Your one-time password must be 6 characters.",
+  }),
+});
+
 const LoginPage: React.FC<LoginPageProps> = ({
   switchCss,
   setSwitchCss,
-  isResetOpen,
-  setIsResetOpen,
   loading,
   setloading,
   setError,
 }) => {
-  const session = useSession();
+  const [otpOpen, setOtpOpen] = useState(false);
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const [showPassword, setShowPassword] = useState(false);
+  //  form definition otp
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      pin: "",
+    },
+  });
+
+  async function onOTPSubmit(data: z.infer<typeof FormSchema>) {
+    // console.log(data.pin+email);
+    setloading(true);
+    const result = await signIn("credentials", {
+      email,
+      otp: data.pin,
+      role: "user",
+      redirect: false,
+    });
+    console.log(result);
+    if (!result?.ok) {
+      setError("Invalid email or otp");
+    } else {
+      toast.success(`Welcome Seller!`);
+      setTimeout(() => {
+        window.location.href = "/dashboard"; // Redirect on success
+      }, 2000);
+    }
+    setloading(false);
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     setloading(true);
     e.preventDefault();
 
-    const result = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });
-    console.log(result);
-    if (result?.error) setError("Invalid email or password");
-    else {
-      toast.success(`Welcome ${session.data?.user?.name}`);
-      window.location.href = "/dashboard"; // Redirect on success
+    try {
+      const result = await axios.post("/api/auth/login/seller", {
+        email,
+      });
+      console.log(result);
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        setError("Invalid email, seller does not exist");
+      } else {
+        setError("Invalid email");
+      }
+      //
+      console.log(err);
+      setloading(false);
+      return;
     }
+    // if (result?.error) setError("Invalid email or password");
+    setOtpOpen(true);
     setloading(false);
   };
 
   return (
     <>
-      {switchCss && !isResetOpen && (
+      {/* login */}
+      {switchCss && !otpOpen && (
         <div className="flex flex-col z-10 items-center justify-start pt-24  pr-14 gap-4 w-2/4">
           <div className="font-nunito text-4xl text-customTeal dark:text-Green font-extrabold">
             Login
@@ -72,7 +130,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
               />
               <User className="h-7 w-7 text-customTeal dark:text-Yellow" />
             </div>
-            <div className="flex items-center w-4/5 justify-center">
+            {/* <div className="flex items-center w-4/5 justify-center">
               <Input
                 className="rounded-full"
                 type={showPassword ? "text" : "password"}
@@ -90,22 +148,22 @@ const LoginPage: React.FC<LoginPageProps> = ({
                   <Eye className="h-7 w-7 text-customTeal dark:text-Yellow" />
                 )}
               </div>
-            </div>
+            </div> */}
             <Button
               type="submit"
-                // disabled
+              // disabled
               disabled={loading}
               className="rounded-full bg-customTeal dark:bg-Green font-bold h-10 w-4/5 disabled"
             >
               {loading ? <Spinner /> : "Login"}
             </Button>
           </form>
-          <div
+          {/* <div
             className="text-customTeal dark:text-Green cursor-pointer"
             onClick={() => setIsResetOpen(!isResetOpen)}
           >
             Forgot Password?
-          </div>
+          </div> */}
           <div className="flex items-center dark:text-gray-500 justify-center gap-2">
             Don&apos;t have an account?
             <div
@@ -118,7 +176,8 @@ const LoginPage: React.FC<LoginPageProps> = ({
           </div>
         </div>
       )}
-      {switchCss && isResetOpen && (
+
+      {/* {switchCss && isResetOpen && !otpOpen &&(
         <div className="flex flex-col z-10 items-center justify-start pt-32  pr-14 gap-4 w-2/4">
           <div className="font-nunito text-4xl text-customTeal dark:text-Green font-extrabold">
             Forgot Password
@@ -137,6 +196,47 @@ const LoginPage: React.FC<LoginPageProps> = ({
             Back to Login
           </div>
         </div>
+      )} */}
+
+      {switchCss && otpOpen && (
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onOTPSubmit)}
+            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center pl-14 gap-4 w-2/4"
+          >
+            <FormField
+              control={form.control}
+              name="pin"
+              render={({ field }) => (
+                <FormItem className="flex items-start justify-center flex-col">
+                  <FormLabel className="text-2xl text-customTeal dark:text-Green font-bold">
+                    One-Time Password
+                  </FormLabel>
+                  <FormControl>
+                    <InputOTP maxLength={6} {...field}>
+                      <InputOTPGroup>
+                        <InputOTPSlot index={0} />
+                        <InputOTPSlot index={1} />
+                        <InputOTPSlot index={2} />
+                        <InputOTPSlot index={3} />
+                        <InputOTPSlot index={4} />
+                        <InputOTPSlot index={5} />
+                      </InputOTPGroup>
+                    </InputOTP>
+                  </FormControl>
+                  <FormDescription>
+                    Please enter the one-time password sent to your email.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <Button className="bg-customTeal dark:bg-Green" type="submit">
+              Submit
+            </Button>
+          </form>
+        </Form>
       )}
     </>
   );
