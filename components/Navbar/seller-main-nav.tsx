@@ -34,7 +34,7 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
 
   const routes = [
     { href: `/${session.data?.user.id}/dashboard`, label: "Home", active: pathname === `/${session.data?.user.id}/dashboard` },
-    // { href: `/${session.data?.user.id}/billboards`, label: "Billboards", active: pathname.startsWith(`/${session.data?.user.id}/billboards`) },
+    { href: `/${session.data?.user.id}/billboards`, label: "Billboards", active: pathname.startsWith(`/${session.data?.user.id}/billboards`) },
     // {
     //   href: `/Categories`,
     //   label: "Categories",
