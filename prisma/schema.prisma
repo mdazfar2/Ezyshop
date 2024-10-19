@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String  @id @default(uuid()) @map("_id")
+  mobileNumber String  @unique
+  name         String?
+
+  email String? @unique
+  otp   String?
+  role  String  @default("user")
+  // addresses     Address[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // orders        Order[]
+  // wishlist      Product[]
+}
+
+model Seller {
+  id String @id @default(uuid()) @map("_id")
+
+  name         String?
+  storeName    String
+  storeAddress String
+  storeUPI     String
+  storeMobile  String  @unique
+
+  email     String?  @unique
+  otp       String?
+  role      String   @default("seller")
+  // addresses     Address[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // orders        Order[]
+  // wishlist      Product[]
+}
+
+// Store Owner Name
+// 2. Store Name
+// 3. Details of Store (in about 20 words)
+// 4. Address --
+// |- City-
+// |- State-
+// |- Colony-
+// |- Nearby-
+
+// 5. Upload Qr Code of your Shop
+
+// 6. Upi Id
+
+// 7. Total products in Shop
