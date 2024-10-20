@@ -104,6 +104,16 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
       <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
       <td><a href="https://linkedin.com/company/ezyshopz/"> Follow us on Linkedin</a></td>
   </tr>
+  
+  <tr>
+      <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
+      <td><a href="https://twitter.com/company/ezyshopz/"> Follow us on Linkedin</a></td>
+  </tr
+    
+  <tr>
+      <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
+      <td><a href="https://instagram.com/company/ezyshopz/"> Follow us on Linkedin</a></td>
+  </tr
 </table>
 
 
