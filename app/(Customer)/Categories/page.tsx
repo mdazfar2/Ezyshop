@@ -1,4 +1,4 @@
-import Stores from "@/components/stores";
+import Categories from "@/components/categories";
 
 const Category = () => {
   return (
@@ -9,7 +9,7 @@ const Category = () => {
         </div>
       </div>
       {/* <SeperatorHeading label="Trending Deals"/> */}
-      <Stores />
+      <Categories />
       
     </div>
   );
