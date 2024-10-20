@@ -162,20 +162,20 @@ const Categories = ({ showLoadMore = true }) => {
         Shop for your favourite products
       </div>
 
-      <div className="h-full flex flex-col gap-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-20">
+      <div className="h-full flex flex-col justify-center items-center gap-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-3">
         {initialStores.map((card) => (
           <Card
             key={card.title}
-            className="sm:w-[400px] my-5 md:hover:scale-105  transition duration-300 bg-gray-200 dark:bg-gray-700"
+            className="sm:w-[400px] my-5 md:hover:scale-105 transition duration-300 bg-gray-200 dark:bg-gray-700"
           >
-            <CardHeader className="border-b border-gray-400 dark:border-DarkGray">
+            <CardHeader className="dark:border-DarkGray p-0">
               <div className="flex flex-col gap-2">
                 <div className="relative">
                   <Image
-                    width={1000}
-                    height={1000}
-                    className="z-0"
-                    alt="card image"
+                    width={700}
+                    height={700}
+                    className="z-0 rounded-tl-lg rounded-tr-lg"
+                    alt="card image m-0"
                     src={card.logo}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center text-center opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -190,9 +190,9 @@ const Categories = ({ showLoadMore = true }) => {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="flex dark:text-gray-200 items-center justify-center font-nunito">
-                <div className="border-r border-gray-400 dark:border-DarkGray font-semibold">
-                  <div className="border-b border-gray-400 dark:border-DarkGray p-2">
+              <div className="flex text-[#525252] dark:text-gray-200 items-center justify-center font-nunito ">
+                <div className="border-r border-gray-400 dark:border-DarkGray font-bold">
+                  <div className=" border-t border-b border-gray-400 dark:border-DarkGray p-2">
                     Category
                   </div>
                   <div className="border-b border-gray-400 dark:border-DarkGray p-2">
@@ -206,7 +206,7 @@ const Categories = ({ showLoadMore = true }) => {
                   </div>
                 </div>
                 <div>
-                  <div className="border-b border-gray-400 dark:border-DarkGray p-2">
+                  <div className="border-t border-b border-gray-400 dark:border-DarkGray p-2">
                     {card.category}
                   </div>
                   <div className="border-b border-gray-400 dark:border-DarkGray p-2">
@@ -221,10 +221,10 @@ const Categories = ({ showLoadMore = true }) => {
                 </div>
               </div>
             </CardContent>
-            <CardFooter className="flex justify-center">
+            <CardFooter className="flex justify-center pt-0 md:pt-0">
               <Button
                 variant="default"
-                className="bg-customTeal dark:bg-Green text-gray-200 rounded-full dark:text-gray-100 dark:hover:opacity-80"
+                className="bg-customTeal dark:bg-Green text-gray-200 rounded-full dark:text-gray-100 dark:hover:opacity-8 "
               >
                 Shop Now
               </Button>
@@ -234,19 +234,19 @@ const Categories = ({ showLoadMore = true }) => {
       </div>
 
       {showLoadMore && showMore && (
-        <div className="h-full flex flex-col gap-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-20">
+        <div className="h-full flex flex-col justify-center items-center gap-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-3">
           {remainingStores.map((card) => (
             <Card
               key={card.title}
               className="sm:w-[400px] md:hover:scale-105 transition duration-300 bg-gray-200 dark:bg-gray-700 "
             >
-              <CardHeader className="border-b border-gray-400 dark:border-DarkGray">
+              <CardHeader className="dark:border-DarkGray p-0">
                 <div className="flex flex-col gap-2">
                   <div className="relative">
                     <Image
-                      width={1000}
-                      height={1000}
-                      className="z-0"
+                      width={700}
+                      height={700}
+                      className="z-0  rounded-tl-lg rounded-tr-lg"
                       alt="card image"
                       src={card.logo}
                     />
@@ -264,7 +264,7 @@ const Categories = ({ showLoadMore = true }) => {
               <CardContent>
                 <div className="flex dark:text-gray-200 items-center justify-center font-nunito">
                   <div className="border-r border-gray-400 dark:border-DarkGray font-semibold">
-                    <div className="border-b border-gray-400 dark:border-DarkGray p-2">
+                    <div className="border-t border-b border-gray-400 dark:border-DarkGray p-2">
                       Category
                     </div>
                     <div className="border-b border-gray-400 dark:border-DarkGray p-2">
@@ -278,7 +278,7 @@ const Categories = ({ showLoadMore = true }) => {
                     </div>
                   </div>
                   <div>
-                    <div className="border-b border-gray-400 dark:border-DarkGray p-2">
+                    <div className="border-t border-b border-gray-400 dark:border-DarkGray p-2">
                       {card.category}
                     </div>
                     <div className="border-b border-gray-400 dark:border-DarkGray p-2">
@@ -293,7 +293,7 @@ const Categories = ({ showLoadMore = true }) => {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-center">
+              <CardFooter className="flex justify-center pt-0 md:pt-0">
                 <Button
                   variant="default"
                   className="bg-customTeal dark:bg-Green text-gray-200 dark:text-gray-100 rounded-full  dark:hover:opacity-80"
