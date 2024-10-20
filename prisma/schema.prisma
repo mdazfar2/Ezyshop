@@ -47,6 +47,7 @@ model Seller {
   // orders        Order[]
   // wishlist      Product[]
   billboards Billboard[] @relation("SellerToBillboard")
+  categories Category[] @relation("SellerToCategory")
 
 }
 
@@ -56,7 +57,19 @@ model Billboard {
   seller      Seller      @relation("SellerToBillboard", fields: [storeId], references: [id])
   label      String
   imageUrl   String
-  // categories Category[]
+  categories Category[]
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
+}
+
+model Category {
+  id          String    @id @default(uuid()) @map("_id")
+  storeId     String
+  seller      Seller     @relation("SellerToCategory", fields: [storeId], references: [id])
+  billboardId String
+  billboard   Billboard @relation(fields: [billboardId], references: [id])
+  // products    Product[] @relation("CategoryToProduct")
+  name        String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
