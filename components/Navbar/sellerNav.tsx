@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useTheme } from "@/context/themeProvider";
 import UnderConstructionAlert from "../modals/underConstruction";
 import { SellerMainNav } from "./seller-main-nav";
+// import { useParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const SellerNavbar = () => {
+  const session=useSession();
   const { theme } = useTheme() || { theme: "light" }; // Get the current theme and toggle function
 
   return (
@@ -20,7 +23,7 @@ const SellerNavbar = () => {
         }`}
       >
         <div className="flex items-center">
-          <Link href="/" className="ml-4 flex lg:ml:0 gap-x-2">
+          <Link href={`/${session.data?.user.id}/dashboard`} className="ml-4 flex lg:ml:0 gap-x-2">
             <Image
               src={"/ezyshop.png"}
               width={80}
@@ -28,7 +31,7 @@ const SellerNavbar = () => {
               alt="ezyshop logo"
             />
           </Link>
-          <Link href="/" className="ml-4 flex lg:ml:0 gap-x-2">
+          <Link href={`/${session.data?.user.id}/dashboard`} className="ml-4 flex lg:ml:0 gap-x-2">
             <div className="flex flex-col items-start">
               <p className="font-extrabold text-5xl font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text">
                 Ezyshop

@@ -8,15 +8,15 @@ export async function POST(request: Request) {
   const { email } = await request.json();
 
   // Check if the user already exists
-  const existingUser = await prisma.user.findUnique({
+  const existingseller = await prisma.seller.findUnique({
     where: { email },
   });
 
-  if (!existingUser) {
-    return NextResponse.json({ message: 'User does not exist' }, { status: 400 });
+  if (!existingseller) {
+    return NextResponse.json({ message: 'seller does not exist' }, { status: 400 });
   }
 
-  generateAndSendOTP(email,"user");
+  generateAndSendOTP(email,"seller");
 
-  return NextResponse.json({ message: 'ACCOUNT EXISTS, OTP Sent!',existingUser });
+  return NextResponse.json({ message: 'ACCOUNT EXISTS, OTP Sent!',existingseller });
 }
