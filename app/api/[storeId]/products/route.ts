@@ -90,17 +90,31 @@ export async function GET(
       where: {
         storeId: params.storeId,
         categoryId,
-        isFeatured: isFeatured ? true : undefined, //undef. will completely ignore this filter.
+        isFeatured: isFeatured ? true : undefined, // undefined will ignore this filter
         isArchived: false,
       },
       include: {
-        category: true
+        category:{
+          select:{
+            name:true
+          }
+        }, // Includes the category details
+        seller: {       // Proper structure for including seller
+          select: {
+            storeName: true, // Selects only the storeName from seller
+          },
+        },
+        images:{
+          select:{
+            url:true
+          }
+        }
       },
       orderBy: {
-        createdAt: "desc",
+        createdAt: "desc", // Orders products by creation date (newest first)
       },
     });
-
+    // console.log(products)
     return NextResponse.json(products);
   } catch (error) {
     console.log("[PRODUCTS_GET]", error);

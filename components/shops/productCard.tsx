@@ -7,16 +7,10 @@ import {
   CardTitle,
 } from "../ui/card";
 import Image from "next/image";
+import { CategoryProductsProps } from "@/app/(Customer)/shops/[shopId]/page";
 
 interface ProductCardProps {
-  product: {
-    product_title: string;
-    product_category: string;
-    product_shop: string;
-    product_img_url: string;
-    product_id: number;
-    cost: number;
-  };
+  product:CategoryProductsProps
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
@@ -29,12 +23,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             width={1000}
             alt="card image"
             className="rounded-t-lg max-h-96"
-            src={`/products/${product.product_id}.jpeg`}
+            src={`${product.images[0].url}`}
           />
 
           <CardTitle className="flex items-center justify-between text-2xl pt-4 text-Green m-2 px-5 font-handlee">
-            <div>{product.product_title}</div>
-            <div className="text-gray-200">₹<span className="text-3xl">{product.cost}</span></div>
+            <div>{product.name}</div>
+            <div className="text-gray-200">₹<span className="text-3xl">{product.price}</span></div>
 
           </CardTitle>
         </div>
@@ -42,9 +36,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       <CardFooter className="flex flex-col">
         <div className="flex flex-col items-start w-full justify-start">
-          <div className="text-gray-100 text-xl">{product.product_category}</div>
+          <div className="text-gray-100 text-xl">{product.description}</div>
 
-          <div className="text-gray-500 text-sm">{product.product_shop}</div>
+          <div className="text-gray-500 text-sm">{product.category.name}</div>
         </div>
         <Link href={`#`}>
           <Button
