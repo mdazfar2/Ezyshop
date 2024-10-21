@@ -4,7 +4,7 @@ import { Trash } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Category,Product } from "@prisma/client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -31,9 +31,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
   name: z.string().min(1),
+  images: z.object({ url: z.string() }).array(),
   price: z.coerce.number().min(1),
   categoryId: z.string().min(1),
   description: z.string().min(1),
@@ -75,6 +77,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
         }
       : {
           name: "",
+          images: [],
           price: 0,
           categoryId: "",
           description: "",
@@ -83,6 +86,23 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           isArchived: false,
         },
   });
+
+  const handleImageChange = useCallback(
+    (url: string) => {
+      form.setValue("images", [...form.getValues("images"), { url }]);
+    },
+    [form]
+  );
+
+  const handleImageRemove = useCallback(
+    (url: string) => {
+      form.setValue(
+        "images",
+        form.getValues("images").filter((image) => image.url !== url)
+      );
+    },
+    [form]
+  );
 
   const onSubmit = async (data: ProductFormValues) => {
     try {
@@ -158,6 +178,25 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 w-full"
         >
+          <FormField
+            control={form.control}
+            name="images"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Images</FormLabel>
+                <FormControl>
+                  <ImageUpload
+                    value={field.value.map((image) => image.url)}
+                    disabled={loading}
+                    //it was a bug here, and i solved it by outsourcing
+                    onChange={handleImageChange}
+                    onRemove={handleImageRemove}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <div className="grid grid-cols-3 gap-8">
             <FormField
               control={form.control}

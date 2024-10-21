@@ -92,4 +92,18 @@ model Product {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  images Image[]
+}
+
+model Image {
+  id String @id @default(uuid()) @map("_id")
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  url String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
