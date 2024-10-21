@@ -36,40 +36,7 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
     { href: `/${session.data?.user.id}/dashboard`, label: "Home", active: pathname === `/${session.data?.user.id}/dashboard` },
     { href: `/${session.data?.user.id}/billboards`, label: "Billboards", active: pathname.startsWith(`/${session.data?.user.id}/billboards`) },
     { href: `/${session.data?.user.id}/categories`, label: "Categories", active: pathname.startsWith(`/${session.data?.user.id}/categories`) },
-    // {
-    //   href: `/Categories`,
-    //   label: "Categories",
-    //   active: pathname.startsWith(`/Categories`),
-    // },
-    // { href: `#`, label: "Teams", active: pathname.startsWith(`/Teams`),
-    //   onClick: (e: React.MouseEvent) => {
-    //     e.preventDefault();
-    //     openDialog(); 
-    //   },
-    //  },
-    // { href: `/Blog`, label: "Blog", active: pathname.startsWith(`/Blog`) },
-    // {
-    //   href: `/MyOrders`,
-    //   label: "My Orders",
-    //   active: pathname.startsWith(`/MyOrders`),
-    // },
-    // {
-    //   href: `/WishList`,
-    //   label: "Wish List",
-    //   active: pathname.startsWith(`/WishList`),
-    //   logo: <Heart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
-    // },
-    // {
-    //   href: `/Cart`,
-    //   label: "Cart",
-    //   active: pathname.startsWith(`/Cart`),
-    //   logo: <ShoppingCart className={`h-5 w-5 ${theme==="dark"?`text-Green`:`text-customTeal`}`} />,
-    // },
-    // {
-    //   href: `/Contact`,
-    //   label: "Contact",
-    //   active: pathname.startsWith(`/Contact`),
-    // },
+    { href: `/${session.data?.user.id}/products`, label: "Products", active: pathname.startsWith(`/${session.data?.user.id}/products`) },
   ];
 
   return (

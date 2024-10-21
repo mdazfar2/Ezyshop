@@ -38,23 +38,23 @@ model Seller {
   storeUPI     String
   storeMobile  String  @unique
 
-  email     String?  @unique
-  otp       String?
-  role      String   @default("seller")
+  email      String?     @unique
+  otp        String?
+  role       String      @default("seller")
   // addresses     Address[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
   // orders        Order[]
   // wishlist      Product[]
   billboards Billboard[] @relation("SellerToBillboard")
-  categories Category[] @relation("SellerToCategory")
-
+  categories Category[]  @relation("SellerToCategory")
+  products   Product[]   @relation("SellerToProduct")
 }
 
 model Billboard {
   id         String     @id @default(uuid()) @map("_id")
   storeId    String
-  seller      Seller      @relation("SellerToBillboard", fields: [storeId], references: [id])
+  seller     Seller     @relation("SellerToBillboard", fields: [storeId], references: [id])
   label      String
   imageUrl   String
   categories Category[]
@@ -65,11 +65,31 @@ model Billboard {
 model Category {
   id          String    @id @default(uuid()) @map("_id")
   storeId     String
-  seller      Seller     @relation("SellerToCategory", fields: [storeId], references: [id])
+  seller      Seller    @relation("SellerToCategory", fields: [storeId], references: [id])
   billboardId String
   billboard   Billboard @relation(fields: [billboardId], references: [id])
-  // products    Product[] @relation("CategoryToProduct")
+  products    Product[] @relation("CategoryToProduct")
   name        String
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id String @id @default(uuid()) @map("_id")
+
+  storeId String
+  seller  Seller @relation("SellerToProduct", fields: [storeId], references: [id])
+
+  categoryId String
+  category   Category @relation("CategoryToProduct", fields: [categoryId], references: [id])
+
+  name        String
+  price       Int
+  description String
+  quantity    Int
+  isFeatured  Boolean @default(false)
+  isArchived  Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
