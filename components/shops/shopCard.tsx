@@ -37,7 +37,7 @@ const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
       </CardHeader>
 
       <CardFooter className="flex justify-center">
-        <Link href={`/shops/${shop.id}`}>
+        <Link href={`/shops/${shop.id}?isfeatured=true`}>
           <Button
             variant="default"
             size={"lg"}

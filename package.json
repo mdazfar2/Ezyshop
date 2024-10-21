@@ -46,6 +46,7 @@
     "next-cloudinary": "^6.15.0",
     "next-themes": "^0.3.0",
     "nodemailer": "^6.9.15",
+    "query-string": "^9.1.1",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",

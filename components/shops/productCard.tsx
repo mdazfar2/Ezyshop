@@ -6,12 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import { Products } from "@/app/(Customer)/shops/[storeId]/page";
 import Image from "next/image";
-import { CategoryProductsProps } from "@/app/(Customer)/shops/[shopId]/page";
 
-interface ProductCardProps {
-  product:CategoryProductsProps
+export interface ProductCardProps {
+  product:Products
 }
+
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
@@ -23,7 +24,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             width={1000}
             alt="card image"
             className="rounded-t-lg max-h-96"
-            src={`${product.images[0].url}`}
+            src={product.images[0].url}
           />
 
           <CardTitle className="flex items-center justify-between text-2xl pt-4 text-Green m-2 px-5 font-handlee">

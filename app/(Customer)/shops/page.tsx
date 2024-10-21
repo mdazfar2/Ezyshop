@@ -1,9 +1,7 @@
-"use client"
+// "use client"
 import ShopCard from "@/components/shops/shopCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
-import { Spinner } from "@/components/ui/spinner";
 import axios from "axios";
-import { useEffect, useState } from "react";
 
 export interface Billboard {
   imageUrl: string; // Add other properties if necessary
@@ -20,31 +18,13 @@ export interface shop {
   billboards: Billboard[]
 }
 
-const Shop = () => {
-  const [shops, setShops] = useState<shop[]>([]);
-  const [loading, setLoading] = useState(true);
+const Shop = async() => {
 
-  async function getShops() {
-    try {
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/seller`
-      ); // Axios GET request
-      console.log(response);
-      setShops(response.data);
-    } catch (error) {
-      console.error("Error fetching sellers:", error);
-    }
-    setLoading(false);
-  }
-  
-  useEffect(() => {
-    getShops();
-  }, []);
+      )
+      const shops:shop[]=response.data
 
-  if (loading) {
-    return <Spinner />;
-  }
-  console.log(shops)
   return (
     <>
       <div className="h-full dark:bg-DarkGray pb-10">
