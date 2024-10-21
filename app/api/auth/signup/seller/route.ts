@@ -6,7 +6,7 @@ import { generateAndSendOTP } from '@/lib/auth';
 const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
-  const { name,storeMobile,email,storeAddress,storeUPI,storeName} = await request.json();
+  const { name,storeMobile,email,storeAddress,storeUPI,storeName,storeDescription} = await request.json();
   // storeMobile,name 
   // Check if the user already exists
   const existingUser = await prisma.seller.findUnique({
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   // Create the user
   const seller = await prisma.seller.create({
     data: {
-      name,storeMobile,email,storeAddress,storeUPI,storeName
+      name,storeMobile,email,storeAddress,storeUPI,storeName,storeDescription
     },
   });
 

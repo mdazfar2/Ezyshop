@@ -32,11 +32,12 @@ model User {
 model Seller {
   id String @id @default(uuid()) @map("_id")
 
-  name         String?
-  storeName    String
-  storeAddress String
-  storeUPI     String
-  storeMobile  String  @unique
+  name            String?
+  storeName       String
+  storeAddress    String
+  storeUPI        String
+  storeMobile     String  @unique
+  storeDescription String @default("A store")
 
   email      String?     @unique
   otp        String?

@@ -1,82 +1,50 @@
+"use client"
 import ShopCard from "@/components/shops/shopCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
+import { Spinner } from "@/components/ui/spinner";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-const shops = [
-  {
-    name: "Fashion Hub",
-    category: "fashion",
-    image: "/shops/fashion_image1.jpg",
-    description: "Trendy clothes for all ages",
-  },
-  {
-    name: "Tech World",
-    category: "electronics",
-    image: "/shops/tech_image1.jpg",
-    description: "Latest gadgets and electronics",
-  },
-  {
-    name: "Fresh Mart",
-    category: "groceries",
-    image: "/shops/grocery_image1.jpg",
-    description: "Fresh produce and groceries",
-  },
-  {
-    name: "Style Studio",
-    category: "fashion",
-    image: "/shops/fashion_image2.jpg",
-    description: "Designer clothes and accessories",
-  },
-  {
-    name: "Gadget Zone",
-    category: "electronics",
-    image: "/shops/tech_image2.jpg",
-    description: "Cutting-edge technology products",
-  },
-  {
-    name: "Green Grocer",
-    category: "groceries",
-    image: "/shops/grocery_image2.jpg",
-    description: "Organic and local produce",
-  },
-  {
-    name: "Wellness Center",
-    category: "health",
-    image: "/shops/wellness_image1.jpg",
-    description: "Health and wellness products",
-  },
-  {
-    name: "Book Nook",
-    category: "books",
-    image: "/shops/bookstore_image1.jpg",
-    description: "Wide range of books and media",
-  },
-  {
-    name: "Toy Box",
-    category: "toys",
-    image: "/shops/toystore_image1.jpeg",
-    description: "Fun toys and games for all ages",
-  },
-  {
-    name: "Baby Bliss",
-    category: "baby products",
-    image: "/shops/babystore_image1.jpg",
-    description: "Everything for babies and new mothers",
-  },
-  {
-    name: "Auto Zone",
-    category: "automotive",
-    image: "/shops/automative_image1.jpg",
-    description: "Automotive parts and tools",
-  },
-  {
-    name: "Pet Paradise",
-    category: "pet supplies",
-    image: "/shops/pet_image1.jpg",
-    description: "Supplies and accessories for pets",
-  },
-];
+export interface Billboard {
+  imageUrl: string; // Add other properties if necessary
+}
+
+export interface shop {
+  id: string;
+  name: string;
+  email: string;
+  storeName: string;
+  storeAddress: string;
+  storeMobile: string;
+  storeDescription: string;
+  billboards: Billboard[]
+}
 
 const Shop = () => {
+  const [shops, setShops] = useState<shop[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  async function getShops() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/seller`
+      ); // Axios GET request
+      console.log(response);
+      setShops(response.data);
+    } catch (error) {
+      console.error("Error fetching sellers:", error);
+    }
+    setLoading(false);
+  }
+  
+  useEffect(() => {
+    getShops();
+  }, []);
+
+  if (loading) {
+    return <Spinner />;
+  }
+  console.log(shops)
   return (
     <>
       <div className="h-full dark:bg-DarkGray pb-10">
@@ -91,9 +59,9 @@ const Shop = () => {
           Explore Our Partner Shops
         </div>
         <div className="flex flex-col items-center justify-center gap-10 px-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
-            {shops.map((shop)=>(
-                <ShopCard key={shop.name} shop={shop}/>
-            ))}
+          {shops.map((shop) => (
+            <ShopCard key={shop.id} shop={shop} />
+          ))}
         </div>
       </div>
     </>
