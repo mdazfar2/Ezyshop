@@ -55,6 +55,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
   const [storeName, setStoreName] = useState("");
   const [storeUPI, setStoreUPI] = useState("");
   const [storeAddress, setStoreAddress] = useState("");
+  const [storeDescription, setStoreDescription] = useState("");
 
   //  form definition otp
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -93,7 +94,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
     e.preventDefault();
 
     // Basic validation
-    if (!name || !storeMobile || !email || !storeAddress || !storeUPI || !storeName ) {
+    if (!name || !storeMobile || !email || !storeAddress || !storeUPI || !storeName ||!storeDescription) {
       setError("All fields are required.");
       setloading(false);
       return;
@@ -106,7 +107,8 @@ const SignupPage: React.FC<SignupPageProps> = ({
         storeMobile,
         storeAddress,
         storeUPI,
-        storeName
+        storeName,
+        storeDescription
       });
       console.log(result);
     } catch (err) {
@@ -127,6 +129,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
     setStoreAddress("");
     setStoreUPI("");
     setStoreName("");
+    setStoreDescription("")
 
     setloading(false);
   };
@@ -134,13 +137,13 @@ const SignupPage: React.FC<SignupPageProps> = ({
   return (
     <>
       {!switchCss && !otpOpen && (
-        <div className="flex flex-col dark:text-gray-200 z-10 items-center justify-start pt-10  gap-2 w-2/4">
+        <div className="flex flex-col dark:text-gray-200 z-10 items-center justify-start pt-10  w-2/4">
           <div className="font-nunito pl-10 text-center text-4xl text-customTeal dark:text-Green font-extrabold">
             Setup Your Store
           </div>
           <form
             onSubmit={handleSubmit}
-            className="w-full flex flex-col items-center justify-center"
+            className="w-full flex pr-4 flex-col items-end justify-center"
           >
             <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
@@ -169,6 +172,16 @@ const SignupPage: React.FC<SignupPageProps> = ({
                 placeholder="store contact number"
                 value={storeMobile}
                 onChange={(e) => setStoreMobile(e.target.value)}
+              />
+              <Phone className="h-7 w-7 text-customTeal dark:text-Yellow" />
+            </div>
+            <div className="flex items-center w-4/5 justify-center mb-4">
+              <Input
+                className="rounded-full"
+                type="text"
+                placeholder="store description"
+                value={storeDescription}
+                onChange={(e) => setStoreDescription(e.target.value)}
               />
               <Phone className="h-7 w-7 text-customTeal dark:text-Yellow" />
             </div>
