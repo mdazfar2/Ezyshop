@@ -16,6 +16,7 @@ export async function POST(
       quantity,
       description,
       isFeatured,
+      images,
       isArchived,
     } = body;
 
@@ -35,7 +36,9 @@ export async function POST(
     if (!description) {
       return new NextResponse("description is required", { status: 400 });
     }
-
+    if (!images || !images.length) {
+      return new NextResponse("images is required", { status: 400 });
+    }
     if (!params.storeId) {
       return new NextResponse("storeId is required", { status: 400 });
     }
@@ -49,7 +52,14 @@ export async function POST(
         categoryId,
         quantity,
         description,
-        storeId: params.storeId
+        storeId: params.storeId,
+        images:{
+          createMany:{
+              data:[
+                  ...images.map((image:{url:string})=>image)
+              ]
+          }
+      }
       },
     });
 

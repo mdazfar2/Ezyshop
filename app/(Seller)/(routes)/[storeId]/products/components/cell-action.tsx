@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ProductColumn } from "./columns";
 import { Button } from "@/components/ui/button";
-import { Copy, MoreHorizontal, Trash } from "lucide-react";
+import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -72,7 +72,14 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
               <Copy className="h-4 w-4 mr-2" />
               Copy Id
             </DropdownMenuItem>
-            
+            <DropdownMenuItem
+              onClick={() =>
+                router.push(`/${params.storeId}/products/${data.id}`)
+              }
+            >
+              <Edit className="h-4 w-4 mr-2" />
+              Update
+            </DropdownMenuItem>
             <DropdownMenuItem onClick={()=>setOpen(true)}>
               <Trash className="h-4 w-4 mr-2" />
               Delete
