@@ -19,7 +19,7 @@ export interface shop {
 }
 
 const Shop = async () => {
-  let shops:shop[];
+  let shops:shop[]=[];
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/seller`
@@ -28,9 +28,9 @@ const Shop = async () => {
   } catch (err) {
     console.error(
       "Error fetching products:",
-      err instanceof Error ? err.message : err
+      err instanceof Error ? err.message : err,
+      console.log("error is hereeeeeeeeeeeeeee")
     );
-    return [];
   }
 
   return (
