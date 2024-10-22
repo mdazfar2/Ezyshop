@@ -17,5 +17,5 @@ jobs:
       - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: "Hello ${{ github.actor }}! Thanks for opening an issue in Ezyshop! 🚀 \n\n - We'll get back to you as soon as possible. \n\n - Hope you star our [Repo](https://github.com/mdazfar2/Ezyshop). \n\n - Join our [Discord Server](https://discord.gg/Rg8T5gtE) to collaborate and discuss further. "
+          issue-message: "Hello ${{ github.actor }}! Thanks for opening an issue in Ezyshop! 🚀 \n\n - We'll get back to you as soon as possible. \n\n - Hope you star our [Repo](https://github.com/mdazfar2/Ezyshop). \n\n - Join our [Discord Server](https://discord.gg/YnABU7tdU3) to collaborate and discuss further. "
           pr-message: "Thank you, ${{ github.actor }}, for your contribution! Your pull request has been submitted successfully. A maintainer will review it as soon as possible. We appreciate your support in making Ezyshop better. 🎉 "
