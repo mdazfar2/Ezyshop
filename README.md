@@ -1,4 +1,4 @@
-<a id="top"></a>.,
+<a id="top"></a>.
 <h1 align="center">Bringing Every Store to Your Door!</h1>
 
 
