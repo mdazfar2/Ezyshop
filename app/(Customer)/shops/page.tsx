@@ -15,15 +15,23 @@ export interface shop {
   storeAddress: string;
   storeMobile: string;
   storeDescription: string;
-  billboards: Billboard[]
+  billboards: Billboard[];
 }
 
-const Shop = async() => {
-
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/seller`
-      )
-      const shops:shop[]=response.data
+const Shop = async () => {
+  let shops:shop[];
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/seller`
+    );
+    shops = response.data;
+  } catch (err) {
+    console.error(
+      "Error fetching products:",
+      err instanceof Error ? err.message : err
+    );
+    return [];
+  }
 
   return (
     <>
