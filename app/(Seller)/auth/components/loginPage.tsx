@@ -103,6 +103,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
       console.log(result);
     } catch (err) {
       if (axios.isAxiosError(err)) {
+        console.log(err.message);
         setError("Invalid email, seller does not exist");
       } else {
         setError("Invalid email");
