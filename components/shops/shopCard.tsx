@@ -8,10 +8,10 @@ import {
   CardTitle,
 } from "../ui/card";
 import Image from "next/image";
-import { shop } from "@/app/(Customer)/shops/page";
+import { Shop } from "@/app/(Customer)/shops/page";
 
 interface shopCardProps{
-  shop:shop
+  shop:Shop
 }
 
 const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
@@ -37,7 +37,7 @@ const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
       </CardHeader>
 
       <CardFooter className="flex justify-center">
-        <Link href={`/shops/${shop.id}`}>
+        <Link href={`/shops/${shop.id}?isfeatured=true`}>
           <Button
             variant="default"
             size={"lg"}

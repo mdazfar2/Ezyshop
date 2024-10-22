@@ -80,7 +80,7 @@ export async function GET(
                     storeId:params.storeId
                 }
             });
-            console.log(categories)
+            // console.log(categories)
             return NextResponse.json(categories);
         }catch(error){
             console.log('[CATEGORIES_GET]',error);
