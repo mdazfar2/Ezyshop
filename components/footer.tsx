@@ -102,21 +102,27 @@ const Footer = () => {
               <MapPin className="h-7 w-7  text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Address</div>
-                <div className="text-lg text-customTeal dark:text-Green">Jaipur, Rajisthan</div>
+                <a target="_blank" href="https://tinyurl.com/w8c3h6jc" className="text-lg text-customTeal dark:text-Green">
+    <div>Jaipur,Rajasthan</div>
+</a>
               </div>
             </div>
             <div className="flex gap-4">
               <Mail className="h-7 w-7 text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Email</div>
-                <div className="text-lg text-customTeal dark:text-Green">ezyshopz@gmail.com</div>
+                <a target="_blank" href="mailto:ezyshopz@gmail.com" className="text-lg text-customTeal dark:text-Green">
+    <div>ezyshopz@gmail.com</div>
+</a>
               </div>
             </div>
             <div className="flex gap-4">
               <Phone className="h-7 w-7  text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Phone</div>
-                <div className="text-lg text-customTeal dark:text-Green">+91 7739317870</div>
+                <a href="tel:+917739317870" className="text-lg text-customTeal dark:text-Green">
+    <div>+91 7739317870</div>
+</a>
               </div>
             </div>
           </div>
@@ -152,8 +158,9 @@ const Footer = () => {
           <p className="font-bold text-3xl text-customTeal dark:text-Green font-handlee">
             News Letter
           </p>
-          <Input placeholder="Name" className="bg-[#f9f9f9] dark:bg-gray-700 text-gray-200 h-10 w-10/12" />
-          <Input placeholder="Email" className="bg-[#f9f9f9] dark:bg-gray-700 text-gray-200 h-10 w-10/12" />
+          <Input placeholder="Name" className="bg-[#f9f9f9] dark:bg-[#2f4f4f] text-gray-800 dark:text-gray-200 h-10 w-10/12" />
+<Input placeholder="Email" className="bg-[#f9f9f9] dark:bg-[#2f4f4f] text-gray-800 dark:text-gray-200 h-10 w-10/12" />
+
           <Button className="lg:h-14 bg-customTeal dark:bg-Green dark:text-gray-100 dark:hover:opacity-80 rounded-full w-10/12">
             Subscribe
           </Button>
