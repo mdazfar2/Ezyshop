@@ -98,7 +98,7 @@ Need help while contributing? Tag any of maintainers when creating the issue. Yo
 <table border="1">
   <tr>
       <td><img src="https://github.com/user-attachments/assets/82287ad0-2c5f-419f-ae49-5283fcc6fcfd" alt="Discord Logo" width="50"></td>
-      <td><a href="https://discord.gg/Rg8T5gtE"> Join our Official Discord Server </a></td>
+      <td><a href="https://discord.gg/A4BhbHYz"> Join our Official Discord Server </a></td>
   </tr>
   <tr>
       <td><img src="https://github.com/user-attachments/assets/a6eb5a92-ba13-419f-8006-1f22345f2331" alt="Linkedin Logo" width="50"></td>
