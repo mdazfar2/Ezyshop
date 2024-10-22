@@ -44,12 +44,12 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
         if (credentials.role === "user") {
           await prisma.user.update({
             where: { email: credentials.email },
-            data: { otp: null }, // Reset OTP or delete it after use
+            data: { otp: undefined}, // Reset OTP or delete it after use
           });
         } else {
           await prisma.seller.update({
             where: { email: credentials.email },
-            data: { otp: null }, // Reset OTP or delete it after use
+            data: { otp: undefined }, // Reset OTP or delete it after use
           });
         }
 

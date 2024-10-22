@@ -103,6 +103,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
       console.log(result);
     } catch (err) {
       if (axios.isAxiosError(err)) {
+        console.log(err.message);
         setError("Invalid email, seller does not exist");
       } else {
         setError("Invalid email");
@@ -121,7 +122,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
     <>
       {/* login */}
       {switchCss && !otpOpen && (
-        <div className="flex flex-col z-10 items-center justify-start pt-24  pr-14 gap-4 w-2/4">
+        <div className="flex flex-col z-10 items-center justify-start py-10 sm:pt-24 gap-4 w-full lg:w-2/4 max-w-md px-4">
           <div className="font-nunito text-4xl text-customTeal dark:text-Green font-extrabold">
             Login
           </div>
@@ -212,7 +213,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onOTPSubmit)}
-            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center pl-14 gap-4 w-2/4"
+            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center py-10 lg:py-0 pl-10 gap-4 w-full max-w-md mx-auto"
           >
             <FormField
               control={form.control}
