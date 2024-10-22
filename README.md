@@ -150,7 +150,30 @@ Ezyshop is licensed under the terms of the Apache License 2.0. check out <a href
 </a>
 </div>
 
-<hr>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+<h2 align = "center">Stargazers ❤️</h2>
+
+<div align='center'>
+
+[![Stargazers repo roster for @mdazfar2/Ezyshop](https://reporoster.com/stars/mdazfar2/Ezyshop)](https://github.com/mdazfar2/Ezyshop/stargazers)
+
+</div>
+
+<h2 align = "center">Forkers ❤️</h2>
+
+<div align='center'>
+
+[![Forkers repo roster for @mdazfar2/Ezyshop](https://reporoster.com/forks/mdazfar2/Ezyshop)](https://github.com/mdazfar2/Ezyshop/network/members)
+
+</div>
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
 
 <div>
   <h2><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31f/512.webp" width="35" height="30"> Support </h2>
