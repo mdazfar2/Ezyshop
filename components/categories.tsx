@@ -238,7 +238,7 @@ const Categories = ({ showLoadMore = true }) => {
           {remainingStores.map((card) => (
             <Card
               key={card.title}
-              className="sm:w-[400px] md:hover:scale-105 transition duration-300 bg-gray-200 dark:bg-gray-700 "
+              className="sm:w-[400px] md:hover:scale-105 mb-6 transition duration-300 bg-gray-200 dark:bg-gray-700 "
             >
               <CardHeader className="dark:border-DarkGray p-0">
                 <div className="flex flex-col gap-2">
