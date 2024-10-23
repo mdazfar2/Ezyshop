@@ -101,16 +101,22 @@ const SignupPage: React.FC<SignupPageProps> = ({
     }
 
     try {
-      const result = await axios.post("/api/auth/signup/seller", {
+      const res = await axios.post("/api/auth/signup/seller", {
         email,
         name,
         storeMobile,
         storeAddress,
         storeUPI,
         storeName,
-        storeDescription
+        storeDescription,
+        otp:""
       });
-      console.log(result);
+      if(res.status===200){
+        toast.success("otp sent successfully!");
+        setOtpOpen(true);
+        setloading(false)
+        return;
+      }
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError("Invalid email or number, axios error");

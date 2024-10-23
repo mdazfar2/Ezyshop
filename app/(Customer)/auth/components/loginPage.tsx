@@ -1,7 +1,7 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { User } from "lucide-react";
+import { ChevronLeftCircleIcon, User } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 interface LoginPageProps {
   switchCss: boolean;
@@ -85,17 +85,37 @@ const LoginPage: React.FC<LoginPageProps> = ({
     e.preventDefault();
 
     try {
-      const result = await axios.post("/api/auth/login/user", {
+      const res = await axios.post("/api/auth/login/user", {
         email,
       });
-      console.log(result);
+      // console.log(result);
+      if (res.status == 200) {
+        toast.success("otp sent successfully!");
+        setOtpOpen(true);
+        setloading(false)
+        return;
+      }
     } catch (err) {
-      setError("Invalid email");
+      if (err instanceof Error) {
+        console.log(err.message);
+        setError("user not found")
+      } else {
+        const axiosError = err as AxiosError;
+        if (axiosError.response) {
+          const statusCode = axiosError.response.status;
+
+          if (statusCode === 400) {
+            setError("user not found");
+          }
+
+          if (statusCode === 500) {
+            setError("error in sending otp, please try after sometime.");
+          }
+        }
+      }
       console.log(err);
-      setloading(false);
-      return;
     }
-    setOtpOpen(true);
+
     setloading(false);
   };
 
@@ -151,7 +171,8 @@ const LoginPage: React.FC<LoginPageProps> = ({
               name="pin"
               render={({ field }) => (
                 <FormItem className="flex items-start justify-center flex-col">
-                  <FormLabel className="text-xl sm:text-2xl text-customTeal dark:text-Green font-bold">
+                  <FormLabel className="text-2xl gap-2 flex items-center justify-center text-customTeal dark:text-Green font-bold">
+                    <ChevronLeftCircleIcon onClick={()=>{setOtpOpen(false)}} className="h-5 w-5"/>
                     One-Time Password
                   </FormLabel>
                   <FormControl>
