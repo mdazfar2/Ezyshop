@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { AtSign, Phone, User} from "lucide-react"; // Import Eye and EyeOff
+import { AtSign, ChevronLeftCircleIcon, Phone, User} from "lucide-react"; // Import Eye and EyeOff
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -65,7 +65,6 @@ const SignupPage: React.FC<SignupPageProps> = ({
   async function onOTPSubmit(data: z.infer<typeof FormSchema>) {
     // console.log(data.pin+email);
     setloading(true);
-
     const result = await signIn("credentials", {
       email,
       otp: data.pin,
@@ -98,15 +97,21 @@ const SignupPage: React.FC<SignupPageProps> = ({
     }
 
     try {
-      const result = await axios.post("/api/auth/signup", {
+      const res = await axios.post("/api/auth/signup", {
         email,
         name: fullname,
         mobileNumber,
+        otp:""
       });
-      console.log(result);
+      if(res.status===200){
+        toast.success("otp sent successfully!");
+        setOtpOpen(true);
+        setloading(false)
+        return;
+      }
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        setError("Invalid email or number, axios error");
+        setError("Invalid email or number");
       } else {
         setError("Invalid email or number");
       }
@@ -115,7 +120,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
       setloading(false);
       return;
     }
-    setOtpOpen(true);
+    
     setFullname("");
     setmobileNumber("");
     setloading(false);
@@ -193,7 +198,8 @@ const SignupPage: React.FC<SignupPageProps> = ({
               name="pin"
               render={({ field }) => (
                 <FormItem className="flex items-start justify-center flex-col">
-                  <FormLabel className="text-2xl text-customTeal dark:text-Green font-bold">
+                  <FormLabel className="text-2xl gap-2 flex items-center justify-center text-customTeal dark:text-Green font-bold">
+                    <ChevronLeftCircleIcon onClick={()=>{setOtpOpen(false)}} className="h-5 w-5"/>
                     One-Time Password
                   </FormLabel>
                   <FormControl>

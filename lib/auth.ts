@@ -1,9 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 import sendEmail from "@/lib/sendEmail"; // Ensure this points to your sendEmail function
+import prismadb from "./prismadb";
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 export const NEXT_AUTH_CONFIG: NextAuthOptions = {
   providers: [
@@ -21,11 +22,11 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
 
         let account;
         if (credentials.role === "user") {
-          account = await prisma.user.findUnique({
+          account = await prismadb.user.findUnique({
             where: { email: credentials.email },
           });
         } else {
-          account = await prisma.seller.findUnique({
+          account = await prismadb.seller.findUnique({
             where: { email: credentials.email },
           });
         }
@@ -40,16 +41,17 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
           return null;
         }
 
+        const updateData = { otp: null };
         // Clear OTP after successful login
         if (credentials.role === "user") {
-          await prisma.user.update({
+          await prismadb.user.update({
             where: { email: credentials.email },
-            data: { otp: undefined}, // Reset OTP or delete it after use
+            data: updateData, // Reset OTP or delete it after use
           });
         } else {
-          await prisma.seller.update({
+          await prismadb.seller.update({
             where: { email: credentials.email },
-            data: { otp: undefined }, // Reset OTP or delete it after use
+            data: updateData, // Reset OTP or delete it after use
           });
         }
 
@@ -82,32 +84,60 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
 };
 
 // Function to generate and send OTP
-export const generateAndSendOTP = async (email: string, role: string) => {
+export const generateAndSendOTP = async (
+  email: string,
+  role: string
+) => {
   const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Generate 6-digit OTP
 
   // Store OTP in the user or seller record
+
   if (role === "user") {
-    await prisma.user.update({
-      where: { email },
-      data: { otp }, // Ensure 'otp' field exists in your User model
-    });
-  }
-  if (role === "seller") {
-    await prisma.seller.update({
-      where: { email },
-      data: { otp }, // Ensure 'otp' field exists in your User model
-    });
+    try {
+      await prismadb.user.update({
+        where: { email },
+        data: { otp }, // Ensure 'otp' field exists in your User model
+      });
+    } catch (err) {
+      console.error(
+        "DB Error sending OTP for user:",
+        err instanceof Error ? err.message : err
+      );
+      return false;
+    }
+  } else if (role === "seller") {
+    try {
+      await prismadb.seller.update({
+        where: { email },
+        data: { otp }, // Ensure 'otp' field exists in your User model
+      });
+    } catch (err) {
+      console.error(
+        "DB Error sending OTP for seller:",
+        err instanceof Error ? err.message : err
+      );
+      return false;
+    }
   }
 
-  // Send OTP via email
-  await sendEmail({
-    to: email,
-    subject: "Your OTP Code",
-    text: `Your OTP code is ${otp}`,
-    html: `<strong>Your OTP code is ${otp}</strong>`,
-  });
+  try {
+    const response = await sendEmail({
+      to: email,
+      subject: "Your OTP Code",
+      text: `Your OTP code is ${otp}`,
+      html: `<strong>Your OTP code is ${otp}</strong>`,
+    });
 
-  return otp;
+    console.log("OTP email sent successfully:", response);
+    return true;
+    // Handle success response if needed (e.g., logging messageId)
+  } catch (err) {
+    console.error(
+      "Error sending OTP:",
+      err instanceof Error ? err.message : err
+    );
+    return false;
+  }
 };
 
 // Call generateAndSendOTP(email) before redirecting to the login page to send OTP to the user
