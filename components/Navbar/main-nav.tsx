@@ -105,7 +105,7 @@ export function MainNav({ className,theme }:MainNavProps) {
         
         <ModeToggle/>
 
-        <AuthButtons/>
+        <AuthButtons toggleMenu={toggleMenu}/>
       </div>
 
       {/* Mobile menu with slow opening animation */}
@@ -136,7 +136,7 @@ export function MainNav({ className,theme }:MainNavProps) {
           </Link>
         ))}
 
-        <AuthButtons />
+        <AuthButtons toggleMenu={toggleMenu}/>
       </div>
     </nav>
   );

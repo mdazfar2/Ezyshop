@@ -2,7 +2,7 @@ import { signOut, useSession } from "next-auth/react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 // {toggleMenu}: {toggleMenu:() => void}
-const AuthButtons = () => {
+const AuthButtons = ({toggleMenu}: {toggleMenu:() => void}) => {
   // const [open, setOpen] = useState(false);
   // const [loading] = useState(false);
 
@@ -14,7 +14,7 @@ const AuthButtons = () => {
           <Button
             size={"lg"}
             className={`bg-customTeal dark:bg-Green dark:text-[#fff] dark:hover:opacity-80  hover:border rounded-xl`}
-            // onClick={() => toggleMenu()}
+            onClick={() => toggleMenu()}
           >
             Login / Signup
           </Button>
