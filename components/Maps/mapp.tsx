@@ -13,7 +13,7 @@ const StorePage = () => {
   },[]);
   useEffect(()=>{
     handleLocationSelect(latitude,longitude)
-  },[latitude,longitude])
+  },[latitude,longitude,handleLocationSelect])
 
   const handleSubmit = async () => {
     if (latitude && longitude) {

@@ -37,7 +37,7 @@
 
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, useMap, Popup } from "react-leaflet";
-import L, { LatLng, LatLngExpression } from "leaflet";
+import L, { LatLngExpression } from "leaflet";
 
 type MapWithPinProps = {
   // centerr: LatLng;
@@ -54,7 +54,7 @@ const MapWithPin: React.FC<MapWithPinProps> = ({
 
   // Custom marker icon fix
   useEffect(() => {
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
+    delete (L.Icon.Default.prototype as L.IconDefault)._getIconUrl;
     L.Icon.Default.mergeOptions({
       iconRetinaUrl:
         "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
@@ -113,7 +113,7 @@ type DraggableMarkerProps = {
 
 const DraggableMarker: React.FC<DraggableMarkerProps> = ({
   position,
-  onDragEnd,
+  // onDragEnd,
   onLocationSelect,
 }) => {
   const [draggablePosition, setDraggablePosition] =
