@@ -24,7 +24,7 @@ const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
             width={1000}
             alt="card image"
             className="rounded-t-lg max-h-52"
-            src={'https://res.cloudinary.com/drz5akzu1/image/upload/v1729718405/mschk1pmmng6nqnlzl32.jpg'} 
+            src={shop.coverUrl} 
             // shop.billboards[0].imageUrl||
           />
 

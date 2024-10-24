@@ -1,24 +1,24 @@
-
 import getCategories from "@/actions/get-categories";
 import getProducts from "@/actions/get-products";
 import ProductCard from "@/components/shops/productCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Category, Image, Product } from "@prisma/client";
+import { Category, Image, Product, Seller } from "@prisma/client";
 import { Search } from "lucide-react";
 import Filter from "./components/filter";
+import prismadb from "@/lib/prismadb";
 
 export interface CategoryProductsProps {
-  params:{
-    storeId:string
-  },
-  searchParams:{
-    categoryId?:string,
-    isfeatured?:boolean
-  }
+  params: {
+    storeId: string;
+  };
+  searchParams: {
+    categoryId?: string;
+    isfeatured?: boolean;
+  };
 }
 
-export interface Products extends Product{
+export interface Products extends Product {
   seller: {
     storeName: string;
   };
@@ -28,32 +28,59 @@ export interface Products extends Product{
   images: Image[];
 }
 // export const revalidate = 0;
-const CategoryProducts:React.FC<CategoryProductsProps> = async({params,searchParams}) => {
-  const categories:Category[]=await getCategories(params.storeId);
-  const products:Products[] = await getProducts(
+const CategoryProducts: React.FC<CategoryProductsProps> = async ({
+  params,
+  searchParams,
+}) => {
+  const categories: Category[] = await getCategories(params.storeId);
+  const products: Products[] = await getProducts(
     {
-      isFeatured:searchParams.isfeatured,
-      categoryId:searchParams.categoryId
-    },params.storeId
+      isFeatured: searchParams.isfeatured,
+      categoryId: searchParams.categoryId,
+    },
+    params.storeId
   );
-  // console.log(products); 
+
+  const seller: Seller | null = await prismadb.seller.findUnique({
+    where: {
+      id: params.storeId,
+    },
+  });
+  // console.log(products);
 
   // if (loading) {
-    // return <Spinner />;
+  // return <Spinner />;
   // }
-  
+
   // console.log(categories)
   return (
     <>
       <div className="h-full mb-10">
-        <div className="flex items-center justify-center bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full p-24">
-          <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
-            {products.length > 0 ? products[0].seller.storeName : "Store"}
+        <div className="relative flex items-center justify-center p-24 ">
+          {/* Background via ::before */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: seller?.coverUrl
+                ? `url(${seller.coverUrl})`
+                : "none",
+              opacity: 0.2, // Control the opacity of the background image
+              zIndex: -1, // Keep it behind the content
+            }}
+          ></div>
+
+          {/* Foreground content */}
+          <div className="relative z-10 text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
+            {seller?.storeName || "Store"}
           </div>
         </div>
         <div className="flex gap-2 my-2 items-center justify-center">
-        {categories.map((category)=>(
-            <Filter key={category.id} category={category} currentId={searchParams.categoryId}/>
+          {categories.map((category) => (
+            <Filter
+              key={category.id}
+              category={category}
+              currentId={searchParams.categoryId}
+            />
           ))}
         </div>
 
