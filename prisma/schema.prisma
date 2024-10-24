@@ -47,6 +47,7 @@ model Seller {
   updatedAt  DateTime    @updatedAt
   // orders        Order[]
   // wishlist      Product[]
+  coverUrl   String @default("https://res.cloudinary.com/drz5akzu1/image/upload/v1729718405/mschk1pmmng6nqnlzl32.jpg")
   billboards Billboard[] @relation("SellerToBillboard")
   categories Category[]  @relation("SellerToCategory")
   products   Product[]   @relation("SellerToProduct")

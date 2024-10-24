@@ -24,7 +24,8 @@ const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
             width={1000}
             alt="card image"
             className="rounded-t-lg max-h-52"
-            src={shop.billboards[0].imageUrl||'/shops/wellness_image1.jpg'} 
+            src={'https://res.cloudinary.com/drz5akzu1/image/upload/v1729718405/mschk1pmmng6nqnlzl32.jpg'} 
+            // shop.billboards[0].imageUrl||
           />
 
           <CardTitle className="flex items-center text-2xl pt-4 text-customTeal dark:text-Green m-2 justify-center font-handlee">
