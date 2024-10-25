@@ -16,7 +16,7 @@ export interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Card className="w-[400px] bg-gray-700 hover:scale-105 transition duration-300  border">
+    <Card className="w-[300px] bg-gray-700 hover:scale-105 transition duration-300  border">
       <CardHeader className=" p-0">
         <div className="flex flex-col gap-2">
           <Image
