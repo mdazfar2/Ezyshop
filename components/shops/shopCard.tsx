@@ -8,10 +8,10 @@ import {
   CardTitle,
 } from "../ui/card";
 import Image from "next/image";
-import { shop } from "@/app/(Customer)/shops/page";
+import { Shop } from "@/app/(Customer)/shops/page";
 
 interface shopCardProps{
-  shop:shop
+  shop:Shop
 }
 
 const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
@@ -24,7 +24,8 @@ const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
             width={1000}
             alt="card image"
             className="rounded-t-lg max-h-52"
-            src={shop.billboards[0].imageUrl||'/shops/wellness_image1.jpg'} 
+            src={shop.coverUrl} 
+            // shop.billboards[0].imageUrl||
           />
 
           <CardTitle className="flex items-center text-2xl pt-4 text-customTeal dark:text-Green m-2 justify-center font-handlee">
@@ -37,7 +38,7 @@ const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
       </CardHeader>
 
       <CardFooter className="flex justify-center">
-        <Link href={`/shops/${shop.id}`}>
+        <Link href={`/shops/${shop.id}?isfeatured=true`}>
           <Button
             variant="default"
             size={"lg"}

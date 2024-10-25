@@ -22,17 +22,28 @@ const Login = () => {
     <div className="dark:bg-DarkGray ">
       {/* <div className="bg-slate-700 h-100 w-100">{switchCss ? "1" : "0"}</div>
       <Button onClick={() => setSwitchCss(!switchCss)}>Toggle CSS</Button> */}
-      <div className="flex h-screen w-full items-center justify-center">
-        <div className="flex rounded-2xl justify-between shadow-xl shadow-black dark:shadow-Green relative lg:h-4/6 lg:w-2/4 border overflow-hidden">
+      <div className="flex lg:h-screen px-10 lg:px-0 h-full w-full flex-col lg:flex-row items-center justify-center">
+        <div
+          className={`text-white lg:hidden flex items-center justify-center mt-10 px-4 flex-col max-h-60 w-full z-10 `}
+        >
+          <div className="text-3xl lg:text-5xl font-handlee font-bold ">
+            {switchCss ? "Welcome Back!" : "Welcome!"}
+          </div>
+          <div className="mt-5 text-md lg:text-lg text-center">
+            EzyShop makes it easy to browse, order, and receive products from
+            your favorite stores.
+          </div>
+        </div>
+        <div className="flex rounded-2xl my-10 lg:my-0 justify-between shadow-xl shadow-black dark:shadow-Green relative w-full lg:h-4/6 lg:w-2/4 border overflow-hidden">
           {/* First background div */}
           <div
-            className={`w-full h-full absolute left-60 bottom-[9.5rem] rotate-45 transition-opacity duration-1000 ease-in-out bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow ${
+            className={`w-full h-full hidden lg:block absolute left-60 bottom-[9.5rem] rotate-45 transition-opacity duration-1000 ease-in-out bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow ${
               switchCss ? "opacity-100" : "opacity-0"
             }`}
           ></div>
           {/* Second background div */}
           <div
-            className={`w-full h-full absolute right-60 bottom-[9.5rem] -rotate-45 transition-opacity duration-1000 ease-in-out bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow ${
+            className={`w-full h-full hidden lg:block absolute right-60 bottom-[9.5rem] -rotate-45 transition-opacity duration-1000 ease-in-out bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow ${
               !switchCss ? "opacity-100" : "opacity-0"
             }`}
           ></div>
@@ -44,18 +55,18 @@ const Login = () => {
             setIsResetOpen={setIsResetOpen}
             loading={loading}
             setError={setError}
-          setloading={setloading}
+            setloading={setloading}
           />
 
           <div
-            className={`text-white flex pt-28 px-4 flex-col w-2/4 ${
+            className={`text-white pt-28 hidden md:flex px-4 flex-col w-2/4 ${
               switchCss ? "items-end text-right" : "items-start text-left"
             } z-10 h-full`}
           >
-            <div className="text-5xl font-handlee font-bold ">
+            <div className="text-2xl lg:text-5xl font-handlee font-bold ">
               {switchCss ? "Welcome Back!" : "Welcome!"}
             </div>
-            <div className="mt-5 text-lg w-52">
+            <div className="mt-5 text-md lg:text-lg w-52">
               EzyShop makes it easy to browse, order, and receive products from
               your favorite stores.
             </div>

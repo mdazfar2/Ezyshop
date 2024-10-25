@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { AtSign, Phone, User} from "lucide-react"; // Import Eye and EyeOff
+import { AtSign, ChevronLeftCircleIcon, Phone, User} from "lucide-react"; // Import Eye and EyeOff
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -65,7 +65,6 @@ const SignupPage: React.FC<SignupPageProps> = ({
   async function onOTPSubmit(data: z.infer<typeof FormSchema>) {
     // console.log(data.pin+email);
     setloading(true);
-
     const result = await signIn("credentials", {
       email,
       otp: data.pin,
@@ -98,15 +97,21 @@ const SignupPage: React.FC<SignupPageProps> = ({
     }
 
     try {
-      const result = await axios.post("/api/auth/signup", {
+      const res = await axios.post("/api/auth/signup", {
         email,
         name: fullname,
         mobileNumber,
+        otp:""
       });
-      console.log(result);
+      if(res.status===200){
+        toast.success("otp sent successfully!");
+        setOtpOpen(true);
+        setloading(false)
+        return;
+      }
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        setError("Invalid email or number, axios error");
+        setError("Invalid email or number");
       } else {
         setError("Invalid email or number");
       }
@@ -115,7 +120,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
       setloading(false);
       return;
     }
-    setOtpOpen(true);
+    
     setFullname("");
     setmobileNumber("");
     setloading(false);
@@ -124,7 +129,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
   return (
     <>
       {!switchCss && !otpOpen && (
-        <div className="flex flex-col dark:text-gray-200 z-10 items-center justify-start pt-20 pl-14 gap-4 w-2/4">
+        <div className="flex flex-col dark:text-gray-200 z-10 items-center justify-start py-10 lg:pb-10 md:pt-20 md:pl-14 gap-4 w-full lg:w-2/4">
           <div className="font-nunito text-4xl text-customTeal dark:text-Green font-extrabold">
             Sign Up
           </div>
@@ -186,14 +191,15 @@ const SignupPage: React.FC<SignupPageProps> = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onOTPSubmit)}
-            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center pl-14 gap-4 w-2/4"
+            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center py-10 lg:py-0 pl-14 gap-4 w-2/4"
           >
             <FormField
               control={form.control}
               name="pin"
               render={({ field }) => (
                 <FormItem className="flex items-start justify-center flex-col">
-                  <FormLabel className="text-2xl text-customTeal dark:text-Green font-bold">
+                  <FormLabel className="text-2xl gap-2 flex items-center justify-center text-customTeal dark:text-Green font-bold">
+                    <ChevronLeftCircleIcon onClick={()=>{setOtpOpen(false)}} className="h-5 w-5"/>
                     One-Time Password
                   </FormLabel>
                   <FormControl>

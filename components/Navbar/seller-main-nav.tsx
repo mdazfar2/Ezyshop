@@ -72,7 +72,7 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
         
         <ModeToggle/>
 
-        <AuthButtons />
+        <AuthButtons toggleMenu={toggleMenu}/>
       </div>
 
       {/* Mobile menu with slow opening animation */}
@@ -103,7 +103,7 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
           </Link>
         ))}
 
-        <AuthButtons />
+        <AuthButtons toggleMenu={toggleMenu}/>
       </div>
     </nav>
   );

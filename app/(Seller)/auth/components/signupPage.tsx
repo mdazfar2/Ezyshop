@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { AtSign, ChevronLeftCircleIcon, CreditCard, MapPin, Phone, Store, User} from "lucide-react"; // Import Eye and EyeOff
+import { AtSign, BookHeart, ChevronLeftCircleIcon, CreditCard, MapPin, Phone, Store, User} from "lucide-react"; // Import Eye and EyeOff
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -101,16 +101,22 @@ const SignupPage: React.FC<SignupPageProps> = ({
     }
 
     try {
-      const result = await axios.post("/api/auth/signup/seller", {
+      const res = await axios.post("/api/auth/signup/seller", {
         email,
         name,
         storeMobile,
         storeAddress,
         storeUPI,
         storeName,
-        storeDescription
+        storeDescription,
+        otp:""
       });
-      console.log(result);
+      if(res.status===200){
+        toast.success("otp sent successfully!");
+        setOtpOpen(true);
+        setloading(false)
+        return;
+      }
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError("Invalid email or number, axios error");
@@ -137,13 +143,13 @@ const SignupPage: React.FC<SignupPageProps> = ({
   return (
     <>
       {!switchCss && !otpOpen && (
-        <div className="flex flex-col dark:text-gray-200 z-10 items-center justify-start pt-10  w-2/4">
-          <div className="font-nunito pl-10 text-center text-4xl text-customTeal dark:text-Green font-extrabold">
+        <div className="flex flex-col dark:text-gray-200 z-10 gap-2 lg:gap-0 items-center justify-start pt-4 w-full md:w-2/4">
+          <div className="font-nunito md:pl-10 text-center text-4xl text-customTeal dark:text-Green font-extrabold">
             Setup Your Store
           </div>
           <form
             onSubmit={handleSubmit}
-            className="w-full flex pr-4 flex-col items-end justify-center"
+            className="w-full flex md:pr-4 flex-col items-center md:items-end justify-center"
           >
             <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
@@ -183,7 +189,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
                 value={storeDescription}
                 onChange={(e) => setStoreDescription(e.target.value)}
               />
-              <Phone className="h-7 w-7 text-customTeal dark:text-Yellow" />
+              <BookHeart className="h-7 w-7 text-customTeal dark:text-Yellow" />
             </div>
             <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
@@ -240,7 +246,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onOTPSubmit)}
-            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center pl-14 gap-4 w-2/4"
+            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center py-10 md:py-0 pl-14 gap-4 w-2/4"
           >
             <FormField
               control={form.control}

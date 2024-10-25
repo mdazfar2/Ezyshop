@@ -35,6 +35,8 @@ model Seller {
   name            String?
   storeName       String
   storeAddress    String
+  storeLat        Float @default(28.61)
+  storeLng        Float @default(77.23)
   storeUPI        String
   storeMobile     String  @unique
   storeDescription String @default("A store")
@@ -47,6 +49,7 @@ model Seller {
   updatedAt  DateTime    @updatedAt
   // orders        Order[]
   // wishlist      Product[]
+  coverUrl   String @default("https://res.cloudinary.com/drz5akzu1/image/upload/v1729718405/mschk1pmmng6nqnlzl32.jpg")
   billboards Billboard[] @relation("SellerToBillboard")
   categories Category[]  @relation("SellerToCategory")
   products   Product[]   @relation("SellerToProduct")
