@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from 'react';
-import MapWithPin from '@/components/Maps/map';
+// import LazyMap from './LazyMapWithPin';
+import MapWithPin from './mapComponent';
+// import MapWithPin from '@/components/Maps/map';
 
 const StorePage = () => {
   const [latitude, setLatitude] = useState<number>(28.61);
