@@ -1,12 +1,10 @@
 import getCategories from "@/actions/get-categories";
 import getProducts from "@/actions/get-products";
 import ProductCard from "@/components/shops/productCard";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Category, Image, Product, Seller } from "@prisma/client";
-import { Search } from "lucide-react";
 import Filter from "./components/filter";
 import prismadb from "@/lib/prismadb";
+import ClientSearchBar from "@/components/shops/clientSearchBar";
 
 export interface CategoryProductsProps {
   params: {
@@ -15,6 +13,7 @@ export interface CategoryProductsProps {
   searchParams: {
     categoryId?: string;
     isfeatured?: boolean;
+    productName?: string
   };
 }
 
@@ -37,6 +36,8 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
     {
       isFeatured: searchParams.isfeatured,
       categoryId: searchParams.categoryId,
+      productName: searchParams.productName, 
+      
     },
     params.storeId
   );
@@ -85,15 +86,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
         </div>
 
         <div className="w-full flex justify-center px-5 lg:px-0 mb-10">
-          <div className="bg-customTeal dark:bg-Green p-1 flex items-center justify-center rounded-full w-full lg:w-2/6">
-            <Input
-              placeholder="Search Products..."
-              className="rounded-full bg-white"
-            />
-            <Button className="bg-customTeal dark:bg-Green hover:shadow-slate-500 rounded-full">
-              <Search className="h-7 w-7" />
-            </Button>
-          </div>
+          <ClientSearchBar initialSearch={searchParams.productName || ""} />
         </div>
 
         <div className="flex flex-col items-center justify-center gap-10 px-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
