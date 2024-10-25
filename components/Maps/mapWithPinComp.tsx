@@ -4,15 +4,20 @@ import L, { LatLngExpression } from "leaflet";
 
 export type MapWithPinProps = {
   // centerr: LatLng;
+  latitude:number,
+  longitude:number,
   onLocationSelect: (lat: number, lng: number) => void;
 };
 
-const defaultCenter: LatLngExpression = [28.61, 77.23]; // Default to London
+
 
 const MapWithPin: React.FC<MapWithPinProps> = ({
   // centerr,
+  latitude,
+  longitude,
   onLocationSelect,
 }) => {
+  const defaultCenter: LatLngExpression = [latitude,longitude ];
   const [position, setPosition] = useState<LatLngExpression>(defaultCenter);
 
   // Custom marker icon fix
@@ -29,22 +34,22 @@ const MapWithPin: React.FC<MapWithPinProps> = ({
   }, []);
 
   // Detect user location using Geolocation API
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setPosition([latitude, longitude]);
-          onLocationSelect(latitude, longitude);
-        },
-        (error) => {
-          console.error("Geolocation error:", error);
-          // setPosition(centerr);
-          setPosition(defaultCenter) // Fallback to default location
-        }
-      );
-    }
-  }, [onLocationSelect]);
+  // useEffect(() => {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         const { latitude, longitude } = position.coords;
+  //         setPosition([latitude, longitude]);
+  //         onLocationSelect(latitude, longitude);
+  //       },
+  //       (error) => {
+  //         console.error("Geolocation error:", error);
+  //         // setPosition(centerr);
+  //         setPosition(defaultCenter) // Fallback to default location
+  //       }
+  //     );
+  //   }
+  // }, [onLocationSelect]);
 
   return (
     <MapContainer

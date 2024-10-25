@@ -18,10 +18,12 @@ export async function PATCH(
       email,
       storeDescription,
       coverUrl,
-      storeLat,
-      storeLng
+      storeLocation
     } = body;
 
+    const {storeLat,storeLng}=storeLocation
+
+    console.log(storeLat+" "+storeLng)
     // Validate the required fields
     if (!storeName) {
       return new NextResponse("Shop name is required.", { status: 400 });

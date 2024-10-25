@@ -1,4 +1,5 @@
-import LazyMap from "@/components/Maps/LazyMapWithPin";
+
+import StaticMap from "@/components/Maps/staticMap";
 // import StorePage from "@/components/Maps/mapPage";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
@@ -30,6 +31,7 @@ const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
     );
   }
   // console.log(coverUrl)
+  // console.log(seller?.storeLat,seller?.storeLng)
   if (!seller) return <div>seller not found</div>;
   return (
     <div>
@@ -103,8 +105,16 @@ const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
               />
             </div>
           )}
+          <div className="flex items-center justify-between">
+            <div className="font-semibold text-customTeal dark:text-Green mb-2">
+              Store Location:
+            </div>
+            {/* <LazyStaticMap latitude={seller.storeLat} longitude={seller.storeLng}/> */}
+            <div className="w-96">
+            <StaticMap storeLat={seller.storeLat} storeLng={seller.storeLng} />
+            </div>
+          </div>
         </div>
-
         <Link
           href={`dashboard/edit`}
           className="flex items-center justify-center"
@@ -114,8 +124,6 @@ const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
             <Settings />
           </Button>
         </Link>
-
-        <LazyMap/>
       </div>
     </div>
   );

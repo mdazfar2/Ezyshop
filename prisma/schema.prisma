@@ -41,7 +41,7 @@ model Seller {
   storeMobile     String  @unique
   storeDescription String @default("A store")
 
-  email      String?     @unique
+  email      String     @unique
   otp        String?
   role       String      @default("seller")
   // addresses     Address[]
