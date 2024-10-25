@@ -1,3 +1,5 @@
+import LazyMap from "@/components/Maps/LazyMapWithPin";
+// import StorePage from "@/components/Maps/mapPage";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import prismadb from "@/lib/prismadb";
@@ -112,6 +114,8 @@ const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
             <Settings />
           </Button>
         </Link>
+
+        <LazyMap/>
       </div>
     </div>
   );
