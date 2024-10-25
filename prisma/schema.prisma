@@ -27,6 +27,8 @@ model User {
   updatedAt DateTime @updatedAt
   // orders        Order[]
   // wishlist      Product[]
+
+  //comments     Comment[] 
 }
 
 model Seller {
@@ -107,4 +109,16 @@ model Image {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Blog {
+  id                String    @id @default(uuid()) @map("_id")
+  title             String
+  image             String
+  content           String
+  metaDescription   String
+  author            String      @default("Admin")
+  label             String
+  // comments          Comment[] // Establishes relationship with comments
+  createdAt         DateTime  @default(now())
 }
