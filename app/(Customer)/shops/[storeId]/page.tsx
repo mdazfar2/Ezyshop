@@ -7,6 +7,8 @@ import { Category, Image, Product, Seller } from "@prisma/client";
 import { Search } from "lucide-react";
 import Filter from "./components/filter";
 import prismadb from "@/lib/prismadb";
+import StaticMap from "@/components/Maps/staticMap";
+import { Heading } from "@/components/ui/heading";
 
 export interface CategoryProductsProps {
   params: {
@@ -53,6 +55,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
   // }
 
   // console.log(categories)
+  if (!seller) return <div>seller not found</div>;
   return (
     <>
       <div className="h-full mb-10">
@@ -72,6 +75,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
           {/* Foreground content */}
           <div className="relative z-10 text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
             {seller?.storeName || "Store"}
+            {/* <LazyStaticMap longitude={seller?.storeLat||0} latitude={seller?.storeLng||0}/> */}
           </div>
         </div>
         <div className="flex gap-2 my-2 items-center justify-center">
@@ -95,11 +99,26 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
             </Button>
           </div>
         </div>
-
-        <div className="flex flex-col items-center justify-center gap-10 px-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className="grid grid-cols-12">
+          <div className="flex col-span-3 rounded-xl max-h-fit ml-5 p-5 bg-gray-200 dark:bg-gray-700  flex-col items-center justify-center gap-10 ">
+            <div className="text-gray-200">
+              <Heading
+                title={seller.storeName}
+                description={`Contact us at: ${seller.storeMobile}`}
+              />
+            </div>
+            <div className="w-full">
+              <StaticMap
+                storeLat={seller.storeLat || 0}
+                storeLng={seller.storeLng || 0}
+              />
+            </div>
+          </div>
+          <div className="flex col-span-9 flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </div>
     </>
