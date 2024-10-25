@@ -29,6 +29,7 @@ import { Input } from "@/components/ui/input";
 //   SelectValue,
 // } from "@/components/ui/select";
 import ImageUpload from "@/components/ui/image-upload";
+import LazyMap from "@/components/Maps/LazyMapWithPin";
 
 const formSchema = z.object({
   storeName: z.string().min(1, "Shop name is required."),
@@ -39,9 +40,13 @@ const formSchema = z.object({
     .string()
     .min(1, "Mobile number is required.")
     .regex(/^\d{10}$/, "Mobile number must be 10 digits."), // Adjust regex for your specific needs
-  email: z.string().email("Invalid email format").optional(),
+  email: z.string().email("Invalid email format"),
   storeDescription: z.string().min(1, "Description is required."),
   coverUrl: z.string().url("Invalid URL"),
+  storeLocation: z.object({
+    storeLat: z.number(),
+    storeLng: z.number(),
+  }),
 });
 
 type DashboardFormValues = z.infer<typeof formSchema>;
@@ -58,6 +63,14 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
 
   // const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [latitude, setLatitude] = useState<number>(
+    initialData?.storeLat || 28.61
+  );
+  const [longitude, setLongitude] = useState<number>(
+    initialData?.storeLng || 77.23
+  );
+
+  console.log(latitude + "::::" + longitude);
 
   const title = "Edit Data";
   const description = "Edit your store Data";
@@ -75,10 +88,19 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
       email: initialData?.email || undefined,
       storeDescription: initialData?.storeDescription || "",
       coverUrl: initialData?.coverUrl || "",
+      storeLocation: {
+        storeLat: initialData?.storeLat || 28.61,
+        storeLng: initialData?.storeLng || 77.23,
+      },
     },
   });
+
   // console.log(initialData?.coverUrl)
   const onSubmit = async (data: DashboardFormValues) => {
+    // console.log(
+    //   data.storeLocation.storeLat + " " + data.storeLocation.storeLng
+    // );
+
     try {
       setLoading(true);
 
@@ -97,6 +119,17 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
     }
   };
 
+  const handleLatChange = (lat: number) => {
+    setLatitude(lat);
+
+    form.setValue("storeLocation.storeLat", lat);
+  };
+
+  const handleLngChange = (lng: number) => {
+    setLongitude(lng);
+    form.setValue("storeLocation.storeLng", lng);
+  };
+
   return (
     <>
       {/* <AlertModal
@@ -107,7 +140,6 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
       /> */}
       <div className="flex items-center justify-between">
         <Heading title={title} description={description} />
-        
       </div>
       <Separator />
 
@@ -257,6 +289,44 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
                       disabled={loading}
                       onChange={(url) => field.onChange(url)}
                       onRemove={() => field.onChange()}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {/* <LazyMap
+              latitude={latitude}
+              longitude={longitude}
+              setLatitude={setLatitude}
+              setLongitude={setLongitude}
+            /> */}
+
+            <FormField
+              control={form.control}
+              name="storeLocation"
+              render={() => (
+                <FormItem>
+                  <FormLabel>
+                    storeLocation: 
+                    <br/>
+                    latitude={latitude}
+                    <br/>
+                    longitude={longitude}
+                  </FormLabel>
+                  <FormControl>
+                    {/* <Input
+                      value={latitude}
+                      onChange={(latitude) => field.onChange(latitude)}
+                      placeholder="Longitude"
+                    /> */}
+                    <LazyMap
+                      latitude={latitude}
+                      longitude={longitude}
+                      // setLatitude={setLatitude}
+                      // setLongitude={setLongitude}
+                      setLatitude={(lat) => handleLatChange(lat)}
+                      setLongitude={(lng) => handleLngChange(lng)}
                     />
                   </FormControl>
                   <FormMessage />

@@ -1,17 +1,18 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
 import { generateAndSendOTP } from "@/lib/auth";
+import prismadb from "@/lib/prismadb";
 
-const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
   const { email } = await request.json();
 
   // Check if the user already exists
+  console.log(email);
   try {
-    const existingseller = await prisma.seller.findUnique({
+    const existingseller = await prismadb.seller.findUnique ({
       where: { email },
     });
+    console.log(existingseller)
     if (!existingseller) {
       return NextResponse.json(
         { message: "seller does not exist" },
