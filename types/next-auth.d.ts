@@ -23,3 +23,9 @@ declare module "next-auth/jwt" {
     role: "user" | "seller"; // Add role to JWT token
   }
 }
+
+declare module "leaflet" {
+  interface IconDefault {
+    _getIconUrl?: () => string;
+  }
+}

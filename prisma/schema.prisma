@@ -35,6 +35,8 @@ model Seller {
   name            String?
   storeName       String
   storeAddress    String
+  storeLat        Float @default(28.61)
+  storeLng        Float @default(77.23)
   storeUPI        String
   storeMobile     String  @unique
   storeDescription String @default("A store")

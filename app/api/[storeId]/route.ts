@@ -18,6 +18,8 @@ export async function PATCH(
       email,
       storeDescription,
       coverUrl,
+      storeLat,
+      storeLng
     } = body;
 
     // Validate the required fields
@@ -39,6 +41,12 @@ export async function PATCH(
     if (!storeDescription) {
       return new NextResponse("Description is required.", { status: 400 });
     }
+    if (!storeLat) {
+      return new NextResponse("Lat is required.", { status: 400 });
+    }
+    if (!storeLng) {
+      return new NextResponse("Lng is required.", { status: 400 });
+    }
     // Optional: You can check the validity of the email and coverUrl if needed
 
     // Update the seller record in the database
@@ -55,6 +63,8 @@ export async function PATCH(
         email,
         storeDescription,
         coverUrl,
+        storeLat,
+        storeLng
       },
     });
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/providers/sessionProvider";
+import 'leaflet/dist/leaflet.css';
 
 const font = Urbanist({ subsets: ["latin"] });
 // console.log(font.className)
