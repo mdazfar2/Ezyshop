@@ -7,6 +7,10 @@ import prismadb from "@/lib/prismadb";
 import ClientSearchBar from "@/components/shops/clientSearchBar";
 import StaticMap from "@/components/Maps/staticMap";
 import { Heading } from "@/components/ui/heading";
+import WishlistForm from "./components/wishListForm";
+import { getServerSession } from "next-auth";
+import { NEXT_AUTH_CONFIG } from "@/lib/auth";
+import { Toaster } from "react-hot-toast";
 
 export interface CategoryProductsProps {
   params: {
@@ -15,7 +19,7 @@ export interface CategoryProductsProps {
   searchParams: {
     categoryId?: string;
     isfeatured?: boolean;
-    productName?: string
+    productName?: string;
   };
 }
 
@@ -33,13 +37,18 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
   params,
   searchParams,
 }) => {
+  const session = await getServerSession(NEXT_AUTH_CONFIG);
+
+  // Access the user ID from the session
+  const userId = session?.user?.id;
+
+  console.log(userId);
   const categories: Category[] = await getCategories(params.storeId);
   const products: Products[] = await getProducts(
     {
       isFeatured: searchParams.isfeatured,
       categoryId: searchParams.categoryId,
-      productName: searchParams.productName, 
-      
+      productName: searchParams.productName,
     },
     params.storeId
   );
@@ -56,6 +65,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
   // }
 
   // console.log(categories)
+ 
   if (!seller) return <div>seller not found</div>;
   return (
     <>
@@ -109,10 +119,15 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
           </div>
           <div className="flex col-span-9 flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <div key={product.id} className="rounded-lg bg-gray-700 w-[300px]  hover:scale-105 transition duration-300  border">
+                <WishlistForm productId={product.id} userId={userId}/>
+
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         </div>
+        <Toaster/>
       </div>
     </>
   );

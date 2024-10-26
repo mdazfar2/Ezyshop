@@ -21,12 +21,12 @@ model User {
   email String? @unique
   otp   String?
   role  String  @default("user")
-  // addresses     Address[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  // orders        Order[]
-  // wishlist      Product[]
+
+  wishlists Wishlist[]
+
 }
 
 model Seller {
@@ -98,6 +98,7 @@ model Product {
   updatedAt DateTime @updatedAt
 
   images Image[]
+  wishlists Wishlist[] 
 }
 
 model Image {
@@ -110,4 +111,23 @@ model Image {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+
+model Wishlist {
+  id        String @id @default(uuid()) @map("_id")
+  userId    String
+  productId String
+
+  // Relations to User and Product
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  // constraint so that combination of productId and userId is unique for a wishlist entry
+  @@unique([userId, productId])
+
+  @@index([userId])
+  @@index([productId])
 }
