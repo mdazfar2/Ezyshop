@@ -5,7 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L, { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css"; // Ensure Leaflet CSS is imported
 
-interface StaticMapProps {
+export interface StaticMapProps {
   storeLat: number;
   storeLng: number;
 }
@@ -26,7 +26,7 @@ const StaticMap: React.FC<StaticMapProps> = ({ storeLat, storeLng }) => {
     <MapContainer
       center={defaultCenter}
       zoom={16}
-      style={{ height: "400px", width: "100%" }}
+      className="h-40 w-full"
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
