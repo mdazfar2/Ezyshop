@@ -63,7 +63,30 @@ export async function WishlistGetByUser(
   }
 }
 
+export async function WishlistDeleteProduct(
+  Id: string,
+): Promise<{ success: boolean; error?: string }> {
 
+  // console.log(Id);
+  try {
+    const res = await prismadb.wishlist.deleteMany({
+      where: {
+        id:Id
+      },
+    });
+
+    if(res.count==0){
+      return {success:false, error:"item does not exist on the wishlist"}
+    }
+      console.log(res);
+    // console.log(res)
+    return { success: true}; // Include success and return the data
+  } catch (err) {
+    // console.log(err);
+
+    return { success: false, error: "An unexpected error occurred while deleting" };
+  }
+} 
 
 export async function WishlistSpecificEntry(
   userId:string
