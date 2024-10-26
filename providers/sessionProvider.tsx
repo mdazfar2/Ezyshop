@@ -2,14 +2,15 @@
 import React from "react";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "@/context/themeProvider";
-import { ConstructionProvider } from "@/context/modalContext";
+import { FlashAlertProvider } from "@/context/flashAlertContext";
+// import { ConstructionProvider } from "@/context/modalContext";
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <SessionProvider>
-      <ConstructionProvider>
+      <FlashAlertProvider>
         <ThemeProvider>{children}</ThemeProvider>
-      </ConstructionProvider>
+      </FlashAlertProvider>
     </SessionProvider>
   );
 };

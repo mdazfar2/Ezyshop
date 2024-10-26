@@ -49,7 +49,8 @@ interface GetProductsParams {
 
 export default async function getProducts(
   params: GetProductsParams,
-  storeId: string
+  storeId: string,
+  userId?:string
 ) {
   const { isFeatured, categoryId, productName } = params;
 
@@ -75,6 +76,11 @@ export default async function getProducts(
       seller: { select: { storeName: true } },
       category: { select: { name: true } },
       images: true,
+      wishlists:userId?{
+        where:{
+          userId: userId?userId:undefined
+        }
+      }:undefined
     },
   });
   // console.log(products);
