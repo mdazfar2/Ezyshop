@@ -2,6 +2,7 @@
 import BlogCard from "@/components/Blog/BlogCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
 import { useEffect, useState } from 'react';
+import Loading from "../loading";
 
 
 const Blog: React.FC = () => {
@@ -24,9 +25,9 @@ const Blog: React.FC = () => {
     fetchBlogs();
   }, []);
 
-  if (loading) {
-    return <p className="text-white text-center">Loading...</p>;
-  }
+
+  if (loading) return <Loading/>;
+
   if (!blogs) {
     return <p className="text-white text-center">Blogs not found.</p>;
   }
@@ -44,7 +45,12 @@ const Blog: React.FC = () => {
       <div className="flex items-center justify-center px-5 text-3xl lg:px-0 my-10 lg:text-4xl font-bold text-customTeal dark:text-Green font-handlee">
         Latest articles from our blogs
       </div>
-      <BlogCard blogData={blogs} /> 
+
+      {blogs.length > 0 ? (
+        <BlogCard blogData={blogs} />
+      ) : (
+        <p className="text-customTeal dark:text-white text-center">Blogs not found.</p>
+      )}
     </div>
   );
 };

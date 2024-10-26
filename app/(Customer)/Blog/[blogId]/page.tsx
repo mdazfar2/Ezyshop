@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Blog from "@/components/Blog/Blog";
+import Loading from "../../loading";
 
 
 
@@ -28,6 +29,9 @@ const BlogPage = () => {
 
     fetchBlogData();
   }, [blogId]);
+
+ 
+  if (loading) return <Loading/>;
 
   if (!blogData) {
     return <p className="text-white text-center">Blog not found.</p>;

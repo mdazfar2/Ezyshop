@@ -10,7 +10,6 @@ import {
 } from "../ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 interface Blog {
   id: string;
@@ -27,10 +26,7 @@ interface BlogData{
 }
 
 const BlogCard: React.FC<BlogData> = ({ blogData }) =>  {
-  // const [loading, setLoading] = useState(true);
-  // useEffect(() =>{
-  //   setLoading(false);
-  // });
+
   return (
     <div className="flex flex-col items-center justify-center gap-5 pb-10 h-full ">
       <div className="h-full flex items-center justify-center flex-col gap-5 lg:grid grid-cols-3 lg:gap-10">
