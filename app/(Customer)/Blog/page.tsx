@@ -6,16 +6,30 @@ import { useEffect, useState } from 'react';
 
 const Blog: React.FC = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      const response = await fetch('/api/blog'); // Call your API endpoint
-      const data = await response.json();
-      setBlogs(data);
+    const fetchBlogs = async () => { 
+      try {
+        const response = await fetch('/api/blog'); // Call your API endpoint
+        const data = await response.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error('Failed to fetch blogs:', error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchBlogs();
   }, []);
+
+  if (loading) {
+    return <p className="text-white text-center">Loading...</p>;
+  }
+  if (!blogs) {
+    return <p className="text-white text-center">Blogs not found.</p>;
+  }
   
   return (
     <div className="h-full dark:bg-DarkGray pb-10">

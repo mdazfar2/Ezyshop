@@ -1,6 +1,38 @@
+"use client"
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import Blog from "@/components/Blog/Blog";
 
+
+
 const BlogPage = () => {
+  const { blogId } = useParams(); 
+  const [blogData, setBlogData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      if (blogId) {
+        try {
+          const response = await fetch(`/api/blog/${blogId}`);
+          const data = await response.json();
+          setBlogData(data);
+          console.log(data);
+        } catch (error) {
+          console.error('Failed to fetch blog data:', error);
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchBlogData();
+  }, [blogId]);
+
+  if (!blogData) {
+    return <p className="text-white text-center">Blog not found.</p>;
+  }
+
     return ( 
         <div className="h-full dark:bg-DarkGray">
         <div className="h-full">
