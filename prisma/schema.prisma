@@ -21,14 +21,14 @@ model User {
   email String? @unique
   otp   String?
   role  String  @default("user")
-  // addresses     Address[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  // orders        Order[]
-  // wishlist      Product[]
+
+  wishlists Wishlist[]
 
   //comments     Comment[] 
+
 }
 
 model Seller {
@@ -37,11 +37,13 @@ model Seller {
   name            String?
   storeName       String
   storeAddress    String
+  storeLat        Float @default(28.61)
+  storeLng        Float @default(77.23)
   storeUPI        String
   storeMobile     String  @unique
   storeDescription String @default("A store")
 
-  email      String?     @unique
+  email      String     @unique
   otp        String?
   role       String      @default("seller")
   // addresses     Address[]
@@ -49,6 +51,7 @@ model Seller {
   updatedAt  DateTime    @updatedAt
   // orders        Order[]
   // wishlist      Product[]
+  coverUrl   String @default("https://res.cloudinary.com/drz5akzu1/image/upload/v1729718405/mschk1pmmng6nqnlzl32.jpg")
   billboards Billboard[] @relation("SellerToBillboard")
   categories Category[]  @relation("SellerToCategory")
   products   Product[]   @relation("SellerToProduct")
@@ -97,6 +100,7 @@ model Product {
   updatedAt DateTime @updatedAt
 
   images Image[]
+  wishlists Wishlist[] 
 }
 
 model Image {
@@ -121,4 +125,22 @@ model Blog {
   label             String
   // comments          Comment[] // Establishes relationship with comments
   createdAt         DateTime  @default(now())
+}
+
+model Wishlist {
+  id        String @id @default(uuid()) @map("_id")
+  userId    String
+  productId String
+
+  // Relations to User and Product
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  // constraint so that combination of productId and userId is unique for a wishlist entry
+  @@unique([userId, productId])
+
+  @@index([userId])
+  @@index([productId])
 }

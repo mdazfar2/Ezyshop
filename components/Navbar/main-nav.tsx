@@ -34,6 +34,7 @@ export function MainNav({ className,theme }:MainNavProps) {
 
   const routes = [
     { href: `/`, label: "Home", active: pathname === `/` },
+    { href: `/shops`, label: "Shops", active: pathname === `/shops` },
     { href: `/About`, label: "About", active: pathname.startsWith(`/About`) },
     {
       href: `/Categories`,
@@ -104,7 +105,7 @@ export function MainNav({ className,theme }:MainNavProps) {
         
         <ModeToggle/>
 
-        <AuthButtons />
+        <AuthButtons toggleMenu={toggleMenu}/>
       </div>
 
       {/* Mobile menu with slow opening animation */}
@@ -135,7 +136,7 @@ export function MainNav({ className,theme }:MainNavProps) {
           </Link>
         ))}
 
-        <AuthButtons />
+        <AuthButtons toggleMenu={toggleMenu}/>
       </div>
     </nav>
   );

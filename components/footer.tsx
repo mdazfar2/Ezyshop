@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  ChevronRight,
-  Copyright,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ChevronRight, Copyright, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Input } from "./ui/input";
@@ -84,12 +78,32 @@ const Footer = () => {
             groceries, essentials, and organic products—all in one app.
           </div>
           <div className="flex gap-2">
-                <div className="d-flex justify-content-start mt-4">
-                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="https://github.com/mdazfar2/Ezyshop"><i className="fab fa-github"></i></a>
-                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="https://discord.gg/YnABU7tdU3"><i className="fa-brands fa-discord"></i></a>
-                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="https://www.linkedin.com/company/ezyshopz/"><i className="fab fa-linkedin-in"></i></a>
-                    <a className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2" href="#"><i className="fab fa-instagram"></i></a>
-                </div>
+            <div className="d-flex justify-content-start mt-4">
+              <a
+                className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
+                href="https://github.com/mdazfar2/Ezyshop"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
+                href="https://discord.gg/YnABU7tdU3"
+              >
+                <i className="fa-brands fa-discord"></i>
+              </a>
+              <a
+                className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
+                href="https://www.linkedin.com/company/ezyshopz/"
+              >
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
+                href="#"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+            </div>
           </div>
         </div>
         {/* section 2 */}
@@ -102,21 +116,38 @@ const Footer = () => {
               <MapPin className="h-7 w-7  text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Address</div>
-                <div className="text-lg text-customTeal dark:text-Green">Jaipur, Rajisthan</div>
+                <a
+                  target="_blank"
+                  href="https://tinyurl.com/w8c3h6jc"
+                  className="text-lg text-customTeal dark:text-Green"
+                >
+                  <div>Jaipur,Rajasthan</div>
+                </a>
               </div>
             </div>
             <div className="flex gap-4">
               <Mail className="h-7 w-7 text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Email</div>
-                <div className="text-lg text-customTeal dark:text-Green">ezyshopz@gmail.com</div>
+                <a
+                  target="_blank"
+                  href="mailto:ezyshopz@gmail.com"
+                  className="text-lg text-customTeal dark:text-Green"
+                >
+                  <div>ezyshop.open@gmail.com</div>
+                </a>
               </div>
             </div>
             <div className="flex gap-4">
               <Phone className="h-7 w-7  text-customTeal dark:text-Yellow" />
               <div className="flex flex-col">
                 <div className="text-gray-200 text-xl">Phone</div>
-                <div className="text-lg text-customTeal dark:text-Green">+91 7739317870</div>
+                <a
+                  href="tel:+917739317870"
+                  className="text-lg text-customTeal dark:text-Green"
+                >
+                  <div>+91 7739317870</div>
+                </a>
               </div>
             </div>
           </div>
@@ -134,8 +165,8 @@ const Footer = () => {
                 onMouseOver={() => {
                   setId(link.id);
                 }}
-                onMouseLeave={()=>{
-                  setId(0)
+                onMouseLeave={() => {
+                  setId(0);
                 }}
                 className="flex items-center  gap-2"
               >
@@ -152,8 +183,15 @@ const Footer = () => {
           <p className="font-bold text-3xl text-customTeal dark:text-Green font-handlee">
             News Letter
           </p>
-          <Input placeholder="Name" className="bg-[#f9f9f9] dark:bg-gray-700 text-gray-200 h-10 w-10/12" />
-          <Input placeholder="Email" className="bg-[#f9f9f9] dark:bg-gray-700 text-gray-200 h-10 w-10/12" />
+          <Input
+            placeholder="Name"
+            className="bg-[#f9f9f9] dark:bg-[#2f4f4f] text-gray-800 dark:text-gray-200 h-10 w-10/12"
+          />
+          <Input
+            placeholder="Email"
+            className="bg-[#f9f9f9] dark:bg-[#2f4f4f] text-gray-800 dark:text-gray-200 h-10 w-10/12"
+          />
+
           <Button className="lg:h-14 bg-customTeal dark:bg-Green dark:text-gray-100 dark:hover:opacity-80 rounded-full w-10/12">
             Subscribe
           </Button>
@@ -161,33 +199,32 @@ const Footer = () => {
       </div>
       <div className="flex flex-col lg:flex-row pt-5 items-center text-gray-100 justify-center">
         <div className="flex items-center text-gray-200 justify-center">
-        <Copyright className="h-4 w-4 mr-2"></Copyright>
-        <Link
-          href={"/"}
-          onMouseOver={() => {
-            setId(7);
-          }}
-          onMouseLeave={()=>{
-            setId(0)
-          }}
-          className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1"
-        >
-          Ezyshop
-        </Link>
+          <Copyright className="h-4 w-4 mr-2"></Copyright>
+          <Link
+            href={"/"}
+            onMouseOver={() => {
+              setId(7);
+            }}
+            onMouseLeave={() => {
+              setId(0);
+            }}
+            className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1"
+          >
+            Ezyshop
+          </Link>
         </div>
-        . All Rights Reserved. Designed by  
-        
+        . All Rights Reserved. Designed by
         <Link
           href={"https://www.azfaralam.xyz/"}
           onMouseOver={() => {
             setId(7);
           }}
-          onMouseLeave={()=>{
-            setId(0)
+          onMouseLeave={() => {
+            setId(0);
           }}
           className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1 "
         >
-           Azfar Alam
+          Azfar Alam
         </Link>
       </div>
     </div>

@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import ShopCard from "@/components/shops/shopCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
 import axios from "axios";
+import { Spinner } from "@/components/ui/spinner";
+import toast, { Toaster } from "react-hot-toast";
 
-// Types for shop and billboard
-export interface Billboard {
-  imageUrl: string;
-}
+
 
 export interface Shop {
   id: string;
@@ -17,7 +16,7 @@ export interface Shop {
   storeAddress: string;
   storeMobile: string;
   storeDescription: string;
-  billboards: Billboard[];
+  coverUrl:string
 }
 
 const Shop = () => {
@@ -42,11 +41,14 @@ const Shop = () => {
     fetchShops();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <Spinner/>;
+  if (error) {
+    toast.error(error)
+  };
 
   return (
     <div className="h-full dark:bg-DarkGray pb-10">
+      <Toaster/>
       <div className="text-white flex items-center justify-center bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
         <div className="text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
           Our Shops

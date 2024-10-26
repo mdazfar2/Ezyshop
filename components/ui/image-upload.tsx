@@ -37,6 +37,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   };
 
   if (!isMounted) return null;
+  const preset=process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET
 
   return (
     <div>
@@ -63,7 +64,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       </div>
 
       {/* upload image button */}
-      <CldUploadWidget onSuccess={onUpload} uploadPreset="f4zf5zmn">
+
+      <CldUploadWidget onSuccess={onUpload} uploadPreset={preset}>
         {({ open }) => {
           const onClick = () => {
             open();

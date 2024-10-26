@@ -1,7 +1,7 @@
 "use client"
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { User } from "lucide-react";
+import { ChevronLeftCircleIcon, User } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -97,12 +97,18 @@ const LoginPage: React.FC<LoginPageProps> = ({
     e.preventDefault();
 
     try {
-      const result = await axios.post("/api/auth/login/seller", {
+      const res= await axios.post("/api/auth/login/seller", {
         email,
       });
-      console.log(result);
+      if(res.status===200){
+        toast.success("otp sent successfully!");
+        setOtpOpen(true);
+        setloading(false)
+        return;
+      }
     } catch (err) {
       if (axios.isAxiosError(err)) {
+        console.log(err.message);
         setError("Invalid email, seller does not exist");
       } else {
         setError("Invalid email");
@@ -121,7 +127,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
     <>
       {/* login */}
       {switchCss && !otpOpen && (
-        <div className="flex flex-col z-10 items-center justify-start pt-24  pr-14 gap-4 w-2/4">
+        <div className="flex flex-col z-10 items-center justify-start py-10 sm:pt-24 gap-4 w-full lg:w-2/4 max-w-md px-4">
           <div className="font-nunito text-4xl text-customTeal dark:text-Green font-extrabold">
             Login
           </div>
@@ -212,14 +218,15 @@ const LoginPage: React.FC<LoginPageProps> = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onOTPSubmit)}
-            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center pl-14 gap-4 w-2/4"
+            className="flex flex-col dark:text-gray-200 z-10 items-start justify-center py-10 lg:py-0 pl-10 gap-4 w-full max-w-md mx-auto"
           >
             <FormField
               control={form.control}
               name="pin"
               render={({ field }) => (
                 <FormItem className="flex items-start justify-center flex-col">
-                  <FormLabel className="text-2xl text-customTeal dark:text-Green font-bold">
+                  <FormLabel className="text-2xl gap-2 flex items-center justify-center text-customTeal dark:text-Green font-bold">
+                    <ChevronLeftCircleIcon onClick={()=>{setOtpOpen(false)}} className="h-5 w-5"/>
                     One-Time Password
                   </FormLabel>
                   <FormControl>

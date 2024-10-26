@@ -45,7 +45,7 @@ Visit https://ezyshopz.vercel.app to see the live demo!
 - **Responsive and Real-Time Updates**: Enjoy a fully responsive shopping experience with real-time updates, ensuring smooth browsing, shopping, and order management on any device.
 
 ## ⚙️ How It Works 
-1. **Sign Up**: Create your EzyShop account in minutes. (***Work in progress***)
+1. **Sign Up**: Create your EzyShop account in minutes. 
 2. **Browse Products**: Explore a wide range of products from your favorite local stores. (***Work in progress***)
 3. **Compare Prices**: Use our price comparison tool to get the best deals.
 4. **Place Your Order**: Add items to your cart and complete your order with just a few clicks. (***Work in progress***)
