@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { MainNav } from "./main-nav";
 import { useTheme } from "@/context/themeProvider";
-import UnderConstructionAlert from "../modals/underConstruction";
+import FlashAlert from "../modals/flashAlert";
+import { Construction } from "lucide-react";
 
 const Navbar = () => {
   
@@ -38,7 +39,7 @@ const Navbar = () => {
         {/* all the navigation links */}
         <MainNav theme={theme} />
 
-        <UnderConstructionAlert theme={theme} />
+        <FlashAlert modalLogo={<Construction className={`h-16 w-16 ${theme==='light'? 'text-customTeal':'text-Green'} mx-auto`} />} modalTitle={"This page is under development"} modalDescription={"We apologize for the inconvenience. Please check back soon."}/>
         
       </div>
     </div>

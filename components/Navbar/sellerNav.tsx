@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/context/themeProvider";
-import UnderConstructionAlert from "../modals/underConstruction";
 import { SellerMainNav } from "./seller-main-nav";
-// import { useParams } from "next/navigation";
 import { useSession } from "next-auth/react";
+import FlashAlert from "../modals/flashAlert";
+import { Construction } from "lucide-react";
 
 const SellerNavbar = () => {
   const session=useSession();
@@ -45,7 +45,8 @@ const SellerNavbar = () => {
         {/* all the navigation links */}
         <SellerMainNav theme={theme} />
 
-        <UnderConstructionAlert theme={theme} />
+        <FlashAlert modalLogo={<Construction className={`h-16 w-16 ${theme==='light'? 'text-customTeal':'text-Green'} mx-auto`} />} modalTitle={"This page is under development"} modalDescription={"We apologize for the inconvenience. Please check back soon."}/>
+
       </div>
     </div>
   );

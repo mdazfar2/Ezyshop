@@ -9,7 +9,8 @@ import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
 import { ModeToggle } from "../ui/themeButton";
 import AuthButtons from "./authButtons";
-import { useConstruction } from "@/context/modalContext";
+import { useFlashAlert } from "@/context/flashAlertContext";
+// import { useConstruction } from "@/context/modalContext";
 
 interface MainNavProps{
   className?:React.HTMLAttributes<HTMLElement>
@@ -20,7 +21,7 @@ interface MainNavProps{
 export function MainNav({ className,theme }:MainNavProps) {
 
   const [loading,setLoading]=useState(true);
-  const {openDialog}=useConstruction();
+  const {openDialog}=useFlashAlert();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu visibility
 

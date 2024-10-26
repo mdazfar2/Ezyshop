@@ -1,16 +1,21 @@
 "use client";
 
 import { WishlistPost } from "@/actions/wishlist-actions";
+import { Wishlist } from "@prisma/client";
 import { Heart } from "lucide-react";
+import { useState } from "react";
 import toast from "react-hot-toast"; // Import react-hot-toast
 
 interface WishlistForm {
   productId: string;
   userId?: string;
+  isWishlisted:Wishlist[]
 }
 
-export default function WishlistForm({ productId, userId }: WishlistForm) {
-  // This is a client-side function for handling form submissions
+export default function WishlistForm({ productId, userId ,isWishlisted}: WishlistForm) {
+
+  const [wishlisted, setWishlisted] = useState(isWishlisted.length > 0);
+
   const handleSubmit = async (formData: FormData) => {
     // Prevent default form submission behavior
     if (!userId) {
@@ -20,6 +25,7 @@ export default function WishlistForm({ productId, userId }: WishlistForm) {
     if (response.success) {
       // Display success message
       toast.success("Added to wishlist!");
+      setWishlisted(true);
     } else {
       // Display error message
       toast.error(response.error || "error");
@@ -52,9 +58,11 @@ export default function WishlistForm({ productId, userId }: WishlistForm) {
         placeholder="User ID"
         required
       />
-      <button type="submit">
+      {!wishlisted?<button type="submit">
         <Heart />
-      </button>
+      </button>:
+      <Heart fill="red" onClick={()=>{toast.error("item is already wishlisted")}}/>
+}
     </form>
   );
 }
