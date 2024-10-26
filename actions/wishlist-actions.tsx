@@ -88,22 +88,22 @@ export async function WishlistDeleteProduct(
   }
 } 
 
-export async function WishlistSpecificEntry(
-  userId:string
-  ,productId:string): Promise<{ success: boolean; error?: string }> {
+// export async function WishlistSpecificEntry(
+//   userId:string
+//   ,productId:string): Promise<{ success: boolean; error?: string }> {
 
-    const res=await prismadb.wishlist.findUnique({
-      where:{
-        userId_productId:{
-          userId,
-          productId
-        }
-      }
-    })
+//     const res=await prismadb.wishlist.findUnique({
+//       where:{
+//         userId_productId:{
+//           userId,
+//           productId
+//         }
+//       }
+//     })
 
-    // console.log(res);
+//     // console.log(res);
 
-    return {success:true}
+//     return {success:true}
 
   
-}
+// }

@@ -1,58 +1,77 @@
 "use client"
 
-import { orderItemProps } from "@/app/(Customer)/MyOrders/components/orderItem";
 import Image from "next/image";
+// import { cartProps } from "../page";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
+import toast from "react-hot-toast";
+import { CartDeleteProduct } from "@/actions/cart-actions";
+import { cartProps, useCart } from "@/context/cartContext";
 
-
-const CartItem:React.FC<orderItemProps> = ({
-    item
+interface cartItemProps{
+    item:cartProps
+}
+const CartItem:React.FC<cartItemProps> = ({
+    item,
 }) => {
+    const {handleRemove} = useCart();
+    const onDelete=async()=>{
 
-    // const cart=useCart();
-
-    // const onRemove=()=>{
-    //     // cart.removeItem(data.id);
-    // }
+        const res=await CartDeleteProduct(item.id);
+    
+        if(res.success){
+          toast.success("removed from cart");
+          handleRemove(item.id); 
+        }
+        else{
+          toast.error(res.error||"error occured");
+        }
+    
+      }
+    
 
     return ( 
-        <li className="flex py-6 h-40 border-b">
-            <div className="relative rounded-md overflow-hidden sm:h-48 sm:w-48">
-                <Image
-                    width={1000}
-                    height={1000}
-                    src={item.image}
-                    alt="product image"
-                    className="object-cover h-32 w-32 rounded-lg object-center"
-                />
-            </div>
-            <div className="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-                <div className="absolute z-10 right-0 top-0">
-                    {/* <IconButton
-                        onClick={onRemove}
-                        icon={<X size={12}/>}
-                    /> */}
-                </div>
-                <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
-                    <div className="flex justify-between">
-                        <p className="text-lg font-semibold dark:text-gray-200">
-                            {item.name}
-                        </p>
-                    </div>
-                    <div className="mt-1 flex sm:justify-end text-sm">
-                        <p className="text-gray-500 dark:text-gray-200">
-                            {/* haha */}
-                            {item.variant}
-                        </p>
-                        <p className="text-gray-500 ml-4 sm:mr-4 border-l border-gray-200 pl-4">
-                            {/* nunu */}
-                            {item.count}
-                        </p>
-                    </div>
-                    <div className="dark:text-gray-200">₹{item.price}</div>
+        <li className="flex py-6 border-b h-auto sm:h-48">
+  {/* Image Section */}
+  <div className="relative rounded-md overflow-hidden ">
+    <Image
+      width={1000}
+      height={1000}
+      src={item.product.images[0].url}
+      alt={`${item.product.name} image`}
+      className="object-cover w-full h-full rounded-lg"
+    />
+  </div>
 
-                </div>
-            </div>
-        </li>
+  {/* Product Details Section */}
+  <div className="flex-1 ml-4 sm:ml-6 flex flex-col justify-between">
+    <div className="flex justify-between items-start sm:items-center">
+      <p className="text-lg font-semibold dark:text-gray-200">
+        {item.product.name}
+      </p>
+
+      {/* Remove Button */}
+      <Button
+        className=" hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
+        aria-label="Remove product"
+        onClick={onDelete}
+      >
+        <X size={16} />
+      </Button>
+    </div>
+
+    {/* Description */}
+    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+      {item.product.description}
+    </p>
+
+    {/* Price Section */}
+    <div className="mt-2 text-lg font-medium dark:text-gray-200">
+      ₹{item.product.price}
+    </div>
+  </div>
+</li>
+
      );
 }
  

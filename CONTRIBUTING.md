@@ -128,3 +128,5 @@ npm run build
 > **PRs that have been open for a duration exceeding 45 days will be automatically closed, so please plan accordingly.**
 >
 >**Additionally, PRs that are improperly linted or have a failing build will not be merged. Ensure that your code passes linting checks and builds successfully before submitting your PR.**
+
+>**Don't forget to check .env.example for better insight of the environment variable**

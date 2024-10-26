@@ -4,7 +4,7 @@ import WishlistItem from "./components/wishlistItem";
 import { useSession } from "next-auth/react";
 import { WishlistGetByUser } from "@/actions/wishlist-actions";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { Image, Product, Wishlist } from "@prisma/client";
 // import { useTheme } from "@/context/themeProvider";
 import { Spinner } from "@/components/ui/spinner";
@@ -79,7 +79,7 @@ const WishlistPage = () => {
     setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  if (loading) {
+  if (loading||!userId) {
     return <Spinner />;
   }
 
@@ -96,7 +96,7 @@ const WishlistPage = () => {
           {wishlistItems.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
               {wishlistItems.map((item) => (
-                <WishlistItem key={item.id} Id={item.id} item={item.product} onRemove={handleRemove}/>
+                <WishlistItem key={item.id} Id={item.id} userId={userId||""} product={item.product} onRemove={handleRemove}/>
               ))}
             </div>
           ) : (
@@ -110,6 +110,7 @@ const WishlistPage = () => {
             </div>
           )}
         </div>
+        <Toaster/>
       </div>
     </>
   );
