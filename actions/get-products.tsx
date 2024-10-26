@@ -80,6 +80,11 @@ export default async function getProducts(
         where:{
           userId: userId?userId:undefined
         }
+      }:undefined,
+      cart:userId?{
+        where:{
+          userId: userId?userId:undefined
+        }
       }:undefined
     },
   });

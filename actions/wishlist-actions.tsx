@@ -17,7 +17,7 @@ export async function WishlistPost(
       },
     });
 
-    console.log(res);
+    // console.log(res);
     return { success: true }; // Return success if the entry was created
   } catch (err) {
     if (err instanceof Prisma.PrismaClientKnownRequestError) {
@@ -32,7 +32,7 @@ export async function WishlistPost(
     }
 
     // Log the error for any other type of error
-    console.log(err);
+    // console.log(err);
     return { success: false, error: "An unexpected error occurred." }; // General error message
   }
 }
@@ -101,7 +101,7 @@ export async function WishlistSpecificEntry(
       }
     })
 
-    console.log(res);
+    // console.log(res);
 
     return {success:true}
 
