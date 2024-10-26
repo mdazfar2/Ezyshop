@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Button } from "../ui/button";
+
 import { Card, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import { Products } from "@/app/(Customer)/shops/[storeId]/page";
 import Image from "next/image";
@@ -17,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             height={1000}
             width={1000}
             alt="card image"
-            className="rounded-t-lg max-h-96"
+            className=" max-h-96"
             src={product.images[0].url}
           />
 
@@ -36,15 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           <div className="text-gray-500 text-sm">{product.category.name}</div>
         </div>
-        <Link href={`#`}>
-          <Button
-            variant="default"
-            size={"lg"}
-            className="bg-Green rounded-full w-full"
-          >
-            Add to cart
-          </Button>
-        </Link>
+        
       </CardFooter>
     </Card>
   );

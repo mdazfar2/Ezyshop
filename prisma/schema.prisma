@@ -26,6 +26,7 @@ model User {
   updatedAt DateTime @updatedAt
 
   wishlists Wishlist[]
+  cart Cart[]
 
 }
 
@@ -99,6 +100,7 @@ model Product {
 
   images Image[]
   wishlists Wishlist[] 
+  cart Cart[]
 }
 
 model Image {
@@ -115,6 +117,24 @@ model Image {
 
 
 model Wishlist {
+  id        String @id @default(uuid()) @map("_id")
+  userId    String
+  productId String
+
+  // Relations to User and Product
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  // constraint so that combination of productId and userId is unique for a wishlist entry
+  @@unique([userId, productId])
+
+  @@index([userId])
+  @@index([productId])
+}
+
+model Cart {
   id        String @id @default(uuid()) @map("_id")
   userId    String
   productId String

@@ -1,16 +1,16 @@
 import getCategories from "@/actions/get-categories";
 import getProducts from "@/actions/get-products";
 import ProductCard from "@/components/shops/productCard";
-import { Category, Image, Product, Seller, Wishlist } from "@prisma/client";
+import { Cart, Category, Image, Product, Seller, Wishlist } from "@prisma/client";
 import Filter from "./components/filter";
 import prismadb from "@/lib/prismadb";
 import ClientSearchBar from "@/components/shops/clientSearchBar";
 import StaticMap from "@/components/Maps/staticMap";
 import { Heading } from "@/components/ui/heading";
-import WishlistForm from "./components/wishListForm";
 import { getServerSession } from "next-auth";
 import { NEXT_AUTH_CONFIG } from "@/lib/auth";
 import { Toaster } from "react-hot-toast";
+import ProductForm from "./components/ProductForm";
 
 export interface CategoryProductsProps {
   params: {
@@ -31,7 +31,8 @@ export interface Products extends Product {
     name: string;
   };
   images: Image[];
-  wishlists: Wishlist[]
+  wishlists: Wishlist[];
+  cart:Cart[]
 }
 // export const revalidate = 0;
 const CategoryProducts: React.FC<CategoryProductsProps> = async ({
@@ -43,7 +44,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
   // Access the user ID from the session
   const userId = session?.user?.id;
 
-  console.log(userId);
+  // console.log(userId);
   // if(!userId)
   const categories: Category[] = await getCategories(params.storeId);
   const products: Products[] = await getProducts(
@@ -62,7 +63,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
       id: params.storeId,
     },
   });
-  console.log(products);
+  // console.log(products);
 
   // if (loading) {
   // return <Spinner />;
@@ -123,8 +124,8 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
           </div>
           <div className="flex col-span-9 flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
             {products.map((product) => (
-              <div key={product.id} className="rounded-lg bg-gray-700 w-[300px]  hover:scale-105 transition duration-300  border">
-                <WishlistForm  isWishlisted={product.wishlists} productId={product.id} userId={userId}/>
+              <div key={product.id} className="rounded-xl bg-gray-700 w-[300px]  hover:scale-105 transition duration-300  border">
+                <ProductForm isInCart={product.cart} isWishlisted={product.wishlists} productId={product.id} userId={userId}/>
 
                 <ProductCard product={product} />
               </div>
