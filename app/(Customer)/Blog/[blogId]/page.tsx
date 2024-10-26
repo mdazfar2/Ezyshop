@@ -17,7 +17,7 @@ const BlogPage = () => {
           const response = await fetch(`/api/blog/${blogId}`);
           const data = await response.json();
           setBlogData(data);
-          console.log(data);
+          // console.log(data);
         } catch (error) {
           console.error('Failed to fetch blog data:', error);
         } finally {
