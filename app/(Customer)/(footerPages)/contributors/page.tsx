@@ -52,7 +52,7 @@ const ContributorsPage = () => {
 
   console.log(contributors);
   return (
-    <div className="bg-gray-100 dark:bg-DarkGray text-gray-900 dark:text-white transition-colors duration-300">
+    <div className="bg-gray-100 dark:bg-DarkGray pb-10 text-gray-900 dark:text-white transition-colors duration-300">
     
       <div className="flex justify-center flex-col items-center">
       <div className="h-full w-full">

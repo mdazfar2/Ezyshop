@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "./button";
+import Link from "next/link";
 
 const Hero = () => {
 
@@ -14,9 +15,11 @@ const Hero = () => {
             order, and receive products from your favorite stores—from your local area to beyond—right 
             from your live place. Enjoy seamless shopping without stepping outside.
             </div>
+            <Link href={"/shops"}>
             <Button size={"lg"} variant={"default"} className="rounded-full w-52 mb-10 lg:mb-0 h-16 text-xl text-gray-200 font-bold lg:w-60 max-w-60 bg-DarkGray border-black hover:shadow-black dark:hover:text-black">
                 Start shopping
             </Button>
+            </Link>
         </div>
         <div>
             <Image alt="Hero Image"  src={"/hero.png"} width={550} height={550}/>
