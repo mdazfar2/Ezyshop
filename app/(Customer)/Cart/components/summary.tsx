@@ -2,15 +2,25 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useCart } from "@/context/cartContext";
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 const Summary = () => {
+  const session=useSession()
+  console.log(session.data)
   const [userDetails, updateUserDetails] = useState({
-    Fullname: "",
+    Fullname: session.data?.user.name,
     Address: "",
     Phone: "",
-    Email: ""
+    Email: session.data?.user.email
   });
+
+  const {cartItems}=useCart();
+
+  const amount=cartItems.reduce((initial,value)=>{
+    return initial+value.product.price
+  },0);
 
   const handleInputChange = (field: keyof typeof userDetails) => (e: React.ChangeEvent<HTMLInputElement>) => {
     updateUserDetails({
@@ -44,6 +54,7 @@ const Summary = () => {
             placeholder="Name"
             onChange={handleInputChange("Fullname")} // Call handleInputChange with the specific field
             // data={userDetails.Fullname}
+            value={userDetails.Fullname}
           />
           <Input
           className="dark:bg-gray-800"
@@ -62,6 +73,7 @@ const Summary = () => {
             placeholder="Email"
             onChange={handleInputChange("Email")}
             // data={userDetails.Email}
+            value={userDetails.Email}
           />
         </div>
       </div>
@@ -70,7 +82,7 @@ const Summary = () => {
           <div className="text-base font-medium text-gray-900 dark:text-gray-100">Order Total</div>
           {/* <Currency value={totalPrice} />
            */}
-           ₹{566}
+           ₹{amount}
         </div>
       </div>
       <Button className="w-full bg-customTeal dark:bg-Green dark:text-gray-100 dark:hover:opacity-80 mt-6">
