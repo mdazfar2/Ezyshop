@@ -48,6 +48,11 @@ const Links = [
     id: 8,
     href: "/Policy",
   },
+  {
+    name: "Github Contributors",
+    id: 9,
+    href: "/contributors",
+  },
 ];
 
 const Footer = () => {
