@@ -8,12 +8,9 @@ export default function SellerLayout({
 }>) {
   return (
 
-    // <body>
     <>
       <SellerNavbar />
       <div className="h-screen w-full dark:bg-DarkGray">{children}</div>
-      {/* <Footer /> */}
     </>
-    // {/* </body> */}
   );
 }

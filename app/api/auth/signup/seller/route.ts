@@ -8,12 +8,13 @@ const prisma = new PrismaClient();
 export async function POST(request: Request) {
   const {
     name,
-    storeMobile,
+    mobile,
     email,
-    storeAddress,
-    storeUPI,
-    storeName,
-    storeDescription,
+    // storeMobile,
+    // storeAddress,
+    // storeUPI,
+    // storeName,
+    // storeDescription,
     otp,
   } = await request.json();
   // storeMobile,name
@@ -34,12 +35,14 @@ export async function POST(request: Request) {
   const seller = await prisma.seller.create({
     data: {
       name,
-      storeMobile,
       email,
-      storeAddress,
-      storeUPI,
-      storeName,
-      storeDescription,
+      mobileNumber:mobile,
+      // mobile,
+      // storeMobile,
+      // storeAddress,
+      // storeUPI,
+      // storeName,
+      // storeDescription,
       otp,
     },
   });

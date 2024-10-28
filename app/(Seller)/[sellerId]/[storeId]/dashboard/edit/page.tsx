@@ -1,6 +1,6 @@
-import { Seller } from "@prisma/client";
-import { DashboardForm } from "./components/dashboard-form";
 import prismadb from "@/lib/prismadb";
+import { Store } from "@prisma/client";
+import { DashboardForm } from "./components/dashboard-form";
 
 interface DashboardProps {
     params: {
@@ -9,9 +9,9 @@ interface DashboardProps {
   }
 
 const EditDashboard:React.FC<DashboardProps> = async({params}) => {
-    let seller: Seller | null = null;
+    let store:Store | null = null;
   try {
-    seller = await prismadb.seller.findUnique({
+    store = await prismadb.store.findUnique({
       where: {
         id: params.storeId,
       },
@@ -23,11 +23,11 @@ const EditDashboard:React.FC<DashboardProps> = async({params}) => {
     );
   }
   // console.log(coverUrl)
-  if (!seller) return <div>seller not found</div>;
+  if (!store) return <div>seller not found</div>;
 
     return ( 
         <div className="dark:bg-DarkGray h-screen px-10 flex-col pt-10">
-            <DashboardForm initialData={seller}/>
+            <DashboardForm initialData={store}/>
         </div>
      );
 }

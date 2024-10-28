@@ -19,7 +19,7 @@ export default function Layout({
 
     if (status === "authenticated") {
       if (session.user.role === "seller") {
-        window.location.href = `/${session.user.id}/dashboard`;
+        window.location.href = `/${session.user.id}`;
       }
     }
     // Set loading to false when authenticated or unauthenticated
