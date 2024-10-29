@@ -67,6 +67,9 @@ Visit https://ezyshopz.vercel.app to see the live demo!
   <a href="https://www.mongodb.com/">
     <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Official Website" />
   </a>
+  <a href="https://www.prisma.io/">
+    <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma Official Website"/>
+</a>
   <a href="https://razorpay.com/">
     <img src="https://img.shields.io/badge/razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=white" alt="Razorpay Official Website" />
   </a>

@@ -48,6 +48,11 @@ const Links = [
     id: 8,
     href: "/Policy",
   },
+  {
+    name: "Github Contributors",
+    id: 9,
+    href: "/contributors",
+  },
 ];
 
 const Footer = () => {
@@ -81,25 +86,25 @@ const Footer = () => {
             <div className="d-flex justify-content-start mt-4">
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="https://github.com/mdazfar2/Ezyshop"
+                href="https://github.com/mdazfar2/Ezyshop" target="_blank"
               >
                 <i className="fab fa-github"></i>
               </a>
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="https://discord.gg/YnABU7tdU3"
+                href="https://discord.gg/YnABU7tdU3" target="_blank"
               >
                 <i className="fa-brands fa-discord"></i>
               </a>
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="https://www.linkedin.com/company/ezyshopz/"
+                href="https://www.linkedin.com/company/ezyshopz/" target="_blank"
               >
                 <i className="fab fa-linkedin-in"></i>
               </a>
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="#"
+                href="#" target="_blank"
               >
                 <i className="fab fa-instagram"></i>
               </a>
