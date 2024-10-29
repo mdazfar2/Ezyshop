@@ -1,6 +1,10 @@
 "use client";
+import ShopCard from "@/components/shops/shopCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
-import { Toaster } from "react-hot-toast";
+import { Spinner } from "@/components/ui/spinner";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 
 
@@ -16,31 +20,31 @@ export interface Shop {
 }
 
 const Shop = () => {
-  // // const [shops, setShops] = useState<Shop[]>([]);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState<string | null>(null);
+  const [shops, setShops] = useState<Shop[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   // Fetch shops data on component mount
-  // useEffect(() => {
-  //   const fetchShops = async () => {
-  //     try {
-  //       const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/seller`);
-  //       setShops(response.data);
-  //     } catch (err) {
-  //       setError(err instanceof Error ? err.message : "An unknown error occurred");
-  //       console.error("Error fetching products:", err);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchShops = async () => {
+      try {
+        const response = await axios.get(`/api/getAllStores`);
+        setShops(response.data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "An unknown error occurred");
+        console.error("Error fetching products:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  //   fetchShops();
-  // }, []);
+    fetchShops();
+  }, []);
 
-  // if (loading) return <Spinner/>;
-  // if (error) {
-  //   toast.error(error)
-  // };
+  if (loading) return <Spinner/>;
+  if (error) {
+    toast.error(error)
+  };
 
   return (
     <div className="h-full dark:bg-DarkGray pb-10">
@@ -56,9 +60,9 @@ const Shop = () => {
         Explore Our Partner Shops
       </div>
       <div className="flex flex-col items-center justify-center gap-10 px-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
-        {/* {shops.map((shop) => (
+        {shops.map((shop) => (
           <ShopCard key={shop.id} shop={shop} />
-        ))} */}
+        ))}
       </div>
     </div>
   );

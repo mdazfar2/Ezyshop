@@ -99,7 +99,7 @@ export async function GET(
             name:true
           }
         }, // Includes the category details
-        seller: {       // Proper structure for including seller
+        Store: {       // Proper structure for including seller
           select: {
             storeName: true, // Selects only the storeName from seller
           },

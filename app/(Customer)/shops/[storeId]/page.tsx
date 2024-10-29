@@ -1,7 +1,7 @@
 import getCategories from "@/actions/get-categories";
 import getProducts from "@/actions/get-products";
 import ProductCard from "@/components/shops/productCard";
-import { Cart, Category, Image, Product, Seller, Wishlist } from "@prisma/client";
+import { Cart, Category, Image, Product, Store, Wishlist } from "@prisma/client";
 import Filter from "./components/filter";
 import prismadb from "@/lib/prismadb";
 import ClientSearchBar from "@/components/shops/clientSearchBar";
@@ -24,7 +24,7 @@ export interface CategoryProductsProps {
 }
 
 export interface Products extends Product {
-  store: {
+  Store: {
     storeName: string;
   };
   category: {
@@ -46,7 +46,20 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
 
   // console.log(userId);
   // if(!userId)
-  const categories: Category[] = await getCategories(params.storeId);
+  const store: Store | null = await prismadb.store.findUnique({
+    where: {
+      id: params.storeId,
+    }
+  });
+
+  if(!store){
+    return <div>
+      no store found
+    </div>
+  }
+
+
+  const categories: Category[] = await getCategories(store?.SellerId,params.storeId);
   const products: Products[] = await getProducts(
     {
       isFeatured: searchParams.isfeatured,
@@ -58,11 +71,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
   );
   
 
-  const seller: Seller | null = await prismadb.seller.findUnique({
-    where: {
-      id: params.storeId,
-    },
-  });
+  
   // console.log(products);
 
   // if (loading) {
@@ -70,8 +79,8 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
   // }
 
   // console.log(categories)
-  console.log(products[0]+"<-------------")
-  if (!seller) return <div>seller not found</div>;
+  // console.log(products[0]+"<-------------")
+  if (!store) return <div>store not found</div>;
   return (
     <>
       <div className="h-full mb-10">
@@ -80,8 +89,8 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: seller?.coverUrl
-                ? `url(${seller.coverUrl})`
+              backgroundImage: store?.coverUrl
+                ? `url(${store.coverUrl})`
                 : "none",
               opacity: 0.2, // Control the opacity of the background image
               zIndex: -1, // Keep it behind the content
@@ -90,8 +99,8 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
 
           {/* Foreground content */}
           <div className="relative z-10 text-4xl pt-5 lg:pt-0 lg:text-7xl text-center lg:text-start font-extrabold font-handlee">
-            {seller?.storeName || "Store"}
-            {/* <LazyStaticMap longitude={seller?.storeLat||0} latitude={seller?.storeLng||0}/> */}
+            {store?.storeName || "Store"}
+            {/* <LazyStaticMap longitude={store?.storeLat||0} latitude={store?.storeLng||0}/> */}
           </div>
         </div>
         <div className="flex gap-2 my-2 items-center justify-center">
@@ -101,6 +110,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
               category={category}
               currentId={searchParams.categoryId}
             />
+            
           ))}
         </div>
 
@@ -111,14 +121,14 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
           <div className="flex col-span-3 rounded-xl max-h-fit ml-5 p-5 bg-gray-200 dark:bg-gray-700  flex-col items-center justify-center gap-10 ">
             <div className="text-gray-200">
               <Heading
-                title={seller.storeName}
-                description={`Contact us at: ${seller.storeMobile}`}
+                title={store.storeName}
+                description={`Contact us at: ${store.storeMobile}`}
               />
             </div>
             <div className="w-full">
               <StaticMap
-                storeLat={seller.storeLat || 0}
-                storeLng={seller.storeLng || 0}
+                storeLat={store.storeLat || 0}
+                storeLng={store.storeLng || 0}
               />
             </div>
           </div>

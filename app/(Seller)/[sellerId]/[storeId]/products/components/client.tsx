@@ -25,7 +25,7 @@ export const ProductClient:React.FC<ProductClientProps> = ({
                     description="Manage products for your store"
                 />
                 <Button onClick={()=>{
-                    router.push(`/${params.storeId}/products/new}`)
+                    router.push(`/${params.sellerId}/${params.storeId}/products/new}`)
                 }}>
                     <Plus className="mr-2 h-4 w-4"/>
                     Add new
