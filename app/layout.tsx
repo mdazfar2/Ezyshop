@@ -3,9 +3,11 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/providers/sessionProvider";
 import 'leaflet/dist/leaflet.css';
+import ScrollToTop from '@/components/ui/ScrollToTop';  // Added import
 
 const font = Urbanist({ subsets: ["latin"] });
 // console.log(font.className)
+
 export const metadata: Metadata = {
   title: "Ezyshop",
   description: "Store",
@@ -16,7 +18,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en">
       <head>
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${font.className},h-screen `}>
         <Providers>
           {children}
+          <ScrollToTop />  {/* Added ScrollToTop component */}
         </Providers>
       </body>
     </html>
