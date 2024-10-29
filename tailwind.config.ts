@@ -57,6 +57,10 @@ const config: Config = {
         Gray: "#F5F5F5",
         DarkGray: "#212121",
       },
+      backgroundImage: {
+        desktop: "url('/bg-sidebar-desktop2.svg')",
+        mobile: "url('/bg-sidebar-mobile.svg')",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -77,7 +81,9 @@ const config: Config = {
       },
     },
     letterSpacing: {
+      wider:".75em",
       widest: "1.25em",
+
     },
   },
   plugins: [require("tailwindcss-animate")],
