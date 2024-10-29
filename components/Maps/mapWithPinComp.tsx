@@ -56,7 +56,7 @@ const MapWithPin: React.FC<MapWithPinProps> = ({
       key={position.toString()}
       center={position || defaultCenter}
       zoom={13}
-      style={{ height: "400px", width: "100%" }}
+      style={{ height: "350px", width: "100%" }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

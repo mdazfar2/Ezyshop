@@ -82,7 +82,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
       toast.success(`Welcome!`);
 
       setTimeout(() => {
-        window.location.href = `"/dashboard"`; // Redirect on success
+        window.location.href = `"/`; // Redirect on success
       }, 2000);
     }
     setloading(false);

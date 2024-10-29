@@ -33,14 +33,14 @@ import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
   storeName: z.string().min(1, "Shop name is required."),
-  name: z.string().min(1, "Owner name is required."),
+  // name: z.string().min(1, "Owner name is required."),
   storeAddress: z.string().min(1, "Address is required."),
   storeUPI: z.string().min(1, "UPI is required."),
   storeMobile: z
     .string()
     .min(1, "Mobile number is required.")
     .regex(/^\d{10}$/, "Mobile number must be 10 digits."), // Adjust regex for your specific needs
-  email: z.string().email("Invalid email format"),
+  // email: z.string().email("Invalid email format"),
   storeDescription: z.string().min(1, "Description is required."),
   coverUrl: z.string().url("Invalid URL"),
   storeLocation: z.object({
@@ -60,7 +60,9 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
 }) => {
   const params = useParams();
   const router = useRouter();
-
+  
+  // console.log(params.sellerId)
+  // console.log(params.storeId)
   // const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [latitude, setLatitude] = useState<number>(
@@ -70,7 +72,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
     initialData?.storeLng || 77.23
   );
 
-  console.log(latitude + "::::" + longitude);
+  // console.log(latitude + "::::" + longitude);
 
   const title = "Edit Data";
   const description = "Edit your store Data";
@@ -97,17 +99,22 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
 
   // console.log(initialData?.coverUrl)
   const onSubmit = async (data: DashboardFormValues) => {
+    // setLoading(true);
+    // alert("wdaaa")
     // console.log(
-    //   data.storeLocation.storeLat + " " + data.storeLocation.storeLng
+    //   data
     // );
+
+    // setLoading(false)
 
     try {
       setLoading(true);
+      const sellerId=params.sellerId
+      const storeId=params.storeId
+      await axios.patch(`/api/${sellerId}/${storeId}`, data);
 
-      await axios.patch(`/api/${params.storeId}`, data);
-
-      router.refresh();
-      router.push(`/${params.storeId}/dashboard`);
+      // router.refresh();
+      router.push(`/${params.sellerId}/${params.storeId}/dashboard`);
       router.refresh();
       toast.success(toastMessage);
       console.log(data);
@@ -132,12 +139,6 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
 
   return (
     <>
-      {/* <AlertModal
-        isOpen={open}
-        onClose={() => setOpen(false)}
-        onConfirm={onDelete}
-        loading={loading}
-      /> */}
       <div className="flex items-center justify-between">
         <Heading title={title} description={description} />
       </div>
@@ -145,28 +146,10 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
 
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={form.handleSubmit(onSubmit,  (errors) => console.log(errors))}
           className="space-y-8 w-full"
         >
           <div className="grid grid-cols-3 gap-8">
-            {/* name */}
-            {/* <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>name</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Ownername"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            /> */}
             <FormField
               control={form.control}
               name="storeName"
@@ -262,22 +245,6 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
                 </FormItem>
               )}
             />
-            {/* email */}
-            {/* <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>email</FormLabel>
-
-                  <FormControl>
-                    <Input disabled={loading} placeholder="email" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            /> */}
 
             <FormField
               control={form.control}
@@ -297,12 +264,6 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
                 </FormItem>
               )}
             />
-            {/* <LazyMap
-              latitude={latitude}
-              longitude={longitude}
-              setLatitude={setLatitude}
-              setLongitude={setLongitude}
-            /> */}
 
             <FormField
               control={form.control}

@@ -3,11 +3,9 @@ import StaticMap from "@/components/Maps/staticMap";
 // import StorePage from "@/components/Maps/mapPage";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import { NEXT_AUTH_CONFIG } from "@/lib/auth";
 import prismadb from "@/lib/prismadb";
 import { Store } from "@prisma/client";
 import { Settings } from "lucide-react";
-import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -18,21 +16,36 @@ interface DashboardProps {
   };
 }
 
-const Dashboard: React.FC<DashboardProps> = async () => {
+const Dashboard: React.FC<DashboardProps> = async ({params}) => {
 
-  const session = await getServerSession(NEXT_AUTH_CONFIG);
+  // const session = await getServerSession(NEXT_AUTH_CONFIG);
 
-  const sellerId= session?.user.id;
+  const storeId=params.storeId
 
-  if (!sellerId){
+  if (!storeId){
     redirect("/auth/seller")
   };
 
-  let Stores: Store[] | null = [];
+  let Store: Store|null={
+    
+      id: "",
+      storeName: "",
+      storeAddress: "",
+      storeLat: 0,
+      storeLng: 0,
+      storeUPI: "",
+      storeMobile: "",
+      storeDescription: "",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      SellerId: "",
+      coverUrl: "",
+  }
+
   try {
-    Stores = await prismadb.store.findMany({
+    Store = await prismadb.store.findUnique({
       where: {
-        SellerId:sellerId,
+        id:storeId
       },
     });
   } catch (err) {
@@ -43,7 +56,7 @@ const Dashboard: React.FC<DashboardProps> = async () => {
   }
   // console.log(coverUrl)
   // console.log(Store?.storeLat,Store?.storeLng)
-  if (!Stores.length||!Stores){
+  if (!Store){
     redirect("/setupStore")
   };
   return (
@@ -59,52 +72,52 @@ const Dashboard: React.FC<DashboardProps> = async () => {
             <span className="font-semibold text-customTeal dark:text-Green">
               Shop Name:
             </span>
-            <span>{Stores[0].storeName}</span>
+            <span>{Store.storeName}</span>
           </div>
 
           {/* <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Owner Name:
             </span>
-            <span>{Stores[0].name || "N/A"}</span>
+            <span>{Store.name || "N/A"}</span>
           </div> */}
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Address:
             </span>
-            <span>{Stores[0].storeAddress}</span>
+            <span>{Store.storeAddress}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               UPI:
             </span>
-            <span>{Stores[0].storeUPI}</span>
+            <span>{Store.storeUPI}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Mobile:
             </span>
-            <span>{Stores[0].storeMobile}</span>
+            <span>{Store.storeMobile}</span>
           </div>
 
           {/* <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Email:
             </span>
-            <span>{Stores[0].email || "N/A"}</span>
+            <span>{Store.email || "N/A"}</span>
           </div> */}
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Description:
             </span>
-            <span>{Stores[0].storeDescription}</span>
+            <span>{Store.storeDescription}</span>
           </div>
 
-          {Stores[0].coverUrl && (
+          {Store.coverUrl && (
             <div className="flex items-center justify-between">
               <div className="font-semibold text-customTeal dark:text-Green mb-2">
                 Cover Image:
@@ -112,7 +125,7 @@ const Dashboard: React.FC<DashboardProps> = async () => {
               <Image
                 height={1000}
                 width={1000}
-                src={Stores[0].coverUrl}
+                src={Store.coverUrl}
                 alt="Store Cover"
                 className="h-60 w-72 object-cover rounded-md"
               />
@@ -122,9 +135,9 @@ const Dashboard: React.FC<DashboardProps> = async () => {
             <div className="font-semibold text-customTeal dark:text-Green mb-2">
               Store Location:
             </div>
-            {/* <LazyStaticMap latitude={Stores[0].storeLat} longitude={Stores[0].storeLng}/> */}
+            {/* <LazyStaticMap latitude={Store.storeLat} longitude={Store.storeLng}/> */}
             <div className="w-96">
-            <StaticMap storeLat={Stores[0].storeLat} storeLng={Stores[0].storeLng} />
+            <StaticMap storeLat={Store.storeLat} storeLng={Store.storeLng} />
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ const StorePage = ({latitude,longitude,setLatitude,setLongitude}:LazyMapProps) =
   },[latitude,longitude,handleLocationSelect])
   
   return (
-    <div className="p-4">
+    <div>
       <MapWithPin latitude={latitude} longitude={longitude} onLocationSelect={handleLocationSelect} />
     </div>
   );
