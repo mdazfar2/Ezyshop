@@ -121,7 +121,7 @@ model Blog {
   id                String    @id @default(uuid()) @map("_id")
   title             String
   image             String
-  content           String
+  content           Json
   metaDescription   String
   author            String      @default("Admin")
   label             String
