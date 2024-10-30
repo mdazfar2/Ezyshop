@@ -1,3 +1,6 @@
+import axios from "axios";
+import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 // Define the shape of the context data
@@ -34,6 +37,8 @@ interface GlobalContextType {
   setValidStoreMobile: (mobile: boolean) => void;
   validstoreDescription: boolean;
   setValidStoreDescription: (description: boolean) => void;
+
+  submitForm:(sellerId:string)=>void
   // coverUrl: string;
   // setCoverUrl: (url: string) => void;
   // storeLat: number;
@@ -62,6 +67,7 @@ export const useGlobalStore = () => {
 };
 // Define the provider component
 export const GlobalStoreProvider = ({ children }: { children: ReactNode }) => {
+  // const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1);
   const [completed, setCompleted] = useState(false);
 
@@ -86,6 +92,80 @@ export const GlobalStoreProvider = ({ children }: { children: ReactNode }) => {
 
   const [checkedBox, setCheckedBox] = useState(false);
   const [formCompeleted, setFormCompeleted] = useState(false);
+
+  const submitForm = async (sellerId:string) => {
+    // e.preventDefault();
+  
+    let allValid = true;
+  
+    // Validate each field and update validity states
+    if (storeName.trim().length < 1) {
+      setValidStoreName(false);
+      allValid = false;
+    } else {
+      setValidStoreName(true);
+    }
+  
+    if (storeAddress.trim().length < 1) {
+      setValidStoreAddress(false);
+      allValid = false;
+    } else {
+      setValidStoreAddress(true);
+    }
+  
+    if (storeUPI.trim().length < 1 || !storeUPI.includes("@")) {
+      setValidStoreUPI(false);
+      allValid = false;
+    } else {
+      setValidStoreUPI(true);
+    }
+  
+    if (storeMobile.trim().length !== 10 || !/^\d+$/.test(storeMobile)) {
+      setValidStoreMobile(false);
+      allValid = false;
+    } else {
+      setValidStoreMobile(true);
+    }
+  
+    if (storeDescription.trim().length < 10) {
+      setValidStoreDescription(false);
+      allValid = false;
+    } else {
+      setValidStoreDescription(true);
+    }
+  
+    // Check if all fields are valid
+    if (allValid) {
+      setFormCompeleted(true); // Set form completed to true
+  
+      // Proceed with the API request or any other logic
+      try {
+        if(!sellerId){
+          console.log("no seller id")
+          return;
+        }
+        const response = await axios.post(`/api/${sellerId}`, {
+          data: {
+            storeName:storeName,
+            storeAddress:storeAddress,
+            storeUPI:storeUPI,
+            storeMobile:storeMobile,
+            storeLat:storeLat,
+            storeLng:storeLng,
+            storeDescription:storeDescription,
+            coverUrl:coverUrl,
+          },
+        });
+  
+        console.log("Form submitted successfully:", response.data);
+        window.location.pathname=(`/${sellerId}/${response.data.id}/dashboard`)
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    } else {
+      console.log("Form is not valid.");
+    }
+  };
 
   return (
     <GlobalStoreContext.Provider
@@ -126,6 +206,7 @@ export const GlobalStoreProvider = ({ children }: { children: ReactNode }) => {
         setValidStoreMobile,
         validstoreDescription,
         setValidStoreDescription,
+        submitForm
       }}
     >
       {children}

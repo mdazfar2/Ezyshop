@@ -54,7 +54,8 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
 
       {/* Navigation links (shown on larger screens, hidden on mobile) */}
       <div className={cn("hidden lg:flex items-center justify-centerx space-x-4 lg:space-x-6")}>
-        {routes.map((route) => (
+        {routes.map((route) => 
+        (
           <Link
             key={route.href}
             href={route.href}
@@ -66,9 +67,10 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
             // onClick={route.onClick}
           >
             {/* {route.logo && <span>{route.logo}</span>} */}
-            {route.label}
+            {/* {route.label} */}
           </Link>
-        ))}
+        )
+        )}
         
         <ModeToggle/>
 

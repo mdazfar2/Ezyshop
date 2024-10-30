@@ -24,7 +24,7 @@ export interface CategoryProductsProps {
 }
 
 export interface Products extends Product {
-  seller: {
+  store: {
     storeName: string;
   };
   category: {

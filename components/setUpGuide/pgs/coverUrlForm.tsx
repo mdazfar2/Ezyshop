@@ -13,7 +13,7 @@ const CoverUrlForm = () => {
       </h3>
       <ImageUpload
         value={coverUrl}
-        onChange={(url) => setCoverUrl([...coverUrl, url])}
+        onChange={(url) => setCoverUrl([url])}
         onRemove={() => setCoverUrl([""])}
       />
     </div>

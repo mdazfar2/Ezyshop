@@ -8,7 +8,7 @@ import FlashAlert from "../modals/flashAlert";
 import { Construction } from "lucide-react";
 
 const SellerNavbar = () => {
-  const session=useSession();
+  const session=useSession(); 
   const { theme } = useTheme() || { theme: "light" }; // Get the current theme and toggle function
 
   return (

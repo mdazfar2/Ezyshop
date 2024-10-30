@@ -70,7 +70,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       setLoading(true);
       if (initialData) {
         await axios.patch(
-          `/api/${params.storeId}/categories/${params.categoryId}`,
+          `/api/${params.sellerId}/${params.storeId}/categories/${params.categoryId}`,
           data
         );
       } else {

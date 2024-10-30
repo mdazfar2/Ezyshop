@@ -1,35 +1,39 @@
 import prismadb from "@/lib/prismadb";
 import { NextResponse } from "next/server";
 
-export async function PATCH(
+export async function POST(
   req: Request,
-  { params }: { params: { storeId: string } }
+  { params }: { params: { sellerId: string } }
 ) {
   try {
     const body = await req.json();
 
+    // console.log(body+"ADWwwwwwwwwwwwwwwwwwwwwwwww")
     // Destructure the required fields from the request body
+    console.log(params.sellerId)
     const {
       storeName,
-      name,
       storeAddress,
       storeUPI,
       storeMobile,
-      email,
+      storeLat,
+      storeLng,
       storeDescription,
       coverUrl,
-      storeLocation
-    } = body;
+    } = body.data;
 
-    const {storeLat,storeLng}=storeLocation
 
-    console.log(storeLat+" "+storeLng)
+    // console.log(storeName,
+    //     storeAddress,
+    //     storeUPI,
+    //     storeMobile,
+    //     storeLat,
+    //     storeLng,
+    //     storeDescription,
+    //     coverUrl)
     // Validate the required fields
     if (!storeName) {
       return new NextResponse("Shop name is required.", { status: 400 });
-    }
-    if (!name) {
-      return new NextResponse("Owner name is required.", { status: 400 });
     }
     if (!storeAddress) {
       return new NextResponse("Address is required.", { status: 400 });
@@ -49,24 +53,23 @@ export async function PATCH(
     if (!storeLng) {
       return new NextResponse("Lng is required.", { status: 400 });
     }
+    if (!coverUrl) {
+      return new NextResponse("coverUrl is required.", { status: 400 });
+    }
     // Optional: You can check the validity of the email and coverUrl if needed
 
     // Update the seller record in the database
-    const updatedSeller = await prismadb.seller.update({
-      where: {
-        id: params.storeId,
-      },
+    const updatedSeller = await prismadb.store.create({
       data: {
         storeName,
-        name,
         storeAddress,
         storeUPI,
         storeMobile,
-        email,
         storeDescription,
-        coverUrl,
+        coverUrl:coverUrl[0],
         storeLat,
-        storeLng
+        storeLng,
+        SellerId:params.sellerId
       },
     });
 
