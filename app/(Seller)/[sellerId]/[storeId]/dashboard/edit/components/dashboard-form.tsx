@@ -1,16 +1,14 @@
 "use client";
-import * as z from "zod";
-import { useForm } from "react-hook-form";
-import { Seller } from "@prisma/client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import { Store } from "@prisma/client";
 import axios from "axios";
+import { useParams, useRouter } from "next/navigation";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Heading } from "@/components/ui/heading";
-import { Separator } from "@/components/ui/separator";
 import {
   Form,
   FormControl,
@@ -19,7 +17,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Heading } from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 // import { AlertModal } from "@/components/modals/alert-modal";
 // import {
 //   Select,
@@ -28,8 +28,8 @@ import { Input } from "@/components/ui/input";
 //   SelectTrigger,
 //   SelectValue,
 // } from "@/components/ui/select";
-import ImageUpload from "@/components/ui/image-upload";
 import LazyMap from "@/components/Maps/LazyMapWithPin";
+import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
   storeName: z.string().min(1, "Shop name is required."),
@@ -52,7 +52,7 @@ const formSchema = z.object({
 type DashboardFormValues = z.infer<typeof formSchema>;
 
 interface DashboardFormProps {
-  initialData: Seller | null;
+  initialData: Store | null;
 }
 
 export const DashboardForm: React.FC<DashboardFormProps> = ({
@@ -81,11 +81,11 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
     resolver: zodResolver(formSchema),
     defaultValues: {
       storeName: initialData?.storeName || "",
-      name: initialData?.name || "",
+      // name: initialData?.name || "",
       storeAddress: initialData?.storeAddress || "",
       storeUPI: initialData?.storeUPI || "",
       storeMobile: initialData?.storeMobile || "",
-      email: initialData?.email || undefined,
+      // email: initialData?.email || undefined,
       storeDescription: initialData?.storeDescription || "",
       coverUrl: initialData?.coverUrl || "",
       storeLocation: {
@@ -149,7 +149,8 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
           className="space-y-8 w-full"
         >
           <div className="grid grid-cols-3 gap-8">
-            <FormField
+            {/* name */}
+            {/* <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
@@ -165,7 +166,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
             <FormField
               control={form.control}
               name="storeName"
@@ -261,7 +262,8 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
                 </FormItem>
               )}
             />
-            <FormField
+            {/* email */}
+            {/* <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
@@ -275,7 +277,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
 
             <FormField
               control={form.control}

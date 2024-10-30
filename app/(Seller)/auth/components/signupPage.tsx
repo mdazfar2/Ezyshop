@@ -1,15 +1,15 @@
 import { Input } from "@/components/ui/input";
-import { AtSign, BookHeart, ChevronLeftCircleIcon, CreditCard, MapPin, Phone, Store, User} from "lucide-react"; // Import Eye and EyeOff
-import React, { useState } from "react";
-import toast from "react-hot-toast";
-import axios from "axios";
-import { Spinner } from "@/components/ui/spinner";
-import { z } from "zod";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { Spinner } from "@/components/ui/spinner";
+import axios from "axios";
+import { AtSign, ChevronLeftCircleIcon, Phone, User } from "lucide-react"; // Import Eye and EyeOff
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -22,8 +22,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
+import { useForm } from "react-hook-form";
 
 interface SignupPageProps {
   switchCss: boolean;
@@ -51,11 +51,11 @@ const SignupPage: React.FC<SignupPageProps> = ({
   // State for form fields
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
-  const [storeMobile, setStoreMobile] = useState("");
-  const [storeName, setStoreName] = useState("");
-  const [storeUPI, setStoreUPI] = useState("");
-  const [storeAddress, setStoreAddress] = useState("");
-  const [storeDescription, setStoreDescription] = useState("");
+  const [mobile, setMobile] = useState("");
+  // const [storeName, setStoreName] = useState("");
+  // const [storeUPI, setStoreUPI] = useState("");
+  // const [storeAddress, setStoreAddress] = useState("");
+  // const [storeDescription, setStoreDescription] = useState("");
 
   //  form definition otp
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -82,7 +82,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
       toast.success(`Welcome!`);
 
       setTimeout(() => {
-        window.location.href = "/dashboard"; // Redirect on success
+        window.location.href = `"/dashboard"`; // Redirect on success
       }, 2000);
     }
     setloading(false);
@@ -94,7 +94,9 @@ const SignupPage: React.FC<SignupPageProps> = ({
     e.preventDefault();
 
     // Basic validation
-    if (!name || !storeMobile || !email || !storeAddress || !storeUPI || !storeName ||!storeDescription) {
+    if (!name || !mobile || !email
+      // || !storeMobile  || !storeAddress || !storeUPI || !storeName ||!storeDescription
+    ) {
       setError("All fields are required.");
       setloading(false);
       return;
@@ -104,11 +106,12 @@ const SignupPage: React.FC<SignupPageProps> = ({
       const res = await axios.post("/api/auth/signup/seller", {
         email,
         name,
-        storeMobile,
-        storeAddress,
-        storeUPI,
-        storeName,
-        storeDescription,
+        mobile,
+        // storeMobile,
+        // storeAddress,
+        // storeUPI,
+        // storeName,
+        // storeDescription,
         otp:""
       });
       if(res.status===200){
@@ -131,11 +134,12 @@ const SignupPage: React.FC<SignupPageProps> = ({
     setOtpOpen(true);
 
     setname("");
-    setStoreMobile("");
-    setStoreAddress("");
-    setStoreUPI("");
-    setStoreName("");
-    setStoreDescription("")
+    setMobile("");
+    // setStoreMobile("");
+    // setStoreAddress("");
+    // setStoreUPI("");
+    // setStoreName("");
+    // setStoreDescription("")
 
     setloading(false);
   };
@@ -143,13 +147,13 @@ const SignupPage: React.FC<SignupPageProps> = ({
   return (
     <>
       {!switchCss && !otpOpen && (
-        <div className="flex flex-col dark:text-gray-200 z-10 gap-2 lg:gap-0 items-center justify-start pt-4 w-full md:w-2/4">
+        <div className="flex flex-col dark:text-gray-200 z-10  lg:gap-2 items-center justify-start py-2 lg:pt-24 w-full md:w-2/4">
           <div className="font-nunito md:pl-10 text-center text-4xl text-customTeal dark:text-Green font-extrabold">
-            Setup Your Store
+            SignUp
           </div>
           <form
             onSubmit={handleSubmit}
-            className="w-full flex md:pr-4 flex-col items-center md:items-end justify-center"
+            className="w-full flex md:pr-4 gap-2 flex-col items-center md:items-end justify-center"
           >
             <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
@@ -161,7 +165,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
               />
               <User className="h-7 w-7 text-customTeal dark:text-Yellow" />
             </div>
-            <div className="flex items-center w-4/5 justify-center mb-4">
+            {/* <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
                 className="rounded-full"
                 type="text"
@@ -170,18 +174,18 @@ const SignupPage: React.FC<SignupPageProps> = ({
                 onChange={(e) => setStoreName(e.target.value)}
               />
               <Store className="h-7 w-7 text-customTeal dark:text-Yellow" />
-            </div>
+            </div> */}
             <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
                 className="rounded-full"
                 type="text"
-                placeholder="store contact number"
-                value={storeMobile}
-                onChange={(e) => setStoreMobile(e.target.value)}
+                placeholder="contact number"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
               />
               <Phone className="h-7 w-7 text-customTeal dark:text-Yellow" />
             </div>
-            <div className="flex items-center w-4/5 justify-center mb-4">
+            {/* <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
                 className="rounded-full"
                 type="text"
@@ -190,7 +194,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
                 onChange={(e) => setStoreDescription(e.target.value)}
               />
               <BookHeart className="h-7 w-7 text-customTeal dark:text-Yellow" />
-            </div>
+            </div> */}
             <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
                 className="rounded-full"
@@ -201,7 +205,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
               />
               <AtSign className="h-7 w-7 text-customTeal dark:text-Yellow" />
             </div>
-            <div className="flex items-center w-4/5 justify-center mb-4">
+            {/* <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
                 className="rounded-full"
                 type="UPI"
@@ -210,8 +214,8 @@ const SignupPage: React.FC<SignupPageProps> = ({
                 onChange={(e) => setStoreUPI(e.target.value)}
               />
               <CreditCard className="h-7 w-7 text-customTeal dark:text-Yellow" />
-            </div>
-            <div className="flex items-center w-4/5 justify-center mb-4">
+            </div> */}
+            {/* <div className="flex items-center w-4/5 justify-center mb-4">
               <Input
                 className="rounded-full"
                 type="text"
@@ -220,7 +224,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
                 onChange={(e) => setStoreAddress(e.target.value)}
               />
               <MapPin className="h-7 w-7 text-customTeal dark:text-Yellow" />
-            </div>
+            </div> */}
             
 
             <Button

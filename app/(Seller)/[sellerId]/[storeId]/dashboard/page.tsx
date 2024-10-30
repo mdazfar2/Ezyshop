@@ -3,11 +3,14 @@ import StaticMap from "@/components/Maps/staticMap";
 // import StorePage from "@/components/Maps/mapPage";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
+import { NEXT_AUTH_CONFIG } from "@/lib/auth";
 import prismadb from "@/lib/prismadb";
-import { Seller } from "@prisma/client";
+import { Store } from "@prisma/client";
 import { Settings } from "lucide-react";
+import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 interface DashboardProps {
   params: {
@@ -15,30 +18,40 @@ interface DashboardProps {
   };
 }
 
-const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
-  // const session = useSession();
-  let seller: Seller | null = null;
+const Dashboard: React.FC<DashboardProps> = async () => {
+
+  const session = await getServerSession(NEXT_AUTH_CONFIG);
+
+  const sellerId= session?.user.id;
+
+  if (!sellerId){
+    redirect("/auth/seller")
+  };
+
+  let Stores: Store[] | null = [];
   try {
-    seller = await prismadb.seller.findUnique({
+    Stores = await prismadb.store.findMany({
       where: {
-        id: params.storeId,
+        SellerId:sellerId,
       },
     });
   } catch (err) {
     console.error(
-      "Error fetching seller",
+      "Error fetching Store",
       err instanceof Error ? err.message : err
     );
   }
   // console.log(coverUrl)
-  // console.log(seller?.storeLat,seller?.storeLng)
-  if (!seller) return <div>seller not found</div>;
+  // console.log(Store?.storeLat,Store?.storeLng)
+  if (!Stores.length||!Stores){
+    redirect("/setupStore")
+  };
   return (
     <div>
       <div className="pl-5 flex flex-col items-center gap-5 text-start pt-5">
         <Heading
           title="Welcome to your dashboard!"
-          description="Manage your store with Ezyshop seller dashboard"
+          description="Manage your store with Ezyshop Store dashboard"
         />
 
         <div className="p-4 bg-gray-100 dark:bg-gray-700 font-nunito dark:text-gray-200 text-xl w-3/4  rounded-lg shadow-md space-y-4">
@@ -46,52 +59,52 @@ const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
             <span className="font-semibold text-customTeal dark:text-Green">
               Shop Name:
             </span>
-            <span>{seller.storeName}</span>
+            <span>{Stores[0].storeName}</span>
           </div>
 
-          <div className="flex justify-between">
+          {/* <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Owner Name:
             </span>
-            <span>{seller.name || "N/A"}</span>
-          </div>
+            <span>{Stores[0].name || "N/A"}</span>
+          </div> */}
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Address:
             </span>
-            <span>{seller.storeAddress}</span>
+            <span>{Stores[0].storeAddress}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               UPI:
             </span>
-            <span>{seller.storeUPI}</span>
+            <span>{Stores[0].storeUPI}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Mobile:
             </span>
-            <span>{seller.storeMobile}</span>
+            <span>{Stores[0].storeMobile}</span>
           </div>
 
-          <div className="flex justify-between">
+          {/* <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Email:
             </span>
-            <span>{seller.email || "N/A"}</span>
-          </div>
+            <span>{Stores[0].email || "N/A"}</span>
+          </div> */}
 
           <div className="flex justify-between">
             <span className="font-semibold text-customTeal dark:text-Green">
               Description:
             </span>
-            <span>{seller.storeDescription}</span>
+            <span>{Stores[0].storeDescription}</span>
           </div>
 
-          {seller.coverUrl && (
+          {Stores[0].coverUrl && (
             <div className="flex items-center justify-between">
               <div className="font-semibold text-customTeal dark:text-Green mb-2">
                 Cover Image:
@@ -99,7 +112,7 @@ const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
               <Image
                 height={1000}
                 width={1000}
-                src={seller.coverUrl}
+                src={Stores[0].coverUrl}
                 alt="Store Cover"
                 className="h-60 w-72 object-cover rounded-md"
               />
@@ -109,9 +122,9 @@ const Dashboard: React.FC<DashboardProps> = async ({ params }) => {
             <div className="font-semibold text-customTeal dark:text-Green mb-2">
               Store Location:
             </div>
-            {/* <LazyStaticMap latitude={seller.storeLat} longitude={seller.storeLng}/> */}
+            {/* <LazyStaticMap latitude={Stores[0].storeLat} longitude={Stores[0].storeLng}/> */}
             <div className="w-96">
-            <StaticMap storeLat={seller.storeLat} storeLng={seller.storeLng} />
+            <StaticMap storeLat={Stores[0].storeLat} storeLng={Stores[0].storeLng} />
             </div>
           </div>
         </div>

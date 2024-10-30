@@ -70,7 +70,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
   // }
 
   // console.log(categories)
- 
+  console.log(products[0]+"<-------------")
   if (!seller) return <div>seller not found</div>;
   return (
     <>
@@ -125,7 +125,7 @@ const CategoryProducts: React.FC<CategoryProductsProps> = async ({
           <div className="flex col-span-9 flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-24">
             {products.map((product) => (
               <div key={product.id} className="rounded-xl bg-gray-700 w-[300px]  hover:scale-105 transition duration-300  border">
-                <ProductForm product={product} userId={userId}/>
+                {userId&&(<ProductForm product={product} userId={userId}/>)}
 
                 <ProductCard product={product} />
               </div>
