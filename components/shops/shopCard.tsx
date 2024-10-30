@@ -8,29 +8,33 @@ import {
   CardTitle,
 } from "../ui/card";
 import Image from "next/image";
-import { Shop } from "@/app/(Customer)/shops/page";
 
-interface shopCardProps{
-  shop:Shop
+interface Shop {
+  id: string;
+  coverUrl: string;
+  storeName: string;
+  storeDescription: string;
 }
 
-const ShopCard: React.FC<shopCardProps> = ( {shop} ) => {
+interface ShopCardProps {
+  shop: Shop;
+}
+
+const ShopCard: React.FC<ShopCardProps> = ({ shop }) => {
   return (
-    <Card className="w-[400px] bg-gray-200 dark:bg-gray-700 hover:scale-105 transition duration-300  border">
+    <Card className="w-[400px] bg-gray-200 dark:bg-gray-700 hover:scale-105 transition duration-300 border hover:shadow-lg">
       <CardHeader className="mb-5 p-0">
         <div className="flex flex-col gap-2">
           <Image
             height={1000}
             width={1000}
-            alt="card image"
-            className="rounded-t-lg max-h-52"
-            src={shop.coverUrl} 
-            // shop.billboards[0].imageUrl||
+            alt={`Cover image for ${shop.storeName}`}
+            className="rounded-t-lg max-h-52 object-cover"
+            src={shop.coverUrl || "/path/to/default-image.png"} // Add a default image path
           />
-
-          <CardTitle className="flex items-center text-2xl pt-4 text-customTeal dark:text-Green m-2 justify-center font-handlee">
+          <h2 className="text-2xl pt-4 text-customTeal dark:text-Green m-2 justify-center font-handlee text-center">
             {shop.storeName}
-          </CardTitle>
+          </h2>
         </div>
         <CardDescription className="text-center dark:text-gray-200 text-lg">
           {shop.storeDescription}
