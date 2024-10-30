@@ -8,6 +8,7 @@ import RecentPosts from "./RecentPosts";
 import Image from "next/image";
 import React from 'react';
 import SubBlog from './SubBlog';
+import {blogs} from './BlogCard'
 
 export interface BlogContentSection {
   type: 'paragraph' | 'imageWithText'
@@ -17,21 +18,12 @@ export interface BlogContentSection {
   text?: string
 }
 
-interface BlogType {
-  id: string;
-  title: string;
-  image: string;
-  content: BlogContentSection[];
-  metaDescription: string;
-  author: string;
-  label: string;
-};
-
 interface BlogProps {
-  blogData: BlogType;
+  blogId: string;
 }
 
-const Blog: React.FC<BlogProps> = ({ blogData }) =>  {
+const Blog: React.FC<BlogProps> = ({ blogId }) =>  {
+  const blogData = blogs[parseInt(blogId)];
   return (
     <div className="flex flex-col items-center justify-center gap-5  h-full pb-20 px-20 lg:px-40">
       <div className="h-full flex items-center flex-col lg:grid lg:items-start grid-cols-12 lg:gap-10">
@@ -48,7 +40,7 @@ const Blog: React.FC<BlogProps> = ({ blogData }) =>  {
           <div className="flex items-center justify-start gap-4 mb-10">
             <div className="flex items-center justify-center gap-2">
               <User className="h-4 w-4 text-customTeal dark:text-Yellow" />
-              <div className="text-sm text-gray-500"> {blogData.author}</div>
+              <div className="text-sm text-gray-500"> Admin</div>
             </div>
             <div className="flex items-center justify-center gap-2">
               <Folder className="h-4 w-4 text-customTeal dark:text-Yellow" />
@@ -56,7 +48,7 @@ const Blog: React.FC<BlogProps> = ({ blogData }) =>  {
             </div>
             <div className="flex items-center justify-center gap-2">
               <MessagesSquare className="h-4 w-4 text-customTeal dark:text-Yellow" />
-              <div className="text-sm text-gray-500">23</div>
+              <div className="text-sm text-gray-500">{blogData.comments}</div>
             </div>
           </div>
 
@@ -67,7 +59,7 @@ const Blog: React.FC<BlogProps> = ({ blogData }) =>  {
           {/* content */}
 
           {blogData.content.map((section, index) =>(
-            <SubBlog key={index} blogSection={section}/>
+            <SubBlog key={index} blogSection={section  as BlogContentSection}/>
           ))}
 
           <RelatedPosts />
