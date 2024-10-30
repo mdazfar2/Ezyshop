@@ -51,7 +51,7 @@ return (
       {cardData.map((card) => (
         <Card key={card.title} className="min-w-[250px] max-w-[350px] shadow-md bg-gray-200 dark:bg-gray-700 ">
           <CardHeader>
-              <div className="flex gap-2 items-center text-customTeal dark:text-Green justify-center">
+              <div className="flex gap-2 items-center text-customTeal dark:text-Green">
                   {card.logo}
             <CardTitle className="text-xl md:text-2xl ml-4 font-bold font-handlee text-customBlue dark:text-Yellow" >{card.title}</CardTitle>
 
