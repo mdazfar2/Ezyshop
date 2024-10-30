@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { generateAndSendOTP } from "@/lib/auth";
-import prismadb from "@/lib/prismadb";
+import { generateAndSendOTP } from "lib/auth";
+import prismadb from "lib/prismadb";
 
 
 export async function POST(request: Request) {

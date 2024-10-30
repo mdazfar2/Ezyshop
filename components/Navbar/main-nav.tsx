@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,7 +9,7 @@ import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
 import { ModeToggle } from "../ui/themeButton";
 import AuthButtons from "./authButtons";
-import { useFlashAlert } from "@/context/flashAlertContext";
+import { useFlashAlert } from "context/flashAlertContext";
 // import { useConstruction } from "@/context/modalContext";
 
 interface MainNavProps{

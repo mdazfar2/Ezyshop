@@ -1,9 +1,9 @@
 "use client";
 
-import { CartPost } from "@/actions/cart-actions";
-import { WishlistPost } from "@/actions/wishlist-actions";
-import { Spinner } from "@/components/ui/spinner";
-import { useCart } from "@/context/cartContext";
+import { CartPost } from "actions/cart-actions";
+import { WishlistPost } from "actions/wishlist-actions";
+import { Spinner } from "components/ui/spinner";
+import { useCart } from "context/cartContext";
 import { Heart, ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast"; // Import react-hot-toast

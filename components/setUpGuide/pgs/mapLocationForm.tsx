@@ -1,5 +1,5 @@
 import LazyMap from "@/components/Maps/LazyMapWithPin";
-import { useGlobalStore } from "@/context/storeContext";
+import { useGlobalStore } from "context/storeContext";
 
 const MapLocationForm = () => {
   const { storeLat, storeLng, setStoreLat, setStoreLng } = useGlobalStore();

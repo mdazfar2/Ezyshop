@@ -1,7 +1,7 @@
 "use client";
 
-import { CartGetByUser } from "@/actions/cart-actions";
-import { useCart } from "@/context/cartContext";
+import { CartGetByUser } from "actions/cart-actions";
+import { useCart } from "context/cartContext";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";

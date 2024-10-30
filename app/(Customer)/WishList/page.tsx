@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import WishlistItem from "./components/wishlistItem";
 import { useSession } from "next-auth/react";
-import { WishlistGetByUser } from "@/actions/wishlist-actions";
+import { WishlistGetByUser } from "actions/wishlist-actions";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Image, Product, Wishlist } from "@prisma/client";

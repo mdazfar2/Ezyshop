@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "lib/utils";
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
 import Link from "next/link";
 import { usePathname } from "next/navigation";

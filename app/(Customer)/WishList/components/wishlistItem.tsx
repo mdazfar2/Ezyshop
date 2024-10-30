@@ -1,8 +1,8 @@
 "use client";
-import { CartPost } from "@/actions/cart-actions";
-import { WishlistDeleteProduct } from "@/actions/wishlist-actions";
+import { CartPost } from "actions/cart-actions";
+import { WishlistDeleteProduct } from "actions/wishlist-actions";
 import { Button } from "@/components/ui/button";
-import { useCart } from "@/context/cartContext";
+import { useCart } from "context/cartContext";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { productWithImages } from "../page";

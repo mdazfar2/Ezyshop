@@ -1,6 +1,6 @@
 "use server"
 
-import prismadb from "@/lib/prismadb";
+import prismadb from "../lib/prismadb";
 import { Cart, Prisma } from "@prisma/client";
 
 export async function CartPost(
@@ -36,7 +36,7 @@ export async function CartPost(
 
 export async function CartGetByUser(
   userId: string
-): Promise<{ success: boolean; data?: any; error?: string }> {
+): Promise<{ success: boolean; data?: Cart[]; error?: string }> {
   // console.log("contrl")
   try {
     const res = await prismadb.cart.findMany({

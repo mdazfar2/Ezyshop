@@ -1,6 +1,6 @@
 "use client"; // Ensure it runs only in the browser
 
-import { productWithImages } from "@/app/(Customer)/WishList/page";
+import { productWithImages } from "app/(Customer)/WishList/page";
 import { Cart } from "@prisma/client";
 import React, {
   createContext,

@@ -1,6 +1,6 @@
-import prismadb from "@/lib/prismadb";
-import { Seller } from "@prisma/client";
-
+import prismadb from "../lib/prismadb";
+//import { Seller } from "@prisma/client";
+//import { Seller } from "@prisma/client";
 const getSeller = async (storeId: string) => {
     
     try {

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 //   DropdownMenuItem,
 //   DropdownMenuTrigger,
 // } from "@/components/ui/dropdown-menu"
-import { useTheme } from "@/context/themeProvider"
+import { useTheme } from "context/themeProvider"
 
 export function ModeToggle() {
   const { toggleTheme } = useTheme() || { toggleTheme: () => {} };

@@ -1,7 +1,7 @@
 
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
-import sendEmail from "@/lib/sendEmail"; // Ensure this points to your sendEmail function
+import sendEmail from "lib/sendEmail"; // Ensure this points to your sendEmail function
 import prismadb from "./prismadb";
 
 // const prisma = new PrismaClient();

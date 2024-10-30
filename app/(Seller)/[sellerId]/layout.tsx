@@ -1,4 +1,4 @@
-import { NEXT_AUTH_CONFIG } from "@/lib/auth";
+import { NEXT_AUTH_CONFIG } from "lib/auth";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { ReactNode } from "react";

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useCart } from "@/context/cartContext";
+import { useCart } from "context/cartContext";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 

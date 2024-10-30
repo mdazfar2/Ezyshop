@@ -1,6 +1,6 @@
 "use server";
 
-import prismadb from "@/lib/prismadb";
+import prismadb from "../lib/prismadb";
 import { Prisma } from "@prisma/client"; // Import Prisma for error handling
 
 export async function WishlistPost(
@@ -10,7 +10,7 @@ export async function WishlistPost(
   const userId = data.get("userid") as string;
 
   try {
-    const res = await prismadb.wishlist.create({
+     await prismadb.wishlist.create({
       data: {
         userId: userId,
         productId: productId,
@@ -18,7 +18,7 @@ export async function WishlistPost(
     });
 
     // console.log(res);
-    return { success: true }; // Return success if the entry was created
+    return { success: true}; // Return success if the entry was created
   } catch (err) {
     if (err instanceof Prisma.PrismaClientKnownRequestError) {
       // Check if the error code is P2002 (Unique constraint failed)

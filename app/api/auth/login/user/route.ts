@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { generateAndSendOTP } from "@/lib/auth";
+import { generateAndSendOTP } from "lib/auth";
 
 const prisma = new PrismaClient();
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-import { Providers } from "@/providers/sessionProvider";
+import { Providers } from "providers/sessionProvider";
 import 'leaflet/dist/leaflet.css';
 import ScrollToTop from '@/components/ui/ScrollToTop';  // Added import
 

@@ -1,7 +1,7 @@
 "use client"
 import Main from "@/components/setUpGuide/main";
 import Sidebar from "@/components/setUpGuide/sidebar";
-import { useTheme } from "@/context/themeProvider";
+import { useTheme } from "context/themeProvider";
 import Image from "next/image";
 import React from "react";
 

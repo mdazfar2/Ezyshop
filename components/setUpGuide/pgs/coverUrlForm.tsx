@@ -1,5 +1,5 @@
 import ImageUpload from "@/components/ui/image-upload";
-import { useGlobalStore } from "@/context/storeContext";
+import { useGlobalStore } from "context/storeContext";
 
 const CoverUrlForm = () => {
   const { coverUrl, setCoverUrl } = useGlobalStore();

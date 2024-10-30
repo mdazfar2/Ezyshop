@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "../ui/card";
 import Image from "next/image";
-import { Shop } from "@/app/(Customer)/shops/page";
+import { Shop } from "app/(Customer)/shops/page";
 
 interface shopCardProps{
   shop:Shop

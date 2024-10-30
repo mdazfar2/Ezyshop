@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "@/context/themeProvider";
+import { useTheme } from "context/themeProvider";
+
 import { SellerMainNav } from "./seller-main-nav";
 import { useSession } from "next-auth/react";
 import FlashAlert from "../modals/flashAlert";

@@ -1,4 +1,4 @@
-import { useGlobalStore } from "@/context/storeContext";
+import { useGlobalStore } from "../../context/storeContext";
 import { MouseEventHandler } from "react";
 import CoverUrlForm from "./pgs/coverUrlForm";
 import MapLocationForm from "./pgs/mapLocationForm";

@@ -1,14 +1,14 @@
-import getCategories from "@/actions/get-categories";
-import getProducts from "@/actions/get-products";
+import getCategories from "actions/get-categories";
+import getProducts from "actions/get-products";
 import ProductCard from "@/components/shops/productCard";
 import { Cart, Category, Image, Product, Store, Wishlist } from "@prisma/client";
 import Filter from "./components/filter";
-import prismadb from "@/lib/prismadb";
+import prismadb from "lib/prismadb";
 import ClientSearchBar from "@/components/shops/clientSearchBar";
 import StaticMap from "@/components/Maps/staticMap";
 import { Heading } from "@/components/ui/heading";
 import { getServerSession } from "next-auth";
-import { NEXT_AUTH_CONFIG } from "@/lib/auth";
+import { NEXT_AUTH_CONFIG } from "lib/auth";
 import { Toaster } from "react-hot-toast";
 import ProductForm from "./components/ProductForm";
 

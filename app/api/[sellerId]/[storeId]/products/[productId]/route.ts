@@ -1,4 +1,4 @@
-import prismadb from "@/lib/prismadb";
+import prismadb from "lib/prismadb";
 import { NextResponse } from "next/server";
 
 //open route for all

@@ -1,6 +1,6 @@
 
 import { Card, CardFooter, CardHeader, CardTitle } from "../ui/card";
-import { Products } from "@/app/(Customer)/shops/[storeId]/page";
+import { Products } from "app/(Customer)/shops/[storeId]/page";
 import Image from "next/image";
 
 export interface ProductCardProps {

@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MainNav } from "./main-nav";
-import { useTheme } from "@/context/themeProvider";
+import { useTheme } from "context/themeProvider";
+
 import FlashAlert from "../modals/flashAlert";
 import { Construction } from "lucide-react";
 

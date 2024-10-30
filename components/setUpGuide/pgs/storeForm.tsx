@@ -1,5 +1,5 @@
 import React from "react";
-import { useGlobalStore } from "@/context/storeContext";
+import { useGlobalStore } from "context/storeContext";
 import FormControl from "./FormControl";
 
 const StoreForm = () => {

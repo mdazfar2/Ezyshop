@@ -3,7 +3,7 @@ import StaticMap from "@/components/Maps/staticMap";
 // import StorePage from "@/components/Maps/mapPage";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import prismadb from "@/lib/prismadb";
+import prismadb from "lib/prismadb";
 import { Store } from "@prisma/client";
 import { Settings } from "lucide-react";
 import Image from "next/image";

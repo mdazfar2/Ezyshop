@@ -1,6 +1,6 @@
 "use client";
 
-import { useOrigin } from "@/hooks/use-origin";
+import { useOrigin } from "hooks/use-origin";
 import { useParams } from "next/navigation";
 import { ApiAlert } from "./api-alert";
 // import { ApiAlert } from "@/components/ui/api-alert";

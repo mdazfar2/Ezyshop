@@ -2,7 +2,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/Navbar/navbar";
 import { Spinner } from "@/components/ui/spinner";
-import { CartProvider } from "@/context/cartContext";
+import { CartProvider } from "context/cartContext";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 

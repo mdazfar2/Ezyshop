@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { NEXT_AUTH_CONFIG } from "@/lib/auth";
+import { NEXT_AUTH_CONFIG } from "lib/auth";
 import { Store } from "@prisma/client";
 import { getServerSession } from "next-auth";
 import Image from "next/image";

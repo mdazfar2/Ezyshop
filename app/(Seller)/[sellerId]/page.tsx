@@ -1,4 +1,4 @@
-import prismadb from "@/lib/prismadb";
+import prismadb from "lib/prismadb";
 import { Store } from "@prisma/client";
 import SetUpGuide from "./components/setupStore";
 import SellerDashboard from "./components/sellerDashboard";

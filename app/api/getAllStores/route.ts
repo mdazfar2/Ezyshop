@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import prismadb from "@/lib/prismadb";
+import prismadb from "lib/prismadb";
 
 //open route for all to fetch shops
 export async function GET(

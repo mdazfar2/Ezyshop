@@ -1,4 +1,5 @@
-import { useGlobalStore } from "@/context/storeContext";
+import { useGlobalStore } from "context/storeContext";
+
 import { data } from "./sideBarConstants";
 
 const Sidebar = () => {

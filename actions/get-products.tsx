@@ -39,7 +39,7 @@
 // export default getProducts;
 "use server"
 
-import prismadb from "@/lib/prismadb";
+import prismadb from "../lib/prismadb";
 
 interface GetProductsParams {
   isFeatured?: boolean;

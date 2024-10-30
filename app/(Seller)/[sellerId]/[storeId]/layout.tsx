@@ -1,4 +1,4 @@
-import prismadb from "@/lib/prismadb";
+import prismadb from "lib/prismadb";
 import { Billboard, Category, Product, Store } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { ReactNode } from "react";

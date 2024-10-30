@@ -5,8 +5,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import toast from "react-hot-toast";
-import { CartDeleteProduct } from "@/actions/cart-actions";
-import { cartProps, useCart } from "@/context/cartContext";
+import { CartDeleteProduct } from "actions/cart-actions";
+//import { cartProps, useCart } from "@/context/cartContext";
+import { useCart } from "context/cartContext";
+//import { useCart } from "@/context/cartContext";
+import { cartProps } from "context/cartContext";
 
 interface cartItemProps{
     item:cartProps
