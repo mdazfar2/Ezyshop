@@ -1,37 +1,11 @@
 "use client"
 import BlogCard from "@/components/Blog/BlogCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
-import { useEffect, useState } from 'react';
-import Loading from "../loading";
 
 
-const Blog: React.FC = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchBlogs = async () => { 
-      try {
-        const response = await fetch('/api/blog'); // Call your API endpoint
-        const data = await response.json();
-        setBlogs(data);
-      } catch (error) {
-        console.error('Failed to fetch blogs:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
 
 
-  if (loading) return <Loading/>;
-
-  if (!blogs) {
-    return <p className="text-white text-center">Blogs not found.</p>;
-  }
-  
+const Blog = () => {
   return (
     <div className="h-full dark:bg-DarkGray pb-10">
       <div className="h-full">
@@ -46,11 +20,8 @@ const Blog: React.FC = () => {
         Latest articles from our blogs
       </div>
 
-      {blogs.length > 0 ? (
-        <BlogCard blogData={blogs} />
-      ) : (
-        <p className="text-customTeal dark:text-white text-center">Blogs not found.</p>
-      )}
+        <BlogCard />
+
     </div>
   );
 };
