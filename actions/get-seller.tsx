@@ -4,7 +4,7 @@ import { Seller } from "@prisma/client";
 const getSeller = async (storeId: string) => {
     
     try {
-        const seller=await prismadb.seller.findUnique({
+        const seller=await prismadb.store.findUnique({
             where:{
               id:storeId
             },

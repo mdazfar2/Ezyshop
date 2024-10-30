@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" preserveAspectRatio="xMaxYMax slice">
+  <rect width="100%" height="100%" fill="#17a2b8"/>
+  <g transform="translate(0, 400)">
+    <circle cx="150" cy="100" r="80" fill="#00394f"/>
+    <rect x="300" y="50" width="100" height="100" fill="#005f73" />
+    <polygon points="600,150 650,50 700,150" fill="#0096c7"/>
+    <path d="M750 50 Q800 150 850 50 T950 50" fill="none" stroke="#00394f" stroke-width="5"/>
+  </g>
+</svg>

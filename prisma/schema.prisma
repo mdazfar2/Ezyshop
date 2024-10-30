@@ -26,42 +26,58 @@ model User {
   updatedAt DateTime @updatedAt
 
   wishlists Wishlist[]
-  cart Cart[]
-
-  //comments     Comment[] 
-
+  cart      Cart[]
 }
 
 model Seller {
   id String @id @default(uuid()) @map("_id")
 
-  name            String?
-  storeName       String
-  storeAddress    String
-  storeLat        Float @default(28.61)
-  storeLng        Float @default(77.23)
-  storeUPI        String
-  storeMobile     String  @unique
+  name String?
+
+  mobileNumber String  @unique
+  email        String  @unique
+  otp          String?
+  role         String  @default("Seller")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Sellers Store[] @relation("SellerToStore")
+}
+
+// store
+model Store {
+  id String @id @default(uuid()) @map("_id")
+
+  storeName        String
+  storeAddress     String
+  storeLat         Float  @default(28.61)
+  storeLng         Float  @default(77.23)
+  storeUPI         String
+  storeMobile      String @unique
   storeDescription String @default("A store")
 
-  email      String     @unique
-  otp        String?
-  role       String      @default("seller")
+  // email      String     @unique
+  // otp        String?
+  // role       String      @default("Store")
   // addresses     Address[]
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   // orders        Order[]
   // wishlist      Product[]
-  coverUrl   String @default("https://res.cloudinary.com/drz5akzu1/image/upload/v1729718405/mschk1pmmng6nqnlzl32.jpg")
-  billboards Billboard[] @relation("SellerToBillboard")
-  categories Category[]  @relation("SellerToCategory")
-  products   Product[]   @relation("SellerToProduct")
+  SellerId  String
+  seller    Seller   @relation("SellerToStore", fields: [SellerId], references: [id])
+
+  coverUrl   String      @default("https://res.cloudinary.com/drz5akzu1/image/upload/v1729718405/mschk1pmmng6nqnlzl32.jpg")
+  billboards Billboard[] @relation("StoreToBillboard")
+  categories Category[]  @relation("StoreToCategory")
+  products   Product[]   @relation("StoreToProduct")
 }
 
 model Billboard {
   id         String     @id @default(uuid()) @map("_id")
   storeId    String
-  seller     Seller     @relation("SellerToBillboard", fields: [storeId], references: [id])
+  Store      Store      @relation("StoreToBillboard", fields: [storeId], references: [id])
   label      String
   imageUrl   String
   categories Category[]
@@ -72,7 +88,7 @@ model Billboard {
 model Category {
   id          String    @id @default(uuid()) @map("_id")
   storeId     String
-  seller      Seller    @relation("SellerToCategory", fields: [storeId], references: [id])
+  Store       Store     @relation("StoreToCategory", fields: [storeId], references: [id])
   billboardId String
   billboard   Billboard @relation(fields: [billboardId], references: [id])
   products    Product[] @relation("CategoryToProduct")
@@ -85,7 +101,7 @@ model Product {
   id String @id @default(uuid()) @map("_id")
 
   storeId String
-  seller  Seller @relation("SellerToProduct", fields: [storeId], references: [id])
+  Store   Store  @relation("StoreToProduct", fields: [storeId], references: [id])
 
   categoryId String
   category   Category @relation("CategoryToProduct", fields: [categoryId], references: [id])
@@ -100,9 +116,9 @@ model Product {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  images Image[]
-  wishlists Wishlist[] 
-  cart Cart[]
+  images    Image[]
+  wishlists Wishlist[]
+  cart      Cart[]
 }
 
 model Image {
@@ -131,7 +147,6 @@ model Wishlist {
 
   // constraint so that combination of productId and userId is unique for a wishlist entry
   @@unique([userId, productId])
-
   @@index([userId])
   @@index([productId])
 }
@@ -149,7 +164,6 @@ model Cart {
 
   // constraint so that combination of productId and userId is unique for a wishlist entry
   @@unique([userId, productId])
-
   @@index([userId])
   @@index([productId])
 }

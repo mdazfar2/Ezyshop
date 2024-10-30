@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
 import ShopCard from "@/components/shops/shopCard";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
-import axios from "axios";
 import { Spinner } from "@/components/ui/spinner";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 
@@ -28,7 +28,7 @@ const Shop = () => {
   useEffect(() => {
     const fetchShops = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/seller`);
+        const response = await axios.get(`/api/getAllStores`);
         setShops(response.data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "An unknown error occurred");

@@ -73,7 +73,7 @@ export default async function getProducts(
         : undefined,
     },
     include: {
-      seller: { select: { storeName: true } },
+      Store: { select: { storeName: true } },
       category: { select: { name: true } },
       images: true,
       wishlists:userId?{
