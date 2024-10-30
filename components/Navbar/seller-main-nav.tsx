@@ -101,7 +101,7 @@ export function SellerMainNav({ className,theme }:SellerMainNavProps) {
             // }}// Close menu on link click
           >
             {/* {route.logo && <span>{route.logo}</span>} */}
-            {route.label}
+            {/* {route.label} */}
           </Link>
         ))}
 

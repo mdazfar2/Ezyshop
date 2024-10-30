@@ -22,7 +22,7 @@ export async function PATCH(
 
     const {storeLat,storeLng}=storeLocation
 
-    console.log(storeLat+" "+storeLng)
+    // console.log(storeLat+" "+storeLng)
     // Validate the required fields
     if (!storeName) {
       return new NextResponse("Shop name is required.", { status: 400 });

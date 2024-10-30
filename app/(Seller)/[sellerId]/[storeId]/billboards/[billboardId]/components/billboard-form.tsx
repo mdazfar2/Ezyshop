@@ -64,15 +64,15 @@ export const Billboardform: React.FC<BillboardformProps> = ({
       setLoading(true);
       if (initialData) {
         await axios.patch(
-          `/api/${params.storeId}/billboards/${params.billboardId}`,
+          `/api/${params.sellerId}/${params.storeId}/billboards/${params.billboardId}`,
           data
         );
       } else {
-        await axios.post(`/api/${params.storeId}/billboards`, data);
+        await axios.post(`/api/${params.sellerId}/${params.storeId}/billboards`, data);
       }
 
       router.refresh();
-      router.push(`/${params.storeId}/billboards`);
+      router.push(`/${params.sellerId}/${params.storeId}/billboards`);
       router.refresh();
       toast.success(toastMessage);
       console.log(data);

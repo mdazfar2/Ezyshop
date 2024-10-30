@@ -8,7 +8,7 @@ export async function GET(
   // { params }: { params: { storeId: string } }
 ) {
   try {
-    const stores = await prismadb.seller.findMany({
+    const stores = await prismadb.store.findMany({
       // select: {
       //   id: true,
       //   name: true,

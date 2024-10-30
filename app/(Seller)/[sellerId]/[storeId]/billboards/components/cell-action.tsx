@@ -39,7 +39,7 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
     try {
       setLoading(true);
 
-      await axios.delete(`/api/${params.storeId}/billboards/${data.id}`);
+      await axios.delete(`/api/${params.seller}/${params.storeId}/billboards/${data.id}`);
 
       router.refresh();
       toast.success("Billboard deleted.");
@@ -75,7 +75,7 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() =>
-              router.push(`/${params.storeId}/billboards/${data.id}`)
+              router.push(`/${params.seller}/${params.storeId}/billboards/${data.id}`)
             }
           >
             <Edit className="h-4 w-4 mr-2" />
