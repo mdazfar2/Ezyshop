@@ -6,9 +6,7 @@ on:
   workflow_dispatch:  # Allow manual triggering
   push:
     branches:
-      # - main
-      # Adding branch to check the feature on local repo first
-      - auto 
+      - main
 
 jobs:
   detect-and-update-structure:
