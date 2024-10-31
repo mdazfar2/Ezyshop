@@ -2,7 +2,7 @@
 
 
 
-Thank you for taking the time to contribute to Ezyshop World. Your help is essential for keeping it great.
+
 
 Please take a moment to read the following guidelines before contributing:
 
