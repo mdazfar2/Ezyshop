@@ -37,6 +37,10 @@ EzyShop is a user-friendly platform that connects you to your favourite local st
 
 Visit https://ezyshopz.vercel.app to see the live demo!
 
+## ✨ Project Structure
+
+Check the project structure here [Project Structure](PROJECT_STRUCTURE.md)
+
 ## 🚀 Features
 - **Login/Signup with User Roles**: Seamless authentication for two user roles – **Store Manager** 🛍️ and **Shopper** 🛒. Store Managers add their store & handle product management, while Shoppers browse and purchase items effortlessly. 
 - **Payment Integration with Razorpay**: Secure and smooth payments through **Razorpay**, providing multiple payment options for a hassle-free checkout experience.
