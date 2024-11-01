@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { Heart, ShoppingCart } from "lucide-react"; // Import any required icons
 import { Menu, X } from "lucide-react"; // Icons for hamburger menu
@@ -25,6 +25,7 @@ export function MainNav({ className, theme }: MainNavProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu visibility
   const session = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     setLoading(false);
@@ -55,18 +56,20 @@ export function MainNav({ className, theme }: MainNavProps) {
     { href: `/Blog`, label: "Blog", active: pathname.startsWith(`/Blog`) },
     {
       href: session.status == "unauthenticated" ? "#" : `/MyOrders`,
-      label: "My Orders",
+      label: "Orders",
       active: pathname.startsWith(`/MyOrders`),
       onClick: (e: React.MouseEvent) => {
         e.preventDefault();
         if (session.status == "unauthenticated") {
           toast.error("Please login as a Customer first");
+        } else {
+          router.push("/MyOrders");
         }
       },
     },
     {
       href: session.status == "unauthenticated" ? "#" : `/WishList`,
-      label: "Wish List",
+      label: "Wishlist",
       active: pathname.startsWith(`/WishList`),
       logo: (
         <Heart
@@ -79,6 +82,8 @@ export function MainNav({ className, theme }: MainNavProps) {
         e.preventDefault();
         if (session.status == "unauthenticated") {
           toast.error("Please login as a Customer first");
+        } else {
+          router.push("/WishList");
         }
       },
     },
@@ -97,6 +102,8 @@ export function MainNav({ className, theme }: MainNavProps) {
         e.preventDefault();
         if (session.status == "unauthenticated") {
           toast.error("Please login as a Customer first");
+        } else {
+          router.push("/Cart");
         }
       },
     },
