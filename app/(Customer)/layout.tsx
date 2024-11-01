@@ -5,6 +5,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { CartProvider } from "@/context/cartContext";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 export default function Layout({
   children,
@@ -39,6 +40,7 @@ export default function Layout({
       <CartProvider>
         <Navbar />
         {children}
+        <Toaster />
         <Footer />
       </CartProvider>
     </>
