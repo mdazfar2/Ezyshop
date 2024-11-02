@@ -118,7 +118,7 @@ const ContributorsPage = () => {
           </div>
         ) : (
           <>
-            <div className="">
+            <div className="mt-10">
               <div className="flex w-full justify-between items-center">
                 {/* First Image on the Left */}
                 <div className="flex md:w-1/4 md:mr-auto hidden md:block">
@@ -129,14 +129,15 @@ const ContributorsPage = () => {
                   />
                   <img src="/left_blue.png" className="dark:hidden" />
                 </div>
-                <div className="flex flex-col items-center md:flex-row overflow-x-auto h-full md:pt-10">
+                <div className="flex flex-col items-center md:flex-row  h-full md:pt-1">
                   {/* First Contributor (index 2) */}
 
-                  <div className="text-center mt-5 w-64 mx-auto md:mx-5 md:w-48 md:mt-10 order-2 md:order-1">
-                    <div className="relative inline-block">
+                  <div className="text-center mt-5 w-64 mx-auto md:mx-3 md:w-48 md:mt-10 order-2 md:order-1">
+                    <div className="relative inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer">
                       <img
                         alt=""
                         className="rounded-full border-8 border-customTeal dark:border-Green"
+          onClick={() => window.open(contributors[2].html_url, "_blank")}
                         height="140"
                         src={contributors[2].avatar_url}
                         width="140"
@@ -146,11 +147,12 @@ const ContributorsPage = () => {
                       </div>
                     </div>
                     <div className="mt-2">
+                    <span className="cursor-pointer" onClick={() => window.open(`https://github.com/mdazfar2/Ezyshop/commits/main/?author=${contributors[2].login}`, "_blank")}>Contributions {contributors[2].contributions}</span>
                       <div className="bg-customTeal dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
                       <button onClick={() => window.open(contributors[2].html_url, "_blank")}>{contributors[2].login}</button>
                       </div>
-                      <div className="bg-customBlue dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-white font-bold py-1 px-4 rounded-full mt-1">
-                        {contributors[2].contributions}
+                      <div className="bg-customBlue text-sm whitespace-nowrap dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-white font-bold py-1 px-4 rounded-full mt-1">
+                        Open-Source Contributor
                       </div>
                     </div>
                   </div>
@@ -178,10 +180,11 @@ const ContributorsPage = () => {
                       className="absolute -top-10 -left-10 w-16 h-16 dark:hidden"
                     />
 
-                    <div className="relative inline-block">
+                    <div className="relative inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer">
                       <img
                         alt="A person in a suit working on a laptop and holding a phone"
                         className="rounded-full border-8 border-customTeal dark:border-Green"
+          onClick={() => window.open(contributors[1].html_url, "_blank")}
                         height="180"
                         src={contributors[1].avatar_url}
                         width="180"
@@ -191,21 +194,23 @@ const ContributorsPage = () => {
                       </div>
                     </div>
                     <div className="mt-2">
+                    <span className="cursor-pointer" onClick={() => window.open(`https://github.com/mdazfar2/Ezyshop/commits/main/?author=${contributors[1].login}`, "_blank")}>Contributions {contributors[1].contributions}</span>
                       <div className="bg-customTeal dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e]  text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
                       <button onClick={() => window.open(contributors[1].html_url, "_blank")}>{contributors[1].login}</button>
                       </div>
-                      <div className="bg-customBlue dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e]  text-white font-bold py-1 px-4 rounded-full mt-1">
-                        {contributors[1].contributions}
+                      <div className="bg-customBlue text-sm whitespace-nowrap dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e]  text-white font-bold py-1 px-4 rounded-full mt-1">
+                        Open-Source Contributor
                       </div>
                     </div>
                   </div>
 
                   {/* Third Contributor (index 3) */}
-                  <div className="text-center mt-5 w-64 mx-auto md:mx-5 md:w-48 md:mt-10 order-3 md:order-3">
-                    <div className="relative inline-block">
+                  <div className="text-center mt-5 w-64 mx-auto md:mx-3 md:w-48 md:mt-10 order-3 md:order-3">
+                    <div className="relative inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer">
                       <img
                         alt="A person in a suit working on a laptop and holding a phone"
                         className="rounded-full border-8 border-customTeal dark:border-Green"
+          onClick={() => window.open(contributors[3].html_url, "_blank")}
                         height="140"
                         src={contributors[3].avatar_url}
                         width="140"
@@ -215,11 +220,12 @@ const ContributorsPage = () => {
                       </div>
                     </div>
                     <div className="mt-2">
+                    <span className="cursor-pointer" onClick={() => window.open(`https://github.com/mdazfar2/Ezyshop/commits/main/?author=${contributors[3].login}`, "_blank")}>Contributions {contributors[3].contributions}</span>
                       <div className="bg-customTeal dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
                       <button onClick={() => window.open(contributors[3].html_url, "_blank")}>{contributors[3].login}</button>
                       </div>
-                      <div className="bg-customBlue dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-white font-bold py-1 px-4 rounded-full mt-1">
-                        {contributors[3].contributions}
+                      <div className="bg-customBlue text-sm whitespace-nowrap dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-white font-bold py-1 px-4 rounded-full mt-1">
+                        Open-Source Contributor
                       </div>
                     </div>
                   </div>
@@ -235,7 +241,7 @@ const ContributorsPage = () => {
               </div>
             </div>
 
-            <div ref={containerRef}  id="contributor-container" className="flex flex-col flex-wrap justify-center md:flex-row mt-10">
+            <div ref={containerRef}  id="contributor-container" className="flex flex-col flex-wrap justify-center md:flex-row md:mt-16">
               {contributors.slice(4).map((contributor, index) =>{
                 const isRowEnd = rowEnds.includes(index);
                 const hasNextCard = index < contributors.length - 1 && !isRowEnd;
