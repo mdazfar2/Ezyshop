@@ -54,11 +54,10 @@ const ContributorsPage = () => {
   useEffect(() => {
     const handleResize = () => {
       const cardElements = document.querySelectorAll('[id^="contributor-card-"]');
-      const containerWidth = containerRef.current ? containerRef.current.offsetWidth : 0; // Use the ref
       const endIndices: number[] = [];
       
       let currentRowStartIndex = 0; // Index where the current row starts
-      let totalHeight = 0; // Track total height of the row
+
   
       cardElements.forEach((card, index) => {
         const cardElement = card as HTMLElement; // Cast to HTMLElement
