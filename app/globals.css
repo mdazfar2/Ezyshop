@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Nunito:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-* {
-  outline: 1px solid red; 
-} */
 
+/* Custom font settings */
 body {
-  font-family: sans-serif,'Handlee','Nutino';
+  font-family: 'Nunito', 'Handlee', sans-serif;
 }
-/* * {
-  outline: 1px solid red;
-} */
 
 @layer utilities {
   .text-balance {
@@ -49,6 +44,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -85,3 +81,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+ 

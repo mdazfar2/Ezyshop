@@ -12,14 +12,14 @@ import React, {
 } from "react";
 
 // Cart item interface extending Prisma's Cart model
-export interface cartProps extends Cart {
+export interface CartProps extends Cart {
   product: productWithImages;
 }
 
 // CartContextType with necessary types
 interface CartContextType {
-  cartItems: cartProps[]; // List of cart items
-  setCartItems: Dispatch<SetStateAction<cartProps[]>>; // Setter for cart items
+  cartItems: CartProps[]; // List of cart items
+  setCartItems: Dispatch<SetStateAction<CartProps[]>>; // Setter for cart items
   handleRemove: (id: string) => void; // Function to remove item by ID
 }
 
@@ -28,7 +28,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 // CartProvider to wrap components where cart state is required
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cartItems, setCartItems] = useState<cartProps[]>([]);
+  const [cartItems, setCartItems] = useState<CartProps[]>([]);
 
   // Function to remove an item from the cart by its ID
   const handleRemove = (id: string) => {
@@ -46,7 +46,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error("useCart must be used within a CartProvider. Please ensure that you wrap your components with CartProvider.");
   }
   return context;
 };
