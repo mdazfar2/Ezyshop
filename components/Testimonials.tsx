@@ -2,17 +2,13 @@
 
 import { Card, CardHeader, CardContent } from "./ui/card";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Quote } from "lucide-react";
 import Image from "next/image";
 
 const reviews = [
   {
-    text: "Managing work and kids is tough, but ezshop has been a lifesaver. I can order everything from groceries to household items without leaving home. Highly recommended!",
+    text: "Managing work and kids is tough, but Ezshop has been a lifesaver. I can order everything from groceries to household items without leaving home. Highly recommended!",
     name: "Priya Nair",
     role: "Mother of Two",
     image: "/priya.jpg",

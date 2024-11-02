@@ -1,18 +1,21 @@
-"use client"
+"use client"; // Ensure it runs only in the browser
 
-import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
+// Define the type for the Theme Context
 interface ThemeContextType {
-  theme: string;
-  toggleTheme: () => void;
+  theme: string; // Current theme: 'light' or 'dark'
+  toggleTheme: () => void; // Function to toggle the theme
 }
 
 // Create the context with a default value of undefined
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// ThemeProvider component to provide theme state to its children
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState("light"); // Default to light theme
 
+  // Function to toggle between light and dark themes
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
@@ -26,17 +29,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
 // Custom hook to use the theme context
 export const useTheme = () => {
-  const [loading,setLoading]=useState(true);
-
-  useEffect(()=>{
-    setLoading(false);
-  },[])
-
-  if(loading) return null;
-
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error("useTheme must be used within a ThemeProvider");
+    throw new Error("useTheme must be used within a ThemeProvider"); // Error if not used within provider
   }
-  return context;
+  return context; // Return the context
 };

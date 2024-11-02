@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": false, // Set to false unless you need to allow JS files
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -22,6 +22,14 @@
     },
     "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(Customer)/loading.js", "multi-step-form/src/components/main.tsx", "multi-step-form/src/components/sidebar.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/(Customer)/loading.js",
+    "multi-step-form/src/components/main.tsx",
+    "multi-step-form/src/components/sidebar.tsx"
+  ],
   "exclude": ["node_modules"]
 }
