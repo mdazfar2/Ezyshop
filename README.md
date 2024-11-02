@@ -126,6 +126,11 @@ I welcome contributions to Ezyshop! If you're interested in contributing, please
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
+## Building with Gitpod | Codespaces 💣
+
+Want to avoid the complexities of setting up a local environment or just need to make quick edits? Consider using [Gitpod.io](https://gitpod.io/#https://github.com/mdazfar2/Ezyshop) or [Codespaces](https://codespaces.new/mdazfar2/Ezyshop). They streamline the process by automatically installing required dependencies, making it effortless to contribute in just one click!:)
+
+
 <h2>Code Of Conduct📑</h2>
 
 This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/mdazfar2/Ezyshop/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
