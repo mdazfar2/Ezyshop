@@ -40,7 +40,7 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ contributor , hasNext
       <div className="relative inline-block">
         <img
           alt={`Profile of ${contributor.login}`}
-          className="rounded-full border-8 border-customTeal dark:border-Green transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+          className="rounded-full border-8 border-customTeal dark:border-Green transform transition-transform duration-300 hover:scale-110 cursor-pointer"
           onClick={() => window.open(contributor.html_url, "_blank")}
           height="160"
           src={contributor.avatar_url}
@@ -49,7 +49,7 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ contributor , hasNext
       </div>
       <div className="mt-2">
       <span className="cursor-pointer" onClick={() => window.open(`https://github.com/mdazfar2/Ezyshop/commits/main/?author=${contributor.login}`, "_blank")}>Contributions {contributor.contributions}</span>
-        <div className="bg-customTeal dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
+        <div className="bg-customTeal md:mt-3 dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
           <button onClick={() => window.open(contributor.html_url, "_blank")}>{contributor.login}</button>
           
         </div>

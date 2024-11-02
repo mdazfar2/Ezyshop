@@ -148,7 +148,7 @@ const ContributorsPage = () => {
                     </div>
                     <div className="mt-2">
                     <span className="cursor-pointer" onClick={() => window.open(`https://github.com/mdazfar2/Ezyshop/commits/main/?author=${contributors[2].login}`, "_blank")}>Contributions {contributors[2].contributions}</span>
-                      <div className="bg-customTeal dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
+                      <div className="bg-customTeal md:mt-2 dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
                       <button onClick={() => window.open(contributors[2].html_url, "_blank")}>{contributors[2].login}</button>
                       </div>
                       <div className="bg-customBlue text-sm whitespace-nowrap dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-white font-bold py-1 px-4 rounded-full mt-1">
@@ -195,7 +195,7 @@ const ContributorsPage = () => {
                     </div>
                     <div className="mt-2">
                     <span className="cursor-pointer" onClick={() => window.open(`https://github.com/mdazfar2/Ezyshop/commits/main/?author=${contributors[1].login}`, "_blank")}>Contributions {contributors[1].contributions}</span>
-                      <div className="bg-customTeal dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e]  text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
+                      <div className="bg-customTeal md:mt-2 dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e]  text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
                       <button onClick={() => window.open(contributors[1].html_url, "_blank")}>{contributors[1].login}</button>
                       </div>
                       <div className="bg-customBlue text-sm whitespace-nowrap dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e]  text-white font-bold py-1 px-4 rounded-full mt-1">
@@ -221,7 +221,7 @@ const ContributorsPage = () => {
                     </div>
                     <div className="mt-2">
                     <span className="cursor-pointer" onClick={() => window.open(`https://github.com/mdazfar2/Ezyshop/commits/main/?author=${contributors[3].login}`, "_blank")}>Contributions {contributors[3].contributions}</span>
-                      <div className="bg-customTeal dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
+                      <div className="bg-customTeal md:mt-2 dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-black font-bold py-1 px-4 rounded-full whitespace-nowrap">
                       <button onClick={() => window.open(contributors[3].html_url, "_blank")}>{contributors[3].login}</button>
                       </div>
                       <div className="bg-customBlue text-sm whitespace-nowrap dark:text-black dark:bg-gradient-to-r dark:from-[#4caf50] dark:to-[#e9be1e] text-white font-bold py-1 px-4 rounded-full mt-1">
