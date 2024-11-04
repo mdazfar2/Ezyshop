@@ -296,11 +296,19 @@
 │   │   └── class-3.png
 │   ├── contact.png
 │   ├── detailblog.png
+│   ├── diamond_blue.png
+│   ├── diamond_green.png
 │   ├── electronics.png
 │   ├── ezyshop.png
 │   ├── fasion.png
+│   ├── glitter_blue_left.png
+│   ├── glitter_blue_right.png
+│   ├── glitter_green_left.png
+│   ├── glitter_green_right.png
 │   ├── groceries.png
 │   ├── hero.png
+│   ├── left_blue.png
+│   ├── left_green.png
 │   ├── not-found.png
 │   ├── priya.jpg
 │   ├── products/
@@ -343,6 +351,8 @@
 │   │   ├── product-image-not-available.png
 │   │   └── tomato.avif
 │   ├── rajesh.jpg
+│   ├── right_blue.png
+│   ├── right_green.png
 │   ├── shops/
 │   │   ├── automative_image1.jpg
 │   │   ├── babystore_image1.jpg
