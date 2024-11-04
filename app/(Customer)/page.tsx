@@ -4,6 +4,7 @@ import Categories from "@/components/categories";
 import Hero from "@/components/ui/Hero";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
 import LearnAboutUs from "@/components/about us/learnAboutUs";
+import GitHubStats from '@/components/ui/gitHubStats';
 // import { useTheme } from "@/context/themeProvider";
 
 export default function Home() {
@@ -12,6 +13,9 @@ export default function Home() {
   return (
     <div className={`h-full dark:bg-DarkGray`}>
       <Hero />
+
+      <GitHubStats />
+      
       <SeperatorHeading label="Learn About us" />
 
       <LearnAboutUs />
