@@ -13,6 +13,7 @@
 │   ├── get-categories.tsx
 │   ├── get-products.tsx
 │   ├── get-seller.tsx
+│   ├── newsLetterEmail.tsx
 │   ├── send-contactEmail.tsx
 │   └── wishlist-actions.tsx
 ├── app/
@@ -198,6 +199,8 @@
 │   ├── contactUsForm.tsx
 │   ├── contributorCard.tsx
 │   ├── features.tsx
+│   ├── footer/
+│   │   └── newsletterForm.tsx
 │   ├── footer.tsx
 │   ├── modals/
 │   │   ├── alert-modal.tsx
