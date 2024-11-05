@@ -87,7 +87,7 @@ const GitHubStats = () => {
 
     return(
 
-        <div className='min-h-52 p-8 rounded-3xl bg-gray-100 dark:bg-gray-700 bg-theme-primary-light mx-4 md:mx-8 mt-4 mb-20 border border-theme-secondary/25 shadow-md'>
+        <div className='min-h-52 w-[1130px] p-6 rounded-3xl bg-gray-100 dark:bg-gray-700 bg-theme-primary-light mx-4 md:mx-8 mt-4 mb-20 border border-theme-secondary/25 shadow-md'>
             <div className= 'h-full flex flex-col lg:flex-row items-center justify-around'>
                 <div className={'mr-0 lg:mr-8'}>
                     <div className="flex  items-start justify-between lg:px-4 pb-4 flex-col">
