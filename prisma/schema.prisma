@@ -57,14 +57,8 @@ model Store {
   storeMobile      String @unique
   storeDescription String @default("A store")
 
-  // email      String     @unique
-  // otp        String?
-  // role       String      @default("Store")
-  // addresses     Address[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  // orders        Order[]
-  // wishlist      Product[]
   SellerId  String
   seller    Seller   @relation("SellerToStore", fields: [SellerId], references: [id])
 
@@ -133,7 +127,6 @@ model Image {
   updatedAt DateTime @updatedAt
 }
 
-
 model Wishlist {
   id        String @id @default(uuid()) @map("_id")
   userId    String
@@ -166,4 +159,14 @@ model Cart {
   @@unique([userId, productId])
   @@index([userId])
   @@index([productId])
+}
+
+model Newsletter {
+  id           String   @id @default(uuid()) @map("_id")
+  email        String   @unique
+  name         String
+  subscribedAt DateTime @default(now())
+  isActive     Boolean  @default(true)
+
+  @@map("newsletter")
 }

@@ -3,9 +3,9 @@
 import { ChevronRight, Copyright, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import { useState } from "react";
+import NewsLetterForm from "./footer/newsletterForm";
+import { Toaster } from "react-hot-toast";
 
 const Links = [
   {
@@ -60,6 +60,7 @@ const Footer = () => {
 
   return (
     <div className="flex items-center flex-col p-5 bg-customBlue dark:bg-DarkGray">
+      <Toaster/>
       <div className="border-y border-customTeal dark:border-Green flex items-start justify-start flex-col lg:grid lg:grid-cols-4 py-2 gap-4">
         {/* section1 */}
         <div className="flex gap-4 items-start justify-between lg:px-4 pb-4 flex-col">
@@ -184,23 +185,7 @@ const Footer = () => {
           </div>
         </div>
         {/* section 4 */}
-        <div className="flex flex-col w-full lg:w-10/12 items-start py-4  lg:ml-10 lg:p-4 gap-5">
-          <p className="font-bold text-3xl text-customTeal dark:text-Green font-handlee">
-            News Letter
-          </p>
-          <Input
-            placeholder="Name"
-            className="bg-[#f9f9f9] dark:bg-[#2f4f4f] text-gray-800 dark:text-gray-200 h-10 w-10/12"
-          />
-          <Input
-            placeholder="Email"
-            className="bg-[#f9f9f9] dark:bg-[#2f4f4f] text-gray-800 dark:text-gray-200 h-10 w-10/12"
-          />
-
-          <Button className="lg:h-14 bg-customTeal dark:bg-Green dark:text-gray-100 dark:hover:opacity-80 rounded-full w-10/12">
-            Subscribe
-          </Button>
-        </div>
+        <NewsLetterForm/>
       </div>
       <div className="flex flex-col lg:flex-row pt-5 items-center text-gray-100 justify-center">
         <div className="flex items-center text-gray-200 justify-center">
