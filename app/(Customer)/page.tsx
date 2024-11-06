@@ -14,8 +14,10 @@ export default function Home() {
     <div className={`h-full dark:bg-DarkGray`}>
       <Hero />
 
-      <GitHubStats />
-      
+      <div className="flex items-center justify-center">
+        <GitHubStats />
+      </div>
+
       <SeperatorHeading label="Learn About us" />
 
       <LearnAboutUs />
