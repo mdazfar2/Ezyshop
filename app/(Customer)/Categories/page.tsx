@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Categories from "@/components/categories";
+
+export const metadata: Metadata = {
+  title: "Ezyshop - Categories",
+  description: "Store",
+};
 
 const Category = () => {
   return (

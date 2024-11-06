@@ -1,7 +1,12 @@
-
+import type { Metadata } from "next";
 import LearnAboutUs from "@/components/about us/learnAboutUs";
 import Features from "@/components/features";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
+
+export const metadata: Metadata = {
+  title: "Ezyshop - About",
+  description: "Store",
+};
 
 const About = () => {
   return (
