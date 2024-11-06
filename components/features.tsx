@@ -9,35 +9,41 @@ const Features = () => {
       logo: <ShoppingCart className="h-10 w-10 "/>,
       decription:
         "Discover a variety of products from groceries to electronics, all in one app.",
+      classes: "p-6 transition transform hover:scale-105 hover:shadow-lg"
     },
     {
       title: "Local & Mall-Based Stores",
       logo: <Store className="h-10 w-10 " />,
       decription:
         "Easily shop from your favorite local stores and top malls, all from home.",
+      classes: "p-6 transition transform hover:scale-105 hover:shadow-lg"
     },
     {
       title: "Seamless Ordering Process",
       logo: <SendToBack className="h-10 w-10 "/>,
       decription:
         "Enjoy a simple and intuitive ordering system that saves you time and hassle.",
+      classes: "p-6 transition transform hover:scale-105 hover:shadow-lg"
     },
     {
       title: "Fast & Reliable Delivery",
       logo: <Car className="h-10 w-10 "/>,
       decription:
         "Get your items delivered to your doorstep quickly and reliably, wherever you are.",
+      classes: "p-6 transition transform hover:scale-105 hover:shadow-lg"
     },
     {
       title: "Exclusive Discounts & Offers",
       logo: <TicketPercent className="h-10 w-10 "/>,
       decription: "Unlock deals and discounts available only through EzyShop.",
+      classes: "p-6 transition transform hover:scale-105 hover:shadow-lg"
     },
     {
       title: "Secure Payments",
       logo: <CreditCard className="h-10 w-10 "/>,
       decription:
         "Shop with peace of mind, thanks to our safe and secure payment gateway.",
+      classes: "p-6 transition transform hover:scale-105 hover:shadow-lg"
     },
   ];
 
