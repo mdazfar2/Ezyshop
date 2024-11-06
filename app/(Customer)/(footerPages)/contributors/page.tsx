@@ -318,7 +318,7 @@ const ContributorsPage = () => {
               <div
                 ref={containerRef}
                 id="contributor-container"
-                className="flex flex-col flex-wrap justify-center md:flex-row md:mt-16"
+                className="grid grid-cols-1 gap-4 md:grid-cols-4 md:mt-16"
               >
                 {contributors.slice(4).map((contributor, index) => {
                   const isRowEnd = rowEnds.includes(index);
