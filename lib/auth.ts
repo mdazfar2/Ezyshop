@@ -25,10 +25,17 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
           account = await prismadb.user.findUnique({
             where: { email: credentials.email },
           });
-        } else {
+        } else if (credentials.role === "seller"){
           account = await prismadb.seller.findUnique({
             where: { email: credentials.email },
           });
+        }else if (credentials.role === "admin"){
+          account = await prismadb.admin.findUnique({
+            where: { email: credentials.email },
+          });
+        }
+        else{
+          return null
         }
 
         if (!account) {
@@ -48,18 +55,28 @@ export const NEXT_AUTH_CONFIG: NextAuthOptions = {
             where: { email: credentials.email },
             data: updateData, // Reset OTP or delete it after use
           });
-        } else {
+        } else if(credentials.role === "seller"){
           await prismadb.seller.update({
             where: { email: credentials.email },
             data: updateData, // Reset OTP or delete it after use
           });
+        }else if (credentials.role === "admin"){
+          await prismadb.admin.update({
+            where: { email: credentials.email },
+            data: updateData, // Reset OTP or delete it after use
+          });
         }
+        else{
+          return null
+        }
+
+        const role =  account.role == "user" ? "user" : account.role == "seller"? "seller" : "admin"
 
         return {
           id: account.id,
           name: account.name,
           email: account.email,
-          role: account.role == "user" ? "user" : "seller",
+          role: role
         };
       },
     }),
@@ -114,6 +131,21 @@ export const generateAndSendOTP = async (
     } catch (err) {
       console.error(
         "DB Error sending OTP for seller:",
+        err instanceof Error ? err.message : err
+      );
+      return false;
+    }
+  }
+
+  else if (role === "admin") {
+    try {
+      await prismadb.admin.update({
+        where: { email },
+        data: { otp }, // Ensure 'otp' field exists in your User model
+      });
+    } catch (err) {
+      console.error(
+        "DB Error sending OTP for admin:",
         err instanceof Error ? err.message : err
       );
       return false;
