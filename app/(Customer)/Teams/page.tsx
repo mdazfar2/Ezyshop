@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ezyshop - Teams",
+  description: "Meet the talented team behind Ezyshop, dedicated to creating the best shopping experience.",
+};
 
 const Teams = () => {
   return (
