@@ -3,7 +3,7 @@ import Categories from "@/components/categories";
 
 export const metadata: Metadata = {
   title: "Ezyshop - Categories",
-  description: "Store",
+  description: "Explore a variety of product categories to find exactly what you're looking for on Ezyshop.",
 };
 
 const Category = () => {

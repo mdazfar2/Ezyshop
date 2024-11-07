@@ -5,7 +5,7 @@ import SeperatorHeading from "@/components/ui/seperatorHeading";
 
 export const metadata: Metadata = {
   title: "Ezyshop - About",
-  description: "Store",
+  description: "Learn more about Ezyshop, our mission, vision, and values driving our platform.",
 };
 
 const About = () => {
