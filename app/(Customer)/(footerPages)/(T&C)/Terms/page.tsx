@@ -5,7 +5,7 @@ import SeperatorHeading from "@/components/ui/seperatorHeading";
 
 export const metadata: Metadata = {
   title: "Ezyshop - Terms & Conditions",
-  description: "Store",
+  description: "Review the terms and conditions for using the Ezyshop platform and services.",
 };
 
 const Terms: NextPage = () => {

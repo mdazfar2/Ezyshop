@@ -5,7 +5,7 @@ import SeperatorHeading from "@/components/ui/seperatorHeading";
 
 export const metadata: Metadata = {
   title: "Ezyshop - Privacy & Policy",
-  description: "Store",
+  description: "Understand how Ezyshop safeguards your data and respects your privacy.",
 };
 
 const Policy: NextPage = () => {
