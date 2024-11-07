@@ -8,19 +8,19 @@ declare module "next-auth" {
       id: string;
       name?: string;
       email?: string;
-      role: "user" | "seller"; // Extend with the role property
+      role: "user" | "seller" | "admin"; // Extend with the role property
     };
   }
 
   interface User extends DefaultUser {
-    role: "user" | "seller"; // Add role to User object
+    role: "user" | "seller" | "admin"; // Add role to User object
   }
 }
 
 declare module "next-auth/jwt" {
   interface JWT {
     uid: string;
-    role: "user" | "seller"; // Add role to JWT token
+    role: "user" | "seller" | "admin"; // Add role to JWT token
   }
 }
 

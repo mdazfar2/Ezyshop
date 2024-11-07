@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
-import { UserLoginForm } from '@/app/admin/auth/components/login-form';
+import { AdminLoginForm } from '@/app/admin/auth/components/login-form';
 
 export const metadata: Metadata = {
   title: 'Authentication',
@@ -35,17 +35,11 @@ export default function AuthenticationPage() {
               <p className="text-sm text-muted-foreground">Enter your credentials to access your admin panel.</p>
             </div>
 
-            {/* User Login Form */}
-            <UserLoginForm authType="login" />
+            {/* Admin Login Form */}
+            <AdminLoginForm authType="login" />
 
             {/* Alternative Links */}
             <div className="flex justify-between text-sm text-center text-white">
-              <Link href="/forgot-password" className="hover:text-gray-300">
-                Forgot Password?
-              </Link>
-              <Link href="/register" className="hover:text-gray-300">
-                Don't have an account? Register
-              </Link>
             </div>
           </div>
         </div>
