@@ -10,7 +10,7 @@ const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ezyshop - Home",
-  description: "Store",
+  description: "Discover the best deals and shop from a wide range of products on Ezyshop.",
 };
 
 export default function RootLayout({
