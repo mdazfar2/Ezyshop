@@ -13,6 +13,7 @@
 │   ├── get-categories.tsx
 │   ├── get-products.tsx
 │   ├── get-seller.tsx
+│   ├── newsLetterEmail.tsx
 │   ├── send-contactEmail.tsx
 │   └── wishlist-actions.tsx
 ├── app/
@@ -132,6 +133,13 @@
 │   │   │   └── seller/
 │   │   │       └── page.tsx
 │   │   └── layout.tsx
+│   ├── admin/
+│   │   ├── [adminId]/
+│   │   │   └── page.tsx
+│   │   └── auth/
+│   │       ├── components/
+│   │       │   └── login-form.tsx
+│   │       └── page.tsx
 │   ├── api/
 │   │   ├── [sellerId]/
 │   │   │   ├── [storeId]/
@@ -198,6 +206,8 @@
 │   ├── contactUsForm.tsx
 │   ├── contributorCard.tsx
 │   ├── features.tsx
+│   ├── footer/
+│   │   └── newsletterForm.tsx
 │   ├── footer.tsx
 │   ├── modals/
 │   │   ├── alert-modal.tsx
@@ -280,6 +290,7 @@
 │   ├── Founder.jpeg
 │   ├── about-us-1.png
 │   ├── about-us-2.png
+│   ├── admin.svg
 │   ├── anita.jpg
 │   ├── bg-sidebar-desktop.svg
 │   ├── bg-sidebar-desktop2.svg

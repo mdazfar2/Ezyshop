@@ -1,14 +1,14 @@
 'use client';
 
 import * as React from 'react';
-import { cn } from '@/lib/utils';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import toast, { Toaster } from 'react-hot-toast';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import { OtpForm } from './otp-form';
 import { AdminVerify } from '@/actions/Admin/admin-login';
+import { cn } from '@/lib/utils';
+import toast, { Toaster } from 'react-hot-toast';
 
 interface AdminAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
   authType: 'signup' | 'login';
