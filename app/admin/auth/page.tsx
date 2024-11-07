@@ -1,9 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
 import { UserLoginForm } from '@/app/admin/auth/components/login-form';
 
 export const metadata: Metadata = {
@@ -44,7 +41,7 @@ export default function AuthenticationPage() {
                 Forgot Password?
               </Link>
               <Link href="/register" className="hover:text-gray-300">
-                Don't have an account? Register
+                Don&apos;t have an account? Register
               </Link>
             </div>
           </div>

@@ -2,12 +2,12 @@
 
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import toast, { Toaster } from 'react-hot-toast';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
+import { cn } from '@/lib/utils';
+import { Toaster } from 'react-hot-toast';
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
   authType: 'signup' | 'login';
@@ -18,9 +18,9 @@ export function UserLoginForm({
   authType,
   ...props
 }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [isLoading] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState('');
-  const [otpOpen, setOtpOpen] = React.useState(false);
+  const [otpOpen] = React.useState(false);
 
   
   return (
