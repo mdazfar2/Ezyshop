@@ -27,12 +27,14 @@
 │   │   │   │   └── Terms/
 │   │   │   │       └── page.tsx
 │   │   │   └── contributors/
+│   │   │       ├── layout.tsx
 │   │   │       └── page.tsx
 │   │   ├── About/
 │   │   │   └── page.tsx
 │   │   ├── Blog/
 │   │   │   ├── [blogId]/
 │   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
 │   │   │   └── page.tsx
 │   │   ├── Cart/
 │   │   │   ├── components/
@@ -52,12 +54,14 @@
 │   │   │   │   ├── datatable.tsx
 │   │   │   │   ├── orderCard.tsx
 │   │   │   │   └── orderItem.tsx
+│   │   │   ├── layout.tsx
 │   │   │   └── page.tsx
 │   │   ├── Teams/
 │   │   │   └── page.tsx
 │   │   ├── WishList/
 │   │   │   ├── components/
 │   │   │   │   └── wishlistItem.tsx
+│   │   │   ├── layout.tsx
 │   │   │   └── page.tsx
 │   │   ├── auth/
 │   │   │   ├── components/
@@ -79,6 +83,7 @@
 │   │       │   │   ├── ProductForm.tsx
 │   │       │   │   └── filter.tsx
 │   │       │   └── page.tsx
+│   │       ├── layout.tsx
 │   │       └── page.tsx
 │   ├── (Seller)/
 │   │   ├── [sellerId]/
