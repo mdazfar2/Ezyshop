@@ -12,6 +12,9 @@
 │   ├── Admin/
 │   │   └── admin-login.tsx
 │   ├── cart-actions.tsx
+│   ├── forum/
+│   │   ├── Answer.tsx
+│   │   └── Question.tsx
 │   ├── get-categories.tsx
 │   ├── get-products.tsx
 │   ├── get-seller.tsx
@@ -177,6 +180,20 @@
 │   │   │       ├── route.ts
 │   │   │       └── seller/
 │   │   │           └── route.ts
+│   │   ├── faq/
+│   │   │   ├── [userId]/
+│   │   │   │   ├── [questionId]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── route.ts
+│   │   │   ├── admin/
+│   │   │   │   └── [adminId]/
+│   │   │   │       ├── answer/
+│   │   │   │       │   └── [answerId]/
+│   │   │   │       │       └── route.ts
+│   │   │   │       └── question/
+│   │   │   │           └── [questionId]/
+│   │   │   │               └── route.ts
+│   │   │   └── route.ts
 │   │   └── getAllStores/
 │   │       └── route.ts
 │   ├── favicon.ico
