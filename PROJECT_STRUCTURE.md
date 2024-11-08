@@ -9,6 +9,8 @@
 ├── README.md
 ├── SECURITY.md
 ├── actions/
+│   ├── Admin/
+│   │   └── admin-login.tsx
 │   ├── cart-actions.tsx
 │   ├── get-categories.tsx
 │   ├── get-products.tsx
@@ -133,6 +135,14 @@
 │   │   │   └── seller/
 │   │   │       └── page.tsx
 │   │   └── layout.tsx
+│   ├── admin/
+│   │   ├── [adminId]/
+│   │   │   └── page.tsx
+│   │   └── auth/
+│   │       ├── components/
+│   │       │   ├── login-form.tsx
+│   │       │   └── otp-form.tsx
+│   │       └── page.tsx
 │   ├── api/
 │   │   ├── [sellerId]/
 │   │   │   ├── [storeId]/
@@ -283,6 +293,7 @@
 │   ├── Founder.jpeg
 │   ├── about-us-1.png
 │   ├── about-us-2.png
+│   ├── admin.svg
 │   ├── anita.jpg
 │   ├── bg-sidebar-desktop.svg
 │   ├── bg-sidebar-desktop2.svg
