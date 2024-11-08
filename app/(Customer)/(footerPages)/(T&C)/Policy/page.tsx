@@ -1,6 +1,12 @@
 // pages/terms-and-conditions.tsx
 import { NextPage } from "next";
+import type { Metadata } from "next";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
+
+export const metadata: Metadata = {
+  title: "Ezyshop - Privacy & Policy",
+  description: "Understand how Ezyshop safeguards your data and respects your privacy.",
+};
 
 const Policy: NextPage = () => {
   return (

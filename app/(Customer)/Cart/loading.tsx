@@ -1,3 +1,12 @@
+// Page title
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ezyshop - Cart",
+  description: "View and manage your shopping cart. Review your selected items before checkout on Ezyshop.",
+};
+
 // components/ui/Loader.tsx
 
 const Loader: React.FC = () => {

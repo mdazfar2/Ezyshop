@@ -1,6 +1,12 @@
 // pages/terms-and-conditions.tsx
 import { NextPage } from 'next';
+import type { Metadata } from "next";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
+
+export const metadata: Metadata = {
+  title: "Ezyshop - Terms & Conditions",
+  description: "Review the terms and conditions for using the Ezyshop platform and services.",
+};
 
 const Terms: NextPage = () => {
   return (
