@@ -53,6 +53,11 @@ const Links = [
     id: 9,
     href: "/contributors",
   },
+  {
+    name: "Forum",
+    id: 10,
+    href: "/forum",
+  },
 ];
 
 const Footer = () => {
