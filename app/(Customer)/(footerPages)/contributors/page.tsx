@@ -4,6 +4,7 @@ import ContributorCard from "@/components/contributorCard";
 import { Spinner } from "@/components/ui/spinner";
 import ReactConfetti from "react-confetti";
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 interface Contributor {
   login: string;
@@ -141,28 +142,33 @@ const ContributorsPage = () => {
               <div className="mt-10">
                 <div className="flex w-full justify-between items-center">
                   {/* First Image on the Left */}
-                  <div className="flex md:w-1/4 md:mr-auto hidden md:block">
-                    <img
+                  <div className="flex md:w-1/4 md:mr-auto md:block">
+                    <Image
+                      width={1000}
+                      height={1000}
                       src="/left_green.png"
                       className="hidden dark:block"
                       alt=""
                     />
-                    <img src="/left_blue.png" className="dark:hidden" />
+                    <Image
+                      width={1000}
+                      height={1000} alt="" src="/left_blue.png" className="dark:hidden" />
                   </div>
                   <div className="flex flex-col items-center md:flex-row  h-full md:pt-1">
                     {/* First Contributor (index 2) */}
 
                     <div className="text-center mt-5 w-64 mx-auto md:mx-3 md:w-48 md:mt-10 order-2 md:order-1">
                       <div className="relative inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer">
-                        <img
+                        <Image
+                          width={1000}
+                          height={1000}
                           alt=""
                           className="rounded-full border-8 border-customTeal dark:border-Green"
                           onClick={() =>
                             window.open(contributors[2].html_url, "_blank")
                           }
-                          height="140"
                           src={contributors[2].avatar_url}
-                          width="140"
+                
                         />
                         <div className="absolute bottom-0 right-0 bg-customTeal dark:bg-[#e9be1e] text-white rounded-full w-10 h-10 flex items-center justify-center text-xl">
                           2
@@ -197,37 +203,46 @@ const ContributorsPage = () => {
 
                     {/* Second Contributor (index 1) */}
                     <div className="relative text-center w-64 mx-auto md:mx-5  md:w-64 flex-shrink-0 order-1 md:order-2">
-                      <img
+                      <Image
+                        width={1000}
+                        height={1000}
                         src="/glitter_green_right.png"
                         alt="Glitter decoration"
                         className="absolute -top-10 -right-10 w-16 h-16 hidden dark:block"
                       />
-                      <img
+                      <Image
+                        width={1000}
+                        height={1000}
                         src="/glitter_blue_right.png"
                         alt="Glitter decoration"
                         className="absolute -top-10 -right-10 w-16 h-16 dark:hidden"
                       />
-                      <img
+                      <Image
+                        width={1000}
+                        height={1000}
                         src="/glitter_green_left.png"
                         alt="Glitter decoration"
                         className="absolute -top-10 -left-10 w-16 h-16 hidden dark:block"
                       />
-                      <img
+                      <Image
+                        width={1000}
+                        height={1000}
                         src="/glitter_blue_left.png"
                         alt="Glitter decoration"
                         className="absolute -top-10 -left-10 w-16 h-16 dark:hidden"
                       />
 
                       <div className="relative inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer">
-                        <img
+                        <Image
+                          width={1000}
+                          height={1000}
                           alt="A person in a suit working on a laptop and holding a phone"
                           className="rounded-full border-8 border-customTeal dark:border-Green"
                           onClick={() =>
                             window.open(contributors[1].html_url, "_blank")
                           }
-                          height="180"
                           src={contributors[1].avatar_url}
-                          width="180"
+                       
                         />
                         <div className="absolute bottom-0 right-0 bg-customTeal dark:bg-[#e9be1e] text-white rounded-full w-12 h-12 flex items-center justify-center text-xl">
                           1
@@ -263,15 +278,16 @@ const ContributorsPage = () => {
                     {/* Third Contributor (index 3) */}
                     <div className="text-center mt-5 w-64 mx-auto md:mx-3 md:w-48 md:mt-10 order-3 md:order-3">
                       <div className="relative inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer">
-                        <img
+                        <Image
+                          width={1000}
+                          height={1000}
                           alt="A person in a suit working on a laptop and holding a phone"
                           className="rounded-full border-8 border-customTeal dark:border-Green"
                           onClick={() =>
                             window.open(contributors[3].html_url, "_blank")
                           }
-                          height="140"
                           src={contributors[3].avatar_url}
-                          width="140"
+                    
                         />
                         <div className="absolute bottom-0 right-0 bg-customTeal dark:bg-[#e9be1e] text-white rounded-full w-10 h-10 flex items-center justify-center text-xl">
                           3
@@ -304,13 +320,17 @@ const ContributorsPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex md:h-auto md:w-1/4 hidden md:block">
-                    <img
+                  <div className="flex md:h-auto md:w-1/4 md:block">
+                    <Image
+                      width={1000}
+                      height={1000}
                       src="/right_green.png"
                       className="hidden dark:block"
                       alt=""
                     />
-                    <img src="/right_blue.png" className="dark:hidden" />
+                    <Image
+                      width={1000}
+                      height={1000} alt="" src="/right_blue.png" className="dark:hidden" />
                   </div>
                 </div>
               </div>

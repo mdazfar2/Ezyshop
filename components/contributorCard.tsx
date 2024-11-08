@@ -38,7 +38,7 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ contributor , hasNext
       </div>
 
       <div className="relative inline-block">
-        <img
+        <Image
           alt={`Profile of ${contributor.login}`}
           className="rounded-full border-8 border-customTeal dark:border-Green transform transition-transform duration-300 hover:scale-110 cursor-pointer"
           onClick={() => window.open(contributor.html_url, "_blank")}

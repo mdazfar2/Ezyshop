@@ -2,7 +2,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { formatter } from "@/lib/utils";
 import { Activity, CreditCard, IndianRupee, Package, Store, User } from "lucide-react";
 import { RecentSales } from "./components/recentSales";
 import Overview from "./components/overview";
@@ -26,7 +25,7 @@ const mockGraphData = [
     { name: "Dec", total: 10000 },
   ];
 
-const AdminPage: React.FC<AdminPageProps> = async ({ params }) => {
+const AdminPage: React.FC<AdminPageProps> = async () => {
 
   return (
     <div className="flex-col">

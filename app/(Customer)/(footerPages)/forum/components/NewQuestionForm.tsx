@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import { Textarea } from '@/components/ui/textarea';
 import { useSession } from 'next-auth/react';
-import { SyntheticEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const NewQuestionForm = () => {
   const [questionContent, setQuestionContent] = useState('');
@@ -31,7 +31,7 @@ const NewQuestionForm = () => {
     return <Spinner />;
   }
 
-  const handleSubmit = async (e: SyntheticEvent) => {
+  const handleSubmit = async () => {
     // e.preventDefault();
     try {
       const response = await createQuestion(questionContent);
