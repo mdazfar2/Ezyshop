@@ -182,3 +182,22 @@ model Newsletter {
 
   @@map("newsletter")
 }
+
+
+model Question {
+  id        String    @id @default(cuid()) @map("_id")
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  answers   Answer[]  @relation("QuestionAnswers")
+  answered  Boolean   @default(false)
+}
+
+model Answer {
+  id        String    @id @default(cuid()) @map("_id")
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  questionId String  
+  question  Question @relation("QuestionAnswers", fields: [questionId], references: [id], onDelete: Cascade) // Moved onDelete: Cascade to this side
+}
