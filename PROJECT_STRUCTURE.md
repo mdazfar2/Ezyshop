@@ -29,8 +29,13 @@
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── Terms/
 │   │   │   │       └── page.tsx
-│   │   │   └── contributors/
-│   │   │       ├── layout.tsx
+│   │   │   ├── contributors/
+│   │   │   │   ├── layout.tsx
+│   │   │   │   └── page.tsx
+│   │   │   └── forum/
+│   │   │       ├── components/
+│   │   │       │   ├── NewQuestionForm.tsx
+│   │   │       │   └── unAnsweredQuestions.tsx
 │   │   │       └── page.tsx
 │   │   ├── About/
 │   │   │   └── page.tsx
