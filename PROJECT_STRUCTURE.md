@@ -150,6 +150,9 @@
 │   │   └── layout.tsx
 │   ├── admin/
 │   │   ├── [adminId]/
+│   │   │   ├── components/
+│   │   │   │   ├── overview.tsx
+│   │   │   │   └── recentSales.tsx
 │   │   │   └── page.tsx
 │   │   └── auth/
 │   │       ├── components/
