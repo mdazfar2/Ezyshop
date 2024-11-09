@@ -307,6 +307,7 @@
 │   ├── prismadb.ts
 │   ├── sendEmail.ts
 │   └── utils.ts
+├── middleware.ts
 ├── next.config.mjs
 ├── package-lock.json
 ├── package.json
