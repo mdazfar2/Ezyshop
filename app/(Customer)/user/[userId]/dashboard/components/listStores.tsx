@@ -76,7 +76,7 @@ const ListStores = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {filteredStores.length > 0 ? (
               filteredStores.map(Store => (
-                <Link href={`/${userId}/${Store.id}`} key={Store.id}>
+                <Link href={`/user/${userId}/${Store.id}`} key={Store.id}>
                   <Card className="hover:scale-105 bg-gray-200">
                     <CardContent className="p-6">
                       <div className="flex items-center space-x-4">
