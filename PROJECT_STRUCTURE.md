@@ -256,6 +256,12 @@
 │   ├── about us/
 │   │   └── learnAboutUs.tsx
 │   ├── categories.tsx
+│   ├── chatbot/
+│   │   ├── chatbot.tsx
+│   │   ├── chatbotPage.tsx
+│   │   ├── index.js
+│   │   ├── steps.ts
+│   │   └── styles.js
 │   ├── contactUsForm.tsx
 │   ├── contributorCard.tsx
 │   ├── features.tsx
@@ -455,6 +461,7 @@
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── types/
-    └── next-auth.d.ts
+    ├── next-auth.d.ts
+    └── react-simple-chatbot.d.ts
 ```
 <!-- END_STRUCTURE -->
