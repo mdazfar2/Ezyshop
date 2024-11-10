@@ -92,14 +92,20 @@
 │   │   ├── layout.tsx
 │   │   ├── loading.tsx
 │   │   ├── page.tsx
-│   │   └── shops/
-│   │       ├── [storeId]/
-│   │       │   ├── components/
-│   │       │   │   ├── ProductForm.tsx
-│   │       │   │   └── filter.tsx
-│   │       │   └── page.tsx
-│   │       ├── layout.tsx
-│   │       └── page.tsx
+│   │   ├── shops/
+│   │   │   ├── [storeId]/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── ProductForm.tsx
+│   │   │   │   │   └── filter.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   └── user/
+│   │       └── [userId]/
+│   │           └── dashboard/
+│   │               ├── components/
+│   │               │   └── listStores.tsx
+│   │               └── page.tsx
 │   ├── (Seller)/
 │   │   ├── [sellerId]/
 │   │   │   ├── [storeId]/
@@ -282,6 +288,7 @@
 │       ├── checkbox.tsx
 │       ├── combobox.tsx
 │       ├── command.tsx
+│       ├── container.tsx
 │       ├── data-table.tsx
 │       ├── dialog.tsx
 │       ├── dropdown-menu.tsx
@@ -353,6 +360,10 @@
 │   │   ├── class-2.png
 │   │   └── class-3.png
 │   ├── contact.png
+│   ├── dashboardPage.png
+│   ├── data/
+│   │   ├── customers.json
+│   │   └── store.json
 │   ├── detailblog.png
 │   ├── diamond_blue.png
 │   ├── diamond_green.png
