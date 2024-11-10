@@ -127,7 +127,7 @@ export function MainNav({ className, theme }: MainNavProps) {
       {/* Navigation links (shown on larger screens, hidden on mobile) */}
       <div
         className={cn(
-          "hidden lg:flex items-center justify-centerx space-x-4 lg:space-x-6"
+          "hidden lg:flex items-center justify-center space-x-2 lg:space-x-4"
         )}
       >
         {routes.map((route) => (
