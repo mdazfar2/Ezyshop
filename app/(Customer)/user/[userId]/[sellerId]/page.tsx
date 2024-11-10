@@ -1,12 +1,12 @@
 'use client';
-import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { ShoppingBag, Utensils } from 'lucide-react';
-import { Product, Seller } from '@prisma/client';
-import { Spinner } from '@/components/ui/spinner';
-import { useParams } from 'next/navigation';
-import Link from 'next/link';
 import Container from '@/components/ui/container';
+import { Spinner } from '@/components/ui/spinner';
+import { Product, Seller } from '@prisma/client';
+import { ShoppingBag } from 'lucide-react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 interface Customer {
   id: string;
@@ -15,6 +15,8 @@ interface Customer {
   seller: string[];
 }
 
+
+
 interface SellerWithProduct extends Seller {
   Products: Product[];
 }
@@ -22,7 +24,6 @@ interface SellerWithProduct extends Seller {
 const ProductsBySeller = () => {
   const [customer, setCustomer] = useState<Customer | null>(null);
   const [seller, setseller] = useState<SellerWithProduct>();
-  const [selectedsellerId, setSelectedsellerId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isMounted, setIsMounted] = useState(false);
   
