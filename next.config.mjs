@@ -9,6 +9,7 @@ const nextConfig = {
             pathname: '/**',
           }
         ],
+        domains: ['avatars.githubusercontent.com'],
       },
       // async headers() { 
       //   return [ 

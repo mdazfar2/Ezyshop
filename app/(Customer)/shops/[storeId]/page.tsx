@@ -25,10 +25,10 @@ export interface CategoryProductsProps {
 
 export interface Products extends Product {
   Store: {
-    storeName: string;
+    storeName?: string;
   };
   category: {
-    name: string;
+    name?: string;
   };
   images: Image[];
   wishlists: Wishlist[];

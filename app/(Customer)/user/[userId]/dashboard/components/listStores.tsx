@@ -1,12 +1,11 @@
 'use client';
-import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { StoreIcon, Utensils } from 'lucide-react';
-import { Product, Store } from '@prisma/client';
 import { Spinner } from '@/components/ui/spinner';
-import Link from 'next/link';
+import { Product, Store } from '@prisma/client';
+import { StoreIcon } from 'lucide-react';
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 interface Customer {
   id: string;
@@ -22,7 +21,6 @@ interface StoreWithProduct extends Store {
 const ListStores = () => {
   const [customer, setCustomer] = useState<Customer | null>(null);
   const [Stores, setStores] = useState<StoreWithProduct[]>([]);
-  const [selectedStoreId, setSelectedStoreId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isMounted, setIsMounted] = useState(false);
 
