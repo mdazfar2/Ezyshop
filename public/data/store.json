@@ -43,6 +43,71 @@
         "listingLat": 40.7306,
         "listingLng": -73.9352,
         "createdAt": "2024-11-09T11:00:00.000Z"
+      },
+      {
+        "id": "c2",
+        "name": "Wooden Picture Frame",
+        "price": 15,
+        "description": "Handcrafted wooden frame for 5x7 photos",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/wooden-frame.jpg" }
+        ],
+        "listingLat": 41.8781,
+        "listingLng": -87.6298,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      },
+      {
+        "id": "c2",
+        "name": "Wooden Picture Frame",
+        "price": 15,
+        "description": "Handcrafted wooden frame for 5x7 photos",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/wooden-frame.jpg" }
+        ],
+        "listingLat": 41.8781,
+        "listingLng": -87.6298,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      },
+      {
+        "id": "c2",
+        "name": "Wooden Picture Frame",
+        "price": 15,
+        "description": "Handcrafted wooden frame for 5x7 photos",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/wooden-frame.jpg" }
+        ],
+        "listingLat": 41.8781,
+        "listingLng": -87.6298,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      },
+      {
+        "id": "c2",
+        "name": "Wooden Picture Frame",
+        "price": 15,
+        "description": "Handcrafted wooden frame for 5x7 photos",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/wooden-frame.jpg" }
+        ],
+        "listingLat": 41.8781,
+        "listingLng": -87.6298,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      },
+      {
+        "id": "c2",
+        "name": "Wooden Picture Frame",
+        "price": 15,
+        "description": "Handcrafted wooden frame for 5x7 photos",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/wooden-frame.jpg" }
+        ],
+        "listingLat": 41.8781,
+        "listingLng": -87.6298,
+        "createdAt": "2024-11-09T11:00:00.000Z"
       }
     ],
     "chats": [],
