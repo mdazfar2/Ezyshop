@@ -102,6 +102,8 @@
 │   │   │   └── page.tsx
 │   │   └── user/
 │   │       └── [userId]/
+│   │           ├── [sellerId]/
+│   │           │   └── page.tsx
 │   │           └── dashboard/
 │   │               ├── components/
 │   │               │   └── listStores.tsx
@@ -419,6 +421,7 @@
 │   │   ├── mseal.avif
 │   │   ├── product-image-not-available.png
 │   │   └── tomato.avif
+│   ├── productsBySeller.png
 │   ├── rajesh.jpg
 │   ├── right_blue.png
 │   ├── right_green.png
