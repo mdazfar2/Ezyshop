@@ -5,6 +5,7 @@ import Hero from "@/components/ui/Hero";
 import SeperatorHeading from "@/components/ui/seperatorHeading";
 import LearnAboutUs from "@/components/about us/learnAboutUs";
 import GitHubStats from '@/components/ui/gitHubStats';
+import ChatBotPage from "@/components/chatbot/chatbotPage";
 // import { useTheme } from "@/context/themeProvider";
 
 export default function Home() {
@@ -27,6 +28,8 @@ export default function Home() {
       <div className="w-full border-b border-customBlue dark:border-Green my-10" />
 
       <Categories showLoadMore = {false}/>
+
+      <ChatBotPage/>
     </div>
   );
 }
