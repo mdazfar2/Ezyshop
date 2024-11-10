@@ -99,6 +99,11 @@
 │   │   └── user/
 │   │       └── [userId]/
 │   │           ├── [sellerId]/
+│   │           │   ├── (chat)/
+│   │           │   │   └── [productId]/
+│   │           │   │       ├── components/
+│   │           │   │       │   └── productCardChatPage.tsx
+│   │           │   │       └── page.tsx
 │   │           │   └── page.tsx
 │   │           └── dashboard/
 │   │               ├── components/
@@ -357,9 +362,12 @@
 │   │   ├── class-1.png
 │   │   ├── class-2.png
 │   │   └── class-3.png
+│   ├── chatbg.png
+│   ├── chatbgLight.png
 │   ├── contact.png
 │   ├── dashboardPage.png
 │   ├── data/
+│   │   ├── chat.json
 │   │   ├── customers.json
 │   │   └── store.json
 │   ├── detailblog.png
@@ -368,6 +376,8 @@
 │   ├── electronics.png
 │   ├── ezyshop.png
 │   ├── fasion.png
+│   ├── food1a.jpeg
+│   ├── food1b.jpeg
 │   ├── glitter_blue_left.png
 │   ├── glitter_blue_right.png
 │   ├── glitter_green_left.png
