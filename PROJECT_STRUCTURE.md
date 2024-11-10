@@ -223,7 +223,9 @@
 │   │   │   │           └── [questionId]/
 │   │   │   │               └── route.ts
 │   │   │   └── route.ts
-│   │   └── getAllStores/
+│   │   ├── getAllStores/
+│   │   │   └── route.ts
+│   │   └── webhook/
 │   │       └── route.ts
 │   ├── favicon.ico
 │   ├── globals.css
