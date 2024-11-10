@@ -1,0 +1,202 @@
+[
+  {
+    "id": "a52j9b81-1c39-3f48-z2b9-kd5s8x1m3q7o",
+    "storeName": "Sophie's Sweets",
+    "email": "sophie@example.com",
+    "otp": "123987",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "s1",
+        "name": "Vanilla Cupcake",
+        "price": 5,
+        "description": "Fluffy vanilla cupcake with buttercream frosting",
+        "category": "Fooding",
+        "images": [
+          { "url": "https://example.com/images/vanilla-cupcake.jpg" }
+        ],
+        "listingLat": 34.0522,
+        "listingLng": -118.2437,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  },
+  {
+    "id": "b63k2e19-7n14-5d42-t9v6-yt6p9w2l5x4z",
+    "storeName": "Ella's Electronics",
+    "email": "ella@example.com",
+    "otp": "789321",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "e2",
+        "name": "Bluetooth Speaker",
+        "price": 25,
+        "description": "Portable Bluetooth speaker with powerful bass",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/bluetooth-speaker.jpg" }
+        ],
+        "listingLat": 40.7306,
+        "listingLng": -73.9352,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  },
+  {
+    "id": "c76m3k81-9o58-2a19-z1g4-wt3y7p2o6z5m",
+    "storeName": "Carlos' Crafts",
+    "email": "carlos@example.com",
+    "otp": "456789",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "c2",
+        "name": "Wooden Picture Frame",
+        "price": 15,
+        "description": "Handcrafted wooden frame for 5x7 photos",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/wooden-frame.jpg" }
+        ],
+        "listingLat": 41.8781,
+        "listingLng": -87.6298,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  },
+  {
+    "id": "d64n4m67-3l45-1h26-c9z8-jp8r2y6t4b5l",
+    "storeName": "Nina's Novelty",
+    "email": "nina@example.com",
+    "otp": "321654",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "n1",
+        "name": "Custom T-Shirt",
+        "price": 20,
+        "description": "Personalized t-shirt with unique design",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/custom-tshirt.jpg" }
+        ],
+        "listingLat": 29.7604,
+        "listingLng": -95.3698,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  },
+  {
+    "id": "e98o6r23-6p38-8z21-d7x1-nl2u3f9h1t4q",
+    "storeName": "Oliver's Outfits",
+    "email": "oliver@example.com",
+    "otp": "987654",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "o1",
+        "name": "Denim Jacket",
+        "price": 40,
+        "description": "Stylish denim jacket for casual wear",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/denim-jacket.jpg" }
+        ],
+        "listingLat": 34.0522,
+        "listingLng": -118.2437,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  },
+  {
+    "id": "f12j3h77-8b69-4o23-v7s2-pm3f4x8h5k6n",
+    "storeName": "Grace's Garden",
+    "email": "grace@example.com",
+    "otp": "654789",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "g2",
+        "name": "Succulent Plant",
+        "price": 10,
+        "description": "Mini potted succulent perfect for desks",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/succulent-plant.jpg" }
+        ],
+        "listingLat": 36.7783,
+        "listingLng": -119.4179,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  },
+  {
+    "id": "g38o5n12-9p67-6a34-v2j8-ky6f2t9p3m9v",
+    "storeName": "Liam's Lounge",
+    "email": "liam@example.com",
+    "otp": "852963",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "l1",
+        "name": "Leather Sofa",
+        "price": 200,
+        "description": "Premium leather sofa with recliner option",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/leather-sofa.jpg" }
+        ],
+        "listingLat": 25.7617,
+        "listingLng": -80.1918,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  },
+  {
+    "id": "h72p1m19-5x36-7d14-z4c2-lm5f9r7s3t6q",
+    "storeName": "Mia's Makeup",
+    "email": "mia@example.com",
+    "otp": "963258",
+    "role": "Seller",
+    "Products": [
+      {
+        "id": "m1",
+        "name": "Lipstick Set",
+        "price": 25,
+        "description": "Variety pack of high-quality lipsticks",
+        "category": "For_Sale",
+        "images": [
+          { "url": "https://example.com/images/lipstick-set.jpg" }
+        ],
+        "listingLat": 39.7392,
+        "listingLng": -104.9903,
+        "createdAt": "2024-11-09T11:00:00.000Z"
+      }
+    ],
+    "chats": [],
+    "createdAt": "2024-11-08T11:00:00.000Z",
+    "updatedAt": "2024-11-08T11:00:00.000Z"
+  }
+]

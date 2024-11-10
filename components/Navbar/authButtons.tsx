@@ -1,8 +1,9 @@
 import { signOut, useSession } from "next-auth/react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { User } from "lucide-react";
 // {toggleMenu}: {toggleMenu:() => void}
-const AuthButtons = ({toggleMenu}: {toggleMenu:() => void}) => {
+const AuthButtons = ({ toggleMenu }: { toggleMenu: () => void }) => {
   // const [open, setOpen] = useState(false);
   // const [loading] = useState(false);
 
@@ -22,7 +23,10 @@ const AuthButtons = ({toggleMenu}: {toggleMenu:() => void}) => {
       )}
       {session.status == "authenticated" && (
         <>
-          <div>Hi! {session.data.user?.name}</div>
+          <Link href={`/user/${session.data.user.id}/dashboard`}>
+            <Button className="rounded-full" variant={"outline"}>Dashboard</Button>
+          </Link>
+          <Button><User/></Button>
           <Button
             className="rounded-full"
             variant={"outline"}
