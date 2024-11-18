@@ -211,7 +211,9 @@ const Footer = () => {
         . Shop easy, shop happy
         <Link
           href={"#"}
-          
+          onMouseOver={() => {
+            setId(7);
+          }}
           onMouseLeave={() => {
             setId(0);
           }}
