@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: false,
     images: {
         remotePatterns: [
           {
@@ -11,6 +12,8 @@ const nextConfig = {
         ],
         domains: ['avatars.githubusercontent.com'],
       },
+
+
       // async headers() { 
       //   return [ 
       //       { 
