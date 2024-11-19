@@ -101,19 +101,18 @@
 │   │   │   ├── layout.tsx
 │   │   │   └── page.tsx
 │   │   └── user/
-│   │       ├── [userId]/
-│   │       │   ├── [sellerId]/
-│   │       │   │   ├── (chat)/
-│   │       │   │   │   └── [productId]/
-│   │       │   │   │       ├── components/
-│   │       │   │   │       │   └── productCardChatPage.tsx
-│   │       │   │   │       └── page.tsx
-│   │       │   │   └── page.tsx
-│   │       │   └── dashboard/
-│   │       │       ├── components/
-│   │       │       │   └── listStores.tsx
-│   │       │       └── page.tsx
-│   │       └── page.tsx
+│   │       └── [userId]/
+│   │           ├── [sellerId]/
+│   │           │   ├── (chat)/
+│   │           │   │   └── [productId]/
+│   │           │   │       ├── components/
+│   │           │   │       │   └── productCardChatPage.tsx
+│   │           │   │       └── page.tsx
+│   │           │   └── page.tsx
+│   │           └── dashboard/
+│   │               ├── components/
+│   │               │   └── listStores.tsx
+│   │               └── page.tsx
 │   ├── (Seller)/
 │   │   ├── [sellerId]/
 │   │   │   ├── [storeId]/

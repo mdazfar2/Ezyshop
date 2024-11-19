@@ -1,33 +1,34 @@
 import { useState } from "react";
 import ChatBot from "react-simple-chatbot";
 
-const Chatbot = () => {
-  const [userMessage, setUserMessage] = useState("");
 
-  const handleMessage = (msg) => {
+const Chatbot = () => {
+  const [userMessage, setUserMessage] = useState<string>("");
+
+  const handleMessage = (msg: string) => {
     setUserMessage(msg); // Update user message on each interaction
   };
-
-  const flow = [
+  // , { ChatBotProps, Step } 
+  const flow= [
     {
       id: "1",
       message: "Welcome to **EzyShop**, your one-stop shop for everything you need! What is your name?",
-      trigger: "2", // Proceed to step 2 after the question
+      trigger: "2",
     },
     {
       id: "2",
-      user: true, // Wait for user input (name)
-      trigger: "3", // Proceed to step 3 once the user responds
+      user: true, // Correctly capturing user input without a message
+      trigger: "3",
     },
     {
       id: "3",
       message: "Hi {previousValue}, nice to meet you! How can I assist you today?",
-      trigger: "4", // Proceed to step 4 after greeting
+      trigger: "4",
     },
     {
       id: "4",
       message: "Please choose an option below to proceed:",
-      trigger: "5", // Provide options to the user
+      trigger: "5",
     },
     {
       id: "5",
@@ -37,11 +38,11 @@ const Chatbot = () => {
         { value: "Explore vendor details", label: "Explore vendors", trigger: "16" },
       ],
     },
-    // ------------------- Request a product flow -------------------
+    // Request a product flow
     {
       id: "6",
       message: "Great! What type of product would you like to request from a vendor?",
-      trigger: "7", // Go to step 7 to choose the product
+      trigger: "7",
     },
     {
       id: "7",
@@ -60,13 +61,13 @@ const Chatbot = () => {
     {
       id: "10",
       message: "Your request has been forwarded! A vendor will contact you shortly. Is there anything else I can help you with?",
-      trigger: "5", // Give another set of options or end the chat
+      trigger: "5",
     },
-    // ------------------- Browse Categories flow -------------------
+    // Browse Categories flow
     {
       id: "8",
       message: "Here are some categories you can explore:",
-      trigger: "11", // Proceed to category options
+      trigger: "11",
     },
     {
       id: "11",
@@ -82,7 +83,7 @@ const Chatbot = () => {
       message: "Here are some popular {previousValue} products:\n\n - Smart TV (₹30,000)\n - Bluetooth Headphones (₹3,500)\n - Gaming Laptop (₹70,000)\n\nWould you like to explore more, request a product, or view other categories?",
       trigger: "5",
     },
-    // ------------------- Explore Vendor Flow -------------------
+    // Explore Vendor Flow
     {
       id: "16",
       message: "Here are some top vendors on EzyShop:",
@@ -101,11 +102,11 @@ const Chatbot = () => {
       message: "{previousValue} specializes in {previousValue.split(' ')[1]} products. Here are some of their offerings:\n - Smartwatch (₹5,000)\n - Wireless Earbuds (₹2,000)\n - 4K TV (₹45,000)\n\nRating: 4.8/5\nWould you like to request a product or explore other vendors?",
       trigger: "5",
     },
-    // ------------------- Thank you message -------------------
+    // Thank you message
     {
       id: "14",
       message: "Thank you for using EzyShop! Enjoy your shopping experience!",
-      end: true, // End the chat
+      end: true,
     },
   ];
 

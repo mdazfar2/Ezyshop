@@ -1,4 +1,3 @@
-import prismadb from "@/lib/prismadb";
 import { NextResponse } from "next/server";
 import { validateWebhookSignature } from "razorpay/dist/utils/razorpay-utils";
 // import crypto from "crypto";
@@ -77,18 +76,18 @@ export async function POST(req: Request) {
       }
 
       // Update the order in the database
-      await prismadb.order.update({
-        where: {
-          RZP_OID: entity.order_id,
-        },
-        data: {
-          name,
-          contact,
-          email,
-          address,
-          isPaid: true,
-        },
-      });
+      // await prismadb.order.update({
+      //   where: {
+      //     RZP_OID: entity.order_id,
+      //   },
+      //   data: {
+      //     name,
+      //     contact,
+      //     email,
+      //     address,
+      //     isPaid: true,
+      //   },
+      // });
 
       //   console.log("Order update successful:", res);
       return NextResponse.json(
