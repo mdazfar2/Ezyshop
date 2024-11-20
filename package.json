@@ -43,7 +43,7 @@
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "lucide-react": "^0.451.0",
-    "next": "^14.2.14",
+    "next": "^14.2.17",
     "next-auth": "^4.24.8",
     "next-cloudinary": "^6.15.0",
     "next-themes": "^0.3.0",
