@@ -1,4 +1,4 @@
-FROM node:20 as Base
+FROM node:20-alpine as Base
 WORKDIR /usr/src/ezyshop
 COPY *.json *.mjs *.js  ./
 COPY prisma ./prisma
