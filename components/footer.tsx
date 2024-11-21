@@ -205,12 +205,12 @@ const Footer = () => {
             }}
             className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1"
           >
-            Ezyshop
+            2024 Ezyshop
           </Link>
         </div>
-        . All Rights Reserved. Designed by
+        . Shop easy, shop happy
         <Link
-          href={"https://www.azfaralam.xyz/"}
+          href={"#"}
           onMouseOver={() => {
             setId(7);
           }}
@@ -219,7 +219,7 @@ const Footer = () => {
           }}
           className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1 "
         >
-          Azfar Alam
+          – with EzyShop.
         </Link>
       </div>
     </div>
