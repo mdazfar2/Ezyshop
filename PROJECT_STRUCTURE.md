@@ -4,6 +4,7 @@
 ```
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
+├── Dockerfile
 ├── LICENSE
 ├── PROJECT_STRUCTURE.md
 ├── README.md
@@ -331,6 +332,7 @@
 │   ├── flashAlertContext.tsx
 │   ├── storeContext.tsx
 │   └── themeProvider.tsx
+├── docker-compose.yaml
 ├── hooks/
 │   └── use-origin.tsx
 ├── lib/
