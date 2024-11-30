@@ -1,0 +1,44 @@
+name: Close Duplicate Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  close_duplicate_issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for duplicate issues
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issueAuthor = context.payload.issue.user.login;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open'
+            });
+
+            // Check if the author has another open issue
+            const authorHasOtherOpenIssues = issues.some(issue => 
+              issue.user.login === issueAuthor && issue.number !== context.payload.issue.number
+            );
+
+            if (authorHasOtherOpenIssues) {
+              // Close the current issue
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                state: 'closed'
+              });
+
+              // Leave a comment explaining why the issue is closed
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                body: `This issue is being closed automatically because you already have an open issue. Please resolve or close the existing issue before opening a new one.`
+              });
+            }
