@@ -78,6 +78,9 @@ Check the project structure here [Project Structure](PROJECT_STRUCTURE.md)
     <img src="https://img.shields.io/badge/razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=white" alt="Razorpay Official Website" />
   </a>
 </p>
+<a href="https://cloudinary.com/">
+  <img src="https://img.shields.io/badge/cloudinary-FF6F00?style=for-the-badge&logo=cloudinary&logoColor=white" alt="Cloudinary Official Website" />
+</a>
 
 
 
