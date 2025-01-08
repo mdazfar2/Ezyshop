@@ -3,7 +3,7 @@
 import { ChevronRight, Copyright, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewsLetterForm from "./footer/newsletterForm";
 import { Toaster } from "react-hot-toast";
 
@@ -61,11 +61,19 @@ const Links = [
 ];
 
 const Footer = () => {
-  const [id, setId] = useState(0);
+  const [currentYear, setCurrentYear] = useState<number>(
+    new Date().getFullYear()
+  );
+  const [id, setId] = useState<number>(0);
+
+  useEffect(() => {
+    // Set the current year dynamically on mount
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <div className="flex items-center flex-col p-5 bg-customBlue dark:bg-DarkGray">
-      <Toaster/>
+      <Toaster />
       <div className="border-y border-customTeal dark:border-Green flex items-start justify-start flex-col lg:grid lg:grid-cols-4 py-2 gap-4">
         {/* section1 */}
         <div className="flex gap-4 items-start justify-between lg:px-4 pb-4 flex-col">
@@ -92,25 +100,29 @@ const Footer = () => {
             <div className="d-flex justify-content-start mt-4">
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="https://github.com/mdazfar2/Ezyshop" target="_blank"
+                href="https://github.com/mdazfar2/Ezyshop"
+                target="_blank"
               >
                 <i className="fab fa-github"></i>
               </a>
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="https://discord.gg/YnABU7tdU3" target="_blank"
+                href="https://discord.gg/YnABU7tdU3"
+                target="_blank"
               >
                 <i className="fa-brands fa-discord"></i>
               </a>
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="https://www.linkedin.com/company/ezyshopz/" target="_blank"
+                href="https://www.linkedin.com/company/ezyshopz/"
+                target="_blank"
               >
                 <i className="fab fa-linkedin-in"></i>
               </a>
               <a
                 className="inline-block border text-customTeal border-customTeal hover:bg-customTeal  dark:border-Green dark:text-Yellow text-sm w-[38px] bg-transparent dark:hover:bg-Yellow hover:text-gray-200 dark:hover:text-gray-200 rounded-full text-center mr-2 p-2"
-                href="#" target="_blank"
+                href="#"
+                target="_blank"
               >
                 <i className="fab fa-instagram"></i>
               </a>
@@ -190,34 +202,26 @@ const Footer = () => {
           </div>
         </div>
         {/* section 4 */}
-        <NewsLetterForm/>
+        <NewsLetterForm />
       </div>
       <div className="flex flex-col lg:flex-row pt-5 items-center text-gray-100 justify-center">
         <div className="flex items-center text-gray-200 justify-center">
-          <Copyright className="h-4 w-4 mr-2"></Copyright>
+          <Copyright className="h-4 w-4 mr-2" />
           <Link
             href={"/"}
-            onMouseOver={() => {
-              setId(7);
-            }}
-            onMouseLeave={() => {
-              setId(0);
-            }}
+            onMouseOver={() => setId(7)}
+            onMouseLeave={() => setId(0)}
             className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1"
           >
-            2024 Ezyshop
+            {currentYear} Ezyshop
           </Link>
         </div>
         . Shop easy, shop happy
         <Link
           href={"#"}
-          onMouseOver={() => {
-            setId(7);
-          }}
-          onMouseLeave={() => {
-            setId(0);
-          }}
-          className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1 "
+          onMouseOver={() => setId(7)}
+          onMouseLeave={() => setId(0)}
+          className="text-customTeal dark:text-Green hover:text-gray-200 hover:underline pl-1"
         >
           – with EzyShop.
         </Link>

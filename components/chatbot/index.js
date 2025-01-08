@@ -1,16 +1,12 @@
 import React from "react";
-import ChatBot from 'react-simple-chatbot';
-import Wrapper from './styles';
-import steps from './steps';
-
+import ChatBot from "react-simple-chatbot";
+import Wrapper from "./styles";
+import steps from "./steps";
 
 function ChatbotWrapper() {
   return (
     <Wrapper>
-      <ChatBot
-        steps={steps}
-        floating recognitionEnable
-      />
+      <ChatBot steps={steps} floating recognitionEnable />
     </Wrapper>
   );
 }
