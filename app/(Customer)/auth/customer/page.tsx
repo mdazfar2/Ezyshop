@@ -26,10 +26,10 @@ const Login = () => {
         <div
           className={`text-white lg:hidden flex items-center justify-center mt-10 px-4 flex-col max-h-60 w-full z-10 `}
         >
-          <div className="text-3xl lg:text-5xl font-handlee font-bold ">
+          <div className="text-3xl lg:text-5xl font-handlee font-bold  text-gray-800 dark:text-white">
             {switchCss ? "Welcome Back!" : "Welcome!"}
           </div>
-          <div className="mt-5 text-md lg:text-lg text-center">
+          <div className="mt-5 text-md lg:text-lg lg:text-white text-center text-gray-800 dark:text-white">
             EzyShop makes it easy to browse, order, and receive products from
             your favorite stores.
           </div>
@@ -66,7 +66,7 @@ const Login = () => {
             <div className="text-2xl lg:text-5xl font-handlee font-bold ">
               {switchCss ? "Welcome Back!" : "Welcome!"}
             </div>
-            <div className="mt-5 text-md lg:text-lg w-52">
+            <div className="mt-5 text-md lg:text-lg lg:text-white text-gray-800 dark:text-white">
               EzyShop makes it easy to browse, order, and receive products from
               your favorite stores.
             </div>
