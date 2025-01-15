@@ -60,7 +60,7 @@ body:
       options:
         - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/Ezyshop/blob/main/CONTRIBUTING.md)
           required: true
-        - label: I'm a SWoC'25 contributor
+        - lable: 'I am a ACWoC'25 contributor.'
         - label: I have starred the repository
           required: true
         - label: 'I am willing to work on this issue (optional)'
