@@ -17,5 +17,25 @@ jobs:
       - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: "Hello ${{ github.actor }}! Thanks for opening an issue in Ezyshop! 🚀 \n\n - We'll get back to you as soon as possible. \n\n - Hope you star our [Repo](https://github.com/mdazfar2/Ezyshop). \n\n - Join our [Discord Server](https://discord.gg/YnABU7tdU3) to collaborate and discuss further. "
+          issue-message: "**👋 Hey there, ${{ github.actor }}!**
+
+  Thank you for opening an issue in **Nexus**! 🚀 We're excited to have you here. Let's make this collaboration epic!
+
+  ---
+  ### 📢 Here's how you can stay connected and contribute further:
+
+  💖 **Star Our Repo**  
+  Show your support by starring our [GitHub repository](https://github.com/nexus-lb/nexus). Your stars inspire us to keep improving!
+
+  🎉 **Join Our Community**  
+  Jump into the conversation on our [Discord Server](https://discord.gg/Qnk25wKJp8). Collaborate, share ideas, or just say hi—we'd love to hear from you!
+
+  📱 **Follow Us on LinkedIn**  
+  Stay updated with the latest news and milestones by following our official [LinkedIn page](https://www.linkedin.com/company/nexuslb/).
+
+  🌟 **Follow Our GitHub Organization**  
+  Don't miss out on the amazing projects under the Nexus banner. Follow us on [GitHub](https://github.com/nexus-lb) and explore everything we have to offer.
+
+  ---
+  Thanks for being a part of the Nexus journey. We can't wait to collaborate with you! 💪✨"
           pr-message: "Thank you, ${{ github.actor }}, for your contribution! Your pull request has been submitted successfully. A maintainer will review it as soon as possible. We appreciate your support in making Ezyshop better. 🎉 "
