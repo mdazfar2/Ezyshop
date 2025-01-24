@@ -11,17 +11,20 @@ export const metadata: Metadata = {
 const About = () => {
   return (
     <div className="h-full dark:bg-DarkGray">
-      <div className="h-full ">
-        <div className="text-white flex items-center justify-center  bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow h-full mb-20 p-24">
-          <div className=" text-4xl md:text-7xl text-gray-200 font-bold font-handlee">About us</div>
-        </div>
-      </div>
-      <SeperatorHeading label="Learn About us"/>
-      <LearnAboutUs />
+      <header className="flex items-center justify-center h-[60vh] bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow mb-20 p-8">
+        <h1 className="text-4xl md:text-7xl text-gray-200 font-bold font-handlee">About Us</h1>
+      </header>
+      
+      <section aria-labelledby="about-us-heading">
+        <SeperatorHeading label="Learn About Us" />
+        <LearnAboutUs />
+      </section>
 
-      <div className="w-full border-b border-Green my-10"/>
-      <Features/>
+      <div className="w-full border-b border-Green my-10" />
 
+      <section aria-labelledby="features-heading">
+        <Features />
+      </section>
     </div>
   );
 };
