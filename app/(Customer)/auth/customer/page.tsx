@@ -59,7 +59,7 @@ const Login = () => {
           />
 
           <div
-            className={`text-white pt-28 hidden md:flex px-4 flex-col w-2/4 ${
+            className={`text-white pt-1.5 hidden md:flex px-4 flex-col w-2/4 ${
               switchCss ? "items-end text-right" : "items-start text-left"
             } z-10 h-full`}
           >
