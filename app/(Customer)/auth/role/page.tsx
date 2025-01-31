@@ -43,7 +43,7 @@ const Login = () => {
           <div
             className={`text-white flex lg:pt-10 px-4 flex-col w-2/4  z-10 h-full`}
           >
-            <div className="text-4xl lg:text-7xl text-right font-handlee font-bold ">
+            <div className="text-4xl lg:text-6xl text-right font-handlee font-bold ">
               Welcome to EzyShop!
             </div>
           </div>
