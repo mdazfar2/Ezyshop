@@ -13,8 +13,7 @@ const AuthButtons = ({ toggleMenu }: { toggleMenu: () => void }) => {
       {session.status == "unauthenticated" && (
         <Link href={"/auth/role"}>
           <Button
-            size={"lg"}
-            className={`bg-customTeal dark:bg-Green dark:text-[#fff] dark:hover:opacity-80  hover:border rounded-xl`}
+            className={`bg-customTeal dark:bg-Green dark:text-[#fff] dark:hover:opacity-80 hover:border rounded-xl h-9 px-3.5 xl:px-5 text-xs xl:text-sm font-semibold whitespace-nowrap`}
             onClick={() => toggleMenu()}
           >
             Login / Signup
@@ -24,11 +23,12 @@ const AuthButtons = ({ toggleMenu }: { toggleMenu: () => void }) => {
       {session.status == "authenticated" && (
         <>
           <Link href={`/user/${session.data.user.id}/dashboard`}>
-            <Button className="rounded-full" variant={"outline"}>Dashboard</Button>
+            <Button size="sm" className="rounded-full text-xs xl:text-sm" variant={"outline"}>Dashboard</Button>
           </Link>
-          <Button><User/></Button>
+          <Button size="icon" className="h-9 w-9 rounded-full"><User className="h-4 w-4" /></Button>
           <Button
-            className="rounded-full"
+            size="sm"
+            className="rounded-full text-xs xl:text-sm"
             variant={"outline"}
             onClick={() => {
               // toggleMenu();
