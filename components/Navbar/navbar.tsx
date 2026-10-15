@@ -16,20 +16,22 @@ const Navbar = () => {
       } sticky top-0 z-50`} // <-- Added `sticky`, `top-0`, and `z-50` for sticky effect
     >
       <div
-        className={`relative px-4 sm:px-6 lg:px-6 xl:px-8 flex h-20 justify-between items-center ${
+        className={`relative px-4 sm:px-6 lg:px-8 flex h-25 justify-between items-center ${
           theme === "dark" ? "text-white" : "text-black"
         }`}
       >
-        <div className="flex items-center flex-shrink-0">
-          <Link href="/" className="flex items-center gap-2">
+        <div className="flex items-center py-2">
+          {/* <-- Added `py-2` for padding */}
+          <Link href="/" className="ml-4 flex lg:ml:0 gap-x-2">
             <Image
               src={"/ezyshop.png"}
-              width={60}
-              height={60}
+              width={80}
+              height={80}
               alt="ezyshop logo"
-              className="w-9 h-9 sm:w-10 sm:h-10 xl:w-12 xl:h-12 object-contain"
             />
-            <p className="font-extrabold text-2xl sm:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text leading-none">
+          </Link>
+          <Link href="/" className="ml-4 flex lg:ml:0 gap-x-2">
+            <p className="font-extrabold text-5xl font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text">
               Ezyshop
             </p>
           </Link>
