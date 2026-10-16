@@ -56,7 +56,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
 
   useEffect(()=>{
     if(session.status==="authenticated" && session.data?.user?.id){
-      window.location.href =`/${session.data.user.id}/dashboard`;
+      window.location.href =`/${session.data.user.id}`;
     }
   },[session.status,session.data?.user.id])
   const [otpOpen, setOtpOpen] = useState(false);
@@ -86,7 +86,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
     } else {
       toast.success(`Welcome Seller!`);
       // setTimeout(() => {
-      //   window.location.href = `/${session.data?.user.id}/dashboard`; // Redirect on success
+      //   window.location.href = `/${session.data?.user.id}`; // Redirect on success
       // }, 2000);
     }
     setloading(false);
