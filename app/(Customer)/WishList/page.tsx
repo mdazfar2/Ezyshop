@@ -9,6 +9,7 @@ import { Image, Product, Wishlist } from "@prisma/client";
 // import { useTheme } from "@/context/themeProvider";
 import { Spinner } from "@/components/ui/spinner";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // const wishlistItems = [
 //   {
@@ -32,6 +33,7 @@ interface wishlistProps extends Wishlist {
   product: productWithImages;
 }
 const WishlistPage = () => {
+  const router = useRouter();
   const session = useSession();
   const userId = session.data?.user.id;
 
@@ -45,6 +47,7 @@ const WishlistPage = () => {
   
 
   useEffect(() => {
+    if (!userId) return;
     const getItems = async () => {
       const response = await WishlistGetByUser(userId||"");
       if (response.success) {
@@ -56,6 +59,13 @@ const WishlistPage = () => {
     };
     getItems();
   }, [userId]);
+
+  useEffect(() => {
+    if (session.status === "unauthenticated" || (session.status !== "loading" && !userId)) {
+      toast.error("Please login as a Customer first");
+      router.push("/auth/customer");
+    }
+  }, [session.status, userId, router]);
 
   // if (!userId) {
   //   // openDialog();
@@ -79,8 +89,12 @@ const WishlistPage = () => {
     setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  if (loading||!userId) {
+  if (session.status === "loading" || loading) {
     return <Spinner />;
+  }
+
+  if (!userId) {
+    return null;
   }
 
   // console.log(wishlistItems+"dakjnjkanefnj")
