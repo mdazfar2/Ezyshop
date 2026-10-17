@@ -10,6 +10,8 @@ import React from 'react';
 import SubBlog from './SubBlog';
 import {blogs} from './BlogCard'
 
+import ItemNotFound from "../ui/ItemNotFound";
+
 export interface BlogContentSection {
   type: 'paragraph' | 'imageWithText'
   subheading?: string
@@ -23,7 +25,14 @@ interface BlogProps {
 }
 
 const Blog: React.FC<BlogProps> = ({ blogId }) =>  {
-  const blogData = blogs[parseInt(blogId)];
+  const isValidId = typeof blogId === "string" && /^(0|[1-9]\d*)$/.test(blogId.trim());
+  const idIndex = isValidId ? parseInt(blogId.trim(), 10) : -1;
+  const blogData = (idIndex >= 0 && idIndex < blogs.length) ? blogs[idIndex] : undefined;
+
+  if (!blogData) {
+    return <ItemNotFound />;
+  }
+
   return (
     <div className="flex flex-col items-center justify-center gap-5  h-full pb-20 px-20 lg:px-40">
       <div className="h-full flex items-center flex-col lg:grid lg:items-start grid-cols-12 lg:gap-10">
