@@ -36,8 +36,8 @@ const UnansweredQuestionCard: React.FC<UnansweredQuestionCardProps> = ({ questio
     return <Spinner />;
   }
 
-  const handleSubmit = async () => {
-    // e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setIsSubmitting(true);
 
     try {
