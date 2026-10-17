@@ -31,8 +31,8 @@ const NewQuestionForm = () => {
     return <Spinner />;
   }
 
-  const handleSubmit = async () => {
-    // e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     try {
       const response = await createQuestion(questionContent);
       if (!response.success && response.error) {
