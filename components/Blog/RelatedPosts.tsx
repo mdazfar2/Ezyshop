@@ -17,7 +17,7 @@ import Image from "next/image";
 
 const blogData = [
   {
-    id: "1",
+    id: "0",
     title: "10 Ways to Save on Groceries This Month",
     url: "/blog-1.png",
     author: "Admin",
@@ -27,7 +27,7 @@ const blogData = [
       "Check out these insider tips to help you cut down on your monthly food budget.",
   },
   {
-    id: "2",
+    id: "1",
     title: "How to Compare Prices and Find Deals Across Multiple Stores",
     url: "/blog-2.png",
     author: "Admin",
@@ -37,7 +37,7 @@ const blogData = [
       "Learn how to use Ezyshop's comparison tool to get the best deals across stores.",
   },
   {
-    id: "3",
+    id: "2",
     title: "Best Local Stores for Organic Products in Your Area",
     url: "/blog-3.png",
     author: "Admin",
