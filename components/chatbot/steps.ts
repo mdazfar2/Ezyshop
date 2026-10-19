@@ -1,4 +1,4 @@
-export default [
+const steps = [
 	{
 		id: '1',
 		message: 'What is your name?',
@@ -38,3 +38,5 @@ export default [
 		end: true,
 	},
 ];
+
+export default steps;

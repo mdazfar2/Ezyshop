@@ -21,10 +21,10 @@ const Forum = async () => {
     ]);
 
     if (unans.status === "fulfilled" && unans.value) {
-      unansweredResp = unans.value as any;
+      unansweredResp = unans.value;
     }
     if (ans.status === "fulfilled" && ans.value) {
-      answeredResp = ans.value as any;
+      answeredResp = ans.value;
     }
   } catch (e) {
     console.error("Error loading forum questions:", e);
