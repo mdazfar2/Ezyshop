@@ -1,14 +1,34 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import {
   getAnsweredQuestions,
   getUnansweredQuestions,
+  getQuestionsResponse,
 } from "@/actions/forum/Question";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import NewQuestionForm from "./components/NewQuestionForm";
 import UnansweredQuestionCard from "./components/unAnsweredQuestions";
 
 const Forum = async () => {
-  const unansweredResp = await getUnansweredQuestions();
-  const answeredResp = await getAnsweredQuestions();
+  let unansweredResp: getQuestionsResponse = { success: false, data: [], error: "" };
+  let answeredResp: getQuestionsResponse = { success: false, data: [], error: "" };
+
+  try {
+    const [unans, ans] = await Promise.allSettled([
+      getUnansweredQuestions(),
+      getAnsweredQuestions(),
+    ]);
+
+    if (unans.status === "fulfilled" && unans.value) {
+      unansweredResp = unans.value as any;
+    }
+    if (ans.status === "fulfilled" && ans.value) {
+      answeredResp = ans.value as any;
+    }
+  } catch (e) {
+    console.error("Error loading forum questions:", e);
+  }
 
   return (
     <div className="container mx-auto p-6 space-y-8">

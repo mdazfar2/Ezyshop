@@ -3,17 +3,17 @@
 import prismadb from '@/lib/prismadb';
 import { Answer, Question } from '@prisma/client';
 
-interface QuestionWithAnswer extends Question{
-  answers?:Answer[]
+export interface QuestionWithAnswer extends Question {
+  answers?: Answer[];
 }
 
-type QuestionResponse = {
+export type QuestionResponse = {
   success: boolean;
   data?: Question;
   error?: string;
 };
 
-type getQuestionsResponse = {
+export type getQuestionsResponse = {
   success: boolean;
   data?: QuestionWithAnswer[];
   error?: string;
