@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MainNav } from "./main-nav";
 import { useTheme } from "@/context/themeProvider";
 import FlashAlert from "../modals/flashAlert";
@@ -12,6 +13,15 @@ import { cn } from "@/lib/utils";
 const Navbar = () => {
   const { theme } = useTheme() || { theme: "light" };
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Determine active role from auth routes
+  let role: "CUSTOMER" | "SELLER" | null = null;
+  if (pathname?.startsWith("/auth/customer") || pathname === "/auth/customer") {
+    role = "CUSTOMER";
+  } else if (pathname?.startsWith("/auth/seller") || pathname === "/auth/seller") {
+    role = "SELLER";
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +57,7 @@ const Navbar = () => {
         {/* Brand Logo - using logo-nav.png */}
         <Link
           href="/"
-          className="flex items-center group focus:outline-none flex-shrink-0 transition-transform duration-200 hover:scale-[1.02]"
+          className="flex flex-col items-center justify-center group focus:outline-none flex-shrink-0 transition-transform duration-200 hover:scale-[1.02] py-0.5"
         >
           <Image
             src="/logo-nav.png"
@@ -57,9 +67,35 @@ const Navbar = () => {
             priority
             className={cn(
               "w-auto object-contain transition-all duration-300",
-              isScrolled ? "h-7.5 sm:h-8.5 drop-shadow-sm" : "h-8 sm:h-9"
+              role
+                ? isScrolled
+                  ? "h-6 sm:h-7 drop-shadow-sm"
+                  : "h-7 sm:h-8"
+                : isScrolled
+                ? "h-7.5 sm:h-8.5 drop-shadow-sm"
+                : "h-8 sm:h-9"
             )}
           />
+
+          {role && (
+            <div
+              className={cn(
+                "flex items-center justify-center transition-all duration-300 select-none",
+                isScrolled ? "-mt-0.5" : "mt-0"
+              )}
+            >
+              <span
+                className={cn(
+                  "font-nunito font-extrabold uppercase transition-all duration-300",
+                  role === "CUSTOMER"
+                    ? "tracking-[0.16em] pl-[0.16em] text-[9.5px] sm:text-[10.5px] text-teal-600 dark:text-teal-400 drop-shadow-[0_1px_2px_rgba(20,184,166,0.25)] dark:drop-shadow-[0_0_8px_rgba(45,212,191,0.35)]"
+                    : "tracking-[0.2em] pl-[0.2em] text-[9.5px] sm:text-[10.5px] text-amber-600 dark:text-amber-400 drop-shadow-[0_1px_2px_rgba(245,158,11,0.25)] dark:drop-shadow-[0_0_8px_rgba(251,191,36,0.35)]"
+                )}
+              >
+                {role === "CUSTOMER" ? "C U S T O M E R" : "S E L L E R"}
+              </span>
+            </div>
+          )}
         </Link>
 
         {/* Navigation & Controls */}

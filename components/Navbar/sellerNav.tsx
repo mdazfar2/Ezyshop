@@ -23,22 +23,22 @@ const SellerNavbar = () => {
         }`}
       >
         <div className="flex items-center">
-          <Link href={`/${session.data?.user.id}`} className="ml-4 flex lg:ml:0 gap-x-2">
+          <Link
+            href={`/${session.data?.user?.id || ""}`}
+            className="flex flex-col items-center justify-center group focus:outline-none flex-shrink-0 transition-transform duration-200 hover:scale-[1.02] py-0.5"
+          >
             <Image
-              src={"/ezyshop.png"}
-              width={80}
-              height={80}
-              alt="ezyshop logo"
+              src="/logo-nav.png"
+              alt="Ezyshop"
+              width={160}
+              height={38}
+              priority
+              className="w-auto h-8 sm:h-9 object-contain"
             />
-          </Link>
-          <Link href={`/${session.data?.user.id}`} className="ml-4 flex lg:ml:0 gap-x-2">
-            <div className="flex flex-col items-start">
-              <p className="font-extrabold text-5xl font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text">
-                Ezyshop
-              </p>
-              <p className="font-extrabold text-xl tracking-widest font-nunito bg-customTeal dark:bg-gradient-to-r from-Green to-Yellow inline-block text-transparent bg-clip-text">
-                seller
-              </p>
+            <div className="flex items-center justify-center transition-all duration-300 select-none mt-0.5">
+              <span className="font-nunito font-extrabold uppercase tracking-[0.2em] pl-[0.2em] text-[9.5px] sm:text-[10.5px] text-amber-600 dark:text-amber-400 drop-shadow-[0_1px_2px_rgba(245,158,11,0.25)] dark:drop-shadow-[0_0_8px_rgba(251,191,36,0.35)]">
+                S E L L E R
+              </span>
             </div>
           </Link>
         </div>

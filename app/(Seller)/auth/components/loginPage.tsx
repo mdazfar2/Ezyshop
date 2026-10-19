@@ -186,7 +186,6 @@ const LoginPage: React.FC<LoginPageProps> = ({
               className="text-customTeal dark:text-Green cursor-pointer"
               onClick={() => setSwitchCss(!switchCss)}
             >
-              {" "}
               Sign Up
             </div>
           </div>

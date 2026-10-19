@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "prisma generate",
     "seed": "ts-node prisma/seed.ts"
   },
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "prisma": {
     "seed": "node --loader ts-node/esm prisma/seed.ts"
   },
