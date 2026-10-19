@@ -107,17 +107,19 @@ export const generateAndSendOTP = async (
 ) => {
   const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Generate 6-digit OTP
 
-  // Store OTP in the user or seller record
+  console.log(`[generateAndSendOTP] Generating OTP for ${role}: ${email}`);
 
+  // Store OTP in the user or seller record
   if (role === "user") {
     try {
       await prismadb.user.update({
         where: { email },
         data: { otp }, // Ensure 'otp' field exists in your User model
       });
+      console.log(`[generateAndSendOTP] OTP stored in DB for user: ${email}`);
     } catch (err) {
       console.error(
-        "DB Error sending OTP for user:",
+        "[generateAndSendOTP] DB Error storing OTP for user:",
         err instanceof Error ? err.message : err
       );
       return false;
@@ -126,26 +128,26 @@ export const generateAndSendOTP = async (
     try {
       await prismadb.seller.update({
         where: { email },
-        data: { otp }, // Ensure 'otp' field exists in your User model
+        data: { otp }, // Ensure 'otp' field exists in your Seller model
       });
+      console.log(`[generateAndSendOTP] OTP stored in DB for seller: ${email}`);
     } catch (err) {
       console.error(
-        "DB Error sending OTP for seller:",
+        "[generateAndSendOTP] DB Error storing OTP for seller:",
         err instanceof Error ? err.message : err
       );
       return false;
     }
-  }
-
-  else if (role === "admin") {
+  } else if (role === "admin") {
     try {
       await prismadb.admin.update({
         where: { email },
-        data: { otp }, // Ensure 'otp' field exists in your User model
+        data: { otp }, // Ensure 'otp' field exists in your Admin model
       });
+      console.log(`[generateAndSendOTP] OTP stored in DB for admin: ${email}`);
     } catch (err) {
       console.error(
-        "DB Error sending OTP for admin:",
+        "[generateAndSendOTP] DB Error storing OTP for admin:",
         err instanceof Error ? err.message : err
       );
       return false;
@@ -155,17 +157,25 @@ export const generateAndSendOTP = async (
   try {
     const response = await sendEmail({
       to: email,
-      subject: "Your OTP Code",
-      text: `Your OTP code is ${otp}`,
-      html: `<strong>Your OTP code is ${otp}</strong>`,
+      subject: "Your OTP Code - Ezyshop",
+      text: `Your OTP code is ${otp}. It will expire shortly.`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 400px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #0d9488; text-align: center;">Ezyshop Verification</h2>
+          <p>Your one-time password (OTP) is:</p>
+          <div style="background: #f0fdfa; border: 2px solid #0d9488; border-radius: 8px; padding: 16px; text-align: center; font-size: 28px; font-weight: bold; letter-spacing: 6px; color: #0d9488;">
+            ${otp}
+          </div>
+          <p style="color: #666; font-size: 13px; margin-top: 16px;">If you didn't request this code, please ignore this email.</p>
+        </div>
+      `,
     });
 
-    console.log("OTP email sent successfully:", response);
+    console.log("[generateAndSendOTP] OTP email sent successfully:", response?.messageId);
     return true;
-    // Handle success response if needed (e.g., logging messageId)
   } catch (err) {
     console.error(
-      "Error sending OTP:",
+      "[generateAndSendOTP] Error sending OTP email:",
       err instanceof Error ? err.message : err
     );
     return false;
@@ -173,3 +183,4 @@ export const generateAndSendOTP = async (
 };
 
 // Call generateAndSendOTP(email) before redirecting to the login page to send OTP to the user
+

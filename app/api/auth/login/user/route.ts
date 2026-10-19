@@ -1,15 +1,23 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import prismadb from "@/lib/prismadb";
 import { generateAndSendOTP } from "@/lib/auth";
 
-const prisma = new PrismaClient();
-
 export async function POST(request: Request) {
-  const { email } = await request.json();
-
-  // Check if the user already exists
+  let body;
   try {
-    const existingUser = await prisma.user.findUnique({
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ message: 'Invalid request body' }, { status: 400 });
+  }
+
+  const { email } = body;
+
+  if (!email) {
+    return NextResponse.json({ message: 'Email is required.' }, { status: 400 });
+  }
+
+  try {
+    const existingUser = await prismadb.user.findUnique({
       where: { email },
     });
 
@@ -20,26 +28,28 @@ export async function POST(request: Request) {
       );
     }
 
-    const res = await generateAndSendOTP(email, "user");
+    console.log(`[Login] Sending OTP to user: ${email}`);
+    const otpSent = await generateAndSendOTP(email, "user");
 
-    if (res) {
+    if (otpSent) {
       return NextResponse.json({
         message: "ACCOUNT EXISTS, OTP Sent!",
         existingUser,
-      },{status:200});
+      }, { status: 200 });
     } else {
       return NextResponse.json({
-        message: "ACCOUNT EXISTS, BUT FAILED TO SEND OTP.",
+        message: "Account exists, but failed to send OTP. Please check SMTP configuration.",
         existingUser,
-      },{status:500});
+      }, { status: 500 });
     }
   } catch (err) {
     console.error(
-      "Error fetching user",
-      err instanceof Error ? err.message : err
+      "[Login] Error:",
+      err instanceof Error ? err.stack : err
     );
     return NextResponse.json({
-      message: err instanceof Error ? err.message : err
-    },{status:400});
+      message: err instanceof Error ? err.message : 'An unexpected error occurred'
+    }, { status: 400 });
   }
 }
+
