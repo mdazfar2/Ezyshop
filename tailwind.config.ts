@@ -52,10 +52,10 @@ const config: Config = {
         },
         customBlue: "#00394f", // Dark Blue-Green
         customTeal: "#17a2b8", // Light Blue
-        Yellow: "#FFC107",
-        Green: "#4CAF50",
+        Yellow: "#38bdf8", // Modern Sky Blue Accent (replaces harsh canary yellow)
+        Green: "#2dd4bf", // Modern Teal Accent (replaces harsh grass green #4CAF50)
         Gray: "#F5F5F5",
-        DarkGray: "#212121",
+        DarkGray: "#0f1013", // Rich modern obsidian dark (replaces washed-out #212121)
       },
       backgroundImage: {
         desktop: "url('/bg-sidebar-desktop2.svg')",

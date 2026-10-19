@@ -22,10 +22,10 @@ export default function Home() {
       <SeperatorHeading label="Learn About us" />
 
       <LearnAboutUs />
-      <div className="w-full border-b border-customBlue dark:border-Green my-10" />
+      <div className="w-full border-b border-gray-200/80 dark:border-zinc-800/80 my-10 max-w-7xl mx-auto px-4" />
 
       <Features />
-      <div className="w-full border-b border-customBlue dark:border-Green my-10" />
+      <div className="w-full border-b border-gray-200/80 dark:border-zinc-800/80 my-10 max-w-7xl mx-auto px-4" />
 
       <Categories showLoadMore = {false}/>
 
