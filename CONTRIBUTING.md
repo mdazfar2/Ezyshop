@@ -26,62 +26,79 @@ Please take a moment to read the following guidelines before contributing:
 
 To get started, look at the existing [**create a new issue**](https://github.com/mdazfar2/Ezyshop/issues)!
 
-### Set up guildines
+### Setup Guidelines
 
 **Follow these steps to setup EzyShop on your local machine 👇**
 
-- Fork the Repository
+1. **Fork and Clone the Repository**
+   ```bash
+   git clone https://github.com/<your-github-username>/Ezyshop.git
+   cd Ezyshop
+   ```
 
-- Clone the forked repository to you local system.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-  git clone https://github.com/<your-github-username>/Ezyshop.git
-```
+3. **Configure Environment Variables**
+   - Copy `.env.example` to create your `.env` file:
+     ```bash
+     cp .env.example .env
+     ```
+   - Fill in your `DATABASE_URL` (MongoDB Atlas connection string), `NEXTAUTH_SECRET`, and SMTP credentials (`SMTP_USER`, `SMTP_PASS`).
+   - In MongoDB Atlas, ensure **Network Access** allows `0.0.0.0/0` (Allow Access from Anywhere) so your database is accessible.
 
-- Create a new branch to make your changes.
+4. **Generate Prisma Client**
+   - Run this command to generate the latest Prisma Client types according to `prisma/schema.prisma`:
+     ```bash
+     npx prisma generate
+     ```
+   > **Note:** This command reads `prisma/schema.prisma` and creates TypeScript types for all models (`User`, `Seller`, `Product`, etc.). Run this whenever you install dependencies or modify `schema.prisma`.
 
-```bash
+5. **Sync Database Schema with MongoDB (`npx prisma db push`)**
+   - Push your Prisma schema directly to your MongoDB Atlas database:
+     ```bash
+     npx prisma db push
+     ```
+   > **Note:** Because MongoDB is NoSQL, `prisma db push` connects directly to your MongoDB Atlas cluster, initializes the `ezyshop` database, and creates all collections (`User`, `Seller`, `Product`, `Order`, `Question`, etc.) and unique indexes automatically. You do **not** need to run this command on Vercel — running it locally will update the cloud database for production as well.
+
+6. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+7. **Create a New Branch for Your Feature / Bug Fix**
+   ```bash
    git checkout -b <your_branch_name>
-```
+   ```
 
-- Track and stage your changes.
+8. **Test and Build Locally Before Submitting (`npm run build`)**
+   - Check linting:
+     ```bash
+     npm run lint
+     # Or fix issues automatically:
+     npm run lint -- --fix
+     ```
+   - **Build the project locally:**
+     ```bash
+     npm run build
+     ```
+   > **Note:** Always run `npm run build` locally before pushing or creating a PR. This compiles Next.js in production mode, verifies all TypeScript types, and ensures your changes will build successfully on Vercel without deployment errors.
 
-```bash
-   # Track the changes
+9. **Commit and Push Changes**
+   ```bash
+   # Check status and stage changes
    git status
-
-   # Add changes to Index
    git add .
-```
 
-- Commit your changes.
+   # Commit with a descriptive message
+   git commit -m "feat/fix: your descriptive message"
 
-```bash
-   git commit -m "your_commit_message"
-```
-
-- Run Linter and Fix Issues.
-- Ensure your code follows the project’s style guidelines.
-
-```bash
-npm run lint
-# Use --fix to auto-correct issues where possible
-npm run lint -- --fix
-```
-
-- Build the Project Locally.
-- Confirm that your changes don’t break the build.
-- if possible, attach a screenshot of the successful build.
-
-```bash
-npm run build
-```
-
-- Push your committed changes to the remote repo.
-
-```bash
+   # Push to your remote branch
    git push origin <your_branch_name>
-```
+   ```
 
 - Go to your forked repository on GitHub and click on `Compare & pull request`.
 
