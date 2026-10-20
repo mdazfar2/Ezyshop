@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { generateAndSendOTP } from "@/lib/auth";
 import prismadb from "@/lib/prismadb";
 
+export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
+
 
 export async function POST(request: Request) {
   const { email } = await request.json();
