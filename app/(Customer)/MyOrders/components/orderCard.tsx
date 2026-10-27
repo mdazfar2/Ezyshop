@@ -1,7 +1,15 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { order } from "./columns";
+import {
+  Package,
+  Truck,
+  Clock,
+  CheckCircle2,
+  AlertCircle,
+  ChevronRight,
+  Receipt,
+} from "lucide-react";
 
 interface OrderCardProps {
   orderItem: order;
@@ -9,55 +17,93 @@ interface OrderCardProps {
 
 const OrderCard = (props: OrderCardProps) => {
   const { orderItem } = props;
-  let statusClass = "";
-  switch (orderItem.status) {
+
+  let statusConfig = {
+    badge: "bg-gray-100 text-gray-700 dark:bg-zinc-800 dark:text-gray-300 border-gray-200 dark:border-zinc-700",
+    icon: <Clock className="h-3.5 w-3.5" />,
+    iconBg: "bg-gray-100 text-gray-600 dark:bg-zinc-800 dark:text-gray-300",
+  };
+
+  switch (orderItem.status.toLowerCase()) {
     case "out for delivery":
-      statusClass = "bg-yellow-500";
+      statusConfig = {
+        badge: "bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-400 border-amber-200 dark:border-amber-800/60",
+        icon: <Truck className="h-3.5 w-3.5" />,
+        iconBg: "bg-amber-50 text-amber-600 dark:bg-amber-950/60 dark:text-amber-400",
+      };
       break;
     case "processing":
-      statusClass = "bg-blue-500";
+      statusConfig = {
+        badge: "bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-400 border-blue-200 dark:border-blue-800/60",
+        icon: <Clock className="h-3.5 w-3.5" />,
+        iconBg: "bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400",
+      };
       break;
     case "delivered":
-      statusClass = "bg-green-500"; 
+      statusConfig = {
+        badge: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/60",
+        icon: <CheckCircle2 className="h-3.5 w-3.5" />,
+        iconBg: "bg-emerald-50 text-customTeal dark:bg-emerald-950/60 dark:text-Green",
+      };
       break;
     case "failed":
-      statusClass = "bg-red-500"; 
+      statusConfig = {
+        badge: "bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-400 border-rose-200 dark:border-rose-800/60",
+        icon: <AlertCircle className="h-3.5 w-3.5" />,
+        iconBg: "bg-rose-50 text-rose-600 dark:bg-rose-950/60 dark:text-rose-400",
+      };
       break;
-    default:
-      statusClass = "bg-gray-500"; 
   }
+
   return (
-    <div className="flex bg-[#F8F8F8] dark:bg-gray-700 border border-gray-200 dark:border-0 gap-2 md:gap-5 p-5 rounded-lg shadow-md dark:shadow-2xl w-full items-center justify-between">
-      <div>
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-      </div>
-      <div className="w-full grid grid-col-8 gap-2">
-        <div className="col-span-8 md:col-span-8">
-          <div className="flex gap-2 font-bold items-center justify-between">
-            <div className="text-black-100 dark:text-gray-200 text-md md:text-lg">{ orderItem.orderId }</div>
-            <div className={`text-sm md:text-md rounded-[10px] text-center text-[#fff] dark:text-gray-200 bg-Green text-xs md:text-sm py-1 px-1 sm:px-3 ${statusClass}`}>
+    <div className="w-full rounded-2xl bg-white dark:bg-zinc-900 border border-gray-200/80 dark:border-zinc-800 p-5 shadow-sm hover:shadow-md hover:border-customTeal/40 dark:hover:border-Green/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      {/* Left: Icon & Order Info */}
+      <div className="flex items-start gap-4">
+        <div
+          className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm ${statusConfig.iconBg}`}
+        >
+          {statusConfig.icon}
+        </div>
+
+        <div>
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <span className="text-sm sm:text-base font-bold font-mono text-gray-900 dark:text-white">
+              {orderItem.orderId}
+            </span>
+            <span
+              className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold border capitalize ${statusConfig.badge}`}
+            >
               {orderItem.status}
-            </div>
+            </span>
           </div>
-        </div>
-        <div className="col-span-8  md:col-span-8 ">
-          <div className="flex gap-2 text-sm md:text-md font-bold items-center justify-between">
-            <div className="text-xs md:text-sm  text-gray-500">
-              {orderItem.date}
-            </div>
-            <div className="text-md md:text-xl text-black-100 dark:text-gray-200">₹{orderItem.amount}</div>
-          </div>
+
+          <p className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-2">
+            <span>Ordered on {orderItem.date}</span>
+          </p>
         </div>
       </div>
-      <Link href={"/MyOrders/1"}>
-        <Button className="bg-transparent shadow-none hover:bg-transparent text-sm font-bold text-Green hover:text-Yellow p-0 pl-1">
-          <i className="text-md md:text-2xl fa-solid fa-angle-right"></i>
-        </Button>
-      </Link>
+
+      {/* Right: Amount & Actions */}
+      <div className="flex items-center justify-between sm:justify-end gap-5 border-t sm:border-t-0 pt-3 sm:pt-0">
+        <div className="text-left sm:text-right">
+          <span className="text-xs text-gray-400 block">Total Amount</span>
+          <span className="text-base sm:text-lg font-black font-nunito text-gray-900 dark:text-white">
+            ₹{orderItem.amount}
+          </span>
+        </div>
+
+        <Link href={`/MyOrders/${orderItem.id || "1"}`}>
+          <Button
+            size="sm"
+            className="rounded-xl bg-customTeal hover:bg-customTeal/90 text-white font-medium text-xs h-9 px-4 flex items-center gap-1 shadow-sm"
+          >
+            <span>Track Order</span>
+            <ChevronRight className="h-3.5 w-3.5" />
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 };
+
 export default OrderCard;
