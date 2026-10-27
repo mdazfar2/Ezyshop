@@ -51,10 +51,28 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  const handleShopsNavClick = (e: React.MouseEvent) => {
+    if (session.status === "unauthenticated") {
+      e.preventDefault();
+      closeMenu();
+      toast.error("Please log in as a customer first to explore shops near you.", {
+        id: "customer-auth-required",
+        duration: 4000,
+      });
+      router.push("/auth/customer?redirect=shops");
+    }
+  };
+
   // Core navigation links (Teams and Blog removed per instructions)
   const navLinks = [
     { href: "/", label: "Home", icon: Home, active: pathname === "/" },
-    { href: "/shops", label: "Shops", icon: Store, active: pathname.startsWith("/shops") },
+    {
+      href: "/shops",
+      label: "Shops",
+      icon: Store,
+      active: pathname.startsWith("/shops"),
+      onClick: handleShopsNavClick,
+    },
     {
       href: "/Categories",
       label: "Categories",
@@ -110,6 +128,7 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
             <Link
               key={link.href}
               href={link.href}
+              onClick={link.onClick}
               className={cn(
                 "px-3 py-1.5 text-sm font-medium transition-all duration-200 relative",
                 link.active
@@ -247,8 +266,8 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
           className={cn(
             "lg:hidden fixed inset-x-3 sm:inset-x-6 mx-auto rounded-3xl backdrop-blur-2xl shadow-2xl py-5 px-6 z-50 animate-in slide-in-from-top-2 duration-200 max-h-[calc(100vh-85px)] overflow-y-auto transition-all",
             isScrolled
-              ? "max-w-6xl top-[68px] sm:top-[76px] bg-[#dff6f8]/95 dark:bg-[#09222c]/95 border border-[#b4ebf2]/80 dark:border-teal-500/35"
-              : "max-w-7xl top-[70px] sm:top-[86px] bg-white/95 dark:bg-[#12141a]/95 border border-gray-200 dark:border-zinc-800"
+              ? "max-w-6xl top-[68px] sm:top-[76px] bg-[#e8f5e9]/95 dark:bg-[#0a1f0e]/95 border border-[#a5d6a7]/80 dark:border-emerald-500/35"
+              : "max-w-7xl top-[70px] sm:top-[86px] bg-white/95 dark:bg-[#0C1A0E]/95 border border-gray-200 dark:border-zinc-800"
           )}
         >
           {/* Main Navigation */}
@@ -262,7 +281,10 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={closeMenu}
+                  onClick={(e) => {
+                    closeMenu();
+                    if (link.onClick) link.onClick(e);
+                  }}
                   className={cn(
                     "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
                     link.active

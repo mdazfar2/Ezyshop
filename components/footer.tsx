@@ -21,12 +21,12 @@ const Links = [
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-100/90 dark:bg-[#07090e] border-t border-slate-200/90 dark:border-slate-800/80 text-slate-600 dark:text-slate-300 transition-colors duration-200">
+    <footer className="w-full bg-slate-100/90 dark:bg-[#071209] border-t border-slate-200/90 dark:border-emerald-900/40 text-slate-600 dark:text-slate-300 transition-colors duration-200">
       <Toaster />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-14 pb-5 sm:pb-6">
         {/* Main Footer Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-8 sm:pb-10 border-b border-slate-300/80 dark:border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-8 sm:pb-10 border-b border-slate-300/80 dark:border-emerald-900/40">
           {/* Section 1: Brand & About (4 cols) */}
           <div className="lg:col-span-4 flex flex-col gap-3.5">
             <Link href="/" className="flex items-center gap-2.5 group focus:outline-none w-fit">
@@ -40,7 +40,7 @@ const Footer = () => {
                   className="h-full w-full object-contain drop-shadow-sm"
                 />
               </div>
-              <span className="font-extrabold text-2xl font-nunito tracking-tight bg-gradient-to-r from-customTeal to-teal-700 dark:from-customTeal dark:to-teal-400 inline-block text-transparent bg-clip-text select-none">
+              <span className="font-extrabold text-2xl font-nunito tracking-tight bg-gradient-to-r from-customTeal to-emerald-700 dark:from-Green dark:to-emerald-400 inline-block text-transparent bg-clip-text select-none">
                 Ezyshop
               </span>
             </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-customTeal dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
+                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-Green dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
               >
                 <i className="fab fa-github text-sm"></i>
               </a>
@@ -67,7 +67,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discord"
-                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-customTeal dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
+                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-Green dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
               >
                 <i className="fa-brands fa-discord text-sm"></i>
               </a>
@@ -76,7 +76,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-customTeal dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
+                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-Green dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
               >
                 <i className="fab fa-linkedin-in text-sm"></i>
               </a>
@@ -85,7 +85,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-customTeal dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
+                className="h-8.5 w-8.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-transparent hover:bg-customTeal hover:text-white dark:hover:bg-Green dark:hover:text-white flex items-center justify-center transition-all duration-200 text-slate-600 dark:text-slate-300 shadow-xs"
               >
                 <i className="fab fa-instagram text-sm"></i>
               </a>
@@ -99,30 +99,30 @@ const Footer = () => {
             </h3>
             <div className="flex flex-col gap-2.5 text-sm text-slate-600 dark:text-slate-400">
               <div className="flex items-start gap-2.5">
-                <MapPin className="h-4.5 w-4.5 text-customTeal flex-shrink-0 mt-0.5" />
+                <MapPin className="h-4.5 w-4.5 text-customTeal dark:text-Green flex-shrink-0 mt-0.5" />
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://tinyurl.com/w8c3h6jc"
-                  className="hover:text-customTeal transition-colors"
+                  className="hover:text-customTeal dark:hover:text-Green transition-colors"
                 >
                   Jaipur, Rajasthan, India
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="h-4.5 w-4.5 text-customTeal flex-shrink-0" />
+                <Mail className="h-4.5 w-4.5 text-customTeal dark:text-Green flex-shrink-0" />
                 <a
                   href="mailto:ezyshop.open@gmail.com"
-                  className="hover:text-customTeal transition-colors"
+                  className="hover:text-customTeal dark:hover:text-Green transition-colors"
                 >
                   ezyshop.open@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="h-4.5 w-4.5 text-customTeal flex-shrink-0" />
+                <Phone className="h-4.5 w-4.5 text-customTeal dark:text-Green flex-shrink-0" />
                 <a
                   href="tel:+919508078935"
-                  className="hover:text-customTeal transition-colors"
+                  className="hover:text-customTeal dark:hover:text-Green transition-colors"
                 >
                   +91 9508078935
                 </a>
@@ -140,9 +140,9 @@ const Footer = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="flex items-center gap-1.5 hover:text-customTeal hover:translate-x-1 transition-all duration-200 group"
+                  className="flex items-center gap-1.5 hover:text-customTeal dark:hover:text-Green hover:translate-x-1 transition-all duration-200 group"
                 >
-                  <ChevronRight className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500 group-hover:text-customTeal transition-colors" />
+                  <ChevronRight className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500 group-hover:text-customTeal dark:group-hover:text-Green transition-colors" />
                   <span>{link.name}</span>
                 </Link>
               ))}
@@ -161,7 +161,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()}{" "}
             <Link
               href="/"
-              className="text-slate-800 dark:text-white hover:text-customTeal font-semibold transition-colors"
+              className="text-slate-800 dark:text-white hover:text-customTeal dark:hover:text-Green font-semibold transition-colors"
             >
               Ezyshop
             </Link>
@@ -170,7 +170,7 @@ const Footer = () => {
 
           <div className="order-1 md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 flex items-center justify-center gap-1.5 text-slate-700 dark:text-slate-300 font-medium">
             <span>Crafted with</span>
-            <span className="text-amber-500 text-sm">✨</span>
+            <span className="text-Yellow text-sm">✨</span>
             <span>by</span>
             <a
               href="https://azfaralam.vercel.app/"

@@ -55,7 +55,7 @@ const ContactUsForm = () => {
       className="flex items-center text-gray-200 lg:px-10 flex-col justify-center gap-5 md:py-8 py-4"
     >
       <Toaster /> {/* Render the Toaster component */}
-      <h1 className="md:text-2xl text-lg font-nunito text-customTeal dark:text-[#75c364] mb-2 font-semibold">
+      <h1 className="md:text-2xl text-lg font-nunito text-customTeal dark:text-Green mb-2 font-semibold">
         Have a question or need assistance?
       </h1>
 
@@ -63,28 +63,28 @@ const ContactUsForm = () => {
         name="name"
         value={formData.name}
         onChange={handleChange}
-        className="dark:bg-gray-700 border-customTeal dark:border-[#3A6E2E]"
+        className="dark:bg-gray-700 border-customTeal dark:border-Green/50"
         placeholder="Your Name"
       />
       <Input
         name="email"
         value={formData.email}
         onChange={handleChange}
-        className="dark:bg-gray-700 border-customTeal dark:border-[#3A6E2E]"
+        className="dark:bg-gray-700 border-customTeal dark:border-Green/50"
         placeholder="Your Email"
       />
       <Input
         name="subject"
         value={formData.subject}
         onChange={handleChange}
-        className="dark:bg-gray-700 border-customTeal dark:border-[#3A6E2E]"
+        className="dark:bg-gray-700 border-customTeal dark:border-Green/50"
         placeholder="Your Subject"
       />
       <Textarea
         name="message"
         value={formData.message}
         onChange={handleChange}
-        className="dark:bg-gray-700 border-customTeal dark:border-[#3A6E2E]"
+        className="dark:bg-gray-700 border-customTeal dark:border-Green/50"
         rows={5}
         placeholder="Message"
       />

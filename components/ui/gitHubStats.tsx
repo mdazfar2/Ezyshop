@@ -119,9 +119,9 @@ const GitHubStats = () => {
                         count={starCount ? starCount : '150+'}
                         link="https://github.com//mdazfar2/Ezyshop"
                         bgColor="#575448"
-                        btnBgColor="#FBD449"
-                        btnHoverColor="#FFF455"
-                        btnTextColor="black"
+                        btnBgColor="#D4A017"
+                        btnHoverColor="#E8C820"
+                        btnTextColor="white"
                         btnText="Give a star"
                     />
 
@@ -130,8 +130,8 @@ const GitHubStats = () => {
                         count={forkCount ? forkCount : '220+'}
                         link="https://github.com/mdazfar2/Ezyshop/blob/main/CONTRIBUTING.md"
                         bgColor="#403B56"
-                        btnBgColor="#4CAF50"
-                        btnHoverColor="#80d983"
+                        btnBgColor="#1B8A2C"
+                        btnHoverColor="#6DBB3A"
                         btnTextColor="white"
                         btnText="Contribute now"
                     />
