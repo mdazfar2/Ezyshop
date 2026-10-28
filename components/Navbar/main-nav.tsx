@@ -130,10 +130,12 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
               href={link.href}
               onClick={link.onClick}
               className={cn(
-                "px-3 py-1.5 text-sm font-medium transition-all duration-200 relative",
+                "cursor-pointer px-3 py-1.5 text-sm font-medium transition-all duration-200 relative",
                 link.active
                   ? "text-customTeal dark:text-Green font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2px] after:bg-customTeal dark:after:bg-Green after:rounded-full"
-                  : "text-gray-600 dark:text-gray-300 hover:text-customTeal dark:hover:text-Green"
+                  : isScrolled
+                  ? "text-gray-600 dark:text-gray-300 hover:text-customTeal dark:hover:text-Green"
+                  : "text-gray-800 dark:text-gray-100 hover:text-customTeal dark:hover:text-Green font-medium drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] dark:drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
               )}
             >
               {link.label}
@@ -153,7 +155,9 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
                   "group flex items-center gap-1 px-3 py-1.5 text-sm font-medium transition-all duration-200 outline-none cursor-pointer relative",
                   isMoreActive
                     ? "text-customTeal dark:text-Green font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2px] after:bg-customTeal dark:after:bg-Green after:rounded-full"
-                    : "text-gray-600 dark:text-gray-300 hover:text-customTeal dark:hover:text-Green data-[state=open]:text-customTeal dark:data-[state=open]:text-Green"
+                    : isScrolled
+                    ? "text-gray-600 dark:text-gray-300 hover:text-customTeal dark:hover:text-Green data-[state=open]:text-customTeal dark:data-[state=open]:text-Green"
+                    : "text-gray-800 dark:text-gray-100 hover:text-customTeal dark:hover:text-Green data-[state=open]:text-customTeal dark:data-[state=open]:text-Green font-medium drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] dark:drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
                 )}
               >
                 <span>More</span>
@@ -213,7 +217,7 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
         </div>
 
         {/* Divider */}
-        <div className="h-5 w-px bg-gray-200 dark:bg-zinc-800 mx-1" />
+        <div className={cn("h-5 w-px mx-1 transition-colors", isScrolled ? "bg-gray-200 dark:bg-zinc-800" : "bg-gray-300/80 dark:bg-zinc-600/80")} />
 
         {/* Utility / Customer Tools */}
         <div className="flex items-center gap-1">
@@ -224,10 +228,12 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
                 key={item.label}
                 onClick={item.onClick}
                 className={cn(
-                  "flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all duration-200 relative",
+                  "cursor-pointer flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all duration-200 relative",
                   item.active
                     ? "text-customTeal dark:text-Green font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2px] after:bg-customTeal dark:after:bg-Green after:rounded-full"
-                    : "text-gray-600 dark:text-gray-300 hover:text-customTeal dark:hover:text-Green"
+                    : isScrolled
+                    ? "text-gray-600 dark:text-gray-300 hover:text-customTeal dark:hover:text-Green"
+                    : "text-gray-800 dark:text-gray-100 hover:text-customTeal dark:hover:text-Green font-medium drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] dark:drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
                 )}
                 title={item.label}
               >
@@ -239,7 +245,7 @@ export function MainNav({ className, isScrolled = false }: MainNavProps) {
         </div>
 
         {/* Divider */}
-        <div className="h-5 w-px bg-gray-200 dark:bg-zinc-800 mx-1" />
+        <div className={cn("h-5 w-px mx-1 transition-colors", isScrolled ? "bg-gray-200 dark:bg-zinc-800" : "bg-gray-300/80 dark:bg-zinc-600/80")} />
 
         {/* Actions: Theme Toggle & Auth */}
         <div className="flex items-center gap-2.5 pl-1">

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
@@ -7,24 +7,58 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-// Create the context with a default value of undefined
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState("light"); // Default to light theme
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
+  const [theme, setTheme] = useState<string>("light");
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
+    setMounted(true);
+    try {
+      const savedTheme = localStorage.getItem("ezyshop-theme");
+      if (savedTheme === "dark" || savedTheme === "light") {
+        setTheme(savedTheme);
+        const root = document.documentElement;
+        if (savedTheme === "dark") {
+          root.classList.add("dark");
+        } else {
+          root.classList.remove("dark");
+        }
+      } else {
+        // Fallback to checking existing class on html element or system preference
+        const isDark = document.documentElement.classList.contains("dark") || 
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initialTheme = isDark ? "dark" : "light";
+        setTheme(initialTheme);
+        if (isDark) {
+          document.documentElement.classList.add("dark");
+        }
+      }
+    } catch (e) {
+      console.error("Theme initialization error:", e);
     }
-  }, [theme]);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => {
+      const nextTheme = prevTheme === "light" ? "dark" : "light";
+      try {
+        localStorage.setItem("ezyshop-theme", nextTheme);
+      } catch (e) {
+        console.error("Failed to persist theme in localStorage:", e);
+      }
+
+      const root = document.documentElement;
+      if (nextTheme === "dark") {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+
+      return nextTheme;
+    });
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -35,19 +69,10 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Custom hook to use the theme context
 export const useTheme = () => {
-  const [loading,setLoading]=useState(true);
-
-  useEffect(()=>{
-    setLoading(false);
-  },[])
-
-  if(loading) return null;
-
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error("useTheme must be used within a ThemeProvider");
+    return { theme: "light", toggleTheme: () => {} };
   }
   return context;
 };
