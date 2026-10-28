@@ -56,19 +56,19 @@ const NewsLetterForm = () => {
           placeholder="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="bg-white dark:bg-zinc-800/80 border-slate-300 dark:border-zinc-700/80 text-slate-900 dark:text-white placeholder-slate-400 h-10 rounded-xl focus:border-customTeal focus:ring-1 focus:ring-customTeal transition-all text-sm shadow-sm"
+          className="bg-white dark:bg-zinc-800/80 border-slate-300 dark:border-zinc-700/80 text-slate-900 dark:text-white placeholder-slate-400 h-10 rounded-xl focus:border-customTeal focus:ring-1 focus:ring-customTeal dark:focus:border-Green dark:focus:ring-Green transition-all text-sm shadow-sm"
         />
         <Input
           type="email"
           placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="bg-white dark:bg-zinc-800/80 border-slate-300 dark:border-zinc-700/80 text-slate-900 dark:text-white placeholder-slate-400 h-10 rounded-xl focus:border-customTeal focus:ring-1 focus:ring-customTeal transition-all text-sm shadow-sm"
+          className="bg-white dark:bg-zinc-800/80 border-slate-300 dark:border-zinc-700/80 text-slate-900 dark:text-white placeholder-slate-400 h-10 rounded-xl focus:border-customTeal focus:ring-1 focus:ring-customTeal dark:focus:border-Green dark:focus:ring-Green transition-all text-sm shadow-sm"
         />
         <Button
           type="submit"
           disabled={loading}
-          className="h-10 w-full bg-customTeal hover:bg-customTeal/90 text-white rounded-xl font-medium shadow-md shadow-teal-500/20 hover:shadow-teal-500/35 transition-all text-sm flex items-center justify-center gap-2"
+          className="h-10 w-full bg-customTeal hover:bg-customTeal/90 dark:bg-Green dark:hover:bg-Green/90 text-white rounded-xl font-medium shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all text-sm flex items-center justify-center gap-2"
         >
           {loading ? (
             <>

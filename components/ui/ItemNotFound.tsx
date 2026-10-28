@@ -39,13 +39,13 @@ const ItemNotFound = () => {
           <div className="flex gap-5 flex-col space-x-4 mb-8">
             <button
               onClick={handleGoBack}
-              className="px-6 py-2 text-customTeal rounded hover:text-blue-600 transition"
+              className="px-6 py-2 text-customTeal rounded hover:text-customBlue transition"
             >
               Go Back
             </button>
             <button
               onClick={handleLearnMore}
-              className="px-6 py-2 text-customTeal rounded hover:text-blue-600 transition"
+              className="px-6 py-2 text-customTeal rounded hover:text-customBlue transition"
             >
               Learn About Ezyshop
             </button>

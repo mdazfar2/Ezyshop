@@ -50,12 +50,12 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        customBlue: "#00394f", // Dark Blue-Green
-        customTeal: "#17a2b8", // Light Blue
-        Yellow: "#38bdf8", // Modern Sky Blue Accent (replaces harsh canary yellow)
-        Green: "#2dd4bf", // Modern Teal Accent (replaces harsh grass green #4CAF50)
+        customBlue: "#145A1E", // Deep Forest Green — matches the darkest greens in the EzyShop logo
+        customTeal: "#1B8A2C", // Emerald Green — matches the primary green tone of the logo
+        Yellow: "#E8C820", // Warm Gold — matches the golden "E" and "Ezy" text in the logo
+        Green: "#6DBB3A", // Lime Green — matches the lighter green highlights in the logo
         Gray: "#F5F5F5",
-        DarkGray: "#0f1013", // Rich modern obsidian dark (replaces washed-out #212121)
+        DarkGray: "#0C1A0E", // Rich dark with a subtle green undertone for cohesive dark mode
       },
       backgroundImage: {
         desktop: "url('/bg-sidebar-desktop2.svg')",

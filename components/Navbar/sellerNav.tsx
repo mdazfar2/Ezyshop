@@ -13,7 +13,7 @@ const SellerNavbar = () => {
 
   return (
     <div
-      className={`border-b dark:border-Green w-full border-gray-900 ${
+      className={`border-b dark:border-Green/40 w-full border-gray-900 ${
         theme === "dark" ? "bg-DarkGray" : "bg-white"
       } sticky top-0 z-50`}  // <-- Added `sticky`, `top-0`, and `z-50` for sticky effect
     >

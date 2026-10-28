@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import SignupPage from "../components/signupPage";
 import LoginPage from "../components/loginPage";
@@ -9,6 +9,16 @@ const Login = () => {
 
   const [error, setError] = useState("");
   const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("redirect") === "shops") {
+      toast.error("Please log in as a customer first to explore shops near you.", {
+        id: "customer-auth-required",
+        duration: 4000,
+      });
+    }
+  }, []);
 
   if (error != "") {
     toast.error(error);
