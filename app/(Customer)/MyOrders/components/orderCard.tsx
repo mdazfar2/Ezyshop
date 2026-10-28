@@ -2,13 +2,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { order } from "./columns";
 import {
-  Package,
   Truck,
   Clock,
   CheckCircle2,
   AlertCircle,
   ChevronRight,
-  Receipt,
 } from "lucide-react";
 
 interface OrderCardProps {

@@ -7,7 +7,6 @@ import {
   ShoppingCart,
   Store,
   TicketPercent,
-  Sparkles,
   ArrowUpRight,
 } from "lucide-react";
 import SeperatorHeading from "./ui/seperatorHeading";
@@ -83,7 +82,7 @@ const Features = () => {
 
       {/* Modern Facility Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {cardData.map((item, index) => (
+        {cardData.map((item) => (
           <div
             key={item.title}
             className="group relative rounded-2xl bg-white dark:bg-zinc-900/80 border border-gray-200/80 dark:border-zinc-800/80 p-7 shadow-sm hover:shadow-xl hover:shadow-emerald-950/5 dark:hover:shadow-emerald-500/5 hover:border-customTeal/40 dark:hover:border-Green/40 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"

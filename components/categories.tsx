@@ -8,8 +8,6 @@ import { useState, useMemo } from "react";
 import {
   ArrowRight,
   Clock,
-  Sparkles,
-  Tag,
   ChevronRight,
   Flame,
 } from "lucide-react";

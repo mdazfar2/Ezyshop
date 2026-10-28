@@ -1,7 +1,6 @@
 "use client";
 
 import ShopCard from "@/components/shops/shopCard";
-import SeperatorHeading from "@/components/ui/seperatorHeading";
 import { Spinner } from "@/components/ui/spinner";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
@@ -9,7 +8,7 @@ import { useEffect, useState, useMemo } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
-import { Search, Store, Mail, Globe, ArrowRight } from "lucide-react";
+import { Search, Store, Mail, Globe } from "lucide-react";
 import Link from "next/link";
 
 export interface Shop {

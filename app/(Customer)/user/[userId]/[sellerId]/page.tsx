@@ -9,12 +9,8 @@ import {
   MessageSquare,
   Search,
   ArrowLeft,
-  Clock,
-  Sparkles,
   ChevronRight,
-  MapPin,
   CheckCircle2,
-  Tag,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
