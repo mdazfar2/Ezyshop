@@ -1,6 +1,6 @@
 "use client";
 
-import { Star, Quote, CheckCircle2 } from "lucide-react";
+import { Star, CheckCircle2 } from "lucide-react";
 import SeperatorHeading from "../ui/seperatorHeading";
 import Image from "next/image";
 

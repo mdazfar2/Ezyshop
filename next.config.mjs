@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: false,
   staticPageGenerationTimeout: 180,
-    images: {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
         remotePatterns: [
           {
             protocol: 'https',

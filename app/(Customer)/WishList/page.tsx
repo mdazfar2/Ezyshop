@@ -10,7 +10,7 @@ import { Image as PrismaImage, Product, Wishlist } from "@prisma/client";
 import { Spinner } from "@/components/ui/spinner";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Heart, Sparkles, ShoppingBag, ArrowRight, Store } from "lucide-react";
+import { Heart, ArrowRight, Store } from "lucide-react";
 
 export interface productWithImages extends Product {
   images: PrismaImage[];

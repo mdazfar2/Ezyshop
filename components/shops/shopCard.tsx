@@ -11,7 +11,6 @@ import {
   Clock,
   CheckCircle2,
   ArrowRight,
-  Store as StoreIcon,
 } from "lucide-react";
 
 interface ShopCardProps {

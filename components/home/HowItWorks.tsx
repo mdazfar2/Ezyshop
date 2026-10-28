@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, ShoppingBag, Truck, Sparkles, ArrowRight } from "lucide-react";
+import { Search, ShoppingBag, Truck, ArrowRight } from "lucide-react";
 import SeperatorHeading from "../ui/seperatorHeading";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -51,7 +51,7 @@ const HowItWorks = () => {
 
       {/* 3 Step Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-        {steps.map((item, idx) => (
+        {steps.map((item) => (
           <div
             key={item.step}
             className="relative rounded-3xl bg-white dark:bg-zinc-900/90 border border-gray-200/80 dark:border-zinc-800/80 p-8 shadow-sm hover:shadow-xl hover:shadow-emerald-950/5 dark:hover:shadow-emerald-500/5 hover:border-customTeal/40 dark:hover:border-Green/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5"

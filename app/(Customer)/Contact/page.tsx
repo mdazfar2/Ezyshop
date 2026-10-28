@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ContactUsFrom from "@/components/contactUsForm";
-import SeperatorHeading from "@/components/ui/seperatorHeading";
-import { Clock, Mail, MapPin, Phone, MessageSquare, Sparkles } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 import Image from "next/image";
 
 export const metadata: Metadata = {

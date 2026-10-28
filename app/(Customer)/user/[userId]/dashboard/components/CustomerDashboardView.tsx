@@ -36,7 +36,7 @@ interface StoreItem {
   id: string;
   storeName: string;
   email: string;
-  Products?: any[];
+  Products?: unknown[];
   role?: string;
 }
 
@@ -166,7 +166,7 @@ export default function CustomerDashboardView({ userId }: { userId: string }) {
     const resolvedEmail = session?.user?.email || "azfarsarsaar@gmail.com";
     const resolvedPhone = savedPhone || "+91 98765 43210";
     const verifiedAvatar = getVerifiedEmailAvatar(resolvedEmail);
-    const resolvedAvatar = savedAvatar || (session?.user as any)?.image || verifiedAvatar;
+    const resolvedAvatar = savedAvatar || (session?.user as { image?: string })?.image || verifiedAvatar;
 
     setUserName(resolvedName);
     setUserEmail(resolvedEmail);
@@ -690,7 +690,7 @@ export default function CustomerDashboardView({ userId }: { userId: string }) {
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as "overview" | "orders" | "chat" | "settings")}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
                   isActive
                     ? "bg-customTeal text-white shadow-md shadow-emerald-600/20"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Categories from "@/components/categories";
-import { Sparkles, Layers, ShieldCheck, Clock, Truck } from "lucide-react";
+import { Layers, ShieldCheck, Clock, Truck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Categories - EzyShop | Explore Neighborhood Products",

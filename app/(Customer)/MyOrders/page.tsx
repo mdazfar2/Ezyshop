@@ -2,8 +2,8 @@
 
 import { order } from "./components/columns";
 import OrderCard from "./components/orderCard";
-import { useState, useRef, useEffect, useMemo } from "react";
-import { Package, Search, Sparkles, Filter, ChevronLeft, ChevronRight, Truck } from "lucide-react";
+import { useState, useRef, useMemo } from "react";
+import { Package, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const options: Intl.DateTimeFormatOptions = {
