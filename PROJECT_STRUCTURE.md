@@ -112,6 +112,7 @@
 │   │           │   └── page.tsx
 │   │           └── dashboard/
 │   │               ├── components/
+│   │               │   ├── CustomerDashboardView.tsx
 │   │               │   └── listStores.tsx
 │   │               └── page.tsx
 │   ├── (Seller)/
@@ -200,6 +201,8 @@
 │   │   ├── auth/
 │   │   │   ├── [...nextauth]/
 │   │   │   │   └── route.ts
+│   │   │   ├── check-config/
+│   │   │   │   └── route.ts
 │   │   │   ├── login/
 │   │   │   │   ├── seller/
 │   │   │   │   │   └── route.ts
@@ -271,6 +274,10 @@
 │   ├── footer/
 │   │   └── newsletterForm.tsx
 │   ├── footer.tsx
+│   ├── home/
+│   │   ├── HowItWorks.tsx
+│   │   ├── SellerPromoBanner.tsx
+│   │   └── TestimonialsSection.tsx
 │   ├── modals/
 │   │   ├── alert-modal.tsx
 │   │   ├── authModal.tsx
@@ -352,6 +359,7 @@
 ├── providers/
 │   └── sessionProvider.tsx
 ├── public/
+│   ├── Azfar-fevico.webp
 │   ├── Founder.jpeg
 │   ├── about-us-1.png
 │   ├── about-us-2.png
@@ -397,9 +405,13 @@
 │   ├── glitter_green_left.png
 │   ├── glitter_green_right.png
 │   ├── groceries.png
+│   ├── hero-3d-original.jpg
+│   ├── hero-3d-showcase.png
+│   ├── hero-delivery.jpg
 │   ├── hero.png
 │   ├── left_blue.png
 │   ├── left_green.png
+│   ├── logo-nav.png
 │   ├── not-found.png
 │   ├── priya.jpg
 │   ├── products/
