@@ -12,13 +12,26 @@ jobs:
   detect-and-update-structure:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # Permission to the GitHub Bot to access and update the Project Repository 
+      contents: write   # Permission to access and update the Project Repository 
+    env:
+      AZFARAI_APP_ID: ${{ secrets.AZFARAI_APP_ID }}
+      AZFARAI_PRIVATE_KEY: ${{ secrets.AZFARAI_PRIVATE_KEY }}
     steps:
+      - name: Generate AzfarAi Bot Token
+        id: azfarai-token
+        if: env.AZFARAI_APP_ID != '' && env.AZFARAI_PRIVATE_KEY != ''
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.AZFARAI_APP_ID }}
+          private-key: ${{ secrets.AZFARAI_PRIVATE_KEY }}
+
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.azfarai-token.outputs.token || secrets.AZFARAI_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: 3.12
 
@@ -26,14 +39,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install PyGithub
+
       - name: Run update script
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python .github/scripts/update_structure.py   # Run the python script to create/update the repo sturcture
+          GH_TOKEN: ${{ steps.azfarai-token.outputs.token || secrets.AZFARAI_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/update_structure.py   # Run the python script to create/update the repo structure
 
-      - name: Commit and push if changed    # Commit and push changes to the head branch(main)
+      - name: Commit and push if changed    # Commit and push changes to the head branch (main)
         run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com" 
-          git config user.name "github-actions[bot]"
+          git config user.name "${{ steps.azfarai-token.outputs.app-slug || 'AzfarAi' }}[bot]"
+          git config user.email "${{ steps.azfarai-token.outputs.app-slug || 'AzfarAi' }}[bot]@users.noreply.github.com"
           git add . 
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update repo structure" && git push)
