@@ -19,29 +19,57 @@ const Hero = () => {
     >
       {/* Full Hero Background Next.js Image Layer - Light & Dark with instant seamless transition */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none overflow-hidden">
-        {/* Light Mode Background */}
-        <div className="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-100 dark:opacity-0">
+        {/* ===== Desktop Backgrounds (hidden on mobile, visible sm+) ===== */}
+        {/* Light Mode Background - Desktop */}
+        <div className="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-100 dark:opacity-0 hidden sm:block">
           <Image
             src="/ezyshop-bg2.png"
             alt="EzyShop Background Light"
             fill
             priority
-            sizes="100vw"
+            sizes="(min-width: 640px) 100vw, 0px"
             quality={95}
-            className="object-cover object-[78%_center] sm:object-[70%_center] md:object-right lg:object-center transform-gpu"
+            className="object-cover object-[70%_center] md:object-right lg:object-center transform-gpu"
           />
         </div>
 
-        {/* Dark Mode Background */}
-        <div className="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 dark:opacity-100">
+        {/* Dark Mode Background - Desktop */}
+        <div className="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 dark:opacity-100 hidden sm:block">
           <Image
             src="/ezyshop-bg-dark.png"
             alt="EzyShop Background Dark"
             fill
             priority
-            sizes="100vw"
+            sizes="(min-width: 640px) 100vw, 0px"
             quality={95}
-            className="object-cover object-[78%_center] sm:object-[70%_center] md:object-right lg:object-center transform-gpu"
+            className="object-cover object-[70%_center] md:object-right lg:object-center transform-gpu"
+          />
+        </div>
+
+        {/* ===== Mobile Backgrounds (visible on mobile, hidden sm+) ===== */}
+        {/* Light Mode Background - Mobile */}
+        <div className="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-100 dark:opacity-0 sm:hidden">
+          <Image
+            src="/bg-mobile-resposive-light.png"
+            alt="EzyShop Background Light Mobile"
+            fill
+            priority
+            sizes="(max-width: 639px) 100vw, 0px"
+            quality={95}
+            className="object-cover object-center transform-gpu"
+          />
+        </div>
+
+        {/* Dark Mode Background - Mobile */}
+        <div className="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 dark:opacity-100 sm:hidden">
+          <Image
+            src="/bg-mobile-resposive-dark.png"
+            alt="EzyShop Background Dark Mobile"
+            fill
+            priority
+            sizes="(max-width: 639px) 100vw, 0px"
+            quality={95}
+            className="object-cover object-center transform-gpu"
           />
         </div>
       </div>
