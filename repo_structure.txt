@@ -361,6 +361,8 @@
 │   ├── about-us-2.png
 │   ├── admin.svg
 │   ├── anita.jpg
+│   ├── bg-mobile-resposive-dark.png
+│   ├── bg-mobile-resposive-light.png
 │   ├── bg-sidebar-desktop.svg
 │   ├── bg-sidebar-desktop2.svg
 │   ├── bg-sidebar-mobile.svg
@@ -392,6 +394,9 @@
 │   ├── diamond_blue.png
 │   ├── diamond_green.png
 │   ├── electronics.png
+│   ├── ezyshop-bg-dark.png
+│   ├── ezyshop-bg2.png
+│   ├── ezyshop-bg3.png
 │   ├── ezyshop.png
 │   ├── fasion.png
 │   ├── food1a.jpeg
@@ -403,7 +408,6 @@
 │   ├── groceries.png
 │   ├── hero-3d-original.jpg
 │   ├── hero-3d-showcase.png
-│   ├── hero-delivery.jpg
 │   ├── hero.png
 │   ├── left_blue.png
 │   ├── left_green.png
