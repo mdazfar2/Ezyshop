@@ -6,16 +6,19 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-        remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'res.cloudinary.com',
-            port: '',
-            pathname: '/**',
-          }
-        ],
-        domains: ['avatars.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        pathname: '/**',
+      },
+    ],
+  },
 
 
       // async headers() { 

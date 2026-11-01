@@ -35,8 +35,8 @@ const AuthButtons = ({ toggleMenu }: { toggleMenu: () => void }) => {
           <Link href={`/user/${session.data?.user?.id}/dashboard`}>
             <Button
               size="icon"
-              className="h-9 w-9 rounded-full text-gray-700 dark:text-gray-300 hover:text-customTeal dark:hover:text-Green hover:bg-gray-100 dark:hover:bg-zinc-800"
-              variant="ghost"
+              className="h-9 w-9 rounded-full border-gray-300 dark:border-zinc-700 bg-background text-gray-700 dark:text-gray-200 hover:text-customTeal dark:hover:text-Green hover:border-customTeal dark:hover:border-Green shadow-sm transition-all"
+              variant="outline"
               title="Profile"
             >
               <User className="h-4 w-4" />

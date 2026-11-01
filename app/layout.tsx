@@ -19,8 +19,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Instant Theme Restoration Script: prevents flash of wrong theme on reload */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var t = localStorage.getItem('ezyshop-theme');
+                  if (t === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else if (t === 'light') {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {/* font awesome CDN */}
         <link
           rel="stylesheet"
